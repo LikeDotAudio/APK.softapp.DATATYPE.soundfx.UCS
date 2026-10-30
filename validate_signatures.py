@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Validate every acoustic_signature in UCS/categories/*.json against the spec.
+"""Validate every acoustic_signature in categories/*.json against the spec.
 
-The spec is Documentation/ucs_signature_spec.md. This enforces the parts of it a
+The spec is SCANALYZER.Like.audio/Documentation/Specs/ucs_signature_spec.md. This enforces the parts of it a
 machine can check: closed vocabularies, well-formed gates and priors, numeric
 sanity, and a resolvable confusion graph. Exits non-zero on any error.
 """

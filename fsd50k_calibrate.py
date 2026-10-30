@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """Calibrate the UCS acoustic signatures against a scanned FSD50K corpus.
 
-    python3 UCS/fsd50k_calibrate.py calibrate <FSD50K.dev_audio/>   # measure, then rewrite categories/*.json
-    python3 UCS/fsd50k_calibrate.py evaluate  <FSD50K.dev_audio/>   # held-out 70/30, signal only, no writes
+    python3 fsd50k_calibrate.py calibrate <FSD50K.dev_audio/>   # measure, then rewrite categories/*.json
+    python3 fsd50k_calibrate.py evaluate  <FSD50K.dev_audio/>   # held-out 70/30, signal only, no writes
 
 The corpus is a directory of `.PEAK` sidecars whose file names carry the human
 FSD50K label chain (`Label-Label-..._[freesound_id].PEAK`). Those labels are joined
 to UCS ids through `fsd50k_crosswalk.json`.
 
-Policy (see README, "Calibrating the signatures against FSD50K"):
+Policy (see SCANALYZER.Like.audio/README.md, "Calibrating the signatures against FSD50K"):
   * only `high`/`medium` crosswalk entries calibrate;
   * a clip is used only if every label it carries agrees on ONE subcategory;
   * location = median (geometric for log features), scale = MAD -> sigma;
@@ -25,7 +25,7 @@ DATE = "2026-07"
 
 # ---------------------------------------------------------------- the vocabulary
 
-# ucs_signature_spec.md 4a + 4b. "`feature` must be one of these exact names ...
+# SCANALYZER.Like.audio/Documentation/Specs/ucs_signature_spec.md 4a + 4b. "`feature` must be one of these exact names ...
 # Nothing outside this vocabulary is legal." Anything else on the record
 # (bit_depth, channels, mid_rms, the legacy attack_seconds) is metadata or a
 # dataset artifact, not a fact about the sound.
@@ -283,7 +283,8 @@ def score(sig, c, rule='spec'):
 
     rule='spec'   : L = sum(w*-0.5z^2) / sum(w), as ucs.rs implements today.
     rule='loglik' : a true Gaussian log-likelihood, summed, keeping the per-term
-                    normalizer -ln(sigma). See the README: the spec's division by
+                    normalizer -ln(sigma). See SCANALYZER.Like.audio/README.md, "Calibrating the
+                    signatures against FSD50K", point 3: the spec's division by
                     sum(w) rewards a signature for being vague."""
     for g in sig.get('gates', []):
         x = c.get(g['feature'])
@@ -520,7 +521,8 @@ def cmd_calibrate(corpus):
 
 
 def cmd_evaluate(corpus):
-    """Held-out 70/30, signal only. Reproduces the numbers quoted in the README."""
+    """Held-out 70/30, signal only. Reproduces the numbers quoted in SCANALYZER.Like.audio/README.md
+    ("Calibrating the signatures against FSD50K")."""
     clean, stats = load_clean(corpus)
     sigs, _ = load_signatures()
     tiers = {u: sigs[u][1]['acoustic_signature'].get('separability') for u in clean if u in sigs}
@@ -589,7 +591,8 @@ def cmd_evaluate(corpus):
     print("\nThe spec 6 rule divides by total weight, so a signature with fewer priors has")
     print("fewer chances to be penalized. The MISC abstention buckets win, and the tiers")
     print("inverted: semantic_only outscores signal_separable. The log-likelihood restores")
-    print("the per-term normalizer and the ordering. See the README.")
+    print("the per-term normalizer and the ordering. See SCANALYZER.Like.audio/README.md,")
+    print("\"Calibrating the signatures against FSD50K\".")
 
 
 if __name__ == '__main__':

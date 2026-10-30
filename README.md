@@ -26,13 +26,12 @@
 | `UCS v8.2.1 Full Translations.xlsx` | The published UCS spreadsheet the JSON was built from. |
 | `validate_signatures.py` | Checks every signature against the spec; exits non-zero on any error. |
 | `fsd50k_calibrate.py` | Calibrates priors and gates from a folder of FSD50K `.PEAK` sidecars. |
-| `music_calibrate.py` | Calibrates the former `MUSICAL`/`MUSICPROD` files from a producer sample library — see the note below. |
+| `music_calibrate.py` | Calibrates the instrument categories (`DRUMS`, `CYMBALS`, `MALLET` …) from a producer sample library — see below. |
 
 The signature grammar, the closed feature vocabulary and the scoring math are specified in
 `Softapps/SCANALYZER_SUITE/SCANALYZER.Like.audio/Documentation/Specs/ucs_signature_spec.md`.
 The calibration policy is written up in the Scanalyzer README, section "Calibrating the
-signatures against FSD50K". The scripts' docstrings still spell their own location `UCS/` and
-say "see README" — they mean those two documents.
+signatures against FSD50K". The scripts' docstrings cite both by those paths.
 
 ---
 
@@ -66,9 +65,17 @@ python3 fsd50k_calibrate.py evaluate  <FSD50K.dev_audio/>   # held-out 70/30, wr
 python3 fsd50k_calibrate.py calibrate <FSD50K.dev_audio/>   # rewrites categories/*.json and fsd50k_calibration.json
 ```
 
-`music_calibrate.py` loads `categories/MUSICAL.json` and `categories/MUSICPROD.json`, and
-neither file exists any more — the musical categories were exploded into `DRUMS`, `CYMBALS`,
-`GUITAR`, `PIANO` and the rest. As it stands it fails on load.
+`music_calibrate.py` calibrates the 13 instrument categories exploded out of UCS MUSICAL
+(the files whose `version` is `8.2.APK`) from a producer library scanned to `.PEAK`. Its
+ground truth is `classification.group`, the instrument the SampleAnalyzer reads off the file
+name; a group feeds the one instrument subcategory it names (or, failing that, lists as a
+synonym). `map` prints that wiring without a corpus:
+
+```bash
+python3 music_calibrate.py map                     # 41 of 53 groups feed exactly one subcategory
+python3 music_calibrate.py measure   <library/>    # report only
+python3 music_calibrate.py calibrate <library/>    # rewrites the instrument category files it touched
+```
 
 **Web Portal Entry**: none. `display.json` declares the folder to the launcher
 (`walk_project()` in `PODS/POD.THIN/WEB.OsApi/SRC/server.py`); its `entry`, `main.py`, is not a
