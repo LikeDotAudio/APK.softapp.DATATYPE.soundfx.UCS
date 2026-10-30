@@ -1,689 +1,1372 @@
 {
-  "version": "8.2.APK",
-  "category": "PERCUSSION",
-  "emoji": "🪘",
-  "subcategories": [
-    {
-      "subcategory": "SHAKER",
-      "category_id": "PERCShak",
-      "category_short": "PERC",
-      "emoji": "🪇",
-      "explanation": [
-        "Shaken idiophone \u2014 maraca, shaker, cabasa, shekere, or a fistful of sand.",
-        "A granular burst of high-frequency noise with no clear pitch; the sound of many small particles."
-      ],
-      "synonyms": [
-        "Shaker",
-        "Maraca",
-        "Maracas",
-        "Cabasa",
-        "Shekere",
-        "Sand",
-        "Sandblock",
-        "Chekere",
-        "Egg Shaker",
-        "caxixi",
-        "shkr",
-        "SHK",
-        "shak"
-      ],
-      "acoustic_signature": {
-        "morphology": "granular",
-        "separability": "signal_separable",
-        "gates": [
-          {
-            "feature": "length_seconds",
-            "max": 4.0
-          }
-        ],
-        "priors": [
-          {
-            "feature": "spectral_centroid_hz",
-            "mean": 6000.0,
-            "deviation": 1.7,
-            "transform": "log",
-            "weight": 1.0,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 6000.0,
-              "reasoned_deviation_before_calibration": 1.7
-            }
-          },
-          {
-            "feature": "spectral_flatness",
-            "mean": 0.6,
-            "deviation": 0.2,
-            "transform": "linear",
-            "weight": 0.9,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.6,
-              "reasoned_deviation_before_calibration": 0.2
-            }
-          },
-          {
-            "feature": "high_band_energy",
-            "mean": 0.65,
-            "deviation": 0.2,
-            "transform": "linear",
-            "weight": 0.8,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.65,
-              "reasoned_deviation_before_calibration": 0.2
-            }
-          },
-          {
-            "feature": "harmonicity",
-            "mean": 0.1,
-            "deviation": 0.15,
-            "transform": "linear",
-            "weight": 0.6,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.1,
-              "reasoned_deviation_before_calibration": 0.15
-            }
-          },
-          {
-            "feature": "length_seconds",
-            "mean": 0.25,
-            "deviation": 2.5,
-            "transform": "log",
-            "weight": 0.4,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.25,
-              "reasoned_deviation_before_calibration": 2.5
-            }
-          }
-        ]
+ "version": "8.2.APK",
+ "category": "PERCUSSION",
+ "emoji": "🪘",
+ "subcategories": [
+  {
+   "subcategory": "SHAKER",
+   "category_id": "PERCShak",
+   "category_short": "PERC",
+   "emoji": "🪇",
+   "explanation": [
+    "Shaken idiophone — maraca, shaker, cabasa, shekere, or a fistful of sand.",
+    "A granular burst of high-frequency noise with no clear pitch; the sound of many small particles."
+   ],
+   "synonyms": [
+    "Shaker",
+    "Maraca",
+    "Maracas",
+    "Cabasa",
+    "Shekere",
+    "Sand",
+    "Sandblock",
+    "Chekere",
+    "Egg Shaker",
+    "caxixi",
+    "shkr",
+    "SHK",
+    "shak"
+   ],
+   "acoustic_signature": {
+    "morphology": "granular",
+    "separability": "signal_separable",
+    "gates": [
+     {
+      "feature": "length_seconds",
+      "max": 4.0
+     }
+    ],
+    "priors": [
+     {
+      "feature": "spectral_centroid_hz",
+      "mean": 9190.4,
+      "deviation": 1.7,
+      "transform": "log",
+      "weight": 1.0,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 249,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "all_unambiguous_clips",
+       "reasoned_mean_before_calibration": 6000.0
       }
-    },
-    {
-      "subcategory": "TAMBOURINE",
-      "category_id": "PERCTamb",
-      "category_short": "PERC",
-      "emoji": "🪇",
-      "explanation": [
-        "Tambourine \u2014 a frame hung with metal jingles that shimmer when struck or shaken.",
-        "A bright metallic shimmer layered over the thud or slap of the frame."
-      ],
-      "synonyms": [
-        "Tambourine",
-        "Jingle",
-        "Jingles",
-        "Zills",
-        "Tambo",
-        "Timbrel",
-        "Riq",
-        "tamb",
-        "TMB"
-      ],
-      "acoustic_signature": {
-        "morphology": "impulsive_with_tail",
-        "separability": "signal_narrowable",
-        "gates": [
-          {
-            "feature": "length_seconds",
-            "max": 4.0
-          }
-        ],
-        "priors": [
-          {
-            "feature": "spectral_centroid_hz",
-            "mean": 5500.0,
-            "deviation": 1.7,
-            "transform": "log",
-            "weight": 1.0,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 5500.0,
-              "reasoned_deviation_before_calibration": 1.7
-            }
-          },
-          {
-            "feature": "high_band_energy",
-            "mean": 0.6,
-            "deviation": 0.22,
-            "transform": "linear",
-            "weight": 0.8,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.6,
-              "reasoned_deviation_before_calibration": 0.22
-            }
-          },
-          {
-            "feature": "inharmonicity",
-            "mean": 0.6,
-            "deviation": 0.25,
-            "transform": "linear",
-            "weight": 0.7,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.6,
-              "reasoned_deviation_before_calibration": 0.25
-            }
-          },
-          {
-            "feature": "spectral_flatness",
-            "mean": 0.4,
-            "deviation": 0.22,
-            "transform": "linear",
-            "weight": 0.6,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.4,
-              "reasoned_deviation_before_calibration": 0.22
-            }
-          },
-          {
-            "feature": "decay_time_seconds_60db",
-            "mean": 0.35,
-            "deviation": 2.5,
-            "transform": "log",
-            "weight": 0.5,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.35,
-              "reasoned_deviation_before_calibration": 2.5
-            }
-          }
-        ]
+     },
+     {
+      "feature": "spectral_flatness",
+      "mean": 0.48306,
+      "deviation": 0.2166,
+      "transform": "linear",
+      "weight": 0.9,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 249,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "all_unambiguous_clips",
+       "reasoned_mean_before_calibration": 0.6
       }
-    },
-    {
-      "subcategory": "WOODBLOCK",
-      "category_id": "PERCWood",
-      "category_short": "PERC",
-      "emoji": "🔒",
-      "explanation": [
-        "Woodblock / temple block \u2014 a hollow wooden idiophone giving a sharp, dry clop.",
-        "Short and impulsive with a mid-range, quickly-damped body."
-      ],
-      "synonyms": [
-        "Woodblock",
-        "Wood Block",
-        "Temple Block",
-        "Wood",
-        "Clop",
-        "Block",
-        "claves",
-        "clave",
-        "castanet",
-        "WB",
-        "CLV",
-        "clav"
-      ],
-      "acoustic_signature": {
-        "morphology": "impulsive",
-        "separability": "signal_narrowable",
-        "gates": [
-          {
-            "feature": "length_seconds",
-            "max": 3.0
-          }
-        ],
-        "priors": [
-          {
-            "feature": "spectral_centroid_hz",
-            "mean": 1400.0,
-            "deviation": 1.8,
-            "transform": "log",
-            "weight": 1.0,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 1400.0,
-              "reasoned_deviation_before_calibration": 1.8
-            }
-          },
-          {
-            "feature": "envelope_attack_seconds",
-            "mean": 0.004,
-            "deviation": 3.0,
-            "transform": "log",
-            "weight": 0.7,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.004,
-              "reasoned_deviation_before_calibration": 3.0
-            }
-          },
-          {
-            "feature": "length_seconds",
-            "mean": 0.12,
-            "deviation": 2.5,
-            "transform": "log",
-            "weight": 0.6,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.12,
-              "reasoned_deviation_before_calibration": 2.5
-            }
-          },
-          {
-            "feature": "harmonicity",
-            "mean": 0.35,
-            "deviation": 0.25,
-            "transform": "linear",
-            "weight": 0.5,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.35,
-              "reasoned_deviation_before_calibration": 0.25
-            }
-          },
-          {
-            "feature": "crest_factor",
-            "mean": 8.0,
-            "deviation": 1.6,
-            "transform": "log",
-            "weight": 0.4,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 8.0,
-              "reasoned_deviation_before_calibration": 1.6
-            }
-          }
-        ]
+     },
+     {
+      "feature": "high_band_energy",
+      "mean": 0.96477,
+      "deviation": 0.2,
+      "transform": "linear",
+      "weight": 0.8,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 249,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "all_unambiguous_clips",
+       "reasoned_mean_before_calibration": 0.65
       }
-    },
-    {
-      "subcategory": "CLAVE",
-      "category_id": "PERCClav",
-      "category_short": "PERC",
-      "emoji": "🪘",
-      "explanation": [
-        "Claves \u2014 two hardwood sticks struck together for a bright, short tonal click.",
-        "Highly impulsive with a clear woody pitch and almost no tail."
-      ],
-      "synonyms": [
-        "Clave",
-        "Claves",
-        "Stick",
-        "Sticks",
-        "Click",
-        "Rimclick"
-      ],
-      "acoustic_signature": {
-        "morphology": "impulsive",
-        "separability": "signal_narrowable",
-        "gates": [
-          {
-            "feature": "length_seconds",
-            "max": 2.5
-          }
-        ],
-        "priors": [
-          {
-            "feature": "spectral_centroid_hz",
-            "mean": 2500.0,
-            "deviation": 1.8,
-            "transform": "log",
-            "weight": 1.0,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 2500.0,
-              "reasoned_deviation_before_calibration": 1.8
-            }
-          },
-          {
-            "feature": "harmonicity",
-            "mean": 0.55,
-            "deviation": 0.25,
-            "transform": "linear",
-            "weight": 0.7,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.55,
-              "reasoned_deviation_before_calibration": 0.25
-            }
-          },
-          {
-            "feature": "length_seconds",
-            "mean": 0.08,
-            "deviation": 2.5,
-            "transform": "log",
-            "weight": 0.7,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.08,
-              "reasoned_deviation_before_calibration": 2.5
-            }
-          },
-          {
-            "feature": "envelope_attack_seconds",
-            "mean": 0.003,
-            "deviation": 3.0,
-            "transform": "log",
-            "weight": 0.6,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.003,
-              "reasoned_deviation_before_calibration": 3.0
-            }
-          },
-          {
-            "feature": "crest_factor",
-            "mean": 9.0,
-            "deviation": 1.6,
-            "transform": "log",
-            "weight": 0.5,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 9.0,
-              "reasoned_deviation_before_calibration": 1.6
-            }
-          }
-        ]
+     },
+     {
+      "feature": "harmonicity",
+      "mean": 0.14075,
+      "deviation": 0.15,
+      "transform": "linear",
+      "weight": 0.6,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 249,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "all_unambiguous_clips",
+       "reasoned_mean_before_calibration": 0.1
       }
-    },
-    {
-      "subcategory": "GUIRO",
-      "category_id": "PERCGuir",
-      "category_short": "PERC",
-      "emoji": "🪘",
-      "explanation": [
-        "Guiro \u2014 a scraped, notched gourd (or washboard/ratchet) producing a rasping friction sound.",
-        "Sustained, noisy rasp with a granular, ratcheting texture from the scrape."
-      ],
-      "synonyms": [
-        "Guiro",
-        "Scrape",
-        "Scraper",
-        "Washboard",
-        "Ratchet",
-        "Rasp",
-        "Reco-Reco",
-        "cuica",
-        "GUI"
-      ],
-      "acoustic_signature": {
-        "morphology": "friction",
-        "separability": "signal_separable",
-        "gates": [
-          {
-            "feature": "length_seconds",
-            "max": 6.0
-          }
-        ],
-        "priors": [
-          {
-            "feature": "spectral_flatness",
-            "mean": 0.55,
-            "deviation": 0.2,
-            "transform": "linear",
-            "weight": 1.0,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.55,
-              "reasoned_deviation_before_calibration": 0.2
-            }
-          },
-          {
-            "feature": "spectral_centroid_hz",
-            "mean": 3500.0,
-            "deviation": 1.8,
-            "transform": "log",
-            "weight": 0.8,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 3500.0,
-              "reasoned_deviation_before_calibration": 1.8
-            }
-          },
-          {
-            "feature": "sustain_ratio",
-            "mean": 0.5,
-            "deviation": 0.25,
-            "transform": "linear",
-            "weight": 0.7,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.5,
-              "reasoned_deviation_before_calibration": 0.25
-            }
-          },
-          {
-            "feature": "harmonicity",
-            "mean": 0.1,
-            "deviation": 0.15,
-            "transform": "linear",
-            "weight": 0.6,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.1,
-              "reasoned_deviation_before_calibration": 0.15
-            }
-          },
-          {
-            "feature": "onset_rate_per_second",
-            "mean": 12.0,
-            "deviation": 2.0,
-            "transform": "log",
-            "weight": 0.5,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 12.0,
-              "reasoned_deviation_before_calibration": 2.0
-            }
-          }
-        ]
+     },
+     {
+      "feature": "length_seconds",
+      "mean": 0.25,
+      "deviation": 2.5,
+      "transform": "log",
+      "weight": 0.4,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.25,
+       "reasoned_deviation_before_calibration": 2.5
       }
-    },
-    {
-      "subcategory": "COWBELL",
-      "category_id": "PERCCowb",
-      "category_short": "PERC",
-      "emoji": "🔔",
-      "explanation": [
-        "Cowbell / agogo \u2014 a struck metal bell with a ringing, clangy mid-high tone.",
-        "Inharmonic with a short metallic tail; the classic salsa and dance-track accent."
-      ],
-      "synonyms": [
-        "Cowbell",
-        "Agogo",
-        "Block Bell",
-        "Bell",
-        "Clang",
-        "Bongo Bell",
-        "cow bell",
-        "CB",
-        "COW",
-        "cbell"
-      ],
-      "acoustic_signature": {
-        "morphology": "impulsive_with_tail",
-        "separability": "signal_narrowable",
-        "gates": [
-          {
-            "feature": "length_seconds",
-            "max": 4.0
-          }
-        ],
-        "priors": [
-          {
-            "feature": "spectral_centroid_hz",
-            "mean": 2800.0,
-            "deviation": 1.7,
-            "transform": "log",
-            "weight": 1.0,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 2800.0,
-              "reasoned_deviation_before_calibration": 1.7
-            }
-          },
-          {
-            "feature": "inharmonicity",
-            "mean": 0.7,
-            "deviation": 0.22,
-            "transform": "linear",
-            "weight": 0.8,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.7,
-              "reasoned_deviation_before_calibration": 0.22
-            }
-          },
-          {
-            "feature": "decay_time_seconds_60db",
-            "mean": 0.3,
-            "deviation": 2.2,
-            "transform": "log",
-            "weight": 0.7,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.3,
-              "reasoned_deviation_before_calibration": 2.2
-            }
-          },
-          {
-            "feature": "mid_band_energy",
-            "mean": 0.55,
-            "deviation": 0.22,
-            "transform": "linear",
-            "weight": 0.6,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.55,
-              "reasoned_deviation_before_calibration": 0.22
-            }
-          },
-          {
-            "feature": "spectral_flatness",
-            "mean": 0.2,
-            "deviation": 0.18,
-            "transform": "linear",
-            "weight": 0.5,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.2,
-              "reasoned_deviation_before_calibration": 0.18
-            }
-          }
-        ]
+     }
+    ],
+    "measured_evidence": {
+     "dataset": "FSD50K.dev — 40,966 human-labelled Freesound clips",
+     "analyzer_version": "20260729.1251",
+     "date": "2026-07",
+     "clip_count": 249,
+     "selection": "clips whose FSD50K labels map unambiguously to this one subcategory (high/medium crosswalk confidence only)",
+     "contributing_fsd50k_classes": {
+      "Rattle_(instrument)": 249
+     },
+     "feature_observations": {
+      "complexity": {
+       "clips": 249,
+       "percentile_05": 2913.5,
+       "median": 4232.2,
+       "percentile_95": 5579.7
+      },
+      "crest_factor": {
+       "clips": 94,
+       "percentile_05": 6.0279,
+       "median": 11.147,
+       "percentile_95": 22.676,
+       "measured_on": "one_shot_clips_only"
+      },
+      "decay_time_seconds_60db": {
+       "clips": 39,
+       "percentile_05": 0.10682,
+       "median": 0.33355,
+       "percentile_95": 2.8243,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_attack_seconds": {
+       "clips": 92,
+       "percentile_05": 0.0099773,
+       "median": 0.054875,
+       "percentile_95": 2.8834,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_decay_seconds": {
+       "clips": 94,
+       "percentile_05": 0.034921,
+       "median": 0.12472,
+       "percentile_95": 0.62857,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_kurtosis": {
+       "clips": 94,
+       "percentile_05": -1.1913,
+       "median": 3.4165,
+       "percentile_95": 22.511,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_release_seconds": {
+       "clips": 94,
+       "percentile_05": 0.024943,
+       "median": 0.15964,
+       "percentile_95": 0.55374,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_skewness": {
+       "clips": 94,
+       "percentile_05": 0.10357,
+       "median": 2.0492,
+       "percentile_95": 4.4338,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_sustain_level": {
+       "clips": 94,
+       "percentile_05": 0.0029397,
+       "median": 0.054187,
+       "percentile_95": 0.32417,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_temporal_centroid": {
+       "clips": 94,
+       "percentile_05": 0.057308,
+       "median": 0.17913,
+       "percentile_95": 0.56546,
+       "measured_on": "one_shot_clips_only"
+      },
+      "harmonicity": {
+       "clips": 249,
+       "percentile_05": 0.049574,
+       "median": 0.14075,
+       "percentile_95": 0.67498
+      },
+      "high_band_energy": {
+       "clips": 249,
+       "percentile_05": 0.7316,
+       "median": 0.96477,
+       "percentile_95": 0.99326
+      },
+      "inharmonicity": {
+       "clips": 249,
+       "percentile_05": 0.0,
+       "median": 0.38495,
+       "percentile_95": 0.59129
+      },
+      "low_band_energy": {
+       "clips": 249,
+       "percentile_05": 0.00028516,
+       "median": 0.002763,
+       "percentile_95": 0.064946
+      },
+      "mid_band_energy": {
+       "clips": 249,
+       "percentile_05": 0.0055956,
+       "median": 0.025,
+       "percentile_95": 0.15693
+      },
+      "onset_periodicity": {
+       "clips": 249,
+       "percentile_05": 0.013874,
+       "median": 0.3127,
+       "percentile_95": 0.64724
+      },
+      "onset_rate_per_second": {
+       "clips": 249,
+       "percentile_05": 0.29533,
+       "median": 2.4734,
+       "percentile_95": 6.0501
+      },
+      "partial_count": {
+       "clips": 236,
+       "percentile_05": 2.0,
+       "median": 12.0,
+       "percentile_95": 12.0
+      },
+      "pitch_hz": {
+       "clips": 225,
+       "percentile_05": 178.54,
+       "median": 1336.4,
+       "percentile_95": 1917.4
+      },
+      "pitch_slope_semitones_per_second": {
+       "clips": 56,
+       "percentile_05": -6.1859,
+       "median": 1.9746e-31,
+       "percentile_95": 3.4408
+      },
+      "spectral_centroid_deviation_hz": {
+       "clips": 249,
+       "percentile_05": 284.13,
+       "median": 775.41,
+       "percentile_95": 2426.0
+      },
+      "spectral_centroid_hz": {
+       "clips": 249,
+       "percentile_05": 4864.3,
+       "median": 9190.4,
+       "percentile_95": 11733.0
+      },
+      "spectral_centroid_mean_hz": {
+       "clips": 249,
+       "percentile_05": 4410.4,
+       "median": 8047.9,
+       "percentile_95": 11002.0
+      },
+      "spectral_centroid_slope_hz_per_second": {
+       "clips": 249,
+       "percentile_05": -8385.0,
+       "median": -53.823,
+       "percentile_95": 2894.6
+      },
+      "spectral_entropy": {
+       "clips": 249,
+       "percentile_05": 0.3583,
+       "median": 0.74827,
+       "percentile_95": 0.84987
+      },
+      "spectral_flatness": {
+       "clips": 249,
+       "percentile_05": 0.17535,
+       "median": 0.48306,
+       "percentile_95": 0.68967
+      },
+      "spectral_flux": {
+       "clips": 249,
+       "percentile_05": 0.21406,
+       "median": 0.22883,
+       "percentile_95": 0.23651
+      },
+      "spectral_rolloff_hz": {
+       "clips": 249,
+       "percentile_05": 7913.3,
+       "median": 13991.0,
+       "percentile_95": 17024.0
+      },
+      "spectral_slope_db_per_octave": {
+       "clips": 249,
+       "percentile_05": -1.8709,
+       "median": 2.3617,
+       "percentile_95": 5.6556
+      },
+      "stationarity": {
+       "clips": 249,
+       "percentile_05": 0.0,
+       "median": 0.0,
+       "percentile_95": 0.43558,
+       "censored_at_floor_fraction": 0.574
+      },
+      "sustain_ratio": {
+       "clips": 94,
+       "percentile_05": 0.033333,
+       "median": 0.13043,
+       "percentile_95": 0.36842,
+       "measured_on": "one_shot_clips_only"
+      },
+      "syllabic_modulation_energy": {
+       "clips": 165,
+       "percentile_05": 0.047241,
+       "median": 0.28016,
+       "percentile_95": 0.67437
+      },
+      "transient_count": {
+       "clips": 249,
+       "percentile_05": 1.0,
+       "median": 4.0,
+       "percentile_95": 44.0
+      },
+      "zero_crossings_per_second": {
+       "clips": 249,
+       "percentile_05": 3384.6,
+       "median": 12298.0,
+       "percentile_95": 20700.0
       }
-    },
-    {
-      "subcategory": "TRIANGLE",
-      "category_id": "PERCTri",
-      "category_short": "PERC",
-      "emoji": "📐",
-      "explanation": [
-        "Triangle \u2014 a struck metal rod giving a very high, bright ting with a long shimmering ring.",
-        "Extremely high spectral centroid, inharmonic partials, and a long metallic decay."
-      ],
-      "synonyms": [
-        "Triangle",
-        "Ting",
-        "Ding"
-      ],
-      "acoustic_signature": {
-        "morphology": "impulsive_with_tail",
-        "separability": "signal_separable",
-        "gates": [
-          {
-            "feature": "length_seconds",
-            "max": 8.0
-          }
-        ],
-        "priors": [
-          {
-            "feature": "spectral_centroid_hz",
-            "mean": 8000.0,
-            "deviation": 1.6,
-            "transform": "log",
-            "weight": 1.0,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 8000.0,
-              "reasoned_deviation_before_calibration": 1.6
-            }
-          },
-          {
-            "feature": "decay_time_seconds_60db",
-            "mean": 1.5,
-            "deviation": 2.2,
-            "transform": "log",
-            "weight": 0.9,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 1.5,
-              "reasoned_deviation_before_calibration": 2.2
-            }
-          },
-          {
-            "feature": "inharmonicity",
-            "mean": 0.75,
-            "deviation": 0.2,
-            "transform": "linear",
-            "weight": 0.8,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.75,
-              "reasoned_deviation_before_calibration": 0.2
-            }
-          },
-          {
-            "feature": "high_band_energy",
-            "mean": 0.7,
-            "deviation": 0.2,
-            "transform": "linear",
-            "weight": 0.7,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.7,
-              "reasoned_deviation_before_calibration": 0.2
-            }
-          },
-          {
-            "feature": "spectral_flatness",
-            "mean": 0.15,
-            "deviation": 0.15,
-            "transform": "linear",
-            "weight": 0.5,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.15,
-              "reasoned_deviation_before_calibration": 0.15
-            }
-          }
-        ]
-      }
-    },
-    {
-      "subcategory": "MISC",
-      "category_id": "PERCMisc",
-      "category_short": "PERC",
-      "emoji": "🪘",
-      "explanation": [
-        "An unpitched idiophone / hand percussion instrument that does not fit a specific subcategory, or the abstention target when the scorer is unsure."
-      ],
-      "synonyms": [
-        "Percussion",
-        "Perc",
-        "Idiophone",
-        "Hand Percussion",
-        "Aux Perc",
-        "wind chime",
-        "chime",
-        "sleigh bell",
-        "hand bell",
-        "bell",
-        "auxiliary",
-        "PRC",
-        "slap",
-        "drum",
-        "DRM"
-      ],
-      "acoustic_signature": {
-        "morphology": "impulsive",
-        "separability": "semantic_only",
-        "gates": [],
-        "priors": []
-      }
+     },
+     "features_not_measurable_here": {
+      "band_limit_high_hz": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "beats_per_minute": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "clipping_density": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "dc_offset": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "length_seconds": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "lufs": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "root_mean_square_level": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "sample_rate": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "stereo_width": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "total_harmonic_distortion": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "voicing_ratio": "left reasoned — see not_calibrated in fsd50k_calibration.json"
+     },
+     "caveat": "Amateur Freesound audio, mono, arbitrary normalization. Treat as a prior on the prior, not as truth. Duration, level, stereo width and band limit are NOT measurable here and are left reasoned."
     }
-  ]
+   }
+  },
+  {
+   "subcategory": "TAMBOURINE",
+   "category_id": "PERCTamb",
+   "category_short": "PERC",
+   "emoji": "🪇",
+   "explanation": [
+    "Tambourine — a frame hung with metal jingles that shimmer when struck or shaken.",
+    "A bright metallic shimmer layered over the thud or slap of the frame."
+   ],
+   "synonyms": [
+    "Tambourine",
+    "Jingle",
+    "Jingles",
+    "Zills",
+    "Tambo",
+    "Timbrel",
+    "Riq",
+    "tamb",
+    "TMB"
+   ],
+   "acoustic_signature": {
+    "morphology": "impulsive_with_tail",
+    "separability": "signal_narrowable",
+    "gates": [
+     {
+      "feature": "length_seconds",
+      "max": 4.0
+     }
+    ],
+    "priors": [
+     {
+      "feature": "spectral_centroid_hz",
+      "mean": 10173.0,
+      "deviation": 1.7,
+      "transform": "log",
+      "weight": 1.0,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 225,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "all_unambiguous_clips",
+       "reasoned_mean_before_calibration": 5500.0
+      }
+     },
+     {
+      "feature": "high_band_energy",
+      "mean": 0.98711,
+      "deviation": 0.22,
+      "transform": "linear",
+      "weight": 0.8,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 225,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "all_unambiguous_clips",
+       "reasoned_mean_before_calibration": 0.6
+      }
+     },
+     {
+      "feature": "inharmonicity",
+      "mean": 0.32115,
+      "deviation": 0.25,
+      "transform": "linear",
+      "weight": 0.7,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 225,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "all_unambiguous_clips",
+       "reasoned_mean_before_calibration": 0.6
+      }
+     },
+     {
+      "feature": "spectral_flatness",
+      "mean": 0.47031,
+      "deviation": 0.22,
+      "transform": "linear",
+      "weight": 0.6,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 225,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "all_unambiguous_clips",
+       "reasoned_mean_before_calibration": 0.4
+      }
+     },
+     {
+      "feature": "decay_time_seconds_60db",
+      "mean": 0.34445,
+      "deviation": 2.5,
+      "transform": "log",
+      "weight": 0.5,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 160,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "one_shot_clips_only",
+       "reasoned_mean_before_calibration": 0.35
+      }
+     }
+    ],
+    "measured_evidence": {
+     "dataset": "FSD50K.dev — 40,966 human-labelled Freesound clips",
+     "analyzer_version": "20260729.1251",
+     "date": "2026-07",
+     "clip_count": 225,
+     "selection": "clips whose FSD50K labels map unambiguously to this one subcategory (high/medium crosswalk confidence only)",
+     "contributing_fsd50k_classes": {
+      "Tambourine": 225
+     },
+     "feature_observations": {
+      "complexity": {
+       "clips": 225,
+       "percentile_05": 3493.0,
+       "median": 4543.3,
+       "percentile_95": 5089.2
+      },
+      "crest_factor": {
+       "clips": 183,
+       "percentile_05": 9.1677,
+       "median": 15.163,
+       "percentile_95": 24.389,
+       "measured_on": "one_shot_clips_only"
+      },
+      "decay_time_seconds_60db": {
+       "clips": 160,
+       "percentile_05": 0.17199,
+       "median": 0.34149,
+       "percentile_95": 0.82167,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_attack_seconds": {
+       "clips": 167,
+       "percentile_05": 0.0049887,
+       "median": 0.019955,
+       "percentile_95": 0.089796,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_decay_seconds": {
+       "clips": 183,
+       "percentile_05": 0.12472,
+       "median": 0.36417,
+       "percentile_95": 0.60862,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_kurtosis": {
+       "clips": 183,
+       "percentile_05": 1.0929,
+       "median": 11.555,
+       "percentile_95": 27.147,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_release_seconds": {
+       "clips": 182,
+       "percentile_05": 0.039909,
+       "median": 0.084807,
+       "percentile_95": 0.20454,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_skewness": {
+       "clips": 183,
+       "percentile_05": 1.3914,
+       "median": 3.3293,
+       "percentile_95": 4.9111,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_sustain_level": {
+       "clips": 183,
+       "percentile_05": 0.0,
+       "median": 0.0021289,
+       "percentile_95": 0.074027,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_temporal_centroid": {
+       "clips": 183,
+       "percentile_05": 0.020696,
+       "median": 0.048141,
+       "percentile_95": 0.29982,
+       "measured_on": "one_shot_clips_only"
+      },
+      "harmonicity": {
+       "clips": 225,
+       "percentile_05": 0.21915,
+       "median": 0.43086,
+       "percentile_95": 0.66666
+      },
+      "high_band_energy": {
+       "clips": 225,
+       "percentile_05": 0.84072,
+       "median": 0.98711,
+       "percentile_95": 0.99484
+      },
+      "inharmonicity": {
+       "clips": 225,
+       "percentile_05": 0.0067294,
+       "median": 0.32115,
+       "percentile_95": 0.57151
+      },
+      "low_band_energy": {
+       "clips": 225,
+       "percentile_05": 0.00051768,
+       "median": 0.0025899,
+       "percentile_95": 0.011558
+      },
+      "mid_band_energy": {
+       "clips": 225,
+       "percentile_05": 0.0041649,
+       "median": 0.010711,
+       "percentile_95": 0.12933
+      },
+      "onset_periodicity": {
+       "clips": 225,
+       "percentile_05": 0.0,
+       "median": 0.15167,
+       "percentile_95": 0.48273
+      },
+      "onset_rate_per_second": {
+       "clips": 225,
+       "percentile_05": 0.67673,
+       "median": 1.2394,
+       "percentile_95": 3.9592
+      },
+      "partial_count": {
+       "clips": 214,
+       "percentile_05": 2.0,
+       "median": 9.0,
+       "percentile_95": 12.0
+      },
+      "pitch_hz": {
+       "clips": 198,
+       "percentile_05": 621.13,
+       "median": 1633.3,
+       "percentile_95": 1917.4
+      },
+      "pitch_slope_semitones_per_second": {
+       "clips": 88,
+       "percentile_05": -14.422,
+       "median": 8.1878e-30,
+       "percentile_95": 12.728
+      },
+      "spectral_centroid_deviation_hz": {
+       "clips": 225,
+       "percentile_05": 292.51,
+       "median": 847.56,
+       "percentile_95": 1619.5
+      },
+      "spectral_centroid_hz": {
+       "clips": 225,
+       "percentile_05": 7941.6,
+       "median": 10173.0,
+       "percentile_95": 11594.0
+      },
+      "spectral_centroid_mean_hz": {
+       "clips": 225,
+       "percentile_05": 8024.0,
+       "median": 9448.8,
+       "percentile_95": 12936.0
+      },
+      "spectral_centroid_slope_hz_per_second": {
+       "clips": 225,
+       "percentile_05": -6801.8,
+       "median": 181.82,
+       "percentile_95": 4054.3
+      },
+      "spectral_entropy": {
+       "clips": 225,
+       "percentile_05": 0.41495,
+       "median": 0.67087,
+       "percentile_95": 0.75513
+      },
+      "spectral_flatness": {
+       "clips": 225,
+       "percentile_05": 0.26351,
+       "median": 0.47031,
+       "percentile_95": 0.55832
+      },
+      "spectral_flux": {
+       "clips": 225,
+       "percentile_05": 0.19058,
+       "median": 0.22255,
+       "percentile_95": 0.23564
+      },
+      "spectral_rolloff_hz": {
+       "clips": 225,
+       "percentile_05": 12301.0,
+       "median": 14723.0,
+       "percentile_95": 17041.0
+      },
+      "spectral_slope_db_per_octave": {
+       "clips": 225,
+       "percentile_05": 1.1064,
+       "median": 3.1944,
+       "percentile_95": 4.6692
+      },
+      "stationarity": {
+       "clips": 225,
+       "percentile_05": 0.0,
+       "median": 0.0,
+       "percentile_95": 0.32959,
+       "censored_at_floor_fraction": 0.867
+      },
+      "sustain_ratio": {
+       "clips": 183,
+       "percentile_05": 0.027397,
+       "median": 0.068966,
+       "percentile_95": 0.20833,
+       "measured_on": "one_shot_clips_only"
+      },
+      "syllabic_modulation_energy": {
+       "clips": 168,
+       "percentile_05": 0.0046176,
+       "median": 0.01698,
+       "percentile_95": 0.39452
+      },
+      "transient_count": {
+       "clips": 225,
+       "percentile_05": 1.0,
+       "median": 1.0,
+       "percentile_95": 8.0
+      },
+      "zero_crossings_per_second": {
+       "clips": 225,
+       "percentile_05": 3632.3,
+       "median": 13727.0,
+       "percentile_95": 19097.0
+      }
+     },
+     "features_not_measurable_here": {
+      "band_limit_high_hz": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "beats_per_minute": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "clipping_density": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "dc_offset": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "length_seconds": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "lufs": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "root_mean_square_level": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "sample_rate": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "stereo_width": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "total_harmonic_distortion": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "voicing_ratio": "left reasoned — see not_calibrated in fsd50k_calibration.json"
+     },
+     "caveat": "Amateur Freesound audio, mono, arbitrary normalization. Treat as a prior on the prior, not as truth. Duration, level, stereo width and band limit are NOT measurable here and are left reasoned."
+    }
+   }
+  },
+  {
+   "subcategory": "WOODBLOCK",
+   "category_id": "PERCWood",
+   "category_short": "PERC",
+   "emoji": "🔒",
+   "explanation": [
+    "Woodblock / temple block — a hollow wooden idiophone giving a sharp, dry clop.",
+    "Short and impulsive with a mid-range, quickly-damped body."
+   ],
+   "synonyms": [
+    "Woodblock",
+    "Wood Block",
+    "Temple Block",
+    "Wood",
+    "Clop",
+    "Block",
+    "claves",
+    "clave",
+    "castanet",
+    "WB",
+    "CLV",
+    "clav"
+   ],
+   "acoustic_signature": {
+    "morphology": "impulsive",
+    "separability": "signal_narrowable",
+    "gates": [
+     {
+      "feature": "length_seconds",
+      "max": 3.0
+     }
+    ],
+    "priors": [
+     {
+      "feature": "spectral_centroid_hz",
+      "mean": 1400.0,
+      "deviation": 1.8,
+      "transform": "log",
+      "weight": 1.0,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 1400.0,
+       "reasoned_deviation_before_calibration": 1.8
+      }
+     },
+     {
+      "feature": "envelope_attack_seconds",
+      "mean": 0.004,
+      "deviation": 3.0,
+      "transform": "log",
+      "weight": 0.7,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.004,
+       "reasoned_deviation_before_calibration": 3.0
+      }
+     },
+     {
+      "feature": "length_seconds",
+      "mean": 0.12,
+      "deviation": 2.5,
+      "transform": "log",
+      "weight": 0.6,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.12,
+       "reasoned_deviation_before_calibration": 2.5
+      }
+     },
+     {
+      "feature": "harmonicity",
+      "mean": 0.35,
+      "deviation": 0.25,
+      "transform": "linear",
+      "weight": 0.5,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.35,
+       "reasoned_deviation_before_calibration": 0.25
+      }
+     },
+     {
+      "feature": "crest_factor",
+      "mean": 8.0,
+      "deviation": 1.6,
+      "transform": "log",
+      "weight": 0.4,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 8.0,
+       "reasoned_deviation_before_calibration": 1.6
+      }
+     }
+    ]
+   }
+  },
+  {
+   "subcategory": "CLAVE",
+   "category_id": "PERCClav",
+   "category_short": "PERC",
+   "emoji": "🪘",
+   "explanation": [
+    "Claves — two hardwood sticks struck together for a bright, short tonal click.",
+    "Highly impulsive with a clear woody pitch and almost no tail."
+   ],
+   "synonyms": [
+    "Clave",
+    "Claves",
+    "Stick",
+    "Sticks",
+    "Click",
+    "Rimclick"
+   ],
+   "acoustic_signature": {
+    "morphology": "impulsive",
+    "separability": "signal_narrowable",
+    "gates": [
+     {
+      "feature": "length_seconds",
+      "max": 2.5
+     }
+    ],
+    "priors": [
+     {
+      "feature": "spectral_centroid_hz",
+      "mean": 2500.0,
+      "deviation": 1.8,
+      "transform": "log",
+      "weight": 1.0,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 2500.0,
+       "reasoned_deviation_before_calibration": 1.8
+      }
+     },
+     {
+      "feature": "harmonicity",
+      "mean": 0.55,
+      "deviation": 0.25,
+      "transform": "linear",
+      "weight": 0.7,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.55,
+       "reasoned_deviation_before_calibration": 0.25
+      }
+     },
+     {
+      "feature": "length_seconds",
+      "mean": 0.08,
+      "deviation": 2.5,
+      "transform": "log",
+      "weight": 0.7,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.08,
+       "reasoned_deviation_before_calibration": 2.5
+      }
+     },
+     {
+      "feature": "envelope_attack_seconds",
+      "mean": 0.003,
+      "deviation": 3.0,
+      "transform": "log",
+      "weight": 0.6,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.003,
+       "reasoned_deviation_before_calibration": 3.0
+      }
+     },
+     {
+      "feature": "crest_factor",
+      "mean": 9.0,
+      "deviation": 1.6,
+      "transform": "log",
+      "weight": 0.5,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 9.0,
+       "reasoned_deviation_before_calibration": 1.6
+      }
+     }
+    ]
+   }
+  },
+  {
+   "subcategory": "GUIRO",
+   "category_id": "PERCGuir",
+   "category_short": "PERC",
+   "emoji": "🪘",
+   "explanation": [
+    "Guiro — a scraped, notched gourd (or washboard/ratchet) producing a rasping friction sound.",
+    "Sustained, noisy rasp with a granular, ratcheting texture from the scrape."
+   ],
+   "synonyms": [
+    "Guiro",
+    "Scrape",
+    "Scraper",
+    "Washboard",
+    "Ratchet",
+    "Rasp",
+    "Reco-Reco",
+    "cuica",
+    "GUI"
+   ],
+   "acoustic_signature": {
+    "morphology": "friction",
+    "separability": "signal_separable",
+    "gates": [
+     {
+      "feature": "length_seconds",
+      "max": 6.0
+     }
+    ],
+    "priors": [
+     {
+      "feature": "spectral_flatness",
+      "mean": 0.55,
+      "deviation": 0.2,
+      "transform": "linear",
+      "weight": 1.0,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.55,
+       "reasoned_deviation_before_calibration": 0.2
+      }
+     },
+     {
+      "feature": "spectral_centroid_hz",
+      "mean": 3500.0,
+      "deviation": 1.8,
+      "transform": "log",
+      "weight": 0.8,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 3500.0,
+       "reasoned_deviation_before_calibration": 1.8
+      }
+     },
+     {
+      "feature": "sustain_ratio",
+      "mean": 0.5,
+      "deviation": 0.25,
+      "transform": "linear",
+      "weight": 0.7,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.5,
+       "reasoned_deviation_before_calibration": 0.25
+      }
+     },
+     {
+      "feature": "harmonicity",
+      "mean": 0.1,
+      "deviation": 0.15,
+      "transform": "linear",
+      "weight": 0.6,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.1,
+       "reasoned_deviation_before_calibration": 0.15
+      }
+     },
+     {
+      "feature": "onset_rate_per_second",
+      "mean": 12.0,
+      "deviation": 2.0,
+      "transform": "log",
+      "weight": 0.5,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 12.0,
+       "reasoned_deviation_before_calibration": 2.0
+      }
+     }
+    ]
+   }
+  },
+  {
+   "subcategory": "COWBELL",
+   "category_id": "PERCCowb",
+   "category_short": "PERC",
+   "emoji": "🔔",
+   "explanation": [
+    "Cowbell / agogo — a struck metal bell with a ringing, clangy mid-high tone.",
+    "Inharmonic with a short metallic tail; the classic salsa and dance-track accent."
+   ],
+   "synonyms": [
+    "Cowbell",
+    "Agogo",
+    "Block Bell",
+    "Bell",
+    "Clang",
+    "Bongo Bell",
+    "cow bell",
+    "CB",
+    "COW",
+    "cbell"
+   ],
+   "acoustic_signature": {
+    "morphology": "impulsive_with_tail",
+    "separability": "signal_narrowable",
+    "gates": [
+     {
+      "feature": "length_seconds",
+      "max": 4.0
+     }
+    ],
+    "priors": [
+     {
+      "feature": "spectral_centroid_hz",
+      "mean": 2800.0,
+      "deviation": 1.7,
+      "transform": "log",
+      "weight": 1.0,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 2800.0,
+       "reasoned_deviation_before_calibration": 1.7
+      }
+     },
+     {
+      "feature": "inharmonicity",
+      "mean": 0.7,
+      "deviation": 0.22,
+      "transform": "linear",
+      "weight": 0.8,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.7,
+       "reasoned_deviation_before_calibration": 0.22
+      }
+     },
+     {
+      "feature": "decay_time_seconds_60db",
+      "mean": 0.3,
+      "deviation": 2.2,
+      "transform": "log",
+      "weight": 0.7,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.3,
+       "reasoned_deviation_before_calibration": 2.2
+      }
+     },
+     {
+      "feature": "mid_band_energy",
+      "mean": 0.55,
+      "deviation": 0.22,
+      "transform": "linear",
+      "weight": 0.6,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.55,
+       "reasoned_deviation_before_calibration": 0.22
+      }
+     },
+     {
+      "feature": "spectral_flatness",
+      "mean": 0.2,
+      "deviation": 0.18,
+      "transform": "linear",
+      "weight": 0.5,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.2,
+       "reasoned_deviation_before_calibration": 0.18
+      }
+     }
+    ]
+   }
+  },
+  {
+   "subcategory": "TRIANGLE",
+   "category_id": "PERCTri",
+   "category_short": "PERC",
+   "emoji": "📐",
+   "explanation": [
+    "Triangle — a struck metal rod giving a very high, bright ting with a long shimmering ring.",
+    "Extremely high spectral centroid, inharmonic partials, and a long metallic decay."
+   ],
+   "synonyms": [
+    "Triangle",
+    "Ting",
+    "Ding"
+   ],
+   "acoustic_signature": {
+    "morphology": "impulsive_with_tail",
+    "separability": "signal_separable",
+    "gates": [
+     {
+      "feature": "length_seconds",
+      "max": 8.0
+     }
+    ],
+    "priors": [
+     {
+      "feature": "spectral_centroid_hz",
+      "mean": 8000.0,
+      "deviation": 1.6,
+      "transform": "log",
+      "weight": 1.0,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 8000.0,
+       "reasoned_deviation_before_calibration": 1.6
+      }
+     },
+     {
+      "feature": "decay_time_seconds_60db",
+      "mean": 1.5,
+      "deviation": 2.2,
+      "transform": "log",
+      "weight": 0.9,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 1.5,
+       "reasoned_deviation_before_calibration": 2.2
+      }
+     },
+     {
+      "feature": "inharmonicity",
+      "mean": 0.75,
+      "deviation": 0.2,
+      "transform": "linear",
+      "weight": 0.8,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.75,
+       "reasoned_deviation_before_calibration": 0.2
+      }
+     },
+     {
+      "feature": "high_band_energy",
+      "mean": 0.7,
+      "deviation": 0.2,
+      "transform": "linear",
+      "weight": 0.7,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.7,
+       "reasoned_deviation_before_calibration": 0.2
+      }
+     },
+     {
+      "feature": "spectral_flatness",
+      "mean": 0.15,
+      "deviation": 0.15,
+      "transform": "linear",
+      "weight": 0.5,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.15,
+       "reasoned_deviation_before_calibration": 0.15
+      }
+     }
+    ]
+   }
+  },
+  {
+   "subcategory": "MISC",
+   "category_id": "PERCMisc",
+   "category_short": "PERC",
+   "emoji": "🪘",
+   "explanation": [
+    "An unpitched idiophone / hand percussion instrument that does not fit a specific subcategory, or the abstention target when the scorer is unsure."
+   ],
+   "synonyms": [
+    "Percussion",
+    "Perc",
+    "Idiophone",
+    "Hand Percussion",
+    "Aux Perc",
+    "wind chime",
+    "chime",
+    "sleigh bell",
+    "hand bell",
+    "bell",
+    "auxiliary",
+    "PRC",
+    "slap",
+    "drum",
+    "DRM"
+   ],
+   "acoustic_signature": {
+    "morphology": "impulsive",
+    "separability": "semantic_only",
+    "gates": [],
+    "priors": [],
+    "measured_evidence": {
+     "dataset": "FSD50K.dev — 40,966 human-labelled Freesound clips",
+     "analyzer_version": "20260729.1251",
+     "date": "2026-07",
+     "clip_count": 62,
+     "selection": "clips whose FSD50K labels map unambiguously to this one subcategory (high/medium crosswalk confidence only)",
+     "contributing_fsd50k_classes": {
+      "Wind_chime": 62
+     },
+     "feature_observations": {
+      "complexity": {
+       "clips": 62,
+       "percentile_05": 1699.3,
+       "median": 3692.9,
+       "percentile_95": 4746.0
+      },
+      "harmonicity": {
+       "clips": 62,
+       "percentile_05": 0.22243,
+       "median": 0.63199,
+       "percentile_95": 0.99817
+      },
+      "high_band_energy": {
+       "clips": 62,
+       "percentile_05": 0.087789,
+       "median": 0.72086,
+       "percentile_95": 0.99259
+      },
+      "inharmonicity": {
+       "clips": 62,
+       "percentile_05": 0.0,
+       "median": 0.40091,
+       "percentile_95": 0.71376
+      },
+      "low_band_energy": {
+       "clips": 62,
+       "percentile_05": 0.00020667,
+       "median": 0.012034,
+       "percentile_95": 0.17607
+      },
+      "mid_band_energy": {
+       "clips": 62,
+       "percentile_05": 0.0051228,
+       "median": 0.20782,
+       "percentile_95": 0.73768
+      },
+      "onset_periodicity": {
+       "clips": 62,
+       "percentile_05": 0.012477,
+       "median": 0.24092,
+       "percentile_95": 0.43188
+      },
+      "onset_rate_per_second": {
+       "clips": 62,
+       "percentile_05": 0.1,
+       "median": 0.7247,
+       "percentile_95": 2.3342
+      },
+      "partial_count": {
+       "clips": 53,
+       "percentile_05": 2.0,
+       "median": 7.0,
+       "percentile_95": 12.0
+      },
+      "pitch_hz": {
+       "clips": 60,
+       "percentile_05": 73.378,
+       "median": 286.36,
+       "percentile_95": 1575.0
+      },
+      "spectral_centroid_deviation_hz": {
+       "clips": 62,
+       "percentile_05": 204.96,
+       "median": 1096.6,
+       "percentile_95": 1945.8
+      },
+      "spectral_centroid_hz": {
+       "clips": 62,
+       "percentile_05": 1110.1,
+       "median": 4907.4,
+       "percentile_95": 10368.0
+      },
+      "spectral_centroid_mean_hz": {
+       "clips": 62,
+       "percentile_05": 806.56,
+       "median": 4049.3,
+       "percentile_95": 8387.1
+      },
+      "spectral_centroid_slope_hz_per_second": {
+       "clips": 62,
+       "percentile_05": -367.9,
+       "median": -10.274,
+       "percentile_95": 612.65
+      },
+      "spectral_entropy": {
+       "clips": 62,
+       "percentile_05": 0.17303,
+       "median": 0.36116,
+       "percentile_95": 0.55281
+      },
+      "spectral_flatness": {
+       "clips": 62,
+       "percentile_05": 0.04624,
+       "median": 0.24519,
+       "percentile_95": 0.45254
+      },
+      "spectral_flux": {
+       "clips": 62,
+       "percentile_05": 0.081958,
+       "median": 0.17776,
+       "percentile_95": 0.23439
+      },
+      "spectral_rolloff_hz": {
+       "clips": 62,
+       "percentile_05": 1040.7,
+       "median": 9217.9,
+       "percentile_95": 14469.0
+      },
+      "spectral_slope_db_per_octave": {
+       "clips": 62,
+       "percentile_05": -8.8462,
+       "median": -1.5889,
+       "percentile_95": 5.6002
+      },
+      "stationarity": {
+       "clips": 62,
+       "percentile_05": 0.0,
+       "median": 0.0,
+       "percentile_95": 0.48382,
+       "censored_at_floor_fraction": 0.565
+      },
+      "syllabic_modulation_energy": {
+       "clips": 62,
+       "percentile_05": 0.02215,
+       "median": 0.24236,
+       "percentile_95": 0.4232
+      },
+      "transient_count": {
+       "clips": 62,
+       "percentile_05": 1.0,
+       "median": 8.0,
+       "percentile_95": 31.0
+      },
+      "zero_crossings_per_second": {
+       "clips": 62,
+       "percentile_05": 885.88,
+       "median": 3714.8,
+       "percentile_95": 14735.0
+      }
+     },
+     "features_not_measurable_here": {
+      "band_limit_high_hz": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "beats_per_minute": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "clipping_density": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "dc_offset": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "length_seconds": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "lufs": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "root_mean_square_level": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "sample_rate": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "stereo_width": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "total_harmonic_distortion": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "voicing_ratio": "left reasoned — see not_calibrated in fsd50k_calibration.json"
+     },
+     "caveat": "Amateur Freesound audio, mono, arbitrary normalization. Treat as a prior on the prior, not as truth. Duration, level, stereo width and band limit are NOT measurable here and are left reasoned."
+    }
+   }
+  }
+ ]
 }

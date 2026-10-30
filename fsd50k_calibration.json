@@ -1,12 +1,12 @@
 {
  "schema": "fsd50k-calibration/2",
  "dataset": "FSD50K.dev",
- "analyzer_version": "20260714.0350-d356b3ca938a00f9",
+ "analyzer_version": "20260729.1251",
  "date": "2026-07",
  "clips_scanned": 40966,
- "clips_used": 28790,
- "clips_dropped_ambiguous": 7076,
- "clips_dropped_unmapped": 5075,
+ "clips_used": 22915,
+ "clips_dropped_ambiguous": 6042,
+ "clips_dropped_unmapped": 11984,
  "selection": "unambiguous single-subcategory clips, high/medium crosswalk confidence, >=30 clips per subcategory",
  "policy": {
   "location": "median (geometric for log features)",
@@ -45,7 +45,7 @@
  },
  "morphology_archetypes": {
   "burst": {
-   "clips": 955,
+   "clips": 956,
    "subcategories_contributing": [
     "EXPLReal",
     "FARTReal",
@@ -53,9 +53,9 @@
    ],
    "feature_observations": {
     "complexity": {
-     "clips": 955,
-     "center": 3501.7,
-     "deviation": 1.408,
+     "clips": 956,
+     "center": 3505.2,
+     "deviation": 1.407,
      "transform": "log",
      "percentile_05": 1733.7,
      "median": 3501.7,
@@ -143,17 +143,17 @@
      "percentile_95": 0.49178
     },
     "harmonicity": {
-     "clips": 955,
-     "center": 0.36079,
-     "deviation": 0.3101,
+     "clips": 956,
+     "center": 0.361,
+     "deviation": 0.3099,
      "transform": "linear",
      "percentile_05": 0.088777,
      "median": 0.36079,
      "percentile_95": 0.90152
     },
     "high_band_energy": {
-     "clips": 955,
-     "center": 0.49134,
+     "clips": 956,
+     "center": 0.49146,
      "deviation": 0.2438,
      "transform": "linear",
      "percentile_05": 0.13255,
@@ -161,35 +161,35 @@
      "percentile_95": 0.77522
     },
     "inharmonicity": {
-     "clips": 955,
-     "center": 0.42845,
-     "deviation": 0.1649,
+     "clips": 956,
+     "center": 0.42849,
+     "deviation": 0.1647,
      "transform": "linear",
      "percentile_05": 0.14374,
      "median": 0.42845,
      "percentile_95": 0.62779
     },
     "low_band_energy": {
-     "clips": 955,
-     "center": 0.055074,
-     "deviation": 0.05654,
+     "clips": 956,
+     "center": 0.055089,
+     "deviation": 0.05662,
      "transform": "linear",
      "percentile_05": 0.012209,
      "median": 0.055074,
      "percentile_95": 0.32803
     },
     "mid_band_energy": {
-     "clips": 955,
-     "center": 0.40764,
-     "deviation": 0.2053,
+     "clips": 956,
+     "center": 0.40731,
+     "deviation": 0.2052,
      "transform": "linear",
      "percentile_05": 0.1904,
-     "median": 0.40764,
+     "median": 0.40697,
      "percentile_95": 0.71046
     },
     "onset_periodicity": {
-     "clips": 955,
-     "center": 0.29563,
+     "clips": 956,
+     "center": 0.29574,
      "deviation": 0.1546,
      "transform": "linear",
      "percentile_05": 0.050346,
@@ -197,16 +197,16 @@
      "percentile_95": 0.55624
     },
     "onset_rate_per_second": {
-     "clips": 955,
-     "center": 1.2912,
-     "deviation": 2.366,
+     "clips": 956,
+     "center": 1.2916,
+     "deviation": 2.365,
      "transform": "log",
      "percentile_05": 0.26971,
      "median": 1.2912,
      "percentile_95": 3.3311
     },
     "partial_count": {
-     "clips": 954,
+     "clips": 955,
      "center": 12.0,
      "deviation": 1.188,
      "transform": "log",
@@ -233,88 +233,88 @@
      "percentile_95": 16.282
     },
     "spectral_centroid_deviation_hz": {
-     "clips": 955,
-     "center": 945.98,
-     "deviation": 695.0,
+     "clips": 956,
+     "center": 945.9,
+     "deviation": 693.8,
      "transform": "linear",
      "percentile_05": 328.69,
-     "median": 945.98,
+     "median": 945.83,
      "percentile_95": 2916.0
     },
     "spectral_centroid_hz": {
-     "clips": 955,
-     "center": 3292.6,
-     "deviation": 1.73,
+     "clips": 956,
+     "center": 3294.7,
+     "deviation": 1.728,
      "transform": "log",
      "percentile_05": 1232.8,
      "median": 3292.6,
      "percentile_95": 5904.0
     },
     "spectral_centroid_mean_hz": {
-     "clips": 955,
-     "center": 3311.4,
-     "deviation": 1.504,
+     "clips": 956,
+     "center": 3313.2,
+     "deviation": 1.503,
      "transform": "log",
      "percentile_05": 1190.6,
      "median": 3311.4,
      "percentile_95": 5905.9
     },
     "spectral_centroid_slope_hz_per_second": {
-     "clips": 955,
-     "center": 90.829,
-     "deviation": 828.3,
+     "clips": 956,
+     "center": 90.114,
+     "deviation": 826.9,
      "transform": "linear",
      "percentile_05": -2590.5,
-     "median": 90.829,
+     "median": 89.399,
      "percentile_95": 5506.8
     },
     "spectral_entropy": {
-     "clips": 955,
-     "center": 0.5188,
-     "deviation": 0.1574,
+     "clips": 956,
+     "center": 0.51906,
+     "deviation": 0.157,
      "transform": "linear",
      "percentile_05": 0.28994,
      "median": 0.5188,
      "percentile_95": 0.68746
     },
     "spectral_flatness": {
-     "clips": 955,
-     "center": 0.18839,
-     "deviation": 0.1756,
+     "clips": 956,
+     "center": 0.18857,
+     "deviation": 0.1761,
      "transform": "linear",
      "percentile_05": 0.026164,
      "median": 0.18839,
      "percentile_95": 0.46612
     },
     "spectral_flux": {
-     "clips": 955,
-     "center": 0.21897,
-     "deviation": 0.01303,
+     "clips": 956,
+     "center": 0.21898,
+     "deviation": 0.013,
      "transform": "linear",
      "percentile_05": 0.18756,
      "median": 0.21897,
      "percentile_95": 0.23437
     },
     "spectral_rolloff_hz": {
-     "clips": 955,
-     "center": 6658.4,
-     "deviation": 1.708,
+     "clips": 956,
+     "center": 6659.0,
+     "deviation": 1.711,
      "transform": "log",
      "percentile_05": 1809.1,
      "median": 6658.4,
      "percentile_95": 11331.0
     },
     "spectral_slope_db_per_octave": {
-     "clips": 955,
-     "center": -3.723,
-     "deviation": 2.332,
+     "clips": 956,
+     "center": -3.7224,
+     "deviation": 2.33,
      "transform": "linear",
      "percentile_05": -8.3046,
      "median": -3.723,
      "percentile_95": -0.74866
     },
     "stationarity": {
-     "clips": 955,
+     "clips": 956,
      "center": 0.0,
      "deviation": 0.2079,
      "transform": "linear",
@@ -332,16 +332,16 @@
      "percentile_95": 0.62069
     },
     "syllabic_modulation_energy": {
-     "clips": 821,
-     "center": 0.15953,
-     "deviation": 0.141,
+     "clips": 822,
+     "center": 0.15962,
+     "deviation": 0.1413,
      "transform": "linear",
      "percentile_05": 0.027502,
      "median": 0.15953,
-     "percentile_95": 0.4158
+     "percentile_95": 0.41454
     },
     "transient_count": {
-     "clips": 955,
+     "clips": 956,
      "center": 2.0,
      "deviation": 3.432,
      "transform": "log",
@@ -350,9 +350,9 @@
      "percentile_95": 7.0
     },
     "zero_crossings_per_second": {
-     "clips": 955,
-     "center": 3027.6,
-     "deviation": 2.119,
+     "clips": 956,
+     "center": 3028.5,
+     "deviation": 2.118,
      "transform": "log",
      "percentile_05": 516.6,
      "median": 3027.6,
@@ -361,7 +361,7 @@
    }
   },
   "complex": {
-   "clips": 2408,
+   "clips": 2417,
    "subcategories_contributing": [
     "BIRDMisc",
     "BIRDSea",
@@ -378,34 +378,34 @@
    ],
    "feature_observations": {
     "complexity": {
-     "clips": 2401,
-     "center": 3313.0,
-     "deviation": 1.613,
+     "clips": 2410,
+     "center": 3313.6,
+     "deviation": 1.614,
      "transform": "log",
      "percentile_05": 1421.2,
-     "median": 3313.0,
-     "percentile_95": 5331.4
+     "median": 3313.6,
+     "percentile_95": 5330.7
     },
     "crest_factor": {
-     "clips": 533,
-     "center": 14.38,
-     "deviation": 3.15,
+     "clips": 540,
+     "center": 14.287,
+     "deviation": 3.164,
      "transform": "log",
      "percentile_05": 2.0933,
-     "median": 14.38,
+     "median": 14.263,
      "percentile_95": 52.018
     },
     "decay_time_seconds_60db": {
-     "clips": 292,
-     "center": 0.58714,
-     "deviation": 3.002,
+     "clips": 295,
+     "center": 0.58648,
+     "deviation": 3.003,
      "transform": "log",
      "percentile_05": 0.10773,
      "median": 0.58648,
-     "percentile_95": 3.2835
+     "percentile_95": 3.6426
     },
     "envelope_attack_seconds": {
-     "clips": 466,
+     "clips": 473,
      "center": 0.044898,
      "deviation": 14.53,
      "transform": "log",
@@ -414,124 +414,124 @@
      "percentile_95": 3.8812
     },
     "envelope_decay_seconds": {
-     "clips": 533,
+     "clips": 540,
      "center": 0.29433,
      "deviation": 3.538,
      "transform": "log",
      "percentile_05": 0.0099773,
      "median": 0.29433,
-     "percentile_95": 2.5342
+     "percentile_95": 2.7138
     },
     "envelope_kurtosis": {
-     "clips": 534,
-     "center": 17.132,
-     "deviation": 29.52,
+     "clips": 541,
+     "center": 16.584,
+     "deviation": 28.56,
      "transform": "linear",
-     "percentile_05": -1.3082,
-     "median": 17.097,
+     "percentile_05": -1.3001,
+     "median": 16.584,
      "percentile_95": 175.56
     },
     "envelope_release_seconds": {
-     "clips": 502,
+     "clips": 509,
      "center": 0.16961,
-     "deviation": 5.051,
+     "deviation": 5.105,
      "transform": "log",
      "percentile_05": 0.014966,
      "median": 0.16961,
      "percentile_95": 2.4893
     },
     "envelope_skewness": {
-     "clips": 534,
-     "center": 3.8117,
-     "deviation": 4.052,
+     "clips": 541,
+     "center": 3.7848,
+     "deviation": 4.032,
      "transform": "linear",
-     "percentile_05": -0.7317,
-     "median": 3.8115,
+     "percentile_05": -0.67866,
+     "median": 3.7848,
      "percentile_95": 12.06
     },
     "envelope_sustain_level": {
-     "clips": 534,
-     "center": 0.020816,
-     "deviation": 0.03458,
+     "clips": 541,
+     "center": 0.021068,
+     "deviation": 0.03457,
      "transform": "linear",
-     "percentile_05": 0.00032639,
-     "median": 0.02061,
+     "percentile_05": 0.00035377,
+     "median": 0.021068,
      "percentile_95": 0.90966
     },
     "envelope_temporal_centroid": {
-     "clips": 534,
-     "center": 0.2595,
-     "deviation": 0.3239,
+     "clips": 541,
+     "center": 0.25447,
+     "deviation": 0.323,
      "transform": "linear",
-     "percentile_05": 0.010512,
-     "median": 0.25899,
+     "percentile_05": 0.01069,
+     "median": 0.25447,
      "percentile_95": 0.68413
     },
     "harmonicity": {
-     "clips": 2408,
-     "center": 0.55659,
-     "deviation": 0.4768,
+     "clips": 2417,
+     "center": 0.55727,
+     "deviation": 0.4764,
      "transform": "linear",
      "percentile_05": 0.11807,
-     "median": 0.55654,
-     "percentile_95": 0.98761
+     "median": 0.55727,
+     "percentile_95": 0.98792
     },
     "high_band_energy": {
-     "clips": 2408,
+     "clips": 2417,
      "center": 0.44713,
-     "deviation": 0.332,
+     "deviation": 0.3334,
      "transform": "linear",
      "percentile_05": 0.085723,
      "median": 0.44713,
      "percentile_95": 0.93211
     },
     "inharmonicity": {
-     "clips": 2408,
-     "center": 0.39958,
-     "deviation": 0.1961,
+     "clips": 2417,
+     "center": 0.39913,
+     "deviation": 0.1967,
      "transform": "linear",
-     "percentile_05": 0.0035871,
-     "median": 0.39956,
+     "percentile_05": 0.0033752,
+     "median": 0.39913,
      "percentile_95": 0.62267
     },
     "low_band_energy": {
-     "clips": 2408,
-     "center": 0.062376,
-     "deviation": 0.0943,
+     "clips": 2417,
+     "center": 0.06236,
+     "deviation": 0.09431,
      "transform": "linear",
      "percentile_05": 0.0015093,
      "median": 0.06236,
-     "percentile_95": 0.40469
+     "percentile_95": 0.40859
     },
     "mid_band_energy": {
-     "clips": 2408,
+     "clips": 2417,
      "center": 0.4026,
-     "deviation": 0.2771,
+     "deviation": 0.2783,
      "transform": "linear",
      "percentile_05": 0.05082,
      "median": 0.4026,
-     "percentile_95": 0.82923
+     "percentile_95": 0.83105
     },
     "onset_periodicity": {
-     "clips": 2407,
-     "center": 0.25092,
-     "deviation": 0.171,
+     "clips": 2416,
+     "center": 0.25096,
+     "deviation": 0.1715,
      "transform": "linear",
-     "percentile_05": 0.01079,
+     "percentile_05": 0.0096513,
      "median": 0.25092,
-     "percentile_95": 0.61146
+     "percentile_95": 0.61263
     },
     "onset_rate_per_second": {
-     "clips": 2407,
-     "center": 0.95792,
-     "deviation": 3.183,
+     "clips": 2416,
+     "center": 0.95958,
+     "deviation": 3.191,
      "transform": "log",
      "percentile_05": 0.15143,
-     "median": 0.95792,
+     "median": 0.95876,
      "percentile_95": 3.3504
     },
     "partial_count": {
-     "clips": 2331,
+     "clips": 2337,
      "center": 12.0,
      "deviation": 1.933,
      "transform": "log",
@@ -540,133 +540,133 @@
      "percentile_95": 12.0
     },
     "pitch_hz": {
-     "clips": 1581,
+     "clips": 1590,
      "center": 588.0,
-     "deviation": 3.765,
+     "deviation": 3.85,
      "transform": "log",
      "percentile_05": 74.368,
      "median": 588.0,
      "percentile_95": 1837.5
     },
     "pitch_slope_semitones_per_second": {
-     "clips": 291,
+     "clips": 297,
      "center": -0.00010971,
-     "deviation": 0.1475,
+     "deviation": 0.1452,
      "transform": "linear",
      "percentile_05": -5.4993,
      "median": -0.00010971,
      "percentile_95": 6.2693
     },
     "spectral_centroid_deviation_hz": {
-     "clips": 2408,
-     "center": 870.3,
-     "deviation": 796.7,
+     "clips": 2417,
+     "center": 872.4,
+     "deviation": 799.6,
      "transform": "linear",
      "percentile_05": 185.86,
-     "median": 870.16,
+     "median": 872.4,
      "percentile_95": 3107.9
     },
     "spectral_centroid_hz": {
-     "clips": 2401,
-     "center": 2922.0,
-     "deviation": 2.065,
+     "clips": 2410,
+     "center": 2920.5,
+     "deviation": 2.068,
      "transform": "log",
-     "percentile_05": 1052.4,
-     "median": 2922.0,
+     "percentile_05": 1049.3,
+     "median": 2919.1,
      "percentile_95": 7510.2
     },
     "spectral_centroid_mean_hz": {
-     "clips": 2407,
-     "center": 2755.4,
-     "deviation": 2.094,
+     "clips": 2416,
+     "center": 2758.9,
+     "deviation": 2.091,
      "transform": "log",
      "percentile_05": 1018.9,
-     "median": 2755.4,
-     "percentile_95": 7100.4
+     "median": 2758.8,
+     "percentile_95": 7105.3
     },
     "spectral_centroid_slope_hz_per_second": {
-     "clips": 2407,
-     "center": 2.2194,
-     "deviation": 135.1,
+     "clips": 2416,
+     "center": 2.4862,
+     "deviation": 137.1,
      "transform": "linear",
      "percentile_05": -1178.9,
-     "median": 2.2194,
-     "percentile_95": 2757.8
+     "median": 2.383,
+     "percentile_95": 2790.0
     },
     "spectral_entropy": {
-     "clips": 2407,
-     "center": 0.43037,
-     "deviation": 0.1704,
+     "clips": 2416,
+     "center": 0.43017,
+     "deviation": 0.1709,
      "transform": "linear",
-     "percentile_05": 0.2096,
-     "median": 0.43037,
+     "percentile_05": 0.20878,
+     "median": 0.43017,
      "percentile_95": 0.66026
     },
     "spectral_flatness": {
-     "clips": 2408,
-     "center": 0.15307,
-     "deviation": 0.1571,
+     "clips": 2417,
+     "center": 0.15313,
+     "deviation": 0.1572,
      "transform": "linear",
      "percentile_05": 0.01922,
-     "median": 0.15301,
+     "median": 0.15313,
      "percentile_95": 0.52988
     },
     "spectral_flux": {
-     "clips": 2408,
-     "center": 0.22028,
-     "deviation": 0.01705,
+     "clips": 2417,
+     "center": 0.22015,
+     "deviation": 0.0173,
      "transform": "linear",
-     "percentile_05": 0.10981,
-     "median": 0.22028,
+     "percentile_05": 0.10913,
+     "median": 0.22015,
      "percentile_95": 0.24387
     },
     "spectral_rolloff_hz": {
-     "clips": 2401,
-     "center": 5513.5,
-     "deviation": 2.271,
+     "clips": 2410,
+     "center": 5510.6,
+     "deviation": 2.278,
      "transform": "log",
      "percentile_05": 1399.7,
-     "median": 5513.5,
+     "median": 5507.8,
      "percentile_95": 13334.0
     },
     "spectral_slope_db_per_octave": {
-     "clips": 2407,
-     "center": -4.3886,
-     "deviation": 3.227,
+     "clips": 2416,
+     "center": -4.3979,
+     "deviation": 3.241,
      "transform": "linear",
      "percentile_05": -8.5513,
-     "median": -4.3886,
-     "percentile_95": 2.1286
+     "median": -4.3998,
+     "percentile_95": 2.1523
     },
     "stationarity": {
-     "clips": 2407,
-     "center": 0.004533,
-     "deviation": 0.008065,
+     "clips": 2416,
+     "center": 0.0015453,
+     "deviation": 0.002749,
      "transform": "linear",
      "percentile_05": 0.0,
-     "median": 0.004533,
+     "median": 0.00085282,
      "percentile_95": 0.73405
     },
     "sustain_ratio": {
-     "clips": 534,
-     "center": 0.044949,
-     "deviation": 0.06094,
+     "clips": 541,
+     "center": 0.045977,
+     "deviation": 0.06203,
      "transform": "linear",
-     "percentile_05": 0.003876,
-     "median": 0.044444,
+     "percentile_05": 0.0038911,
+     "median": 0.045977,
      "percentile_95": 0.92308
     },
     "syllabic_modulation_energy": {
-     "clips": 2304,
-     "center": 0.21406,
-     "deviation": 0.1509,
+     "clips": 2309,
+     "center": 0.21403,
+     "deviation": 0.1514,
      "transform": "linear",
-     "percentile_05": 0.033172,
-     "median": 0.21406,
+     "percentile_05": 0.031896,
+     "median": 0.21403,
      "percentile_95": 0.4553
     },
     "transient_count": {
-     "clips": 2407,
+     "clips": 2416,
      "center": 5.0,
      "deviation": 5.105,
      "transform": "log",
@@ -675,18 +675,18 @@
      "percentile_95": 33.0
     },
     "zero_crossings_per_second": {
-     "clips": 2406,
-     "center": 2295.5,
-     "deviation": 2.784,
+     "clips": 2415,
+     "center": 2294.8,
+     "deviation": 2.792,
      "transform": "log",
-     "percentile_05": 495.4,
+     "percentile_05": 480.65,
      "median": 2294.8,
-     "percentile_95": 9794.5
+     "percentile_95": 9847.0
     }
    }
   },
   "friction": {
-   "clips": 820,
+   "clips": 821,
    "subcategories_contributing": [
     "HMNSkin",
     "OBJTape",
@@ -696,34 +696,34 @@
    ],
    "feature_observations": {
     "complexity": {
-     "clips": 820,
-     "center": 4683.7,
-     "deviation": 1.244,
+     "clips": 821,
+     "center": 4679.8,
+     "deviation": 1.246,
      "transform": "log",
-     "percentile_05": 2907.3,
+     "percentile_05": 2945.8,
      "median": 4679.8,
      "percentile_95": 5790.8
     },
     "crest_factor": {
-     "clips": 210,
-     "center": 26.352,
-     "deviation": 4.147,
+     "clips": 211,
+     "center": 26.578,
+     "deviation": 4.176,
      "transform": "log",
      "percentile_05": 5.1095,
-     "median": 26.128,
+     "median": 26.578,
      "percentile_95": 82.665
     },
     "decay_time_seconds_60db": {
-     "clips": 73,
-     "center": 0.19858,
-     "deviation": 2.65,
+     "clips": 74,
+     "center": 0.19257,
+     "deviation": 2.767,
      "transform": "log",
      "percentile_05": 0.072736,
-     "median": 0.19858,
+     "median": 0.18675,
      "percentile_95": 0.94107
     },
     "envelope_attack_seconds": {
-     "clips": 190,
+     "clips": 191,
      "center": 0.014966,
      "deviation": 7.061,
      "transform": "log",
@@ -732,7 +732,7 @@
      "percentile_95": 0.67846
     },
     "envelope_decay_seconds": {
-     "clips": 210,
+     "clips": 211,
      "center": 0.17959,
      "deviation": 1.668,
      "transform": "log",
@@ -741,16 +741,16 @@
      "percentile_95": 0.48889
     },
     "envelope_kurtosis": {
-     "clips": 210,
-     "center": 46.179,
-     "deviation": 77.84,
+     "clips": 211,
+     "center": 46.184,
+     "deviation": 78.8,
      "transform": "linear",
      "percentile_05": -0.5418,
-     "median": 46.174,
+     "median": 46.184,
      "percentile_95": 301.83
     },
     "envelope_release_seconds": {
-     "clips": 209,
+     "clips": 210,
      "center": 0.059864,
      "deviation": 4.747,
      "transform": "log",
@@ -759,26 +759,26 @@
      "percentile_95": 1.1873
     },
     "envelope_skewness": {
-     "clips": 210,
-     "center": 6.2883,
-     "deviation": 7.139,
+     "clips": 211,
+     "center": 6.369,
+     "deviation": 7.389,
      "transform": "linear",
      "percentile_05": 0.67123,
-     "median": 6.2076,
+     "median": 6.369,
      "percentile_95": 16.969
     },
     "envelope_sustain_level": {
-     "clips": 210,
-     "center": 0.005068,
-     "deviation": 0.009017,
+     "clips": 211,
+     "center": 0.0049913,
+     "deviation": 0.00888,
      "transform": "linear",
      "percentile_05": 0.0,
      "median": 0.0049913,
      "percentile_95": 0.40804
     },
     "envelope_temporal_centroid": {
-     "clips": 210,
-     "center": 0.10462,
+     "clips": 211,
+     "center": 0.10279,
      "deviation": 0.1688,
      "transform": "linear",
      "percentile_05": 0.004734,
@@ -786,65 +786,65 @@
      "percentile_95": 0.58579
     },
     "harmonicity": {
-     "clips": 820,
-     "center": 0.27759,
-     "deviation": 0.2621,
+     "clips": 821,
+     "center": 0.27706,
+     "deviation": 0.2613,
      "transform": "linear",
      "percentile_05": 0.051393,
      "median": 0.27706,
      "percentile_95": 0.91963
     },
     "high_band_energy": {
-     "clips": 820,
-     "center": 0.63595,
-     "deviation": 0.3253,
+     "clips": 821,
+     "center": 0.63612,
+     "deviation": 0.3251,
      "transform": "linear",
-     "percentile_05": 0.26052,
-     "median": 0.63579,
+     "percentile_05": 0.26218,
+     "median": 0.63612,
      "percentile_95": 0.9169
     },
     "inharmonicity": {
-     "clips": 820,
-     "center": 0.43991,
-     "deviation": 0.1286,
+     "clips": 821,
+     "center": 0.43979,
+     "deviation": 0.1292,
      "transform": "linear",
      "percentile_05": 0.11372,
      "median": 0.43979,
      "percentile_95": 0.62711
     },
     "low_band_energy": {
-     "clips": 820,
-     "center": 0.041736,
-     "deviation": 0.05824,
+     "clips": 821,
+     "center": 0.041635,
+     "deviation": 0.05816,
      "transform": "linear",
-     "percentile_05": 0.0025119,
+     "percentile_05": 0.0025462,
      "median": 0.041635,
      "percentile_95": 0.29966
     },
     "mid_band_energy": {
-     "clips": 820,
-     "center": 0.26582,
-     "deviation": 0.2268,
+     "clips": 821,
+     "center": 0.26563,
+     "deviation": 0.2269,
      "transform": "linear",
-     "percentile_05": 0.068455,
+     "percentile_05": 0.068856,
      "median": 0.26563,
      "percentile_95": 0.59123
     },
     "onset_periodicity": {
-     "clips": 819,
-     "center": 0.26335,
-     "deviation": 0.1404,
+     "clips": 820,
+     "center": 0.26333,
+     "deviation": 0.1405,
      "transform": "linear",
      "percentile_05": 0.0,
-     "median": 0.26335,
+     "median": 0.26331,
      "percentile_95": 0.45251
     },
     "onset_rate_per_second": {
-     "clips": 820,
-     "center": 1.2564,
-     "deviation": 2.994,
+     "clips": 821,
+     "center": 1.2563,
+     "deviation": 2.996,
      "transform": "log",
-     "percentile_05": 0.22577,
+     "percentile_05": 0.22766,
      "median": 1.2563,
      "percentile_95": 3.9062
     },
@@ -876,88 +876,88 @@
      "percentile_95": 17.845
     },
     "spectral_centroid_deviation_hz": {
-     "clips": 820,
-     "center": 1285.1,
-     "deviation": 716.2,
+     "clips": 821,
+     "center": 1284.8,
+     "deviation": 715.6,
      "transform": "linear",
-     "percentile_05": 516.28,
+     "percentile_05": 517.0,
      "median": 1284.8,
      "percentile_95": 3025.2
     },
     "spectral_centroid_hz": {
-     "clips": 820,
-     "center": 5005.5,
-     "deviation": 1.696,
+     "clips": 821,
+     "center": 5001.8,
+     "deviation": 1.694,
      "transform": "log",
-     "percentile_05": 2188.9,
+     "percentile_05": 2197.5,
      "median": 5001.8,
      "percentile_95": 9032.2
     },
     "spectral_centroid_mean_hz": {
-     "clips": 820,
-     "center": 4853.8,
-     "deviation": 1.704,
+     "clips": 821,
+     "center": 4847.7,
+     "deviation": 1.708,
      "transform": "log",
-     "percentile_05": 2110.0,
+     "percentile_05": 2122.0,
      "median": 4847.7,
      "percentile_95": 8624.4
     },
     "spectral_centroid_slope_hz_per_second": {
-     "clips": 820,
-     "center": -7.0076,
-     "deviation": 374.8,
+     "clips": 821,
+     "center": -6.9158,
+     "deviation": 375.6,
      "transform": "linear",
-     "percentile_05": -3904.4,
-     "median": -7.0995,
+     "percentile_05": -3868.1,
+     "median": -6.9158,
      "percentile_95": 14464.0
     },
     "spectral_entropy": {
-     "clips": 820,
-     "center": 0.53961,
-     "deviation": 0.1861,
+     "clips": 821,
+     "center": 0.54024,
+     "deviation": 0.186,
      "transform": "linear",
-     "percentile_05": 0.21231,
-     "median": 0.53899,
+     "percentile_05": 0.21355,
+     "median": 0.54024,
      "percentile_95": 0.79321
     },
     "spectral_flatness": {
-     "clips": 820,
-     "center": 0.38944,
-     "deviation": 0.25,
+     "clips": 821,
+     "center": 0.38876,
+     "deviation": 0.2495,
      "transform": "linear",
-     "percentile_05": 0.11609,
+     "percentile_05": 0.11727,
      "median": 0.38876,
      "percentile_95": 0.67979
     },
     "spectral_flux": {
-     "clips": 820,
-     "center": 0.22816,
-     "deviation": 0.00943,
+     "clips": 821,
+     "center": 0.22814,
+     "deviation": 0.009457,
      "transform": "linear",
      "percentile_05": 0.20765,
      "median": 0.22814,
      "percentile_95": 0.24334
     },
     "spectral_rolloff_hz": {
-     "clips": 820,
-     "center": 10489.0,
-     "deviation": 1.503,
+     "clips": 821,
+     "center": 10488.0,
+     "deviation": 1.504,
      "transform": "log",
-     "percentile_05": 4189.4,
+     "percentile_05": 4208.6,
      "median": 10488.0,
      "percentile_95": 15110.0
     },
     "spectral_slope_db_per_octave": {
-     "clips": 820,
-     "center": -2.7348,
-     "deviation": 2.787,
+     "clips": 821,
+     "center": -2.7296,
+     "deviation": 2.792,
      "transform": "linear",
-     "percentile_05": -6.1419,
-     "median": -2.74,
+     "percentile_05": -6.1082,
+     "median": -2.7296,
      "percentile_95": 1.5009
     },
     "stationarity": {
-     "clips": 820,
+     "clips": 821,
      "center": 0.0,
      "deviation": 0.169,
      "transform": "linear",
@@ -966,25 +966,25 @@
      "percentile_95": 0.46114
     },
     "sustain_ratio": {
-     "clips": 210,
-     "center": 0.042866,
-     "deviation": 0.05466,
+     "clips": 211,
+     "center": 0.042254,
+     "deviation": 0.05449,
      "transform": "linear",
      "percentile_05": 0.0074074,
      "median": 0.042254,
      "percentile_95": 0.36364
     },
     "syllabic_modulation_energy": {
-     "clips": 716,
-     "center": 0.22633,
-     "deviation": 0.1441,
+     "clips": 717,
+     "center": 0.22624,
+     "deviation": 0.1444,
      "transform": "linear",
      "percentile_05": 0.047445,
      "median": 0.22624,
      "percentile_95": 0.45763
     },
     "transient_count": {
-     "clips": 820,
+     "clips": 821,
      "center": 4.0,
      "deviation": 4.232,
      "transform": "log",
@@ -993,9 +993,9 @@
      "percentile_95": 28.0
     },
     "zero_crossings_per_second": {
-     "clips": 820,
-     "center": 3414.9,
-     "deviation": 2.681,
+     "clips": 821,
+     "center": 3410.9,
+     "deviation": 2.699,
      "transform": "log",
      "percentile_05": 472.33,
      "median": 3410.9,
@@ -1003,306 +1003,614 @@
     }
    }
   },
-  "impulsive": {
-   "clips": 3159,
+  "granular": {
+   "clips": 249,
    "subcategories_contributing": [
-    "COMCam",
-    "MUSCPerc",
-    "TOOLHand",
-    "WATRDrip",
-    "WATRSplsh"
+    "PERCShak"
    ],
    "feature_observations": {
     "complexity": {
-     "clips": 3158,
-     "center": 4427.6,
-     "deviation": 1.385,
+     "clips": 249,
+     "center": 4232.2,
+     "deviation": 1.202,
      "transform": "log",
-     "percentile_05": 2133.2,
-     "median": 4426.9,
-     "percentile_95": 6041.9
+     "percentile_05": 2913.5,
+     "median": 4232.2,
+     "percentile_95": 5579.7
     },
     "crest_factor": {
-     "clips": 1904,
-     "center": 16.821,
-     "deviation": 1.879,
+     "clips": 94,
+     "center": 11.243,
+     "deviation": 1.437,
      "transform": "log",
-     "percentile_05": 6.0602,
-     "median": 16.816,
-     "percentile_95": 50.304
-    },
-    "decay_time_seconds_60db": {
-     "clips": 1253,
-     "center": 0.45505,
-     "deviation": 2.942,
-     "transform": "log",
-     "percentile_05": 0.14632,
-     "median": 0.45505,
-     "percentile_95": 2.813
+     "percentile_05": 6.0279,
+     "median": 11.147,
+     "percentile_95": 22.676
     },
     "envelope_attack_seconds": {
-     "clips": 943,
-     "center": 0.014966,
-     "deviation": 2.057,
+     "clips": 92,
+     "center": 0.057315,
+     "deviation": 2.415,
      "transform": "log",
-     "percentile_05": 0.0049887,
-     "median": 0.014966,
-     "percentile_95": 0.39909
+     "percentile_05": 0.0099773,
+     "median": 0.054875,
+     "percentile_95": 2.8834
     },
     "envelope_decay_seconds": {
-     "clips": 1904,
-     "center": 0.61361,
-     "deviation": 3.695,
-     "transform": "log",
-     "percentile_05": 0.099773,
-     "median": 0.61361,
-     "percentile_95": 2.0304
-    },
-    "envelope_kurtosis": {
-     "clips": 1905,
-     "center": 18.288,
-     "deviation": 25.39,
-     "transform": "linear",
-     "percentile_05": 0.6145,
-     "median": 18.288,
-     "percentile_95": 108.43
-    },
-    "envelope_release_seconds": {
-     "clips": 1865,
-     "center": 0.15465,
-     "deviation": 4.693,
+     "clips": 94,
+     "center": 0.12719,
+     "deviation": 1.94,
      "transform": "log",
      "percentile_05": 0.034921,
-     "median": 0.15465,
-     "percentile_95": 1.6562
+     "median": 0.12472,
+     "percentile_95": 0.62857
+    },
+    "envelope_kurtosis": {
+     "clips": 94,
+     "center": 3.485,
+     "deviation": 4.944,
+     "transform": "linear",
+     "percentile_05": -1.1913,
+     "median": 3.4165,
+     "percentile_95": 22.511
+    },
+    "envelope_release_seconds": {
+     "clips": 94,
+     "center": 0.15964,
+     "deviation": 1.692,
+     "transform": "log",
+     "percentile_05": 0.024943,
+     "median": 0.15964,
+     "percentile_95": 0.55374
     },
     "envelope_skewness": {
-     "clips": 1905,
-     "center": 3.9671,
-     "deviation": 2.892,
+     "clips": 94,
+     "center": 2.0645,
+     "deviation": 1.157,
      "transform": "linear",
-     "percentile_05": 1.2425,
-     "median": 3.9671,
-     "percentile_95": 9.3719
+     "percentile_05": 0.10357,
+     "median": 2.0492,
+     "percentile_95": 4.4338
     },
     "envelope_sustain_level": {
-     "clips": 1905,
-     "center": 0.0065259,
-     "deviation": 0.01125,
+     "clips": 94,
+     "center": 0.054288,
+     "deviation": 0.06977,
      "transform": "linear",
-     "percentile_05": 8.5817e-05,
-     "median": 0.0065259,
-     "percentile_95": 0.14288
+     "percentile_05": 0.0029397,
+     "median": 0.054187,
+     "percentile_95": 0.32417
     },
     "envelope_temporal_centroid": {
-     "clips": 1905,
-     "center": 0.047868,
-     "deviation": 0.05402,
+     "clips": 94,
+     "center": 0.18096,
+     "deviation": 0.1275,
      "transform": "linear",
-     "percentile_05": 0.0075854,
-     "median": 0.047868,
-     "percentile_95": 0.36896
+     "percentile_05": 0.057308,
+     "median": 0.17913,
+     "percentile_95": 0.56546
     },
     "harmonicity": {
-     "clips": 3159,
-     "center": 0.45907,
-     "deviation": 0.4921,
+     "clips": 249,
+     "center": 0.14075,
+     "deviation": 0.1074,
      "transform": "linear",
-     "percentile_05": 0.096489,
-     "median": 0.45907,
-     "percentile_95": 0.97475
+     "percentile_05": 0.049574,
+     "median": 0.14075,
+     "percentile_95": 0.67498
     },
     "high_band_energy": {
-     "clips": 3159,
-     "center": 0.67227,
-     "deviation": 0.3497,
+     "clips": 249,
+     "center": 0.96477,
+     "deviation": 0.04454,
      "transform": "linear",
-     "percentile_05": 0.13811,
-     "median": 0.67227,
-     "percentile_95": 0.95442
+     "percentile_05": 0.7316,
+     "median": 0.96477,
+     "percentile_95": 0.99326
     },
     "inharmonicity": {
-     "clips": 3159,
-     "center": 0.42127,
-     "deviation": 0.1642,
-     "transform": "linear",
-     "percentile_05": 0.041806,
-     "median": 0.42127,
-     "percentile_95": 0.6444
-    },
-    "low_band_energy": {
-     "clips": 3159,
-     "center": 0.024785,
-     "deviation": 0.04027,
-     "transform": "linear",
-     "percentile_05": 0.0012945,
-     "median": 0.024785,
-     "percentile_95": 0.46079
-    },
-    "mid_band_energy": {
-     "clips": 3159,
-     "center": 0.23312,
-     "deviation": 0.2246,
-     "transform": "linear",
-     "percentile_05": 0.040962,
-     "median": 0.23312,
-     "percentile_95": 0.61535
-    },
-    "onset_periodicity": {
-     "clips": 3158,
-     "center": 0.17894,
-     "deviation": 0.2911,
+     "clips": 249,
+     "center": 0.38495,
+     "deviation": 0.1302,
      "transform": "linear",
      "percentile_05": 0.0,
-     "median": 0.17874,
-     "percentile_95": 0.51724
+     "median": 0.38495,
+     "percentile_95": 0.59129
+    },
+    "low_band_energy": {
+     "clips": 249,
+     "center": 0.002763,
+     "deviation": 0.003869,
+     "transform": "linear",
+     "percentile_05": 0.00028516,
+     "median": 0.002763,
+     "percentile_95": 0.064946
+    },
+    "mid_band_energy": {
+     "clips": 249,
+     "center": 0.025,
+     "deviation": 0.03095,
+     "transform": "linear",
+     "percentile_05": 0.0055956,
+     "median": 0.025,
+     "percentile_95": 0.15693
+    },
+    "onset_periodicity": {
+     "clips": 249,
+     "center": 0.3127,
+     "deviation": 0.195,
+     "transform": "linear",
+     "percentile_05": 0.013874,
+     "median": 0.3127,
+     "percentile_95": 0.64724
     },
     "onset_rate_per_second": {
-     "clips": 3158,
-     "center": 0.95644,
-     "deviation": 3.445,
+     "clips": 249,
+     "center": 2.4734,
+     "deviation": 1.856,
      "transform": "log",
-     "percentile_05": 0.19065,
-     "median": 0.95626,
-     "percentile_95": 3.5
+     "percentile_05": 0.29533,
+     "median": 2.4734,
+     "percentile_95": 6.0501
     },
     "partial_count": {
-     "clips": 3089,
+     "clips": 236,
      "center": 12.0,
-     "deviation": 1.691,
+     "deviation": 1.382,
      "transform": "log",
      "percentile_05": 2.0,
      "median": 12.0,
      "percentile_95": 12.0
     },
     "pitch_hz": {
-     "clips": 2315,
-     "center": 355.65,
-     "deviation": 5.342,
+     "clips": 225,
+     "center": 1336.4,
+     "deviation": 1.639,
      "transform": "log",
-     "percentile_05": 68.161,
-     "median": 355.65,
-     "percentile_95": 1764.0
+     "percentile_05": 178.54,
+     "median": 1336.4,
+     "percentile_95": 1917.4
     },
     "pitch_slope_semitones_per_second": {
-     "clips": 731,
-     "center": -0.015684,
-     "deviation": 0.7433,
+     "clips": 56,
+     "center": 2.9756e-29,
+     "deviation": 0.4024,
      "transform": "linear",
-     "percentile_05": -14.739,
-     "median": -0.015684,
-     "percentile_95": 6.3447
+     "percentile_05": -6.1859,
+     "median": 1.9746e-31,
+     "percentile_95": 3.4408
     },
     "spectral_centroid_deviation_hz": {
-     "clips": 3159,
-     "center": 1524.1,
-     "deviation": 1063.0,
+     "clips": 249,
+     "center": 775.41,
+     "deviation": 596.4,
      "transform": "linear",
-     "percentile_05": 428.1,
-     "median": 1524.1,
-     "percentile_95": 3287.3
+     "percentile_05": 284.13,
+     "median": 775.41,
+     "percentile_95": 2426.0
     },
     "spectral_centroid_hz": {
-     "clips": 3158,
-     "center": 5149.7,
-     "deviation": 1.937,
+     "clips": 249,
+     "center": 9190.4,
+     "deviation": 1.37,
      "transform": "log",
-     "percentile_05": 1227.2,
-     "median": 5149.2,
-     "percentile_95": 10934.0
+     "percentile_05": 4864.3,
+     "median": 9190.4,
+     "percentile_95": 11733.0
     },
     "spectral_centroid_mean_hz": {
-     "clips": 3158,
-     "center": 4678.3,
-     "deviation": 1.738,
+     "clips": 249,
+     "center": 8047.9,
+     "deviation": 1.388,
      "transform": "log",
-     "percentile_05": 1313.5,
-     "median": 4677.3,
-     "percentile_95": 8789.2
+     "percentile_05": 4410.4,
+     "median": 8047.9,
+     "percentile_95": 11002.0
     },
     "spectral_centroid_slope_hz_per_second": {
-     "clips": 3158,
-     "center": 48.085,
-     "deviation": 1604.0,
+     "clips": 249,
+     "center": -53.823,
+     "deviation": 453.8,
      "transform": "linear",
-     "percentile_05": -5448.8,
-     "median": 48.049,
-     "percentile_95": 8725.9
+     "percentile_05": -8385.0,
+     "median": -53.823,
+     "percentile_95": 2894.6
     },
     "spectral_entropy": {
-     "clips": 3158,
-     "center": 0.50303,
-     "deviation": 0.2475,
+     "clips": 249,
+     "center": 0.74827,
+     "deviation": 0.1024,
      "transform": "linear",
-     "percentile_05": 0.19953,
-     "median": 0.50299,
-     "percentile_95": 0.78275
+     "percentile_05": 0.3583,
+     "median": 0.74827,
+     "percentile_95": 0.84987
     },
     "spectral_flatness": {
-     "clips": 3159,
-     "center": 0.36848,
-     "deviation": 0.2955,
+     "clips": 249,
+     "center": 0.48306,
+     "deviation": 0.2166,
      "transform": "linear",
-     "percentile_05": 0.052393,
-     "median": 0.36848,
-     "percentile_95": 0.71945
+     "percentile_05": 0.17535,
+     "median": 0.48306,
+     "percentile_95": 0.68967
     },
     "spectral_flux": {
-     "clips": 3159,
-     "center": 0.20758,
-     "deviation": 0.03934,
+     "clips": 249,
+     "center": 0.22883,
+     "deviation": 0.00624,
      "transform": "linear",
-     "percentile_05": 0.10838,
-     "median": 0.20758,
-     "percentile_95": 0.24654
+     "percentile_05": 0.21406,
+     "median": 0.22883,
+     "percentile_95": 0.23651
     },
     "spectral_rolloff_hz": {
-     "clips": 3158,
-     "center": 10045.0,
-     "deviation": 1.701,
+     "clips": 249,
+     "center": 13991.0,
+     "deviation": 1.302,
      "transform": "log",
-     "percentile_05": 1830.1,
-     "median": 10044.0,
-     "percentile_95": 18043.0
+     "percentile_05": 7913.3,
+     "median": 13991.0,
+     "percentile_95": 17024.0
     },
     "spectral_slope_db_per_octave": {
-     "clips": 3158,
-     "center": -1.5466,
-     "deviation": 4.462,
+     "clips": 249,
+     "center": 2.3617,
+     "deviation": 3.011,
      "transform": "linear",
-     "percentile_05": -9.3227,
-     "median": -1.5475,
-     "percentile_95": 3.6404
+     "percentile_05": -1.8709,
+     "median": 2.3617,
+     "percentile_95": 5.6556
     },
     "stationarity": {
-     "clips": 3158,
+     "clips": 249,
      "center": 0.0,
-     "deviation": 0.0611,
+     "deviation": 0.1612,
      "transform": "linear",
      "percentile_05": 0.0,
      "median": 0.0,
-     "percentile_95": 0.46424
+     "percentile_95": 0.43558
     },
     "sustain_ratio": {
-     "clips": 1905,
-     "center": 0.04,
-     "deviation": 0.045,
+     "clips": 94,
+     "center": 0.13188,
+     "deviation": 0.09057,
      "transform": "linear",
-     "percentile_05": 0.008,
-     "median": 0.04,
-     "percentile_95": 0.21739
+     "percentile_05": 0.033333,
+     "median": 0.13043,
+     "percentile_95": 0.36842
     },
     "syllabic_modulation_energy": {
-     "clips": 2740,
-     "center": 0.12017,
-     "deviation": 0.2041,
+     "clips": 165,
+     "center": 0.28016,
+     "deviation": 0.2381,
      "transform": "linear",
-     "percentile_05": 0.001328,
-     "median": 0.1201,
-     "percentile_95": 0.45802
+     "percentile_05": 0.047241,
+     "median": 0.28016,
+     "percentile_95": 0.67437
     },
     "transient_count": {
-     "clips": 3158,
+     "clips": 249,
+     "center": 4.0,
+     "deviation": 11.78,
+     "transform": "log",
+     "percentile_05": 1.0,
+     "median": 4.0,
+     "percentile_95": 44.0
+    },
+    "zero_crossings_per_second": {
+     "clips": 249,
+     "center": 12298.0,
+     "deviation": 1.66,
+     "transform": "log",
+     "percentile_05": 3384.6,
+     "median": 12298.0,
+     "percentile_95": 20700.0
+    }
+   }
+  },
+  "impulsive": {
+   "clips": 2090,
+   "subcategories_contributing": [
+    "COMCam",
+    "DRUMHand",
+    "DRUMKick",
+    "DRUMSnr",
+    "PERCMisc",
+    "TOOLHand",
+    "WATRDrip",
+    "WATRSplsh"
+   ],
+   "feature_observations": {
+    "complexity": {
+     "clips": 2090,
+     "center": 4182.2,
+     "deviation": 1.34,
+     "transform": "log",
+     "percentile_05": 2024.2,
+     "median": 4181.8,
+     "percentile_95": 5543.9
+    },
+    "crest_factor": {
+     "clips": 1172,
+     "center": 17.691,
+     "deviation": 1.865,
+     "transform": "log",
+     "percentile_05": 4.8791,
+     "median": 17.681,
+     "percentile_95": 42.728
+    },
+    "decay_time_seconds_60db": {
+     "clips": 860,
+     "center": 0.41907,
+     "deviation": 2.468,
+     "transform": "log",
+     "percentile_05": 0.14834,
+     "median": 0.41834,
+     "percentile_95": 1.4017
+    },
+    "envelope_attack_seconds": {
+     "clips": 555,
+     "center": 0.014966,
+     "deviation": 2.057,
+     "transform": "log",
+     "percentile_05": 0.0049887,
+     "median": 0.014966,
+     "percentile_95": 1.1175
+    },
+    "envelope_decay_seconds": {
+     "clips": 1172,
+     "center": 0.5288,
+     "deviation": 2.519,
+     "transform": "log",
+     "percentile_05": 0.064853,
+     "median": 0.5288,
+     "percentile_95": 1.2272
+    },
+    "envelope_kurtosis": {
+     "clips": 1172,
+     "center": 25.684,
+     "deviation": 30.19,
+     "transform": "linear",
+     "percentile_05": 1.4077,
+     "median": 25.68,
+     "percentile_95": 117.59
+    },
+    "envelope_release_seconds": {
+     "clips": 1147,
+     "center": 0.11973,
+     "deviation": 2.977,
+     "transform": "log",
+     "percentile_05": 0.029932,
+     "median": 0.11973,
+     "percentile_95": 0.75828
+    },
+    "envelope_skewness": {
+     "clips": 1172,
+     "center": 4.6881,
+     "deviation": 2.899,
+     "transform": "linear",
+     "percentile_05": 1.4066,
+     "median": 4.6876,
+     "percentile_95": 10.092
+    },
+    "envelope_sustain_level": {
+     "clips": 1172,
+     "center": 0.0022587,
+     "deviation": 0.003736,
+     "transform": "linear",
+     "percentile_05": 1.1526e-05,
+     "median": 0.0022557,
+     "percentile_95": 0.14237
+    },
+    "envelope_temporal_centroid": {
+     "clips": 1172,
+     "center": 0.033289,
+     "deviation": 0.04184,
+     "transform": "linear",
+     "percentile_05": 0.0065237,
+     "median": 0.033221,
+     "percentile_95": 0.45522
+    },
+    "harmonicity": {
+     "clips": 2090,
+     "center": 0.48845,
+     "deviation": 0.5436,
+     "transform": "linear",
+     "percentile_05": 0.087933,
+     "median": 0.48726,
+     "percentile_95": 0.98453
+    },
+    "high_band_energy": {
+     "clips": 2090,
+     "center": 0.64531,
+     "deviation": 0.3236,
+     "transform": "linear",
+     "percentile_05": 0.12912,
+     "median": 0.64506,
+     "percentile_95": 0.93297
+    },
+    "inharmonicity": {
+     "clips": 2090,
+     "center": 0.41779,
+     "deviation": 0.1801,
+     "transform": "linear",
+     "percentile_05": 0.008123,
+     "median": 0.41768,
+     "percentile_95": 0.66359
+    },
+    "low_band_energy": {
+     "clips": 2090,
+     "center": 0.02974,
+     "deviation": 0.04405,
+     "transform": "linear",
+     "percentile_05": 0.001903,
+     "median": 0.029657,
+     "percentile_95": 0.57058
+    },
+    "mid_band_energy": {
+     "clips": 2090,
+     "center": 0.2738,
+     "deviation": 0.2228,
+     "transform": "linear",
+     "percentile_05": 0.053143,
+     "median": 0.27377,
+     "percentile_95": 0.62479
+    },
+    "onset_periodicity": {
+     "clips": 2090,
+     "center": 0.1679,
+     "deviation": 0.2741,
+     "transform": "linear",
+     "percentile_05": 0.0,
+     "median": 0.16786,
+     "percentile_95": 0.48497
+    },
+    "onset_rate_per_second": {
+     "clips": 2090,
+     "center": 0.90056,
+     "deviation": 2.563,
+     "transform": "log",
+     "percentile_05": 0.23881,
+     "median": 0.90055,
+     "percentile_95": 3.325
+    },
+    "partial_count": {
+     "clips": 2012,
+     "center": 12.0,
+     "deviation": 1.933,
+     "transform": "log",
+     "percentile_05": 2.0,
+     "median": 12.0,
+     "percentile_95": 12.0
+    },
+    "pitch_hz": {
+     "clips": 1595,
+     "center": 412.15,
+     "deviation": 5.758,
+     "transform": "log",
+     "percentile_05": 74.493,
+     "median": 412.15,
+     "percentile_95": 1837.5
+    },
+    "pitch_slope_semitones_per_second": {
+     "clips": 449,
+     "center": -0.0069612,
+     "deviation": 1.311,
+     "transform": "linear",
+     "percentile_05": -18.73,
+     "median": -0.0069612,
+     "percentile_95": 8.3973
+    },
+    "spectral_centroid_deviation_hz": {
+     "clips": 2090,
+     "center": 1463.4,
+     "deviation": 1075.0,
+     "transform": "linear",
+     "percentile_05": 405.9,
+     "median": 1463.2,
+     "percentile_95": 3304.2
+    },
+    "spectral_centroid_hz": {
+     "clips": 2090,
+     "center": 4799.9,
+     "deviation": 1.798,
+     "transform": "log",
+     "percentile_05": 1051.2,
+     "median": 4798.6,
+     "percentile_95": 8809.0
+    },
+    "spectral_centroid_mean_hz": {
+     "clips": 2090,
+     "center": 4771.9,
+     "deviation": 1.656,
+     "transform": "log",
+     "percentile_05": 1078.5,
+     "median": 4770.7,
+     "percentile_95": 8238.9
+    },
+    "spectral_centroid_slope_hz_per_second": {
+     "clips": 2090,
+     "center": 260.23,
+     "deviation": 1613.0,
+     "transform": "linear",
+     "percentile_05": -2325.9,
+     "median": 260.15,
+     "percentile_95": 9200.2
+    },
+    "spectral_entropy": {
+     "clips": 2090,
+     "center": 0.47301,
+     "deviation": 0.2564,
+     "transform": "linear",
+     "percentile_05": 0.17161,
+     "median": 0.47289,
+     "percentile_95": 0.76194
+    },
+    "spectral_flatness": {
+     "clips": 2090,
+     "center": 0.33034,
+     "deviation": 0.2571,
+     "transform": "linear",
+     "percentile_05": 0.049423,
+     "median": 0.3303,
+     "percentile_95": 0.63463
+    },
+    "spectral_flux": {
+     "clips": 2090,
+     "center": 0.21414,
+     "deviation": 0.03819,
+     "transform": "linear",
+     "percentile_05": 0.094855,
+     "median": 0.21407,
+     "percentile_95": 0.25118
+    },
+    "spectral_rolloff_hz": {
+     "clips": 2090,
+     "center": 9426.8,
+     "deviation": 1.613,
+     "transform": "log",
+     "percentile_05": 1586.4,
+     "median": 9426.0,
+     "percentile_95": 14821.0
+    },
+    "spectral_slope_db_per_octave": {
+     "clips": 2090,
+     "center": -1.7054,
+     "deviation": 3.465,
+     "transform": "linear",
+     "percentile_05": -9.8437,
+     "median": -1.7071,
+     "percentile_95": 2.6944
+    },
+    "stationarity": {
+     "clips": 2090,
+     "center": 0.0,
+     "deviation": 0.0489,
+     "transform": "linear",
+     "percentile_05": 0.0,
+     "median": 0.0,
+     "percentile_95": 0.46256
+    },
+    "sustain_ratio": {
+     "clips": 1172,
+     "center": 0.032,
+     "deviation": 0.02967,
+     "transform": "linear",
+     "percentile_05": 0.0082645,
+     "median": 0.032,
+     "percentile_95": 0.2
+    },
+    "syllabic_modulation_energy": {
+     "clips": 1858,
+     "center": 0.12732,
+     "deviation": 0.2185,
+     "transform": "linear",
+     "percentile_05": 0.0010756,
+     "median": 0.12712,
+     "percentile_95": 0.43484
+    },
+    "transient_count": {
+     "clips": 2090,
      "center": 1.0,
      "deviation": 3.482,
      "transform": "log",
@@ -1311,340 +1619,347 @@
      "percentile_95": 22.0
     },
     "zero_crossings_per_second": {
-     "clips": 3158,
-     "center": 3729.6,
-     "deviation": 3.377,
+     "clips": 2090,
+     "center": 3062.7,
+     "deviation": 3.306,
      "transform": "log",
-     "percentile_05": 261.78,
-     "median": 3729.6,
-     "percentile_95": 13359.0
+     "percentile_05": 178.91,
+     "median": 3061.9,
+     "percentile_95": 11807.0
     }
    }
   },
   "impulsive_with_tail": {
-   "clips": 4870,
+   "clips": 4391,
    "subcategories_contributing": [
+    "BELLGong",
     "BELLLrg",
+    "CYMBCrsh",
     "FOODKware",
     "FOODTware",
+    "GUITAcou",
+    "GUITBass",
+    "GUITElec",
+    "GUITHarp",
     "HMNCough",
     "HMNSneez",
-    "MUSCKeyd",
-    "MUSCPluck",
+    "MALTGlok",
     "OBJCoin",
-    "OBJKey"
+    "OBJKey",
+    "PERCTamb",
+    "PIANMisc"
    ],
    "feature_observations": {
     "complexity": {
-     "clips": 4870,
-     "center": 3112.9,
-     "deviation": 1.998,
+     "clips": 4391,
+     "center": 3542.5,
+     "deviation": 1.722,
      "transform": "log",
-     "percentile_05": 1141.0,
-     "median": 3112.3,
-     "percentile_95": 5735.6
+     "percentile_05": 1169.3,
+     "median": 3542.5,
+     "percentile_95": 5738.0
     },
     "crest_factor": {
-     "clips": 2248,
-     "center": 9.4271,
-     "deviation": 2.196,
+     "clips": 2284,
+     "center": 11.152,
+     "deviation": 2.257,
      "transform": "log",
-     "percentile_05": 3.6497,
-     "median": 9.4249,
-     "percentile_95": 27.572
+     "percentile_05": 3.972,
+     "median": 11.149,
+     "percentile_95": 37.297
     },
     "decay_time_seconds_60db": {
-     "clips": 833,
-     "center": 1.2767,
-     "deviation": 6.011,
+     "clips": 955,
+     "center": 0.94686,
+     "deviation": 5.403,
      "transform": "log",
-     "percentile_05": 0.14445,
-     "median": 1.2767,
-     "percentile_95": 10.117
+     "percentile_05": 0.17024,
+     "median": 0.94686,
+     "percentile_95": 7.6075
     },
     "envelope_attack_seconds": {
-     "clips": 1891,
+     "clips": 1818,
      "center": 0.019955,
      "deviation": 3.432,
      "transform": "log",
      "percentile_05": 0.0049887,
      "median": 0.019955,
-     "percentile_95": 0.22948
+     "percentile_95": 0.18957
     },
     "envelope_decay_seconds": {
-     "clips": 2248,
-     "center": 1.0351,
-     "deviation": 5.747,
+     "clips": 2284,
+     "center": 0.94785,
+     "deviation": 5.22,
      "transform": "log",
-     "percentile_05": 0.049887,
-     "median": 1.0327,
-     "percentile_95": 4.7991
+     "percentile_05": 0.089796,
+     "median": 0.94785,
+     "percentile_95": 4.4349
     },
     "envelope_kurtosis": {
-     "clips": 2248,
-     "center": 5.5237,
-     "deviation": 9.36,
+     "clips": 2284,
+     "center": 6.8428,
+     "deviation": 10.94,
      "transform": "linear",
-     "percentile_05": -0.88974,
-     "median": 5.5214,
-     "percentile_95": 55.999
+     "percentile_05": -0.57611,
+     "median": 6.8407,
+     "percentile_95": 64.735
     },
     "envelope_release_seconds": {
-     "clips": 2183,
-     "center": 0.7483,
-     "deviation": 5.593,
+     "clips": 2245,
+     "center": 0.59864,
+     "deviation": 6.887,
      "transform": "log",
-     "percentile_05": 0.034921,
-     "median": 0.7483,
-     "percentile_95": 4.1406
+     "percentile_05": 0.044898,
+     "median": 0.59864,
+     "percentile_95": 4.0658
     },
     "envelope_skewness": {
-     "clips": 2248,
-     "center": 2.2441,
-     "deviation": 1.938,
+     "clips": 2284,
+     "center": 2.5271,
+     "deviation": 2.008,
      "transform": "linear",
-     "percentile_05": -0.18508,
-     "median": 2.2441,
-     "percentile_95": 6.6779
+     "percentile_05": 0.2609,
+     "median": 2.5219,
+     "percentile_95": 7.0876
     },
     "envelope_sustain_level": {
-     "clips": 2248,
-     "center": 0.051916,
-     "deviation": 0.07998,
+     "clips": 2284,
+     "center": 0.039258,
+     "deviation": 0.06268,
      "transform": "linear",
-     "percentile_05": 0.0017677,
-     "median": 0.051913,
-     "percentile_95": 0.65711
+     "percentile_05": 0.00084661,
+     "median": 0.039222,
+     "percentile_95": 0.5103
     },
     "envelope_temporal_centroid": {
-     "clips": 2248,
-     "center": 0.11364,
-     "deviation": 0.1137,
+     "clips": 2284,
+     "center": 0.10153,
+     "deviation": 0.1002,
      "transform": "linear",
-     "percentile_05": 0.026814,
-     "median": 0.11359,
-     "percentile_95": 0.45043
+     "percentile_05": 0.023457,
+     "median": 0.10153,
+     "percentile_95": 0.39354
     },
     "harmonicity": {
-     "clips": 4870,
-     "center": 0.79426,
-     "deviation": 0.3525,
+     "clips": 4391,
+     "center": 0.66878,
+     "deviation": 0.5088,
      "transform": "linear",
-     "percentile_05": 0.18911,
-     "median": 0.7942,
-     "percentile_95": 0.99672
+     "percentile_05": 0.1773,
+     "median": 0.66878,
+     "percentile_95": 0.99593
     },
     "high_band_energy": {
-     "clips": 4870,
-     "center": 0.34398,
-     "deviation": 0.366,
+     "clips": 4391,
+     "center": 0.43715,
+     "deviation": 0.4918,
      "transform": "linear",
-     "percentile_05": 0.038956,
-     "median": 0.34395,
-     "percentile_95": 0.95618
+     "percentile_05": 0.042131,
+     "median": 0.43715,
+     "percentile_95": 0.98177
     },
     "inharmonicity": {
-     "clips": 4870,
-     "center": 0.21335,
-     "deviation": 0.352,
+     "clips": 4391,
+     "center": 0.27584,
+     "deviation": 0.3477,
      "transform": "linear",
-     "percentile_05": 0.00037341,
-     "median": 0.21332,
-     "percentile_95": 0.60313
+     "percentile_05": 0.00023429,
+     "median": 0.27584,
+     "percentile_95": 0.61165
     },
     "low_band_energy": {
-     "clips": 4870,
-     "center": 0.055759,
-     "deviation": 0.08265,
+     "clips": 4391,
+     "center": 0.038959,
+     "deviation": 0.06184,
      "transform": "linear",
-     "percentile_05": 0.0028135,
-     "median": 0.055755,
-     "percentile_95": 0.50967
+     "percentile_05": 0.0014407,
+     "median": 0.038959,
+     "percentile_95": 0.50084
     },
     "mid_band_energy": {
-     "clips": 4870,
-     "center": 0.50564,
-     "deviation": 0.3387,
+     "clips": 4391,
+     "center": 0.41872,
+     "deviation": 0.401,
      "transform": "linear",
-     "percentile_05": 0.034823,
-     "median": 0.50561,
-     "percentile_95": 0.84704
+     "percentile_05": 0.013891,
+     "median": 0.41872,
+     "percentile_95": 0.82834
     },
     "onset_periodicity": {
-     "clips": 4869,
-     "center": 0.27442,
-     "deviation": 0.209,
+     "clips": 4390,
+     "center": 0.26003,
+     "deviation": 0.2097,
      "transform": "linear",
-     "percentile_05": 0.0095838,
-     "median": 0.27442,
-     "percentile_95": 0.64988
+     "percentile_05": 0.0014819,
+     "median": 0.26003,
+     "percentile_95": 0.59639
     },
     "onset_rate_per_second": {
-     "clips": 4870,
-     "center": 0.8073,
-     "deviation": 4.825,
+     "clips": 4391,
+     "center": 0.77801,
+     "deviation": 4.858,
      "transform": "log",
-     "percentile_05": 0.10508,
-     "median": 0.80725,
-     "percentile_95": 3.3338
+     "percentile_05": 0.11106,
+     "median": 0.77801,
+     "percentile_95": 3.2893
     },
     "partial_count": {
-     "clips": 4694,
-     "center": 7.0,
-     "deviation": 2.609,
+     "clips": 4194,
+     "center": 8.0,
+     "deviation": 2.057,
      "transform": "log",
      "percentile_05": 1.0,
-     "median": 7.0,
+     "median": 8.0,
      "percentile_95": 12.0
     },
     "pitch_hz": {
-     "clips": 4128,
-     "center": 264.07,
-     "deviation": 5.215,
+     "clips": 3785,
+     "center": 329.1,
+     "deviation": 6.212,
      "transform": "log",
-     "percentile_05": 58.179,
-     "median": 264.07,
-     "percentile_95": 1696.2
+     "percentile_05": 58.722,
+     "median": 329.1,
+     "percentile_95": 1764.0
     },
     "pitch_slope_semitones_per_second": {
-     "clips": 958,
-     "center": -0.0013994,
-     "deviation": 0.1022,
+     "clips": 966,
+     "center": -0.0016554,
+     "deviation": 0.1501,
      "transform": "linear",
-     "percentile_05": -2.7237,
-     "median": -0.0014102,
-     "percentile_95": 2.5846
+     "percentile_05": -4.1048,
+     "median": -0.0016596,
+     "percentile_95": 3.0704
     },
     "spectral_centroid_deviation_hz": {
-     "clips": 4870,
-     "center": 868.13,
-     "deviation": 1068.0,
+     "clips": 4391,
+     "center": 934.74,
+     "deviation": 1016.0,
      "transform": "linear",
-     "percentile_05": 65.927,
-     "median": 867.81,
-     "percentile_95": 3141.7
+     "percentile_05": 67.402,
+     "median": 934.74,
+     "percentile_95": 3107.7
     },
     "spectral_centroid_hz": {
-     "clips": 4870,
-     "center": 2275.6,
-     "deviation": 2.71,
+     "clips": 4391,
+     "center": 2966.2,
+     "deviation": 3.266,
      "transform": "log",
-     "percentile_05": 653.52,
-     "median": 2274.5,
-     "percentile_95": 10276.0
+     "percentile_05": 670.93,
+     "median": 2966.2,
+     "percentile_95": 11237.0
     },
     "spectral_centroid_mean_hz": {
-     "clips": 4870,
-     "center": 2240.3,
-     "deviation": 2.835,
+     "clips": 4391,
+     "center": 2838.1,
+     "deviation": 3.032,
      "transform": "log",
-     "percentile_05": 405.79,
-     "median": 2238.6,
-     "percentile_95": 8366.4
+     "percentile_05": 403.34,
+     "median": 2838.1,
+     "percentile_95": 9731.0
     },
     "spectral_centroid_slope_hz_per_second": {
-     "clips": 4870,
-     "center": 46.352,
-     "deviation": 396.0,
+     "clips": 4391,
+     "center": 30.324,
+     "deviation": 590.4,
      "transform": "linear",
-     "percentile_05": -1888.1,
-     "median": 46.263,
-     "percentile_95": 2954.1
+     "percentile_05": -3491.3,
+     "median": 30.324,
+     "percentile_95": 3045.8
     },
     "spectral_entropy": {
-     "clips": 4870,
-     "center": 0.34374,
-     "deviation": 0.1792,
+     "clips": 4391,
+     "center": 0.37807,
+     "deviation": 0.2263,
      "transform": "linear",
-     "percentile_05": 0.1577,
-     "median": 0.34369,
-     "percentile_95": 0.66263
+     "percentile_05": 0.15896,
+     "median": 0.37807,
+     "percentile_95": 0.70733
     },
     "spectral_flatness": {
-     "clips": 4870,
-     "center": 0.12162,
-     "deviation": 0.1679,
+     "clips": 4391,
+     "center": 0.17597,
+     "deviation": 0.244,
      "transform": "linear",
-     "percentile_05": 0.01144,
-     "median": 0.12151,
-     "percentile_95": 0.59307
+     "percentile_05": 0.012709,
+     "median": 0.17597,
+     "percentile_95": 0.61231
     },
     "spectral_flux": {
-     "clips": 4870,
-     "center": 0.14238,
-     "deviation": 0.1062,
+     "clips": 4391,
+     "center": 0.16079,
+     "deviation": 0.1045,
      "transform": "linear",
-     "percentile_05": 0.02184,
-     "median": 0.14235,
-     "percentile_95": 0.23814
+     "percentile_05": 0.02141,
+     "median": 0.16079,
+     "percentile_95": 0.2387
     },
     "spectral_rolloff_hz": {
-     "clips": 4870,
-     "center": 4092.3,
-     "deviation": 3.649,
+     "clips": 4391,
+     "center": 5823.9,
+     "deviation": 3.686,
      "transform": "log",
-     "percentile_05": 648.0,
-     "median": 4090.8,
-     "percentile_95": 16202.0
+     "percentile_05": 649.7,
+     "median": 5823.9,
+     "percentile_95": 16913.0
     },
     "spectral_slope_db_per_octave": {
-     "clips": 4870,
-     "center": -4.8821,
-     "deviation": 4.953,
+     "clips": 4391,
+     "center": -3.8388,
+     "deviation": 5.811,
      "transform": "linear",
-     "percentile_05": -12.87,
-     "median": -4.8823,
-     "percentile_95": 1.7091
+     "percentile_05": -12.852,
+     "median": -3.8388,
+     "percentile_95": 3.4171
     },
     "stationarity": {
-     "clips": 4870,
+     "clips": 4391,
      "center": 0.0,
-     "deviation": 0.3325,
+     "deviation": 0.2629,
      "transform": "linear",
      "percentile_05": 0.0,
      "median": 0.0,
-     "percentile_95": 0.77572
+     "percentile_95": 0.69391
     },
     "sustain_ratio": {
-     "clips": 2248,
-     "center": 0.086957,
-     "deviation": 0.1094,
+     "clips": 2284,
+     "center": 0.077466,
+     "deviation": 0.09455,
      "transform": "linear",
-     "percentile_05": 0.011111,
-     "median": 0.086957,
-     "percentile_95": 0.71739
+     "percentile_05": 0.0089686,
+     "median": 0.077381,
+     "percentile_95": 0.53968
     },
     "syllabic_modulation_energy": {
-     "clips": 4613,
-     "center": 0.14896,
-     "deviation": 0.2147,
+     "clips": 4093,
+     "center": 0.13683,
+     "deviation": 0.2105,
      "transform": "linear",
-     "percentile_05": 0.00092214,
-     "median": 0.14896,
-     "percentile_95": 0.4815
+     "percentile_05": 0.00079338,
+     "median": 0.13683,
+     "percentile_95": 0.45838
     },
     "transient_count": {
-     "clips": 4870,
-     "center": 2.0,
-     "deviation": 3.432,
+     "clips": 4391,
+     "center": 1.0,
+     "deviation": 3.482,
      "transform": "log",
      "percentile_05": 1.0,
-     "median": 2.0,
-     "percentile_95": 20.0
+     "median": 1.0,
+     "percentile_95": 18.0
     },
     "zero_crossings_per_second": {
-     "clips": 4870,
-     "center": 1695.4,
-     "deviation": 3.507,
+     "clips": 4391,
+     "center": 2202.8,
+     "deviation": 4.158,
      "transform": "log",
-     "percentile_05": 328.16,
-     "median": 1695.4,
-     "percentile_95": 12856.0
+     "percentile_05": 331.84,
+     "median": 2202.8,
+     "percentile_95": 15679.0
     }
    }
   },
   "rhythmic": {
-   "clips": 2853,
+   "clips": 2871,
    "subcategories_contributing": [
     "ANMLAmph",
     "BELLAnml",
@@ -1664,61 +1979,61 @@
    ],
    "feature_observations": {
     "complexity": {
-     "clips": 2853,
-     "center": 3800.4,
-     "deviation": 1.506,
+     "clips": 2871,
+     "center": 3803.6,
+     "deviation": 1.505,
      "transform": "log",
-     "percentile_05": 1934.7,
-     "median": 3800.4,
-     "percentile_95": 5615.7
+     "percentile_05": 1935.5,
+     "median": 3803.6,
+     "percentile_95": 5607.8
     },
     "crest_factor": {
-     "clips": 495,
-     "center": 12.739,
-     "deviation": 2.388,
+     "clips": 501,
+     "center": 12.767,
+     "deviation": 2.355,
      "transform": "log",
-     "percentile_05": 3.8061,
-     "median": 12.739,
+     "percentile_05": 3.8515,
+     "median": 12.767,
      "percentile_95": 41.178
     },
     "decay_time_seconds_60db": {
-     "clips": 270,
-     "center": 0.39496,
-     "deviation": 1.353,
+     "clips": 275,
+     "center": 0.39368,
+     "deviation": 1.356,
      "transform": "log",
      "percentile_05": 0.1216,
-     "median": 0.39443,
+     "median": 0.39368,
      "percentile_95": 4.9681
     },
     "envelope_attack_seconds": {
-     "clips": 443,
-     "center": 0.034921,
-     "deviation": 9.289,
+     "clips": 448,
+     "center": 0.029932,
+     "deviation": 7.061,
      "transform": "log",
      "percentile_05": 0.0099773,
-     "median": 0.034921,
+     "median": 0.029932,
      "percentile_95": 6.6399
     },
     "envelope_decay_seconds": {
-     "clips": 495,
-     "center": 0.34422,
-     "deviation": 6.006,
+     "clips": 501,
+     "center": 0.34921,
+     "deviation": 5.854,
      "transform": "log",
      "percentile_05": 0.0099773,
-     "median": 0.34422,
+     "median": 0.34921,
      "percentile_95": 1.9755
     },
     "envelope_kurtosis": {
-     "clips": 495,
-     "center": 18.745,
-     "deviation": 30.84,
+     "clips": 501,
+     "center": 18.815,
+     "deviation": 30.96,
      "transform": "linear",
-     "percentile_05": -0.89443,
-     "median": 18.745,
+     "percentile_05": -0.85666,
+     "median": 18.815,
      "percentile_95": 129.46
     },
     "envelope_release_seconds": {
-     "clips": 448,
+     "clips": 454,
      "center": 0.089796,
      "deviation": 2.402,
      "transform": "log",
@@ -1727,97 +2042,97 @@
      "percentile_95": 2.9782
     },
     "envelope_skewness": {
-     "clips": 495,
-     "center": 4.143,
-     "deviation": 3.75,
+     "clips": 501,
+     "center": 4.1596,
+     "deviation": 3.731,
      "transform": "linear",
-     "percentile_05": -0.010379,
-     "median": 4.143,
+     "percentile_05": -0.0054317,
+     "median": 4.1596,
      "percentile_95": 10.019
     },
     "envelope_sustain_level": {
-     "clips": 495,
-     "center": 0.021195,
-     "deviation": 0.03771,
+     "clips": 501,
+     "center": 0.020202,
+     "deviation": 0.03594,
      "transform": "linear",
      "percentile_05": 0.0,
-     "median": 0.021195,
+     "median": 0.020202,
      "percentile_95": 0.74019
     },
     "envelope_temporal_centroid": {
-     "clips": 495,
-     "center": 0.20235,
-     "deviation": 0.3306,
+     "clips": 501,
+     "center": 0.19941,
+     "deviation": 0.3254,
      "transform": "linear",
-     "percentile_05": 0.011221,
-     "median": 0.20235,
+     "percentile_05": 0.011289,
+     "median": 0.19941,
      "percentile_95": 0.66389
     },
     "harmonicity": {
-     "clips": 2853,
-     "center": 0.47638,
-     "deviation": 0.4302,
+     "clips": 2871,
+     "center": 0.47574,
+     "deviation": 0.4324,
      "transform": "linear",
-     "percentile_05": 0.10393,
-     "median": 0.47638,
-     "percentile_95": 0.95922
+     "percentile_05": 0.10334,
+     "median": 0.47574,
+     "percentile_95": 0.95866
     },
     "high_band_energy": {
-     "clips": 2853,
-     "center": 0.48319,
-     "deviation": 0.3296,
+     "clips": 2871,
+     "center": 0.48476,
+     "deviation": 0.3306,
      "transform": "linear",
-     "percentile_05": 0.15048,
-     "median": 0.48319,
-     "percentile_95": 0.90053
+     "percentile_05": 0.15094,
+     "median": 0.48476,
+     "percentile_95": 0.90362
     },
     "inharmonicity": {
-     "clips": 2853,
+     "clips": 2871,
      "center": 0.41726,
-     "deviation": 0.1757,
+     "deviation": 0.1751,
      "transform": "linear",
-     "percentile_05": 0.064563,
+     "percentile_05": 0.064014,
      "median": 0.41726,
      "percentile_95": 0.62453
     },
     "low_band_energy": {
-     "clips": 2853,
-     "center": 0.0767,
-     "deviation": 0.1094,
+     "clips": 2871,
+     "center": 0.07549,
+     "deviation": 0.1081,
      "transform": "linear",
-     "percentile_05": 0.0025662,
-     "median": 0.0767,
-     "percentile_95": 0.41589
+     "percentile_05": 0.002225,
+     "median": 0.07549,
+     "percentile_95": 0.41565
     },
     "mid_band_energy": {
-     "clips": 2853,
-     "center": 0.36585,
-     "deviation": 0.2522,
+     "clips": 2871,
+     "center": 0.36564,
+     "deviation": 0.2527,
      "transform": "linear",
-     "percentile_05": 0.074737,
-     "median": 0.36585,
-     "percentile_95": 0.68244
+     "percentile_05": 0.071925,
+     "median": 0.36564,
+     "percentile_95": 0.68214
     },
     "onset_periodicity": {
-     "clips": 2852,
-     "center": 0.26298,
-     "deviation": 0.1746,
+     "clips": 2870,
+     "center": 0.26266,
+     "deviation": 0.174,
      "transform": "linear",
-     "percentile_05": 0.023163,
-     "median": 0.26297,
-     "percentile_95": 0.63265
+     "percentile_05": 0.02203,
+     "median": 0.26264,
+     "percentile_95": 0.63164
     },
     "onset_rate_per_second": {
-     "clips": 2853,
-     "center": 0.99872,
-     "deviation": 3.404,
+     "clips": 2871,
+     "center": 0.99968,
+     "deviation": 3.41,
      "transform": "log",
-     "percentile_05": 0.1303,
-     "median": 0.99872,
-     "percentile_95": 3.7295
+     "percentile_05": 0.13038,
+     "median": 0.99968,
+     "percentile_95": 3.7489
     },
     "partial_count": {
-     "clips": 2821,
+     "clips": 2839,
      "center": 12.0,
      "deviation": 1.516,
      "transform": "log",
@@ -1826,153 +2141,153 @@
      "percentile_95": 12.0
     },
     "pitch_hz": {
-     "clips": 1672,
-     "center": 848.08,
-     "deviation": 3.008,
+     "clips": 1689,
+     "center": 864.71,
+     "deviation": 2.906,
      "transform": "log",
-     "percentile_05": 87.674,
-     "median": 848.08,
+     "percentile_05": 89.634,
+     "median": 864.71,
      "percentile_95": 1837.5
     },
     "pitch_slope_semitones_per_second": {
-     "clips": 407,
-     "center": -0.0046738,
-     "deviation": 0.3989,
+     "clips": 411,
+     "center": -0.0051438,
+     "deviation": 0.4088,
      "transform": "linear",
      "percentile_05": -4.9679,
-     "median": -0.0046738,
+     "median": -0.0051438,
      "percentile_95": 2.1159
     },
     "spectral_centroid_deviation_hz": {
-     "clips": 2853,
-     "center": 949.87,
-     "deviation": 813.8,
+     "clips": 2871,
+     "center": 950.25,
+     "deviation": 812.4,
      "transform": "linear",
-     "percentile_05": 209.65,
-     "median": 949.87,
-     "percentile_95": 2453.7
+     "percentile_05": 209.71,
+     "median": 950.25,
+     "percentile_95": 2450.7
     },
     "spectral_centroid_hz": {
-     "clips": 2853,
-     "center": 3334.5,
-     "deviation": 2.042,
+     "clips": 2871,
+     "center": 3336.7,
+     "deviation": 2.045,
      "transform": "log",
-     "percentile_05": 1254.2,
-     "median": 3334.5,
-     "percentile_95": 8477.0
+     "percentile_05": 1254.4,
+     "median": 3336.7,
+     "percentile_95": 8510.6
     },
     "spectral_centroid_mean_hz": {
-     "clips": 2853,
-     "center": 3418.3,
-     "deviation": 1.981,
+     "clips": 2871,
+     "center": 3427.4,
+     "deviation": 1.982,
      "transform": "log",
-     "percentile_05": 1232.3,
-     "median": 3418.3,
-     "percentile_95": 7559.5
+     "percentile_05": 1234.0,
+     "median": 3427.4,
+     "percentile_95": 7619.6
     },
     "spectral_centroid_slope_hz_per_second": {
-     "clips": 2852,
-     "center": 2.8955,
-     "deviation": 99.94,
+     "clips": 2870,
+     "center": 2.7876,
+     "deviation": 100.5,
      "transform": "linear",
-     "percentile_05": -727.54,
-     "median": 2.8782,
+     "percentile_05": -795.43,
+     "median": 2.7452,
      "percentile_95": 4758.6
     },
     "spectral_entropy": {
-     "clips": 2853,
-     "center": 0.46638,
-     "deviation": 0.1799,
+     "clips": 2871,
+     "center": 0.46653,
+     "deviation": 0.1805,
      "transform": "linear",
      "percentile_05": 0.22452,
-     "median": 0.46638,
-     "percentile_95": 0.73696
+     "median": 0.46653,
+     "percentile_95": 0.74212
     },
     "spectral_flatness": {
-     "clips": 2853,
-     "center": 0.21748,
-     "deviation": 0.2161,
+     "clips": 2871,
+     "center": 0.21788,
+     "deviation": 0.2164,
      "transform": "linear",
-     "percentile_05": 0.039508,
-     "median": 0.21748,
-     "percentile_95": 0.60202
+     "percentile_05": 0.039511,
+     "median": 0.21788,
+     "percentile_95": 0.60368
     },
     "spectral_flux": {
-     "clips": 2853,
-     "center": 0.22234,
+     "clips": 2871,
+     "center": 0.22246,
      "deviation": 0.01812,
      "transform": "linear",
      "percentile_05": 0.17193,
-     "median": 0.22234,
+     "median": 0.22246,
      "percentile_95": 0.24245
     },
     "spectral_rolloff_hz": {
-     "clips": 2853,
-     "center": 6880.7,
-     "deviation": 2.112,
+     "clips": 2871,
+     "center": 6895.2,
+     "deviation": 2.11,
      "transform": "log",
-     "percentile_05": 2006.5,
-     "median": 6880.7,
-     "percentile_95": 14738.0
+     "percentile_05": 2017.5,
+     "median": 6895.2,
+     "percentile_95": 14760.0
     },
     "spectral_slope_db_per_octave": {
-     "clips": 2853,
-     "center": -4.2074,
-     "deviation": 3.115,
+     "clips": 2871,
+     "center": -4.1785,
+     "deviation": 3.146,
      "transform": "linear",
-     "percentile_05": -7.9966,
-     "median": -4.2074,
-     "percentile_95": 0.83468
+     "percentile_05": -7.9846,
+     "median": -4.1785,
+     "percentile_95": 1.0271
     },
     "stationarity": {
-     "clips": 2853,
+     "clips": 2871,
      "center": 0.051947,
      "deviation": 0.09242,
      "transform": "linear",
      "percentile_05": 0.0,
      "median": 0.051947,
-     "percentile_95": 0.79698
+     "percentile_95": 0.7965
     },
     "sustain_ratio": {
-     "clips": 495,
-     "center": 0.044944,
-     "deviation": 0.05031,
+     "clips": 501,
+     "center": 0.044118,
+     "deviation": 0.04884,
      "transform": "linear",
-     "percentile_05": 0.0045249,
-     "median": 0.044944,
+     "percentile_05": 0.0047329,
+     "median": 0.044118,
      "percentile_95": 0.99408
     },
     "syllabic_modulation_energy": {
-     "clips": 2758,
-     "center": 0.20631,
-     "deviation": 0.1553,
+     "clips": 2771,
+     "center": 0.20592,
+     "deviation": 0.1555,
      "transform": "linear",
-     "percentile_05": 0.012391,
-     "median": 0.20612,
+     "percentile_05": 0.012358,
+     "median": 0.20592,
      "percentile_95": 0.42618
     },
     "transient_count": {
-     "clips": 2853,
-     "center": 7.0,
-     "deviation": 4.515,
+     "clips": 2871,
+     "center": 6.0,
+     "deviation": 5.105,
      "transform": "log",
      "percentile_05": 1.0,
-     "median": 7.0,
+     "median": 6.0,
      "percentile_95": 40.0
     },
     "zero_crossings_per_second": {
-     "clips": 2852,
-     "center": 2325.5,
-     "deviation": 3.056,
+     "clips": 2870,
+     "center": 2330.7,
+     "deviation": 3.065,
      "transform": "log",
-     "percentile_05": 448.29,
-     "median": 2324.1,
-     "percentile_95": 10287.0
+     "percentile_05": 448.79,
+     "median": 2330.4,
+     "percentile_95": 10506.0
     }
    }
   },
   "sustained_noise": {
-   "clips": 2329,
+   "clips": 2331,
    "subcategories_contributing": [
     "AIRHiss",
     "AMBTraf",
@@ -1987,12 +2302,12 @@
    ],
    "feature_observations": {
     "complexity": {
-     "clips": 2328,
-     "center": 4120.2,
-     "deviation": 1.401,
+     "clips": 2330,
+     "center": 4119.0,
+     "deviation": 1.402,
      "transform": "log",
-     "percentile_05": 1941.1,
-     "median": 4119.5,
+     "percentile_05": 1937.5,
+     "median": 4118.4,
      "percentile_95": 5732.7
     },
     "crest_factor": {
@@ -2077,16 +2392,16 @@
      "percentile_95": 0.64768
     },
     "harmonicity": {
-     "clips": 2329,
-     "center": 0.33987,
+     "clips": 2331,
+     "center": 0.34033,
      "deviation": 0.4052,
      "transform": "linear",
      "percentile_05": 0.045903,
-     "median": 0.33987,
+     "median": 0.34033,
      "percentile_95": 0.95534
     },
     "high_band_energy": {
-     "clips": 2329,
+     "clips": 2331,
      "center": 0.57106,
      "deviation": 0.3362,
      "transform": "linear",
@@ -2095,52 +2410,52 @@
      "percentile_95": 0.92388
     },
     "inharmonicity": {
-     "clips": 2329,
+     "clips": 2331,
      "center": 0.44723,
-     "deviation": 0.1366,
+     "deviation": 0.1367,
      "transform": "linear",
-     "percentile_05": 0.14226,
+     "percentile_05": 0.1419,
      "median": 0.44723,
      "percentile_95": 0.62688
     },
     "low_band_energy": {
-     "clips": 2329,
-     "center": 0.047588,
-     "deviation": 0.06835,
+     "clips": 2331,
+     "center": 0.047526,
+     "deviation": 0.06824,
      "transform": "linear",
-     "percentile_05": 0.003431,
-     "median": 0.047588,
+     "percentile_05": 0.0033849,
+     "median": 0.047526,
      "percentile_95": 0.49512
     },
     "mid_band_energy": {
-     "clips": 2329,
-     "center": 0.31659,
-     "deviation": 0.2321,
+     "clips": 2331,
+     "center": 0.31664,
+     "deviation": 0.2322,
      "transform": "linear",
      "percentile_05": 0.058977,
-     "median": 0.31659,
-     "percentile_95": 0.65408
+     "median": 0.31664,
+     "percentile_95": 0.65417
     },
     "onset_periodicity": {
-     "clips": 2329,
-     "center": 0.24221,
-     "deviation": 0.1544,
+     "clips": 2331,
+     "center": 0.24252,
+     "deviation": 0.1539,
      "transform": "linear",
      "percentile_05": 0.07225,
-     "median": 0.24221,
+     "median": 0.24252,
      "percentile_95": 0.49266
     },
     "onset_rate_per_second": {
-     "clips": 2329,
-     "center": 0.7,
-     "deviation": 3.591,
+     "clips": 2331,
+     "center": 0.70013,
+     "deviation": 3.593,
      "transform": "log",
      "percentile_05": 0.10926,
-     "median": 0.7,
+     "median": 0.70013,
      "percentile_95": 2.9701
     },
     "partial_count": {
-     "clips": 2291,
+     "clips": 2293,
      "center": 12.0,
      "deviation": 1.275,
      "transform": "log",
@@ -2149,12 +2464,12 @@
      "percentile_95": 12.0
     },
     "pitch_hz": {
-     "clips": 1596,
-     "center": 773.68,
-     "deviation": 3.133,
+     "clips": 1598,
+     "center": 766.99,
+     "deviation": 3.182,
      "transform": "log",
-     "percentile_05": 142.26,
-     "median": 773.68,
+     "percentile_05": 140.89,
+     "median": 760.34,
      "percentile_95": 1837.5
     },
     "pitch_slope_semitones_per_second": {
@@ -2167,93 +2482,93 @@
      "percentile_95": 12.217
     },
     "spectral_centroid_deviation_hz": {
-     "clips": 2329,
-     "center": 919.74,
-     "deviation": 781.1,
+     "clips": 2331,
+     "center": 920.15,
+     "deviation": 781.8,
      "transform": "linear",
      "percentile_05": 202.2,
-     "median": 919.74,
-     "percentile_95": 2634.6
+     "median": 920.15,
+     "percentile_95": 2640.6
     },
     "spectral_centroid_hz": {
-     "clips": 2328,
-     "center": 4199.3,
-     "deviation": 2.066,
+     "clips": 2330,
+     "center": 4194.4,
+     "deviation": 2.065,
      "transform": "log",
      "percentile_05": 1041.6,
-     "median": 4196.1,
+     "median": 4192.6,
      "percentile_95": 9085.3
     },
     "spectral_centroid_mean_hz": {
-     "clips": 2329,
-     "center": 4256.2,
-     "deviation": 1.895,
+     "clips": 2331,
+     "center": 4253.7,
+     "deviation": 1.893,
      "transform": "log",
      "percentile_05": 1116.8,
-     "median": 4256.2,
+     "median": 4253.7,
      "percentile_95": 8348.9
     },
     "spectral_centroid_slope_hz_per_second": {
-     "clips": 2329,
+     "clips": 2331,
      "center": -0.89585,
-     "deviation": 143.9,
+     "deviation": 144.0,
      "transform": "linear",
      "percentile_05": -952.37,
      "median": -0.89585,
      "percentile_95": 1584.0
     },
     "spectral_entropy": {
-     "clips": 2329,
-     "center": 0.54766,
+     "clips": 2331,
+     "center": 0.54762,
      "deviation": 0.2297,
      "transform": "linear",
      "percentile_05": 0.24073,
-     "median": 0.54766,
+     "median": 0.54762,
      "percentile_95": 0.80224
     },
     "spectral_flatness": {
-     "clips": 2329,
-     "center": 0.28158,
-     "deviation": 0.2765,
+     "clips": 2331,
+     "center": 0.28141,
+     "deviation": 0.2766,
      "transform": "linear",
      "percentile_05": 0.039689,
-     "median": 0.28158,
+     "median": 0.28141,
      "percentile_95": 0.6778
     },
     "spectral_flux": {
-     "clips": 2329,
+     "clips": 2331,
      "center": 0.22651,
      "deviation": 0.008883,
      "transform": "linear",
-     "percentile_05": 0.20284,
+     "percentile_05": 0.20275,
      "median": 0.22651,
      "percentile_95": 0.24668
     },
     "spectral_rolloff_hz": {
-     "clips": 2328,
-     "center": 8690.3,
-     "deviation": 1.905,
+     "clips": 2330,
+     "center": 8687.4,
+     "deviation": 1.906,
      "transform": "log",
      "percentile_05": 1488.5,
-     "median": 8689.8,
+     "median": 8684.9,
      "percentile_95": 15234.0
     },
     "spectral_slope_db_per_octave": {
-     "clips": 2329,
-     "center": -2.9784,
-     "deviation": 3.377,
+     "clips": 2331,
+     "center": -2.9681,
+     "deviation": 3.387,
      "transform": "linear",
      "percentile_05": -8.2643,
-     "median": -2.9784,
+     "median": -2.9681,
      "percentile_95": 1.5218
     },
     "stationarity": {
-     "clips": 2329,
-     "center": 0.21631,
-     "deviation": 0.3848,
+     "clips": 2331,
+     "center": 0.21414,
+     "deviation": 0.381,
      "transform": "linear",
      "percentile_05": 0.0,
-     "median": 0.21631,
+     "median": 0.21414,
      "percentile_95": 0.82364
     },
     "sustain_ratio": {
@@ -2266,7 +2581,7 @@
      "percentile_95": 0.80769
     },
     "syllabic_modulation_energy": {
-     "clips": 2249,
+     "clips": 2251,
      "center": 0.19162,
      "deviation": 0.1058,
      "transform": "linear",
@@ -2275,7 +2590,7 @@
      "percentile_95": 0.37152
     },
     "transient_count": {
-     "clips": 2329,
+     "clips": 2331,
      "center": 5.0,
      "deviation": 4.747,
      "transform": "log",
@@ -2284,7 +2599,7 @@
      "percentile_95": 25.0
     },
     "zero_crossings_per_second": {
-     "clips": 2329,
+     "clips": 2331,
      "center": 4026.0,
      "deviation": 2.883,
      "transform": "log",
@@ -2295,320 +2610,321 @@
    }
   },
   "sustained_tonal": {
-   "clips": 5848,
+   "clips": 1382,
    "subcategories_contributing": [
+    "BRASTpt",
+    "KEYBAcrd",
+    "KEYBOrg",
     "MACHAppl",
-    "MUSCBrass",
-    "MUSCStr",
-    "MUSCWind",
-    "TOOLPowr"
+    "TOOLPowr",
+    "WWNDMisc"
    ],
    "feature_observations": {
     "complexity": {
-     "clips": 5848,
-     "center": 2297.0,
-     "deviation": 1.529,
+     "clips": 1382,
+     "center": 2392.5,
+     "deviation": 1.98,
      "transform": "log",
-     "percentile_05": 1356.6,
-     "median": 2296.8,
-     "percentile_95": 4316.1
+     "percentile_05": 1274.9,
+     "median": 2388.4,
+     "percentile_95": 5078.5
     },
     "crest_factor": {
-     "clips": 2749,
-     "center": 4.9716,
-     "deviation": 2.208,
+     "clips": 444,
+     "center": 6.8478,
+     "deviation": 1.734,
      "transform": "log",
-     "percentile_05": 2.4297,
-     "median": 4.9716,
-     "percentile_95": 16.807
+     "percentile_05": 3.0347,
+     "median": 6.8471,
+     "percentile_95": 16.191
     },
     "decay_time_seconds_60db": {
-     "clips": 1854,
-     "center": 0.58752,
-     "deviation": 3.086,
+     "clips": 211,
+     "center": 0.47705,
+     "deviation": 3.336,
      "transform": "log",
-     "percentile_05": 0.15586,
-     "median": 0.58734,
-     "percentile_95": 4.0343
+     "percentile_05": 0.10812,
+     "median": 0.47705,
+     "percentile_95": 2.841
     },
     "envelope_attack_seconds": {
-     "clips": 2729,
-     "center": 0.069841,
-     "deviation": 6.245,
+     "clips": 428,
+     "center": 0.079819,
+     "deviation": 4.353,
      "transform": "log",
-     "percentile_05": 0.0099773,
-     "median": 0.069841,
-     "percentile_95": 1.9605
+     "percentile_05": 0.014966,
+     "median": 0.079819,
+     "percentile_95": 2.5642
     },
     "envelope_decay_seconds": {
-     "clips": 2749,
-     "center": 0.49887,
-     "deviation": 3.775,
+     "clips": 444,
+     "center": 0.29932,
+     "deviation": 4.718,
      "transform": "log",
-     "percentile_05": 0.0099773,
-     "median": 0.49887,
-     "percentile_95": 2.22
+     "percentile_05": 0.0049887,
+     "median": 0.29932,
+     "percentile_95": 2.2549
     },
     "envelope_kurtosis": {
-     "clips": 2749,
-     "center": -0.16095,
-     "deviation": 2.466,
+     "clips": 444,
+     "center": 0.77914,
+     "deviation": 3.109,
      "transform": "linear",
-     "percentile_05": -1.7692,
-     "median": -0.16095,
-     "percentile_95": 27.15
+     "percentile_05": -1.5847,
+     "median": 0.76838,
+     "percentile_95": 20.085
     },
     "envelope_release_seconds": {
-     "clips": 2731,
-     "center": 0.19456,
-     "deviation": 3.999,
+     "clips": 415,
+     "center": 0.15465,
+     "deviation": 5.282,
      "transform": "log",
-     "percentile_05": 0.044898,
-     "median": 0.19456,
-     "percentile_95": 1.5265
+     "percentile_05": 0.024943,
+     "median": 0.15465,
+     "percentile_95": 1.8159
     },
     "envelope_skewness": {
-     "clips": 2749,
-     "center": 0.41259,
-     "deviation": 2.025,
+     "clips": 444,
+     "center": 0.23307,
+     "deviation": 2.317,
      "transform": "linear",
-     "percentile_05": -1.4788,
-     "median": 0.41259,
-     "percentile_95": 4.66
+     "percentile_05": -1.9224,
+     "median": 0.2317,
+     "percentile_95": 3.8145
     },
     "envelope_sustain_level": {
-     "clips": 2749,
-     "center": 0.23972,
-     "deviation": 0.4176,
+     "clips": 444,
+     "center": 0.45102,
+     "deviation": 0.5537,
      "transform": "linear",
-     "percentile_05": 0.0028517,
-     "median": 0.23972,
-     "percentile_95": 0.89423
+     "percentile_05": 0.0071523,
+     "median": 0.44939,
+     "percentile_95": 0.90442
     },
     "envelope_temporal_centroid": {
-     "clips": 2749,
-     "center": 0.33919,
-     "deviation": 0.2489,
+     "clips": 444,
+     "center": 0.40906,
+     "deviation": 0.174,
      "transform": "linear",
-     "percentile_05": 0.038253,
-     "median": 0.33919,
-     "percentile_95": 0.55544
+     "percentile_05": 0.083269,
+     "median": 0.40764,
+     "percentile_95": 0.61658
     },
     "harmonicity": {
-     "clips": 5848,
-     "center": 0.98695,
-     "deviation": 0.01992,
+     "clips": 1382,
+     "center": 0.8993,
+     "deviation": 0.1729,
      "transform": "linear",
-     "percentile_05": 0.4184,
-     "median": 0.98693,
-     "percentile_95": 0.99869
+     "percentile_05": 0.21296,
+     "median": 0.89898,
+     "percentile_95": 0.99768
     },
     "high_band_energy": {
-     "clips": 5848,
-     "center": 0.28129,
-     "deviation": 0.2259,
+     "clips": 1382,
+     "center": 0.40854,
+     "deviation": 0.3192,
      "transform": "linear",
-     "percentile_05": 0.05047,
-     "median": 0.28114,
-     "percentile_95": 0.73526
+     "percentile_05": 0.076542,
+     "median": 0.40813,
+     "percentile_95": 0.83185
     },
     "inharmonicity": {
-     "clips": 5848,
-     "center": 0.0077202,
-     "deviation": 0.01278,
+     "clips": 1382,
+     "center": 0.033975,
+     "deviation": 0.05877,
      "transform": "linear",
-     "percentile_05": 0.00026127,
-     "median": 0.0077184,
-     "percentile_95": 0.50883
+     "percentile_05": 0.00065343,
+     "median": 0.033764,
+     "percentile_95": 0.52918
     },
     "low_band_energy": {
-     "clips": 5848,
-     "center": 0.010289,
-     "deviation": 0.01629,
+     "clips": 1382,
+     "center": 0.0062181,
+     "deviation": 0.01049,
      "transform": "linear",
-     "percentile_05": 0.00053549,
-     "median": 0.010288,
-     "percentile_95": 0.33961
+     "percentile_05": 0.00027594,
+     "median": 0.0061943,
+     "percentile_95": 0.30795
     },
     "mid_band_energy": {
-     "clips": 5848,
-     "center": 0.63738,
-     "deviation": 0.238,
+     "clips": 1382,
+     "center": 0.52356,
+     "deviation": 0.3098,
      "transform": "linear",
-     "percentile_05": 0.23671,
-     "median": 0.63727,
-     "percentile_95": 0.89071
+     "percentile_05": 0.14216,
+     "median": 0.52351,
+     "percentile_95": 0.81831
     },
     "onset_periodicity": {
-     "clips": 5848,
-     "center": 0.39431,
-     "deviation": 0.2664,
+     "clips": 1382,
+     "center": 0.35366,
+     "deviation": 0.2167,
      "transform": "linear",
-     "percentile_05": 0.092303,
-     "median": 0.39426,
-     "percentile_95": 0.84284
+     "percentile_05": 0.11407,
+     "median": 0.35283,
+     "percentile_95": 0.76699
     },
     "onset_rate_per_second": {
-     "clips": 5848,
-     "center": 0.55343,
-     "deviation": 3.418,
+     "clips": 1382,
+     "center": 0.64653,
+     "deviation": 3.839,
      "transform": "log",
-     "percentile_05": 0.14286,
-     "median": 0.55314,
-     "percentile_95": 2.4957
+     "percentile_05": 0.13685,
+     "median": 0.64625,
+     "percentile_95": 3.0293
     },
     "partial_count": {
-     "clips": 5771,
-     "center": 5.0,
-     "deviation": 2.481,
+     "clips": 1375,
+     "center": 8.0,
+     "deviation": 2.057,
      "transform": "log",
-     "percentile_05": 1.0,
-     "median": 5.0,
+     "percentile_05": 2.0,
+     "median": 8.0,
      "percentile_95": 12.0
     },
     "pitch_hz": {
-     "clips": 5611,
-     "center": 280.89,
-     "deviation": 2.853,
+     "clips": 1240,
+     "center": 269.73,
+     "deviation": 3.451,
      "transform": "log",
-     "percentile_05": 65.625,
-     "median": 280.89,
-     "percentile_95": 1050.0
+     "percentile_05": 61.851,
+     "median": 268.9,
+     "percentile_95": 1225.0
     },
     "pitch_slope_semitones_per_second": {
-     "clips": 641,
-     "center": 0.0016173,
-     "deviation": 0.2071,
+     "clips": 127,
+     "center": 0.0048757,
+     "deviation": 0.1537,
      "transform": "linear",
-     "percentile_05": -0.99376,
-     "median": 0.0016173,
-     "percentile_95": 1.0416
+     "percentile_05": -3.1631,
+     "median": 0.0048757,
+     "percentile_95": 6.2763
     },
     "spectral_centroid_deviation_hz": {
-     "clips": 5848,
-     "center": 909.02,
-     "deviation": 717.6,
+     "clips": 1382,
+     "center": 1059.4,
+     "deviation": 809.9,
      "transform": "linear",
-     "percentile_05": 227.73,
-     "median": 908.89,
-     "percentile_95": 2532.4
+     "percentile_05": 108.96,
+     "median": 1058.6,
+     "percentile_95": 2080.1
     },
     "spectral_centroid_hz": {
-     "clips": 5848,
-     "center": 1922.7,
-     "deviation": 1.673,
+     "clips": 1382,
+     "center": 2349.3,
+     "deviation": 1.93,
      "transform": "log",
-     "percentile_05": 828.49,
-     "median": 1922.2,
-     "percentile_95": 4714.1
+     "percentile_05": 930.25,
+     "median": 2349.2,
+     "percentile_95": 6818.8
     },
     "spectral_centroid_mean_hz": {
-     "clips": 5848,
-     "center": 1966.1,
-     "deviation": 1.726,
+     "clips": 1382,
+     "center": 2424.4,
+     "deviation": 1.751,
      "transform": "log",
-     "percentile_05": 858.9,
-     "median": 1966.0,
-     "percentile_95": 4748.9
+     "percentile_05": 732.09,
+     "median": 2424.1,
+     "percentile_95": 6154.3
     },
     "spectral_centroid_slope_hz_per_second": {
-     "clips": 5848,
-     "center": 9.677,
-     "deviation": 263.3,
+     "clips": 1382,
+     "center": -19.934,
+     "deviation": 238.1,
      "transform": "linear",
-     "percentile_05": -573.8,
-     "median": 9.656,
-     "percentile_95": 5361.9
+     "percentile_05": -855.47,
+     "median": -20.19,
+     "percentile_95": 1422.9
     },
     "spectral_entropy": {
-     "clips": 5848,
-     "center": 0.29578,
-     "deviation": 0.1014,
+     "clips": 1382,
+     "center": 0.38635,
+     "deviation": 0.1055,
      "transform": "linear",
-     "percentile_05": 0.18509,
-     "median": 0.29578,
-     "percentile_95": 0.46792
+     "percentile_05": 0.22583,
+     "median": 0.38631,
+     "percentile_95": 0.63578
     },
     "spectral_flatness": {
-     "clips": 5848,
-     "center": 0.064511,
-     "deviation": 0.05723,
+     "clips": 1382,
+     "center": 0.070067,
+     "deviation": 0.07884,
      "transform": "linear",
-     "percentile_05": 0.020414,
-     "median": 0.064502,
-     "percentile_95": 0.26276
+     "percentile_05": 0.018855,
+     "median": 0.069754,
+     "percentile_95": 0.44515
     },
     "spectral_flux": {
-     "clips": 5848,
-     "center": 0.097707,
-     "deviation": 0.05344,
+     "clips": 1382,
+     "center": 0.11892,
+     "deviation": 0.07316,
      "transform": "linear",
-     "percentile_05": 0.047489,
-     "median": 0.097704,
-     "percentile_95": 0.20161
+     "percentile_05": 0.052901,
+     "median": 0.11892,
+     "percentile_95": 0.22348
     },
     "spectral_rolloff_hz": {
-     "clips": 5848,
-     "center": 3024.7,
-     "deviation": 1.869,
+     "clips": 1382,
+     "center": 3753.2,
+     "deviation": 2.304,
      "transform": "log",
-     "percentile_05": 934.87,
-     "median": 3024.6,
-     "percentile_95": 9486.6
+     "percentile_05": 1205.2,
+     "median": 3751.8,
+     "percentile_95": 12508.0
     },
     "spectral_slope_db_per_octave": {
-     "clips": 5848,
-     "center": -1.9255,
-     "deviation": 4.875,
+     "clips": 1382,
+     "center": -0.74853,
+     "deviation": 5.522,
      "transform": "linear",
-     "percentile_05": -10.214,
-     "median": -1.9263,
-     "percentile_95": 3.3176
+     "percentile_05": -10.568,
+     "median": -0.75136,
+     "percentile_95": 4.8446
     },
     "stationarity": {
-     "clips": 5848,
-     "center": 0.28977,
-     "deviation": 0.3887,
+     "clips": 1382,
+     "center": 0.43452,
+     "deviation": 0.3364,
      "transform": "linear",
      "percentile_05": 0.0,
-     "median": 0.28973,
-     "percentile_95": 0.66876
+     "median": 0.43423,
+     "percentile_95": 0.82101
     },
     "sustain_ratio": {
-     "clips": 2749,
-     "center": 0.38158,
-     "deviation": 0.4736,
+     "clips": 444,
+     "center": 0.41951,
+     "deviation": 0.5612,
      "transform": "linear",
-     "percentile_05": 0.025641,
-     "median": 0.38158,
-     "percentile_95": 0.85081
+     "percentile_05": 0.033333,
+     "median": 0.41905,
+     "percentile_95": 0.96386
     },
     "syllabic_modulation_energy": {
-     "clips": 5742,
-     "center": 0.089763,
-     "deviation": 0.1154,
+     "clips": 1361,
+     "center": 0.14108,
+     "deviation": 0.1536,
      "transform": "linear",
-     "percentile_05": 0.0071002,
-     "median": 0.089703,
-     "percentile_95": 0.50743
+     "percentile_05": 0.020315,
+     "median": 0.14108,
+     "percentile_95": 0.48849
     },
     "transient_count": {
-     "clips": 5848,
-     "center": 2.0,
-     "deviation": 3.432,
+     "clips": 1382,
+     "center": 2.4495,
+     "deviation": 4.923,
      "transform": "log",
      "percentile_05": 1.0,
      "median": 2.0,
-     "percentile_95": 16.0
+     "percentile_95": 19.0
     },
     "zero_crossings_per_second": {
-     "clips": 5848,
-     "center": 1543.0,
-     "deviation": 2.011,
+     "clips": 1382,
+     "center": 2094.4,
+     "deviation": 1.858,
      "transform": "log",
-     "percentile_05": 425.71,
-     "median": 1542.7,
-     "percentile_95": 4533.3
+     "percentile_05": 607.98,
+     "median": 2093.3,
+     "percentile_95": 8452.7
     }
    }
   },
@@ -2919,173 +3235,172 @@
    }
   },
   "texture": {
-   "clips": 1476,
+   "clips": 1323,
    "subcategories_contributing": [
     "ANMLInsc",
     "CRWDApls",
     "FIRECrkl",
     "FOODCook",
-    "MUSCChim",
     "PAPRHndl",
     "RAIN",
     "WATRBubl"
    ],
    "feature_observations": {
     "complexity": {
-     "clips": 1476,
-     "center": 4223.7,
-     "deviation": 1.349,
+     "clips": 1323,
+     "center": 4295.5,
+     "deviation": 1.334,
      "transform": "log",
-     "percentile_05": 2389.9,
-     "median": 4223.2,
-     "percentile_95": 5790.2
+     "percentile_05": 2477.8,
+     "median": 4295.5,
+     "percentile_95": 5873.7
     },
     "crest_factor": {
-     "clips": 163,
-     "center": 16.068,
-     "deviation": 3.278,
+     "clips": 143,
+     "center": 16.519,
+     "deviation": 3.824,
      "transform": "log",
-     "percentile_05": 2.9312,
-     "median": 16.068,
-     "percentile_95": 66.61
+     "percentile_05": 2.8536,
+     "median": 16.519,
+     "percentile_95": 67.971
     },
     "decay_time_seconds_60db": {
-     "clips": 62,
-     "center": 0.50646,
-     "deviation": 5.77,
+     "clips": 51,
+     "center": 0.41576,
+     "deviation": 4.476,
      "transform": "log",
-     "percentile_05": 0.087773,
-     "median": 0.49175,
-     "percentile_95": 6.8629
+     "percentile_05": 0.056979,
+     "median": 0.41576,
+     "percentile_95": 9.6956
     },
     "envelope_attack_seconds": {
-     "clips": 147,
-     "center": 0.16463,
-     "deviation": 55.05,
+     "clips": 135,
+     "center": 0.20454,
+     "deviation": 43.1,
      "transform": "log",
      "percentile_05": 0.0099773,
-     "median": 0.16463,
-     "percentile_95": 8.2612
+     "median": 0.20454,
+     "percentile_95": 8.6503
     },
     "envelope_decay_seconds": {
-     "clips": 163,
-     "center": 0.16961,
-     "deviation": 10.64,
+     "clips": 143,
+     "center": 0.12472,
+     "deviation": 7.061,
      "transform": "log",
-     "percentile_05": 0.0099773,
-     "median": 0.16961,
-     "percentile_95": 3.512
+     "percentile_05": 0.0049887,
+     "median": 0.12472,
+     "percentile_95": 1.746
     },
     "envelope_kurtosis": {
-     "clips": 163,
-     "center": 20.681,
-     "deviation": 37.05,
+     "clips": 143,
+     "center": 22.472,
+     "deviation": 40.41,
      "transform": "linear",
-     "percentile_05": -0.92059,
-     "median": 20.681,
-     "percentile_95": 365.7
+     "percentile_05": -0.93266,
+     "median": 22.472,
+     "percentile_95": 421.83
     },
     "envelope_release_seconds": {
-     "clips": 134,
-     "center": 0.35626,
-     "deviation": 26.12,
+     "clips": 115,
+     "center": 0.26939,
+     "deviation": 25.17,
      "transform": "log",
-     "percentile_05": 0.0099773,
-     "median": 0.33923,
-     "percentile_95": 8.2163
+     "percentile_05": 0.0049887,
+     "median": 0.26939,
+     "percentile_95": 8.2363
     },
     "envelope_skewness": {
-     "clips": 163,
-     "center": 3.8673,
-     "deviation": 5.607,
+     "clips": 143,
+     "center": 3.8946,
+     "deviation": 6.128,
      "transform": "linear",
-     "percentile_05": -0.29835,
-     "median": 3.8673,
-     "percentile_95": 15.69
+     "percentile_05": -0.3144,
+     "median": 3.8946,
+     "percentile_95": 16.099
     },
     "envelope_sustain_level": {
-     "clips": 163,
-     "center": 0.046973,
-     "deviation": 0.07764,
+     "clips": 143,
+     "center": 0.058736,
+     "deviation": 0.09968,
      "transform": "linear",
-     "percentile_05": 0.0010602,
-     "median": 0.046973,
-     "percentile_95": 0.78518
+     "percentile_05": 0.00048483,
+     "median": 0.058736,
+     "percentile_95": 0.79126
     },
     "envelope_temporal_centroid": {
-     "clips": 163,
-     "center": 0.36992,
-     "deviation": 0.2705,
+     "clips": 143,
+     "center": 0.45212,
+     "deviation": 0.2339,
      "transform": "linear",
-     "percentile_05": 0.038459,
-     "median": 0.36992,
-     "percentile_95": 0.68551
+     "percentile_05": 0.098319,
+     "median": 0.45212,
+     "percentile_95": 0.71126
     },
     "harmonicity": {
-     "clips": 1476,
-     "center": 0.29492,
-     "deviation": 0.3997,
+     "clips": 1323,
+     "center": 0.24086,
+     "deviation": 0.3315,
      "transform": "linear",
-     "percentile_05": 0.040103,
-     "median": 0.29473,
-     "percentile_95": 0.96631
+     "percentile_05": 0.037081,
+     "median": 0.24086,
+     "percentile_95": 0.96142
     },
     "high_band_energy": {
-     "clips": 1476,
-     "center": 0.66338,
-     "deviation": 0.3317,
+     "clips": 1323,
+     "center": 0.64649,
+     "deviation": 0.3057,
      "transform": "linear",
-     "percentile_05": 0.24138,
-     "median": 0.66327,
-     "percentile_95": 0.99175
+     "percentile_05": 0.25261,
+     "median": 0.64649,
+     "percentile_95": 0.96653
     },
     "inharmonicity": {
-     "clips": 1476,
-     "center": 0.43988,
-     "deviation": 0.1681,
+     "clips": 1323,
+     "center": 0.44628,
+     "deviation": 0.1613,
      "transform": "linear",
-     "percentile_05": 0.0030771,
-     "median": 0.43987,
-     "percentile_95": 0.6514
+     "percentile_05": 0.012424,
+     "median": 0.44628,
+     "percentile_95": 0.6438
     },
     "low_band_energy": {
-     "clips": 1476,
-     "center": 0.024657,
-     "deviation": 0.03886,
+     "clips": 1323,
+     "center": 0.030032,
+     "deviation": 0.04448,
      "transform": "linear",
-     "percentile_05": 0.00011847,
-     "median": 0.024623,
-     "percentile_95": 0.31635
+     "percentile_05": 0.0013971,
+     "median": 0.030032,
+     "percentile_95": 0.31798
     },
     "mid_band_energy": {
-     "clips": 1476,
-     "center": 0.25301,
-     "deviation": 0.2776,
+     "clips": 1323,
+     "center": 0.26814,
+     "deviation": 0.2615,
      "transform": "linear",
-     "percentile_05": 0.0059619,
-     "median": 0.25292,
-     "percentile_95": 0.61085
+     "percentile_05": 0.019415,
+     "median": 0.26814,
+     "percentile_95": 0.59509
     },
     "onset_periodicity": {
-     "clips": 1476,
-     "center": 0.22954,
-     "deviation": 0.1395,
+     "clips": 1323,
+     "center": 0.22484,
+     "deviation": 0.1386,
      "transform": "linear",
-     "percentile_05": 0.080121,
-     "median": 0.22954,
-     "percentile_95": 0.5496
+     "percentile_05": 0.083939,
+     "median": 0.22484,
+     "percentile_95": 0.57137
     },
     "onset_rate_per_second": {
-     "clips": 1476,
-     "center": 1.044,
-     "deviation": 3.386,
+     "clips": 1323,
+     "center": 1.0714,
+     "deviation": 3.453,
      "transform": "log",
-     "percentile_05": 0.12629,
-     "median": 1.0432,
-     "percentile_95": 3.8111
+     "percentile_05": 0.11871,
+     "median": 1.0714,
+     "percentile_95": 3.9141
     },
     "partial_count": {
-     "clips": 1410,
+     "clips": 1277,
      "center": 12.0,
      "deviation": 1.691,
      "transform": "log",
@@ -3094,153 +3409,153 @@
      "percentile_95": 12.0
     },
     "pitch_hz": {
-     "clips": 1161,
-     "center": 980.0,
-     "deviation": 2.481,
+     "clips": 1013,
+     "center": 1075.6,
+     "deviation": 2.249,
      "transform": "log",
-     "percentile_05": 116.36,
-     "median": 980.0,
+     "percentile_05": 148.99,
+     "median": 1075.6,
      "percentile_95": 1917.4
     },
     "pitch_slope_semitones_per_second": {
-     "clips": 244,
-     "center": -2.0076e-05,
-     "deviation": 0.1625,
+     "clips": 213,
+     "center": -0.0013088,
+     "deviation": 0.1535,
      "transform": "linear",
-     "percentile_05": -3.0412,
-     "median": -2.6154e-05,
-     "percentile_95": 2.9134
+     "percentile_05": -3.193,
+     "median": -0.0013088,
+     "percentile_95": 3.7541
     },
     "spectral_centroid_deviation_hz": {
-     "clips": 1476,
-     "center": 803.03,
-     "deviation": 608.6,
+     "clips": 1323,
+     "center": 771.07,
+     "deviation": 560.5,
      "transform": "linear",
      "percentile_05": 245.25,
-     "median": 802.65,
-     "percentile_95": 2186.3
+     "median": 771.07,
+     "percentile_95": 2109.8
     },
     "spectral_centroid_hz": {
-     "clips": 1476,
-     "center": 4811.9,
-     "deviation": 1.837,
+     "clips": 1323,
+     "center": 4678.0,
+     "deviation": 1.733,
      "transform": "log",
-     "percentile_05": 1992.2,
-     "median": 4809.4,
-     "percentile_95": 10434.0
+     "percentile_05": 2031.5,
+     "median": 4678.0,
+     "percentile_95": 9714.9
     },
     "spectral_centroid_mean_hz": {
-     "clips": 1476,
-     "center": 4723.2,
-     "deviation": 1.783,
+     "clips": 1323,
+     "center": 4627.2,
+     "deviation": 1.737,
      "transform": "log",
-     "percentile_05": 1933.8,
-     "median": 4721.6,
-     "percentile_95": 9548.7
+     "percentile_05": 2026.2,
+     "median": 4627.2,
+     "percentile_95": 9377.9
     },
     "spectral_centroid_slope_hz_per_second": {
-     "clips": 1476,
-     "center": -3.2222,
-     "deviation": 84.57,
+     "clips": 1323,
+     "center": -1.4425,
+     "deviation": 75.19,
      "transform": "linear",
-     "percentile_05": -643.99,
-     "median": -3.2674,
-     "percentile_95": 581.01
+     "percentile_05": -488.35,
+     "median": -1.4425,
+     "percentile_95": 470.19
     },
     "spectral_entropy": {
-     "clips": 1476,
-     "center": 0.57885,
-     "deviation": 0.2126,
+     "clips": 1323,
+     "center": 0.60538,
+     "deviation": 0.1996,
      "transform": "linear",
-     "percentile_05": 0.21601,
-     "median": 0.57876,
-     "percentile_95": 0.8168
+     "percentile_05": 0.21912,
+     "median": 0.60538,
+     "percentile_95": 0.81873
     },
     "spectral_flatness": {
-     "clips": 1476,
-     "center": 0.30402,
-     "deviation": 0.2487,
+     "clips": 1323,
+     "center": 0.31918,
+     "deviation": 0.2506,
      "transform": "linear",
-     "percentile_05": 0.061396,
-     "median": 0.30388,
-     "percentile_95": 0.65211
+     "percentile_05": 0.0674,
+     "median": 0.31918,
+     "percentile_95": 0.65762
     },
     "spectral_flux": {
-     "clips": 1476,
-     "center": 0.22611,
-     "deviation": 0.00874,
+     "clips": 1323,
+     "center": 0.22666,
+     "deviation": 0.007384,
      "transform": "linear",
-     "percentile_05": 0.17273,
-     "median": 0.22611,
-     "percentile_95": 0.24181
+     "percentile_05": 0.20039,
+     "median": 0.22666,
+     "percentile_95": 0.24259
     },
     "spectral_rolloff_hz": {
-     "clips": 1476,
-     "center": 9581.6,
-     "deviation": 1.701,
+     "clips": 1323,
+     "center": 9297.3,
+     "deviation": 1.682,
      "transform": "log",
-     "percentile_05": 3291.9,
-     "median": 9580.8,
-     "percentile_95": 15882.0
+     "percentile_05": 3451.5,
+     "median": 9297.3,
+     "percentile_95": 15826.0
     },
     "spectral_slope_db_per_octave": {
-     "clips": 1476,
-     "center": -1.9666,
-     "deviation": 3.223,
+     "clips": 1323,
+     "center": -2.1262,
+     "deviation": 3.105,
      "transform": "linear",
-     "percentile_05": -6.2623,
-     "median": -1.9688,
-     "percentile_95": 7.0267
+     "percentile_05": -6.2927,
+     "median": -2.1262,
+     "percentile_95": 2.7426
     },
     "stationarity": {
-     "clips": 1476,
-     "center": 0.27824,
-     "deviation": 0.495,
+     "clips": 1323,
+     "center": 0.33202,
+     "deviation": 0.5129,
      "transform": "linear",
      "percentile_05": 0.0,
-     "median": 0.27813,
-     "percentile_95": 0.8225
+     "median": 0.33202,
+     "percentile_95": 0.83145
     },
     "sustain_ratio": {
-     "clips": 163,
-     "center": 0.03125,
-     "deviation": 0.05023,
+     "clips": 143,
+     "center": 0.035977,
+     "deviation": 0.05959,
      "transform": "linear",
-     "percentile_05": 0.0017361,
-     "median": 0.03125,
-     "percentile_95": 0.99944
+     "percentile_05": 0.0017094,
+     "median": 0.035977,
+     "percentile_95": 1.0
     },
     "syllabic_modulation_energy": {
-     "clips": 1443,
-     "center": 0.23028,
-     "deviation": 0.1046,
+     "clips": 1290,
+     "center": 0.22855,
+     "deviation": 0.09911,
      "transform": "linear",
-     "percentile_05": 0.069712,
-     "median": 0.23028,
-     "percentile_95": 0.44423
+     "percentile_05": 0.072783,
+     "median": 0.22845,
+     "percentile_95": 0.44867
     },
     "transient_count": {
-     "clips": 1476,
+     "clips": 1323,
      "center": 9.0,
      "deviation": 4.232,
      "transform": "log",
      "percentile_05": 1.0,
      "median": 9.0,
-     "percentile_95": 42.0
+     "percentile_95": 43.0
     },
     "zero_crossings_per_second": {
-     "clips": 1475,
-     "center": 4693.9,
-     "deviation": 2.706,
+     "clips": 1322,
+     "center": 4524.6,
+     "deviation": 2.598,
      "transform": "log",
-     "percentile_05": 760.25,
-     "median": 4693.9,
-     "percentile_95": 15688.0
+     "percentile_05": 736.75,
+     "median": 4524.3,
+     "percentile_95": 14704.0
     }
    }
   },
   "voiced": {
-   "clips": 3737,
+   "clips": 3749,
    "subcategories_contributing": [
     "ANMLCat",
     "ANMLDog",
@@ -3256,12 +3571,12 @@
    ],
    "feature_observations": {
     "complexity": {
-     "clips": 3736,
-     "center": 2767.7,
-     "deviation": 1.578,
+     "clips": 3748,
+     "center": 2772.0,
+     "deviation": 1.577,
      "transform": "log",
-     "percentile_05": 1561.0,
-     "median": 2767.2,
+     "percentile_05": 1563.3,
+     "median": 2771.8,
      "percentile_95": 4811.4
     },
     "crest_factor": {
@@ -3346,70 +3661,70 @@
      "percentile_95": 0.54727
     },
     "harmonicity": {
-     "clips": 3737,
-     "center": 0.54375,
-     "deviation": 0.3296,
+     "clips": 3749,
+     "center": 0.54251,
+     "deviation": 0.3299,
      "transform": "linear",
-     "percentile_05": 0.19407,
-     "median": 0.54375,
-     "percentile_95": 0.951
+     "percentile_05": 0.19452,
+     "median": 0.54251,
+     "percentile_95": 0.95056
     },
     "high_band_energy": {
-     "clips": 3737,
-     "center": 0.35378,
-     "deviation": 0.2528,
+     "clips": 3749,
+     "center": 0.35387,
+     "deviation": 0.2525,
      "transform": "linear",
-     "percentile_05": 0.084559,
-     "median": 0.35378,
-     "percentile_95": 0.72994
+     "percentile_05": 0.084618,
+     "median": 0.35387,
+     "percentile_95": 0.72963
     },
     "inharmonicity": {
-     "clips": 3737,
-     "center": 0.31844,
-     "deviation": 0.2786,
+     "clips": 3749,
+     "center": 0.31904,
+     "deviation": 0.2774,
      "transform": "linear",
-     "percentile_05": 0.011049,
-     "median": 0.31844,
-     "percentile_95": 0.59818
+     "percentile_05": 0.011103,
+     "median": 0.31904,
+     "percentile_95": 0.59809
     },
     "low_band_energy": {
-     "clips": 3737,
-     "center": 0.01942,
-     "deviation": 0.02798,
+     "clips": 3749,
+     "center": 0.01943,
+     "deviation": 0.02797,
      "transform": "linear",
      "percentile_05": 0.0015001,
-     "median": 0.01942,
-     "percentile_95": 0.24812
+     "median": 0.01943,
+     "percentile_95": 0.24647
     },
     "mid_band_energy": {
-     "clips": 3737,
-     "center": 0.58873,
-     "deviation": 0.256,
+     "clips": 3749,
+     "center": 0.58861,
+     "deviation": 0.2552,
      "transform": "linear",
-     "percentile_05": 0.20313,
-     "median": 0.58873,
-     "percentile_95": 0.8805
+     "percentile_05": 0.20366,
+     "median": 0.58861,
+     "percentile_95": 0.88037
     },
     "onset_periodicity": {
-     "clips": 3737,
-     "center": 0.29054,
-     "deviation": 0.1262,
+     "clips": 3749,
+     "center": 0.29051,
+     "deviation": 0.1263,
      "transform": "linear",
      "percentile_05": 0.1391,
-     "median": 0.29054,
+     "median": 0.29051,
      "percentile_95": 0.53436
     },
     "onset_rate_per_second": {
-     "clips": 3737,
+     "clips": 3749,
      "center": 1.4995,
-     "deviation": 2.405,
+     "deviation": 2.402,
      "transform": "log",
-     "percentile_05": 0.33001,
+     "percentile_05": 0.33237,
      "median": 1.4995,
-     "percentile_95": 4.2953
+     "percentile_95": 4.2857
     },
     "partial_count": {
-     "clips": 3695,
+     "clips": 3707,
      "center": 9.0,
      "deviation": 1.668,
      "transform": "log",
@@ -3418,11 +3733,11 @@
      "percentile_95": 12.0
     },
     "pitch_hz": {
-     "clips": 3305,
+     "clips": 3315,
      "center": 464.21,
      "deviation": 2.389,
      "transform": "log",
-     "percentile_05": 106.52,
+     "percentile_05": 106.01,
      "median": 464.21,
      "percentile_95": 1470.0
     },
@@ -3436,79 +3751,79 @@
      "percentile_95": 6.8659
     },
     "spectral_centroid_deviation_hz": {
-     "clips": 3737,
-     "center": 911.48,
-     "deviation": 777.5,
+     "clips": 3749,
+     "center": 910.86,
+     "deviation": 776.8,
      "transform": "linear",
-     "percentile_05": 242.46,
-     "median": 911.48,
-     "percentile_95": 2856.9
+     "percentile_05": 243.17,
+     "median": 910.86,
+     "percentile_95": 2841.9
     },
     "spectral_centroid_hz": {
-     "clips": 3736,
-     "center": 2419.4,
-     "deviation": 1.711,
+     "clips": 3748,
+     "center": 2420.2,
+     "deviation": 1.713,
      "transform": "log",
-     "percentile_05": 1116.0,
-     "median": 2419.3,
-     "percentile_95": 5123.5
+     "percentile_05": 1118.1,
+     "median": 2420.2,
+     "percentile_95": 5125.0
     },
     "spectral_centroid_mean_hz": {
-     "clips": 3737,
-     "center": 2728.2,
+     "clips": 3749,
+     "center": 2726.8,
      "deviation": 1.736,
      "transform": "log",
      "percentile_05": 1189.2,
-     "median": 2728.2,
+     "median": 2726.8,
      "percentile_95": 5518.3
     },
     "spectral_centroid_slope_hz_per_second": {
-     "clips": 3737,
-     "center": 16.967,
-     "deviation": 295.3,
+     "clips": 3749,
+     "center": 16.922,
+     "deviation": 295.4,
      "transform": "linear",
-     "percentile_05": -1503.1,
-     "median": 16.967,
-     "percentile_95": 1844.3
+     "percentile_05": -1499.7,
+     "median": 16.922,
+     "percentile_95": 1842.0
     },
     "spectral_entropy": {
-     "clips": 3737,
-     "center": 0.41906,
-     "deviation": 0.1334,
+     "clips": 3749,
+     "center": 0.41926,
+     "deviation": 0.1335,
      "transform": "linear",
-     "percentile_05": 0.23559,
-     "median": 0.41906,
-     "percentile_95": 0.59574
+     "percentile_05": 0.2377,
+     "median": 0.41926,
+     "percentile_95": 0.59573
     },
     "spectral_flatness": {
-     "clips": 3737,
-     "center": 0.10999,
-     "deviation": 0.1034,
+     "clips": 3749,
+     "center": 0.11019,
+     "deviation": 0.1033,
      "transform": "linear",
-     "percentile_05": 0.024514,
-     "median": 0.10999,
-     "percentile_95": 0.37642
+     "percentile_05": 0.024638,
+     "median": 0.11019,
+     "percentile_95": 0.37688
     },
     "spectral_flux": {
-     "clips": 3737,
-     "center": 0.22145,
-     "deviation": 0.02727,
+     "clips": 3749,
+     "center": 0.22137,
+     "deviation": 0.02736,
      "transform": "linear",
-     "percentile_05": 0.13051,
-     "median": 0.22145,
-     "percentile_95": 0.25386
+     "percentile_05": 0.13055,
+     "median": 0.22137,
+     "percentile_95": 0.25385
     },
     "spectral_rolloff_hz": {
-     "clips": 3736,
-     "center": 4046.7,
-     "deviation": 2.117,
+     "clips": 3748,
+     "center": 4055.7,
+     "deviation": 2.112,
      "transform": "log",
-     "percentile_05": 1421.2,
-     "median": 4045.2,
-     "percentile_95": 10600.0
+     "percentile_05": 1421.3,
+     "median": 4054.5,
+     "percentile_95": 10601.0
     },
     "spectral_slope_db_per_octave": {
-     "clips": 3737,
+     "clips": 3749,
      "center": -3.1117,
      "deviation": 3.017,
      "transform": "linear",
@@ -3517,12 +3832,12 @@
      "percentile_95": 1.317
     },
     "stationarity": {
-     "clips": 3737,
-     "center": 0.090808,
-     "deviation": 0.1616,
+     "clips": 3749,
+     "center": 0.092076,
+     "deviation": 0.1638,
      "transform": "linear",
      "percentile_05": 0.0,
-     "median": 0.090808,
+     "median": 0.092076,
      "percentile_95": 0.64541
     },
     "sustain_ratio": {
@@ -3535,16 +3850,16 @@
      "percentile_95": 0.86765
     },
     "syllabic_modulation_energy": {
-     "clips": 3500,
-     "center": 0.23855,
-     "deviation": 0.2157,
+     "clips": 3512,
+     "center": 0.23887,
+     "deviation": 0.2161,
      "transform": "linear",
-     "percentile_05": 0.042516,
-     "median": 0.23841,
-     "percentile_95": 0.65283
+     "percentile_05": 0.043031,
+     "median": 0.23868,
+     "percentile_95": 0.65261
     },
     "transient_count": {
-     "clips": 3737,
+     "clips": 3749,
      "center": 5.0,
      "deviation": 4.066,
      "transform": "log",
@@ -3553,12 +3868,12 @@
      "percentile_95": 26.0
     },
     "zero_crossings_per_second": {
-     "clips": 3734,
-     "center": 2405.1,
+     "clips": 3746,
+     "center": 2404.1,
      "deviation": 2.242,
      "transform": "log",
-     "percentile_05": 798.56,
-     "median": 2404.4,
+     "percentile_05": 799.0,
+     "median": 2403.8,
      "percentile_95": 6270.3
     }
    }
@@ -3616,94 +3931,44 @@
    "clips": 227
   },
   {
-   "ucs_id": "MUSCKeyd",
+   "ucs_id": "KEYBAcrd",
    "feature": "harmonicity",
-   "clips": 1415
+   "clips": 52
   },
   {
-   "ucs_id": "MUSCKeyd",
-   "feature": "inharmonicity",
-   "clips": 1415
+   "ucs_id": "KEYBAcrd",
+   "feature": "spectral_centroid_hz",
+   "clips": 52
   },
   {
-   "ucs_id": "MUSCKeyd",
-   "feature": "envelope_attack_seconds",
-   "clips": 665
-  },
-  {
-   "ucs_id": "MUSCKeyd",
-   "feature": "envelope_sustain_level",
-   "clips": 759
-  },
-  {
-   "ucs_id": "MUSCKeyd",
-   "feature": "decay_time_seconds_60db",
-   "clips": 344
-  },
-  {
-   "ucs_id": "MUSCKeyd",
-   "feature": "partial_count",
-   "clips": 1349
-  },
-  {
-   "ucs_id": "MUSCKeyd",
-   "feature": "envelope_skewness",
-   "clips": 759
-  },
-  {
-   "ucs_id": "MUSCKeyd",
+   "ucs_id": "KEYBAcrd",
    "feature": "pitch_hz",
-   "clips": 1194
+   "clips": 52
   },
   {
-   "ucs_id": "MUSCPluck",
-   "feature": "envelope_attack_seconds",
-   "clips": 914
-  },
-  {
-   "ucs_id": "MUSCPluck",
-   "feature": "envelope_sustain_level",
-   "clips": 1106
-  },
-  {
-   "ucs_id": "MUSCPluck",
+   "ucs_id": "GUITAcou",
    "feature": "harmonicity",
-   "clips": 2061
+   "clips": 534
   },
   {
-   "ucs_id": "MUSCPluck",
-   "feature": "inharmonicity",
-   "clips": 2061
+   "ucs_id": "GUITAcou",
+   "feature": "spectral_centroid_hz",
+   "clips": 534
   },
   {
-   "ucs_id": "MUSCPluck",
-   "feature": "decay_time_seconds_60db",
-   "clips": 264
+   "ucs_id": "GUITAcou",
+   "feature": "envelope_attack_seconds",
+   "clips": 300
   },
   {
-   "ucs_id": "MUSCPluck",
-   "feature": "envelope_temporal_centroid",
-   "clips": 1106
-  },
-  {
-   "ucs_id": "MUSCPluck",
+   "ucs_id": "GUITAcou",
    "feature": "sustain_ratio",
-   "clips": 1106
+   "clips": 399
   },
   {
-   "ucs_id": "MUSCPluck",
-   "feature": "envelope_skewness",
-   "clips": 1106
-  },
-  {
-   "ucs_id": "MUSCPluck",
-   "feature": "partial_count",
-   "clips": 1980
-  },
-  {
-   "ucs_id": "MUSCPluck",
-   "feature": "pitch_hz",
-   "clips": 1693
+   "ucs_id": "GUITAcou",
+   "feature": "decay_time_seconds_60db",
+   "clips": 103
   },
   {
    "ucs_id": "BOATMisc",
@@ -3768,17 +4033,17 @@
   {
    "ucs_id": "CLOCKTick",
    "feature": "onset_periodicity",
-   "clips": 280
+   "clips": 282
   },
   {
    "ucs_id": "CLOCKTick",
    "feature": "onset_rate_per_second",
-   "clips": 280
+   "clips": 282
   },
   {
    "ucs_id": "CLOCKTick",
    "feature": "crest_factor",
-   "clips": 36
+   "clips": 37
   },
   {
    "ucs_id": "CLOCKTick",
@@ -3788,37 +4053,37 @@
   {
    "ucs_id": "CLOCKTick",
    "feature": "sustain_ratio",
-   "clips": 36
+   "clips": 37
   },
   {
    "ucs_id": "CLOCKTick",
    "feature": "spectral_centroid_hz",
-   "clips": 280
+   "clips": 282
   },
   {
    "ucs_id": "CLOCKTick",
    "feature": "high_band_energy",
-   "clips": 280
+   "clips": 282
   },
   {
    "ucs_id": "CLOCKTick",
    "feature": "harmonicity",
-   "clips": 280
+   "clips": 282
   },
   {
    "ucs_id": "CLOCKTick",
    "feature": "low_band_energy",
-   "clips": 280
+   "clips": 282
   },
   {
    "ucs_id": "CLOCKTick",
    "feature": "stationarity",
-   "clips": 280
+   "clips": 282
   },
   {
    "ucs_id": "CLOCKTick",
    "feature": "envelope_kurtosis",
-   "clips": 36
+   "clips": 37
   },
   {
    "ucs_id": "ANMLDog",
@@ -3873,47 +4138,47 @@
   {
    "ucs_id": "ANMLInsc",
    "feature": "spectral_centroid_hz",
-   "clips": 338
+   "clips": 339
   },
   {
    "ucs_id": "ANMLInsc",
    "feature": "high_band_energy",
-   "clips": 338
+   "clips": 339
   },
   {
    "ucs_id": "ANMLInsc",
    "feature": "low_band_energy",
-   "clips": 338
+   "clips": 339
   },
   {
    "ucs_id": "ANMLInsc",
    "feature": "zero_crossings_per_second",
-   "clips": 337
+   "clips": 338
   },
   {
    "ucs_id": "ANMLInsc",
    "feature": "pitch_hz",
-   "clips": 264
+   "clips": 265
   },
   {
    "ucs_id": "ANMLInsc",
    "feature": "onset_periodicity",
-   "clips": 338
+   "clips": 339
   },
   {
    "ucs_id": "ANMLInsc",
    "feature": "onset_rate_per_second",
-   "clips": 338
+   "clips": 339
   },
   {
    "ucs_id": "ANMLInsc",
    "feature": "stationarity",
-   "clips": 338
+   "clips": 339
   },
   {
    "ucs_id": "ANMLInsc",
    "feature": "spectral_flatness",
-   "clips": 338
+   "clips": 339
   },
   {
    "ucs_id": "VEHTruck",
@@ -3951,154 +4216,104 @@
    "clips": 83
   },
   {
-   "ucs_id": "MUSCBrass",
-   "feature": "harmonicity",
-   "clips": 941
-  },
-  {
-   "ucs_id": "MUSCBrass",
-   "feature": "envelope_sustain_level",
-   "clips": 447
-  },
-  {
-   "ucs_id": "MUSCBrass",
-   "feature": "spectral_centroid_hz",
-   "clips": 941
-  },
-  {
-   "ucs_id": "MUSCBrass",
-   "feature": "partial_count",
-   "clips": 939
-  },
-  {
-   "ucs_id": "MUSCBrass",
-   "feature": "inharmonicity",
-   "clips": 941
-  },
-  {
-   "ucs_id": "MUSCBrass",
-   "feature": "envelope_attack_seconds",
-   "clips": 447
-  },
-  {
-   "ucs_id": "MUSCBrass",
-   "feature": "sustain_ratio",
-   "clips": 447
-  },
-  {
-   "ucs_id": "MUSCBrass",
-   "feature": "spectral_flatness",
-   "clips": 941
-  },
-  {
-   "ucs_id": "MUSCBrass",
-   "feature": "pitch_hz",
-   "clips": 928
-  },
-  {
    "ucs_id": "CRWDApls",
    "feature": "harmonicity",
-   "clips": 245
+   "clips": 246
   },
   {
    "ucs_id": "CRWDApls",
    "feature": "onset_rate_per_second",
-   "clips": 245
+   "clips": 246
   },
   {
    "ucs_id": "CRWDApls",
    "feature": "onset_periodicity",
-   "clips": 245
+   "clips": 246
   },
   {
    "ucs_id": "CRWDApls",
    "feature": "spectral_flatness",
-   "clips": 245
+   "clips": 246
   },
   {
    "ucs_id": "CRWDApls",
    "feature": "spectral_entropy",
-   "clips": 245
+   "clips": 246
   },
   {
    "ucs_id": "CRWDApls",
    "feature": "stationarity",
-   "clips": 245
+   "clips": 246
   },
   {
    "ucs_id": "CRWDApls",
    "feature": "spectral_centroid_hz",
-   "clips": 245
+   "clips": 246
   },
   {
    "ucs_id": "CRWDApls",
    "feature": "high_band_energy",
-   "clips": 245
+   "clips": 246
   },
   {
    "ucs_id": "CRWDApls",
    "feature": "low_band_energy",
-   "clips": 245
+   "clips": 246
   },
   {
    "ucs_id": "CRWDApls",
    "feature": "zero_crossings_per_second",
-   "clips": 245
+   "clips": 246
   },
   {
    "ucs_id": "CRWDApls",
    "feature": "syllabic_modulation_energy",
-   "clips": 245
+   "clips": 246
   },
   {
-   "ucs_id": "MUSCPerc",
-   "feature": "harmonicity",
-   "clips": 2095
+   "ucs_id": "DRUMKick",
+   "feature": "spectral_centroid_hz",
+   "clips": 195
   },
   {
-   "ucs_id": "MUSCPerc",
-   "feature": "inharmonicity",
-   "clips": 2095
-  },
-  {
-   "ucs_id": "MUSCPerc",
-   "feature": "envelope_attack_seconds",
-   "clips": 662
-  },
-  {
-   "ucs_id": "MUSCPerc",
-   "feature": "crest_factor",
-   "clips": 1609
-  },
-  {
-   "ucs_id": "MUSCPerc",
-   "feature": "envelope_sustain_level",
-   "clips": 1610
-  },
-  {
-   "ucs_id": "MUSCPerc",
-   "feature": "decay_time_seconds_60db",
-   "clips": 1096
-  },
-  {
-   "ucs_id": "MUSCPerc",
-   "feature": "envelope_temporal_centroid",
-   "clips": 1610
-  },
-  {
-   "ucs_id": "MUSCPerc",
+   "ucs_id": "DRUMKick",
    "feature": "low_band_energy",
-   "clips": 2095
+   "clips": 195
   },
   {
-   "ucs_id": "MUSCPerc",
-   "feature": "envelope_skewness",
-   "clips": 1610
+   "ucs_id": "DRUMKick",
+   "feature": "envelope_attack_seconds",
+   "clips": 119
   },
   {
-   "ucs_id": "MUSCPerc",
-   "feature": "spectral_flatness",
-   "clips": 2095
+   "ucs_id": "DRUMKick",
+   "feature": "crest_factor",
+   "clips": 163
+  },
+  {
+   "ucs_id": "GUITBass",
+   "feature": "spectral_centroid_hz",
+   "clips": 310
+  },
+  {
+   "ucs_id": "GUITBass",
+   "feature": "low_band_energy",
+   "clips": 310
+  },
+  {
+   "ucs_id": "GUITBass",
+   "feature": "harmonicity",
+   "clips": 310
+  },
+  {
+   "ucs_id": "GUITBass",
+   "feature": "pitch_hz",
+   "clips": 215
+  },
+  {
+   "ucs_id": "GUITBass",
+   "feature": "envelope_attack_seconds",
+   "clips": 141
   },
   {
    "ucs_id": "WATRPlmb",
@@ -4238,27 +4453,27 @@
   {
    "ucs_id": "HMNBrth",
    "feature": "spectral_flatness",
-   "clips": 456
+   "clips": 458
   },
   {
    "ucs_id": "HMNBrth",
    "feature": "harmonicity",
-   "clips": 456
+   "clips": 458
   },
   {
    "ucs_id": "HMNBrth",
    "feature": "high_band_energy",
-   "clips": 456
+   "clips": 458
   },
   {
    "ucs_id": "HMNBrth",
    "feature": "mid_band_energy",
-   "clips": 456
+   "clips": 458
   },
   {
    "ucs_id": "HMNBrth",
    "feature": "zero_crossings_per_second",
-   "clips": 456
+   "clips": 458
   },
   {
    "ucs_id": "HMNBrth",
@@ -4273,17 +4488,17 @@
   {
    "ucs_id": "HMNBrth",
    "feature": "onset_rate_per_second",
-   "clips": 456
+   "clips": 458
   },
   {
    "ucs_id": "HMNBrth",
    "feature": "onset_periodicity",
-   "clips": 456
+   "clips": 458
   },
   {
    "ucs_id": "HMNBrth",
    "feature": "syllabic_modulation_energy",
-   "clips": 391
+   "clips": 393
   },
   {
    "ucs_id": "ANMLAmph",
@@ -4383,32 +4598,32 @@
   {
    "ucs_id": "RAIN",
    "feature": "spectral_centroid_hz",
-   "clips": 234
+   "clips": 235
   },
   {
    "ucs_id": "RAIN",
    "feature": "spectral_slope_db_per_octave",
-   "clips": 234
+   "clips": 235
   },
   {
    "ucs_id": "RAIN",
    "feature": "high_band_energy",
-   "clips": 234
+   "clips": 235
   },
   {
    "ucs_id": "RAIN",
    "feature": "mid_band_energy",
-   "clips": 234
+   "clips": 235
   },
   {
    "ucs_id": "RAIN",
    "feature": "low_band_energy",
-   "clips": 234
+   "clips": 235
   },
   {
    "ucs_id": "RAIN",
    "feature": "zero_crossings_per_second",
-   "clips": 234
+   "clips": 235
   },
   {
    "ucs_id": "RAIN",
@@ -4418,42 +4633,42 @@
   {
    "ucs_id": "RAIN",
    "feature": "spectral_flatness",
-   "clips": 234
+   "clips": 235
   },
   {
    "ucs_id": "RAIN",
    "feature": "onset_rate_per_second",
-   "clips": 234
+   "clips": 235
   },
   {
    "ucs_id": "RAIN",
    "feature": "stationarity",
-   "clips": 234
+   "clips": 235
   },
   {
    "ucs_id": "RAIN",
    "feature": "inharmonicity",
-   "clips": 234
+   "clips": 235
   },
   {
    "ucs_id": "RAIN",
    "feature": "onset_periodicity",
-   "clips": 234
+   "clips": 235
   },
   {
    "ucs_id": "RAIN",
    "feature": "spectral_flux",
-   "clips": 234
+   "clips": 235
   },
   {
    "ucs_id": "VOXSing",
    "feature": "harmonicity",
-   "clips": 498
+   "clips": 509
   },
   {
    "ucs_id": "VOXSing",
    "feature": "inharmonicity",
-   "clips": 498
+   "clips": 509
   },
   {
    "ucs_id": "VOXSing",
@@ -4463,22 +4678,22 @@
   {
    "ucs_id": "VOXSing",
    "feature": "partial_count",
-   "clips": 495
+   "clips": 506
   },
   {
    "ucs_id": "VOXSing",
    "feature": "pitch_hz",
-   "clips": 460
+   "clips": 469
   },
   {
    "ucs_id": "VOXSing",
    "feature": "syllabic_modulation_energy",
-   "clips": 496
+   "clips": 507
   },
   {
    "ucs_id": "VOXSing",
    "feature": "spectral_flatness",
-   "clips": 498
+   "clips": 509
   },
   {
    "ucs_id": "BIRDMisc",
@@ -4561,54 +4776,29 @@
    "clips": 63
   },
   {
-   "ucs_id": "MUSCStr",
-   "feature": "envelope_attack_seconds",
-   "clips": 994
-  },
-  {
-   "ucs_id": "MUSCStr",
-   "feature": "envelope_sustain_level",
-   "clips": 1007
-  },
-  {
-   "ucs_id": "MUSCStr",
-   "feature": "harmonicity",
-   "clips": 1921
-  },
-  {
-   "ucs_id": "MUSCStr",
-   "feature": "sustain_ratio",
-   "clips": 1007
-  },
-  {
-   "ucs_id": "MUSCStr",
-   "feature": "inharmonicity",
-   "clips": 1921
-  },
-  {
-   "ucs_id": "MUSCStr",
-   "feature": "envelope_temporal_centroid",
-   "clips": 1007
-  },
-  {
-   "ucs_id": "MUSCStr",
+   "ucs_id": "DRUMSnr",
    "feature": "spectral_centroid_hz",
-   "clips": 1921
+   "clips": 717
   },
   {
-   "ucs_id": "MUSCStr",
-   "feature": "partial_count",
-   "clips": 1899
+   "ucs_id": "DRUMSnr",
+   "feature": "spectral_flatness",
+   "clips": 717
   },
   {
-   "ucs_id": "MUSCStr",
-   "feature": "spectral_flux",
-   "clips": 1921
+   "ucs_id": "DRUMSnr",
+   "feature": "mid_band_energy",
+   "clips": 717
   },
   {
-   "ucs_id": "MUSCStr",
-   "feature": "pitch_hz",
-   "clips": 1806
+   "ucs_id": "DRUMSnr",
+   "feature": "envelope_attack_seconds",
+   "clips": 107
+  },
+  {
+   "ucs_id": "DRUMSnr",
+   "feature": "harmonicity",
+   "clips": 717
   },
   {
    "ucs_id": "HMNBurp",
@@ -4851,134 +5041,99 @@
    "clips": 172
   },
   {
-   "ucs_id": "MUSCChim",
-   "feature": "spectral_centroid_hz",
-   "clips": 156
-  },
-  {
-   "ucs_id": "MUSCChim",
-   "feature": "high_band_energy",
-   "clips": 156
-  },
-  {
-   "ucs_id": "MUSCChim",
-   "feature": "low_band_energy",
-   "clips": 156
-  },
-  {
-   "ucs_id": "MUSCChim",
-   "feature": "onset_rate_per_second",
-   "clips": 156
-  },
-  {
-   "ucs_id": "MUSCChim",
-   "feature": "transient_count",
-   "clips": 156
-  },
-  {
-   "ucs_id": "MUSCChim",
-   "feature": "onset_periodicity",
-   "clips": 156
-  },
-  {
-   "ucs_id": "MUSCChim",
-   "feature": "inharmonicity",
-   "clips": 156
-  },
-  {
    "ucs_id": "VOXLaff",
    "feature": "onset_rate_per_second",
-   "clips": 862
+   "clips": 863
   },
   {
    "ucs_id": "VOXLaff",
    "feature": "onset_periodicity",
-   "clips": 862
+   "clips": 863
   },
   {
    "ucs_id": "VOXLaff",
    "feature": "pitch_hz",
-   "clips": 783
+   "clips": 784
   },
   {
    "ucs_id": "VOXLaff",
    "feature": "syllabic_modulation_energy",
-   "clips": 835
+   "clips": 836
   },
   {
    "ucs_id": "VOXLaff",
    "feature": "harmonicity",
-   "clips": 862
+   "clips": 863
   },
   {
    "ucs_id": "VOXLaff",
    "feature": "spectral_centroid_hz",
-   "clips": 862
+   "clips": 863
   },
   {
    "ucs_id": "BELLLrg",
    "feature": "inharmonicity",
-   "clips": 59
+   "clips": 72
   },
   {
    "ucs_id": "BELLLrg",
    "feature": "pitch_hz",
-   "clips": 54
+   "clips": 67
   },
   {
    "ucs_id": "BELLLrg",
    "feature": "spectral_centroid_hz",
-   "clips": 59
+   "clips": 72
   },
   {
    "ucs_id": "BELLLrg",
    "feature": "low_band_energy",
-   "clips": 59
+   "clips": 72
   },
   {
    "ucs_id": "BELLLrg",
    "feature": "partial_count",
-   "clips": 59
+   "clips": 72
   },
   {
    "ucs_id": "BELLLrg",
    "feature": "harmonicity",
-   "clips": 59
+   "clips": 72
   },
   {
    "ucs_id": "BELLLrg",
    "feature": "onset_periodicity",
-   "clips": 59
+   "clips": 72
   },
   {
    "ucs_id": "CMPTKey",
    "feature": "onset_rate_per_second",
-   "clips": 229
+   "clips": 230
   },
   {
    "ucs_id": "CMPTKey",
    "feature": "transient_count",
-   "clips": 229
+   "clips": 230
   },
   {
    "ucs_id": "CMPTKey",
    "feature": "harmonicity",
-   "clips": 229
+   "clips": 230
   },
   {
    "ucs_id": "CMPTKey",
    "feature": "onset_periodicity",
-   "clips": 229
+   "clips": 230
   },
   {
    "ucs_id": "CMPTKey",
    "feature": "spectral_centroid_hz",
-   "clips": 229
+   "clips": 230
   },
   {
    "ucs_id": "CMPTKey",
    "feature": "spectral_flatness",
-   "clips": 229
+   "clips": 230
   },
   {
    "ucs_id": "VOXMisc",
@@ -5088,52 +5243,52 @@
   {
    "ucs_id": "BELLAnml",
    "feature": "inharmonicity",
-   "clips": 162
+   "clips": 166
   },
   {
    "ucs_id": "BELLAnml",
    "feature": "decay_time_seconds_60db",
-   "clips": 160
+   "clips": 164
   },
   {
    "ucs_id": "BELLAnml",
    "feature": "spectral_centroid_hz",
-   "clips": 162
+   "clips": 166
   },
   {
    "ucs_id": "BELLAnml",
    "feature": "onset_rate_per_second",
-   "clips": 162
+   "clips": 166
   },
   {
    "ucs_id": "BELLAnml",
    "feature": "high_band_energy",
-   "clips": 162
+   "clips": 166
   },
   {
    "ucs_id": "BELLAnml",
    "feature": "pitch_hz",
-   "clips": 139
+   "clips": 143
   },
   {
    "ucs_id": "BELLAnml",
    "feature": "onset_periodicity",
-   "clips": 162
+   "clips": 166
   },
   {
    "ucs_id": "BELLAnml",
    "feature": "crest_factor",
-   "clips": 160
+   "clips": 164
   },
   {
    "ucs_id": "BELLAnml",
    "feature": "envelope_attack_seconds",
-   "clips": 130
+   "clips": 134
   },
   {
    "ucs_id": "BELLAnml",
    "feature": "transient_count",
-   "clips": 162
+   "clips": 166
   },
   {
    "ucs_id": "FIRECrkl",
@@ -5184,6 +5339,36 @@
    "ucs_id": "FIRECrkl",
    "feature": "transient_count",
    "clips": 181
+  },
+  {
+   "ucs_id": "CYMBCrsh",
+   "feature": "spectral_centroid_hz",
+   "clips": 211
+  },
+  {
+   "ucs_id": "CYMBCrsh",
+   "feature": "high_band_energy",
+   "clips": 211
+  },
+  {
+   "ucs_id": "CYMBCrsh",
+   "feature": "spectral_flatness",
+   "clips": 211
+  },
+  {
+   "ucs_id": "CYMBCrsh",
+   "feature": "inharmonicity",
+   "clips": 211
+  },
+  {
+   "ucs_id": "CYMBCrsh",
+   "feature": "decay_time_seconds_60db",
+   "clips": 85
+  },
+  {
+   "ucs_id": "CYMBCrsh",
+   "feature": "harmonicity",
+   "clips": 211
   },
   {
    "ucs_id": "BIRDCrow",
@@ -5541,6 +5726,26 @@
    "clips": 37
   },
   {
+   "ucs_id": "GUITElec",
+   "feature": "harmonicity",
+   "clips": 493
+  },
+  {
+   "ucs_id": "GUITElec",
+   "feature": "spectral_centroid_hz",
+   "clips": 493
+  },
+  {
+   "ucs_id": "GUITElec",
+   "feature": "sustain_ratio",
+   "clips": 157
+  },
+  {
+   "ucs_id": "GUITElec",
+   "feature": "envelope_attack_seconds",
+   "clips": 152
+  },
+  {
    "ucs_id": "EXPLReal",
    "feature": "low_band_energy",
    "clips": 207
@@ -5583,22 +5788,22 @@
   {
    "ucs_id": "FARTReal",
    "feature": "low_band_energy",
-   "clips": 531
+   "clips": 532
   },
   {
    "ucs_id": "FARTReal",
    "feature": "mid_band_energy",
-   "clips": 531
+   "clips": 532
   },
   {
    "ucs_id": "FARTReal",
    "feature": "high_band_energy",
-   "clips": 531
+   "clips": 532
   },
   {
    "ucs_id": "FARTReal",
    "feature": "spectral_centroid_hz",
-   "clips": 531
+   "clips": 532
   },
   {
    "ucs_id": "FARTReal",
@@ -5608,22 +5813,22 @@
   {
    "ucs_id": "FARTReal",
    "feature": "inharmonicity",
-   "clips": 531
+   "clips": 532
   },
   {
    "ucs_id": "FARTReal",
    "feature": "harmonicity",
-   "clips": 531
+   "clips": 532
   },
   {
    "ucs_id": "FARTReal",
    "feature": "spectral_flux",
-   "clips": 531
+   "clips": 532
   },
   {
    "ucs_id": "FARTReal",
    "feature": "onset_periodicity",
-   "clips": 531
+   "clips": 532
   },
   {
    "ucs_id": "FARTReal",
@@ -5668,47 +5873,47 @@
   {
    "ucs_id": "HMNSkin",
    "feature": "spectral_flatness",
-   "clips": 131
+   "clips": 132
   },
   {
    "ucs_id": "HMNSkin",
    "feature": "spectral_flux",
-   "clips": 131
+   "clips": 132
   },
   {
    "ucs_id": "HMNSkin",
    "feature": "spectral_centroid_hz",
-   "clips": 131
+   "clips": 132
   },
   {
    "ucs_id": "HMNSkin",
    "feature": "spectral_centroid_deviation_hz",
-   "clips": 131
+   "clips": 132
   },
   {
    "ucs_id": "HMNSkin",
    "feature": "high_band_energy",
-   "clips": 131
+   "clips": 132
   },
   {
    "ucs_id": "HMNSkin",
    "feature": "zero_crossings_per_second",
-   "clips": 131
+   "clips": 132
   },
   {
    "ucs_id": "HMNSkin",
    "feature": "harmonicity",
-   "clips": 131
+   "clips": 132
   },
   {
    "ucs_id": "HMNSkin",
    "feature": "sustain_ratio",
-   "clips": 116
+   "clips": 117
   },
   {
    "ucs_id": "HMNSkin",
    "feature": "onset_periodicity",
-   "clips": 131
+   "clips": 132
   },
   {
    "ucs_id": "FIREBurn",
@@ -5794,6 +5999,81 @@
    "ucs_id": "FOODCook",
    "feature": "low_band_energy",
    "clips": 61
+  },
+  {
+   "ucs_id": "MALTGlok",
+   "feature": "spectral_centroid_hz",
+   "clips": 56
+  },
+  {
+   "ucs_id": "MALTGlok",
+   "feature": "inharmonicity",
+   "clips": 56
+  },
+  {
+   "ucs_id": "MALTGlok",
+   "feature": "high_band_energy",
+   "clips": 56
+  },
+  {
+   "ucs_id": "MALTGlok",
+   "feature": "decay_time_seconds_60db",
+   "clips": 41
+  },
+  {
+   "ucs_id": "MALTGlok",
+   "feature": "pitch_hz",
+   "clips": 52
+  },
+  {
+   "ucs_id": "BELLGong",
+   "feature": "inharmonicity",
+   "clips": 206
+  },
+  {
+   "ucs_id": "BELLGong",
+   "feature": "decay_time_seconds_60db",
+   "clips": 43
+  },
+  {
+   "ucs_id": "BELLGong",
+   "feature": "harmonicity",
+   "clips": 206
+  },
+  {
+   "ucs_id": "BELLGong",
+   "feature": "pitch_hz",
+   "clips": 189
+  },
+  {
+   "ucs_id": "BELLGong",
+   "feature": "low_band_energy",
+   "clips": 206
+  },
+  {
+   "ucs_id": "BELLGong",
+   "feature": "partial_count",
+   "clips": 197
+  },
+  {
+   "ucs_id": "BELLGong",
+   "feature": "spectral_centroid_slope_hz_per_second",
+   "clips": 206
+  },
+  {
+   "ucs_id": "BELLGong",
+   "feature": "envelope_attack_seconds",
+   "clips": 140
+  },
+  {
+   "ucs_id": "BELLGong",
+   "feature": "envelope_temporal_centroid",
+   "clips": 147
+  },
+  {
+   "ucs_id": "BELLGong",
+   "feature": "complexity",
+   "clips": 206
   },
   {
    "ucs_id": "AIRHiss",
@@ -5991,49 +6271,24 @@
    "clips": 352
   },
   {
-   "ucs_id": "MUSCWind",
+   "ucs_id": "GUITHarp",
    "feature": "harmonicity",
-   "clips": 2706
+   "clips": 177
   },
   {
-   "ucs_id": "MUSCWind",
+   "ucs_id": "GUITHarp",
    "feature": "spectral_centroid_hz",
-   "clips": 2706
+   "clips": 177
   },
   {
-   "ucs_id": "MUSCWind",
-   "feature": "envelope_sustain_level",
-   "clips": 1211
-  },
-  {
-   "ucs_id": "MUSCWind",
-   "feature": "partial_count",
-   "clips": 2659
-  },
-  {
-   "ucs_id": "MUSCWind",
-   "feature": "inharmonicity",
-   "clips": 2706
-  },
-  {
-   "ucs_id": "MUSCWind",
+   "ucs_id": "GUITHarp",
    "feature": "envelope_attack_seconds",
-   "clips": 1209
+   "clips": 62
   },
   {
-   "ucs_id": "MUSCWind",
-   "feature": "spectral_flatness",
-   "clips": 2706
-  },
-  {
-   "ucs_id": "MUSCWind",
-   "feature": "high_band_energy",
-   "clips": 2706
-  },
-  {
-   "ucs_id": "MUSCWind",
+   "ucs_id": "GUITHarp",
    "feature": "sustain_ratio",
-   "clips": 1211
+   "clips": 66
   },
   {
    "ucs_id": "VOXEfrt",
@@ -6286,6 +6541,36 @@
    "clips": 114
   },
   {
+   "ucs_id": "KEYBOrg",
+   "feature": "sustain_ratio",
+   "clips": 71
+  },
+  {
+   "ucs_id": "KEYBOrg",
+   "feature": "harmonicity",
+   "clips": 308
+  },
+  {
+   "ucs_id": "KEYBOrg",
+   "feature": "envelope_decay_seconds",
+   "clips": 71
+  },
+  {
+   "ucs_id": "KEYBOrg",
+   "feature": "pitch_hz",
+   "clips": 257
+  },
+  {
+   "ucs_id": "KEYBOrg",
+   "feature": "spectral_centroid_hz",
+   "clips": 308
+  },
+  {
+   "ucs_id": "KEYBOrg",
+   "feature": "envelope_attack_seconds",
+   "clips": 60
+  },
+  {
    "ucs_id": "OBJTape",
    "feature": "spectral_centroid_hz",
    "clips": 70
@@ -6338,37 +6623,57 @@
   {
    "ucs_id": "MECHRtch",
    "feature": "onset_rate_per_second",
-   "clips": 44
+   "clips": 55
   },
   {
    "ucs_id": "MECHRtch",
    "feature": "onset_periodicity",
-   "clips": 44
+   "clips": 55
   },
   {
    "ucs_id": "MECHRtch",
    "feature": "transient_count",
-   "clips": 44
+   "clips": 55
   },
   {
    "ucs_id": "MECHRtch",
    "feature": "spectral_centroid_hz",
-   "clips": 44
+   "clips": 55
   },
   {
    "ucs_id": "MECHRtch",
    "feature": "high_band_energy",
-   "clips": 44
+   "clips": 55
   },
   {
    "ucs_id": "MECHRtch",
    "feature": "harmonicity",
-   "clips": 44
+   "clips": 55
   },
   {
    "ucs_id": "MECHRtch",
    "feature": "low_band_energy",
-   "clips": 44
+   "clips": 55
+  },
+  {
+   "ucs_id": "PERCShak",
+   "feature": "spectral_centroid_hz",
+   "clips": 249
+  },
+  {
+   "ucs_id": "PERCShak",
+   "feature": "spectral_flatness",
+   "clips": 249
+  },
+  {
+   "ucs_id": "PERCShak",
+   "feature": "high_band_energy",
+   "clips": 249
+  },
+  {
+   "ucs_id": "PERCShak",
+   "feature": "harmonicity",
+   "clips": 249
   },
   {
    "ucs_id": "FEETHmn",
@@ -6493,32 +6798,32 @@
   {
    "ucs_id": "TRNSbwy",
    "feature": "low_band_energy",
-   "clips": 269
+   "clips": 270
   },
   {
    "ucs_id": "TRNSbwy",
    "feature": "harmonicity",
-   "clips": 269
+   "clips": 270
   },
   {
    "ucs_id": "TRNSbwy",
    "feature": "onset_periodicity",
-   "clips": 269
+   "clips": 270
   },
   {
    "ucs_id": "TRNSbwy",
    "feature": "spectral_centroid_hz",
-   "clips": 269
+   "clips": 270
   },
   {
    "ucs_id": "TRNSbwy",
    "feature": "spectral_flux",
-   "clips": 269
+   "clips": 270
   },
   {
    "ucs_id": "TRNSbwy",
    "feature": "stationarity",
-   "clips": 269
+   "clips": 270
   },
   {
    "ucs_id": "SPRTSkate",
@@ -6641,6 +6946,51 @@
    "clips": 251
   },
   {
+   "ucs_id": "DRUMHand",
+   "feature": "spectral_centroid_hz",
+   "clips": 52
+  },
+  {
+   "ucs_id": "DRUMHand",
+   "feature": "envelope_attack_seconds",
+   "clips": 43
+  },
+  {
+   "ucs_id": "DRUMHand",
+   "feature": "harmonicity",
+   "clips": 52
+  },
+  {
+   "ucs_id": "DRUMHand",
+   "feature": "crest_factor",
+   "clips": 51
+  },
+  {
+   "ucs_id": "PERCTamb",
+   "feature": "spectral_centroid_hz",
+   "clips": 225
+  },
+  {
+   "ucs_id": "PERCTamb",
+   "feature": "high_band_energy",
+   "clips": 225
+  },
+  {
+   "ucs_id": "PERCTamb",
+   "feature": "inharmonicity",
+   "clips": 225
+  },
+  {
+   "ucs_id": "PERCTamb",
+   "feature": "spectral_flatness",
+   "clips": 225
+  },
+  {
+   "ucs_id": "PERCTamb",
+   "feature": "decay_time_seconds_60db",
+   "clips": 160
+  },
+  {
    "ucs_id": "AMBTraf",
    "feature": "low_band_energy",
    "clips": 47
@@ -6679,6 +7029,36 @@
    "ucs_id": "AMBTraf",
    "feature": "zero_crossings_per_second",
    "clips": 47
+  },
+  {
+   "ucs_id": "BRASTpt",
+   "feature": "spectral_centroid_hz",
+   "clips": 579
+  },
+  {
+   "ucs_id": "BRASTpt",
+   "feature": "harmonicity",
+   "clips": 579
+  },
+  {
+   "ucs_id": "BRASTpt",
+   "feature": "pitch_hz",
+   "clips": 578
+  },
+  {
+   "ucs_id": "BRASTpt",
+   "feature": "high_band_energy",
+   "clips": 579
+  },
+  {
+   "ucs_id": "BRASTpt",
+   "feature": "spectral_flatness",
+   "clips": 579
+  },
+  {
+   "ucs_id": "BRASTpt",
+   "feature": "envelope_attack_seconds",
+   "clips": 231
   },
   {
    "ucs_id": "VOXWhsp",
@@ -6927,6 +7307,19 @@
    "measured_p95": 0.92628
   },
   {
+   "ucs_id": "GUITBass",
+   "feature": "spectral_centroid_hz",
+   "gate": {
+    "max": 1200
+   },
+   "clips": 310,
+   "judged_on": "all_clips",
+   "percent_of_true_clips_killed": 34.5,
+   "measured_p05": 239.5,
+   "measured_median": 738.04,
+   "measured_p95": 2346.8
+  },
+  {
    "ucs_id": "FIREBurn",
    "feature": "harmonicity",
    "gate": {
@@ -6977,6 +7370,19 @@
    "measured_p05": 0.026643,
    "measured_median": 0.29141,
    "measured_p95": 0.92257
+  },
+  {
+   "ucs_id": "DRUMKick",
+   "feature": "spectral_centroid_hz",
+   "gate": {
+    "max": 2500
+   },
+   "clips": 195,
+   "judged_on": "all_clips",
+   "percent_of_true_clips_killed": 25.1,
+   "measured_p05": 208.2,
+   "measured_median": 1280.1,
+   "measured_p95": 5681.1
   },
   {
    "ucs_id": "VEHTruck",
@@ -7044,19 +7450,6 @@
    "measured_p95": 0.35636
   },
   {
-   "ucs_id": "MUSCPluck",
-   "feature": "envelope_attack_seconds",
-   "gate": {
-    "max": 0.06
-   },
-   "clips": 914,
-   "judged_on": "one_shot_clips",
-   "percent_of_true_clips_killed": 18.4,
-   "measured_p05": 0.0049887,
-   "measured_median": 0.019955,
-   "measured_p95": 0.19456
-  },
-  {
    "ucs_id": "WATRFlow",
    "feature": "harmonicity",
    "gate": {
@@ -7122,6 +7515,19 @@
    "measured_p95": 0.63582
   },
   {
+   "ucs_id": "BRASTpt",
+   "feature": "harmonicity",
+   "gate": {
+    "min": 0.45
+   },
+   "clips": 579,
+   "judged_on": "all_clips",
+   "percent_of_true_clips_killed": 8.3,
+   "measured_p05": 0.41289,
+   "measured_median": 0.98274,
+   "measured_p95": 0.99775
+  },
+  {
    "ucs_id": "CLOCKTick",
    "feature": "onset_rate_per_second",
    "gate": {
@@ -7173,19 +7579,6 @@
    "measured_p05": 0.033597,
    "measured_median": 0.084954,
    "measured_p95": 0.4789
-  },
-  {
-   "ucs_id": "MUSCPerc",
-   "feature": "envelope_attack_seconds",
-   "gate": {
-    "max": 0.08
-   },
-   "clips": 662,
-   "judged_on": "one_shot_clips",
-   "percent_of_true_clips_killed": 5.9,
-   "measured_p05": 0.0049887,
-   "measured_median": 0.0099773,
-   "measured_p95": 0.084807
   },
   {
    "ucs_id": "WATRSplsh",
@@ -7264,20 +7657,6 @@
    "percent_of_true_clips_killed": 20.4,
    "clips": 494,
    "detail": "widening to the measured p01 (0.003935) reaches the feature's floor of 0 — it excludes nothing"
-  },
-  {
-   "ucs_id": "MUSCPluck",
-   "feature": "envelope_attack_seconds",
-   "was": {
-    "max": 0.06
-   },
-   "action": "widened",
-   "percent_of_true_clips_killed": 18.4,
-   "clips": 914,
-   "detail": "max 0.06 -> 1.095",
-   "now": {
-    "max": 1.095
-   }
   },
   {
    "ucs_id": "VEHCar",
@@ -7396,20 +7775,6 @@
    "detail": "max 0.45 -> 0.7543",
    "now": {
     "max": 0.7543
-   }
-  },
-  {
-   "ucs_id": "MUSCPerc",
-   "feature": "envelope_attack_seconds",
-   "was": {
-    "max": 0.08
-   },
-   "action": "widened",
-   "percent_of_true_clips_killed": 5.9,
-   "clips": 662,
-   "detail": "max 0.08 -> 0.3876",
-   "now": {
-    "max": 0.3876
    }
   },
   {
@@ -7681,15 +8046,81 @@
    "now": {
     "max": 54.11
    }
+  },
+  {
+   "ucs_id": "DRUMKick",
+   "feature": "spectral_centroid_hz",
+   "was": {
+    "max": 2500
+   },
+   "action": "widened",
+   "percent_of_true_clips_killed": 25.1,
+   "clips": 195,
+   "detail": "max 2500 -> 8725.0",
+   "now": {
+    "max": 8725.0
+   }
+  },
+  {
+   "ucs_id": "GUITBass",
+   "feature": "spectral_centroid_hz",
+   "was": {
+    "max": 1200
+   },
+   "action": "widened",
+   "percent_of_true_clips_killed": 34.5,
+   "clips": 310,
+   "detail": "max 1200 -> 4933.0",
+   "now": {
+    "max": 4933.0
+   }
+  },
+  {
+   "ucs_id": "BRASTpt",
+   "feature": "harmonicity",
+   "was": {
+    "min": 0.45
+   },
+   "action": "widened",
+   "percent_of_true_clips_killed": 8.3,
+   "clips": 579,
+   "detail": "min 0.45 -> 0.318",
+   "now": {
+    "min": 0.318
+   }
   }
  ],
  "disagreements": [
+  {
+   "ucs_id": "CYMBCrsh",
+   "feature": "inharmonicity",
+   "clips": 211,
+   "reasoned_mean": 0.85,
+   "measured_mean": 0.42686,
+   "spreads_apart": 2.8
+  },
+  {
+   "ucs_id": "KEYBOrg",
+   "feature": "sustain_ratio",
+   "clips": 71,
+   "reasoned_mean": 0.9,
+   "measured_mean": 0.18605,
+   "spreads_apart": 2.7
+  },
   {
    "ucs_id": "BIRDCrow",
    "feature": "spectral_flatness",
    "clips": 61,
    "reasoned_mean": 0.6,
    "measured_mean": 0.10262,
+   "spreads_apart": 2.5
+  },
+  {
+   "ucs_id": "MALTGlok",
+   "feature": "inharmonicity",
+   "clips": 56,
+   "reasoned_mean": 0.55,
+   "measured_mean": 0.0,
    "spreads_apart": 2.5
   },
   {
@@ -7711,9 +8142,9 @@
   {
    "ucs_id": "MECHRtch",
    "feature": "onset_periodicity",
-   "clips": 44,
+   "clips": 55,
    "reasoned_mean": 0.72,
-   "measured_mean": 0.27208,
+   "measured_mean": 0.27339,
    "spreads_apart": 2.2
   },
   {
@@ -7735,25 +8166,16 @@
     "Idling": 50
    }
   },
-  "MUSCKeyd": {
-   "clips": 1415,
+  "KEYBAcrd": {
+   "clips": 52,
    "classes": {
-    "Accordion": 52,
-    "Keyboard_(musical)": 1363,
-    "Organ": 309,
-    "Piano": 771
+    "Accordion": 52
    }
   },
-  "MUSCPluck": {
-   "clips": 2061,
+  "GUITAcou": {
+   "clips": 534,
    "classes": {
-    "Acoustic_guitar": 531,
-    "Guitar": 1799,
-    "Plucked_string_instrument": 1885,
-    "Strum": 175,
-    "Bass_guitar": 320,
-    "Electric_guitar": 501,
-    "Harp": 177
+    "Acoustic_guitar": 534
    }
   },
   "BOATMisc": {
@@ -7769,10 +8191,10 @@
    }
   },
   "CLOCKTick": {
-   "clips": 280,
+   "clips": 282,
    "classes": {
-    "Clock": 246,
-    "Tick": 132
+    "Clock": 248,
+    "Tick": 133
    }
   },
   "ANMLDog": {
@@ -7783,17 +8205,17 @@
    }
   },
   "DOORMisc": {
-   "clips": 346,
+   "clips": 347,
    "classes": {
-    "Door": 346,
+    "Door": 347,
     "Slam": 244
    }
   },
   "ANMLInsc": {
-   "clips": 338,
+   "clips": 339,
    "classes": {
-    "Insect": 338,
-    "Buzz": 71,
+    "Insect": 339,
+    "Buzz": 72,
     "Cricket": 150
    }
   },
@@ -7803,30 +8225,22 @@
     "Truck": 83
    }
   },
-  "MUSCBrass": {
-   "clips": 941,
-   "classes": {
-    "Brass_instrument": 941,
-    "Trumpet": 579
-   }
-  },
   "CRWDApls": {
-   "clips": 245,
+   "clips": 246,
    "classes": {
-    "Applause": 245
+    "Applause": 246
    }
   },
-  "MUSCPerc": {
-   "clips": 2095,
+  "DRUMKick": {
+   "clips": 195,
    "classes": {
-    "Bass_drum": 193,
-    "Drum": 1160,
-    "Percussion": 2095,
-    "Drum_kit": 337,
-    "Snare_drum": 736,
-    "Crash_cymbal": 213,
-    "Cymbal": 665,
-    "Tabla": 52
+    "Bass_drum": 195
+   }
+  },
+  "GUITBass": {
+   "clips": 310,
+   "classes": {
+    "Bass_guitar": 310
    }
   },
   "WATRPlmb": {
@@ -7863,9 +8277,9 @@
    }
   },
   "HMNBrth": {
-   "clips": 456,
+   "clips": 458,
    "classes": {
-    "Breathing": 412,
+    "Breathing": 414,
     "Gasp": 54,
     "Sigh": 75
    }
@@ -7884,18 +8298,18 @@
    }
   },
   "RAIN": {
-   "clips": 234,
+   "clips": 235,
    "classes": {
-    "Rain": 234,
+    "Rain": 235,
     "Raindrop": 35
    }
   },
   "VOXSing": {
-   "clips": 498,
+   "clips": 509,
    "classes": {
-    "Singing": 498,
+    "Singing": 509,
     "Female_singing": 137,
-    "Male_singing": 74
+    "Male_singing": 77
    }
   },
   "BIRDMisc": {
@@ -7910,10 +8324,10 @@
     "Boiling": 63
    }
   },
-  "MUSCStr": {
-   "clips": 1921,
+  "DRUMSnr": {
+   "clips": 717,
    "classes": {
-    "Bowed_string_instrument": 1921
+    "Snare_drum": 717
    }
   },
   "HMNBurp": {
@@ -7954,32 +8368,25 @@
     "Chewing_and_mastication": 172
    }
   },
-  "MUSCChim": {
-   "clips": 156,
-   "classes": {
-    "Chime": 156,
-    "Wind_chime": 61
-   }
-  },
   "VOXLaff": {
-   "clips": 862,
+   "clips": 863,
    "classes": {
     "Chuckle_and_chortle": 50,
     "Giggle": 104,
-    "Laughter": 862
+    "Laughter": 863
    }
   },
   "BELLLrg": {
-   "clips": 59,
+   "clips": 72,
    "classes": {
-    "Church_bell": 59
+    "Church_bell": 72
    }
   },
   "CMPTKey": {
-   "clips": 229,
+   "clips": 230,
    "classes": {
-    "Typing": 229,
-    "Computer_keyboard": 129
+    "Typing": 230,
+    "Computer_keyboard": 130
    }
   },
   "VOXMisc": {
@@ -8001,9 +8408,9 @@
    }
   },
   "BELLAnml": {
-   "clips": 162,
+   "clips": 166,
    "classes": {
-    "Cowbell": 162
+    "Cowbell": 166
    }
   },
   "FIRECrkl": {
@@ -8013,9 +8420,15 @@
    }
   },
   "WOODMisc": {
-   "clips": 121,
+   "clips": 128,
    "classes": {
-    "Wood": 121
+    "Wood": 128
+   }
+  },
+  "CYMBCrsh": {
+   "clips": 211,
+   "classes": {
+    "Crash_cymbal": 211
    }
   },
   "BIRDCrow": {
@@ -8085,6 +8498,12 @@
     "Drip": 98
    }
   },
+  "GUITElec": {
+   "clips": 493,
+   "classes": {
+    "Electric_guitar": 493
+   }
+  },
   "EXPLReal": {
    "clips": 207,
    "classes": {
@@ -8092,9 +8511,9 @@
    }
   },
   "FARTReal": {
-   "clips": 531,
+   "clips": 532,
    "classes": {
-    "Fart": 531
+    "Fart": 532
    }
   },
   "WATRPour": {
@@ -8105,9 +8524,9 @@
    }
   },
   "HMNSkin": {
-   "clips": 131,
+   "clips": 132,
    "classes": {
-    "Finger_snapping": 131
+    "Finger_snapping": 132
    }
   },
   "FIREBurn": {
@@ -8120,6 +8539,18 @@
    "clips": 61,
    "classes": {
     "Frying_(food)": 61
+   }
+  },
+  "MALTGlok": {
+   "clips": 56,
+   "classes": {
+    "Glockenspiel": 56
+   }
+  },
+  "BELLGong": {
+   "clips": 206,
+   "classes": {
+    "Gong": 206
    }
   },
   "AIRHiss": {
@@ -8149,11 +8580,16 @@
     "Scissors": 106
    }
   },
-  "MUSCWind": {
-   "clips": 2706,
+  "WWNDMisc": {
+   "clips": 163,
    "classes": {
-    "Harmonica": 163,
-    "Wind_instrument_and_woodwind_instrument": 2543
+    "Harmonica": 163
+   }
+  },
+  "GUITHarp": {
+   "clips": 177,
+   "classes": {
+    "Harp": 177
    }
   },
   "VOXEfrt": {
@@ -8167,6 +8603,12 @@
    "clips": 164,
    "classes": {
     "Keys_jangling": 164
+   }
+  },
+  "PIANMisc": {
+   "clips": 772,
+   "classes": {
+    "Piano": 772
    }
   },
   "MACHFan": {
@@ -8193,6 +8635,12 @@
     "Motorcycle": 114
    }
   },
+  "KEYBOrg": {
+   "clips": 308,
+   "classes": {
+    "Organ": 308
+   }
+  },
   "OBJTape": {
    "clips": 70,
    "classes": {
@@ -8206,9 +8654,15 @@
    }
   },
   "MECHRtch": {
-   "clips": 44,
+   "clips": 55,
    "classes": {
-    "Ratchet_and_pawl": 44
+    "Ratchet_and_pawl": 55
+   }
+  },
+  "PERCShak": {
+   "clips": 249,
+   "classes": {
+    "Rattle_(instrument)": 249
    }
   },
   "FEETHmn": {
@@ -8231,9 +8685,9 @@
    }
   },
   "TRNSbwy": {
-   "clips": 269,
+   "clips": 270,
    "classes": {
-    "Subway_and_metro_and_underground": 269
+    "Subway_and_metro_and_underground": 270
    }
   },
   "SPRTSkate": {
@@ -8260,10 +8714,28 @@
     "Writing": 251
    }
   },
+  "DRUMHand": {
+   "clips": 52,
+   "classes": {
+    "Tabla": 52
+   }
+  },
+  "PERCTamb": {
+   "clips": 225,
+   "classes": {
+    "Tambourine": 225
+   }
+  },
   "AMBTraf": {
    "clips": 47,
    "classes": {
     "Traffic_noise_and_roadway_noise": 47
+   }
+  },
+  "BRASTpt": {
+   "clips": 579,
+   "classes": {
+    "Trumpet": 579
    }
   },
   "VOXWhsp": {
@@ -8276,6 +8748,12 @@
    "clips": 238,
    "classes": {
     "Wind": 238
+   }
+  },
+  "PERCMisc": {
+   "clips": 62,
+   "classes": {
+    "Wind_chime": 62
    }
   },
   "OBJZipr": {

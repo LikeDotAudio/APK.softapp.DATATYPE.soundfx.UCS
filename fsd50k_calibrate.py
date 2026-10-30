@@ -3,6 +3,7 @@
 
     python3 fsd50k_calibrate.py calibrate <FSD50K.dev_audio/>   # measure, then rewrite categories/*.json
     python3 fsd50k_calibrate.py evaluate  <FSD50K.dev_audio/>   # held-out 70/30, signal only, no writes
+    python3 fsd50k_calibrate.py separability <FSD50K.dev_audio/> # sibling-pair logistic probe -> fsd50k_separability.json (numpy)
 
 The corpus is a directory of `.PEAK` sidecars whose file names carry the human
 FSD50K label chain (`Label-Label-..._[freesound_id].PEAK`). Those labels are joined
@@ -18,7 +19,7 @@ Policy (see SCANALYZER.Like.audio/README.md, "Calibrating the signatures against
   * eleven features are never calibrated here at all (see NEVER) because on this
     corpus they measure the uploader rather than the sound.
 """
-import sys, os, re, json, math, glob, copy, statistics, collections
+import sys, os, re, json, math, glob, copy, statistics, collections, itertools, warnings
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATE = "2026-07"
@@ -478,6 +479,10 @@ def cmd_calibrate(corpus):
         # OLD wins on conflict: these records are the history of what the reasoned
         # signature looked like and what was done to it. A later run re-auditing an
         # already-widened gate must not overwrite the record of why it was widened.
+        # A record whose ucs_id no category file defines any more (the MUSICAL split
+        # retired the MUSC... ids) describes a signature that no longer exists; carrying
+        # it forward would keep naming the retired id forever. git history keeps it.
+        old = [r for r in old if r['ucs_id'] in sigs]
         seen = {key(r) for r in old}
         return old + [r for r in new if key(r) not in seen]
     gk = lambda r: (r['ucs_id'], r['feature'])
@@ -595,11 +600,92 @@ def cmd_evaluate(corpus):
     print("\"Calibrating the signatures against FSD50K\".")
 
 
+def cmd_separability(corpus, folds=5, l2=1.0):
+    """Falsify the separability tiers (SCANALYZER fsd50k_audit.md 6.4 / 7.7): a logistic
+    probe on the analyzer's own feature vector, per pair of SIBLING subcategories (same
+    category file) that both have >= MIN_CLIPS clean clips. Folds are deterministic
+    (freesound id mod `folds`); the baseline is the majority class. Rewrites
+    fsd50k_separability.json. Needs numpy (the only command that does)."""
+    import numpy as np
+    clean, stats = load_clean(corpus)
+    sigs, _ = load_signatures()
+    cat = {u: json.load(open(f))['category'] for u, (f, _) in sigs.items()}
+    tier = {u: s['acoustic_signature'].get('separability') for u, (_, s) in sigs.items()}
+
+    def row(c):
+        out = []
+        for feat in CALIBRATABLE:
+            v = values([c], feat)
+            out.append(math.log(v[0]) if v and feat in LOG else (v[0] if v else float('nan')))
+        return out
+
+    X = {u: np.array([row(c) for c in cl], dtype=float) for u, cl in clean.items() if u in sigs}
+    ids = {u: np.array([int(c['_id']) % folds for c in clean[u]]) for u in X}
+
+    def fit_predict(Xtr, ytr, Xte):
+        with warnings.catch_warnings():               # a feature absent from every clip
+            warnings.simplefilter('ignore', RuntimeWarning)
+            med = np.nanmedian(Xtr, axis=0)
+        med = np.where(np.isnan(med), 0.0, med)
+        Xtr = np.where(np.isnan(Xtr), med, Xtr)
+        Xte = np.where(np.isnan(Xte), med, Xte)
+        mu, sd = Xtr.mean(0), Xtr.std(0)
+        sd[sd == 0] = 1.0
+        A = np.hstack([np.ones((len(Xtr), 1)), (Xtr - mu) / sd])
+        B = np.hstack([np.ones((len(Xte), 1)), (Xte - mu) / sd])
+        w = np.zeros(A.shape[1])
+        reg = l2 * np.eye(A.shape[1])
+        reg[0, 0] = 0.0
+        for _ in range(25):                       # Newton / IRLS, L2-regularised
+            p = 1.0 / (1.0 + np.exp(-np.clip(A @ w, -30, 30)))
+            g = A.T @ (p - ytr) + reg @ w
+            H = (A * (p * (1 - p))[:, None]).T @ A + reg
+            step = np.linalg.solve(H, g)
+            w -= step
+            if np.abs(step).max() < 1e-6:
+                break
+        return (B @ w) > 0
+
+    by_cat = collections.defaultdict(list)
+    for u in sorted(X):
+        by_cat[cat[u]].append(u)
+    out = []
+    for c in sorted(by_cat):
+        for a, b in itertools.combinations(by_cat[c], 2):
+            Xa, Xb = X[a], X[b]
+            Xp = np.vstack([Xa, Xb])
+            y = np.r_[np.zeros(len(Xa)), np.ones(len(Xb))]
+            fo = np.r_[ids[a], ids[b]]
+            hit = 0
+            for k in range(folds):
+                te = fo == k
+                if te.any():
+                    hit += int((fit_predict(Xp[~te], y[~te], Xp[te]) == y[te].astype(bool)).sum())
+            acc = hit / len(y)
+            base = max(len(Xa), len(Xb)) / len(y)
+            out.append({'category': c, 'pair': [a, b], 'tier': [tier[a], tier[b]],
+                        'clips': [len(Xa), len(Xb)], 'accuracy': round(acc, 3),
+                        'baseline': round(base, 3), 'lift_over_chance': round(acc - base, 3)})
+    out.sort(key=lambda e: -e['lift_over_chance'])
+    json.dump(out, open(os.path.join(HERE, 'fsd50k_separability.json'), 'w'),
+              indent=1, ensure_ascii=False)
+    lifts = sorted(e['lift_over_chance'] for e in out)
+    so = [e for e in out if 'semantic_only' in e['tier']]
+    print(f"{len(out)} sibling pairs across {len(by_cat)} categories, "
+          f"median lift {lifts[len(lifts)//2]:+.3f}")
+    print(f"pairs touching semantic_only: {len(so)}, "
+          f"{sum(1 for e in so if e['lift_over_chance'] > 0.05)} with lift > 0.05")
+    print("wrote fsd50k_separability.json")
+
+
+COMMANDS = {'calibrate': cmd_calibrate, 'evaluate': cmd_evaluate,
+            'separability': cmd_separability}
+
 if __name__ == '__main__':
-    if len(sys.argv) != 3 or sys.argv[1] not in ('calibrate', 'evaluate'):
+    if len(sys.argv) != 3 or sys.argv[1] not in COMMANDS:
         print(__doc__)
         sys.exit(2)
     corpus = sys.argv[2]
     if not os.path.isdir(corpus):
         sys.exit(f"not a directory: {corpus}")
-    (cmd_calibrate if sys.argv[1] == 'calibrate' else cmd_evaluate)(corpus)
+    COMMANDS[sys.argv[1]](corpus)

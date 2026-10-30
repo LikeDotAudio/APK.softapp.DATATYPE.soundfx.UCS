@@ -191,7 +191,7 @@
        "source": "fsd50k_measured",
        "dataset": "FSD50K.dev",
        "clips": 493,
-       "analyzer_version": "20260714.0350-d356b3ca938a00f9",
+       "analyzer_version": "20260729.1251",
        "date": "2026-07",
        "measured_on": "all_unambiguous_clips",
        "reasoned_mean_before_calibration": 0.68
@@ -207,7 +207,7 @@
        "source": "fsd50k_measured",
        "dataset": "FSD50K.dev",
        "clips": 494,
-       "analyzer_version": "20260714.0350-d356b3ca938a00f9",
+       "analyzer_version": "20260729.1251",
        "date": "2026-07",
        "measured_on": "all_unambiguous_clips",
        "reasoned_mean_before_calibration": 0.52572
@@ -223,7 +223,7 @@
        "source": "fsd50k_measured",
        "dataset": "FSD50K.dev",
        "clips": 494,
-       "analyzer_version": "20260714.0350-d356b3ca938a00f9",
+       "analyzer_version": "20260729.1251",
        "date": "2026-07",
        "measured_on": "all_unambiguous_clips",
        "reasoned_mean_before_calibration": 0.14586
@@ -239,7 +239,7 @@
        "source": "fsd50k_measured",
        "dataset": "FSD50K.dev",
        "clips": 494,
-       "analyzer_version": "20260714.0350-d356b3ca938a00f9",
+       "analyzer_version": "20260729.1251",
        "date": "2026-07",
        "measured_on": "all_unambiguous_clips",
        "reasoned_mean_before_calibration": 0.56921
@@ -255,7 +255,7 @@
        "source": "fsd50k_measured",
        "dataset": "FSD50K.dev",
        "clips": 494,
-       "analyzer_version": "20260714.0350-d356b3ca938a00f9",
+       "analyzer_version": "20260729.1251",
        "date": "2026-07",
        "measured_on": "all_unambiguous_clips",
        "reasoned_mean_before_calibration": 0.15735
@@ -271,7 +271,7 @@
        "source": "fsd50k_measured",
        "dataset": "FSD50K.dev",
        "clips": 494,
-       "analyzer_version": "20260714.0350-d356b3ca938a00f9",
+       "analyzer_version": "20260729.1251",
        "date": "2026-07",
        "measured_on": "all_unambiguous_clips",
        "reasoned_mean_before_calibration": 2851.55387
@@ -287,7 +287,7 @@
        "source": "fsd50k_measured",
        "dataset": "FSD50K.dev",
        "clips": 494,
-       "analyzer_version": "20260714.0350-d356b3ca938a00f9",
+       "analyzer_version": "20260729.1251",
        "date": "2026-07",
        "measured_on": "all_unambiguous_clips",
        "reasoned_mean_before_calibration": 0.52234
@@ -303,7 +303,7 @@
        "source": "fsd50k_measured",
        "dataset": "FSD50K.dev",
        "clips": 78,
-       "analyzer_version": "20260714.0350-d356b3ca938a00f9",
+       "analyzer_version": "20260729.1251",
        "date": "2026-07",
        "measured_on": "one_shot_clips_only",
        "reasoned_mean_before_calibration": 0.72
@@ -319,7 +319,7 @@
        "source": "fsd50k_measured",
        "dataset": "FSD50K.dev",
        "clips": 78,
-       "analyzer_version": "20260714.0350-d356b3ca938a00f9",
+       "analyzer_version": "20260729.1251",
        "date": "2026-07",
        "measured_on": "one_shot_clips_only",
        "reasoned_mean_before_calibration": 4.2
@@ -335,7 +335,7 @@
        "source": "fsd50k_measured",
        "dataset": "FSD50K.dev",
        "clips": 227,
-       "analyzer_version": "20260714.0350-d356b3ca938a00f9",
+       "analyzer_version": "20260729.1251",
        "date": "2026-07",
        "measured_on": "all_unambiguous_clips",
        "reasoned_mean_before_calibration": 90.0
@@ -378,7 +378,7 @@
     ],
     "measured_evidence": {
      "dataset": "FSD50K.dev — 40,966 human-labelled Freesound clips",
-     "analyzer_version": "20260714.0350-d356b3ca938a00f9",
+     "analyzer_version": "20260729.1251",
      "date": "2026-07",
      "clip_count": 494,
      "selection": "clips whose FSD50K labels map unambiguously to this one subcategory (high/medium crosswalk confidence only)",

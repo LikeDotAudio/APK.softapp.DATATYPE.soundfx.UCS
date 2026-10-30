@@ -1,770 +1,1803 @@
 {
-  "version": "8.2.APK",
-  "category": "GUITAR",
-  "emoji": "🎸",
-  "subcategories": [
-    {
-      "subcategory": "ACOUSTIC",
-      "category_id": "GUITAcou",
-      "category_short": "GUIT",
-      "emoji": "🎸",
-      "explanation": [
-        "Acoustic guitar \u2014 a plucked/strummed chordophone with a hollow wooden body giving a woody, harmonic decay.",
-        "Steel-string and nylon/classical guitars alike, from single plucks to full strums."
-      ],
-      "synonyms": [
-        "Acoustic Guitar",
-        "Acoustic",
-        "Nylon",
-        "Steel String",
-        "Classical Guitar",
-        "Strum",
-        "Fingerpick",
-        "Folk Guitar"
-      ],
-      "acoustic_signature": {
-        "morphology": "impulsive_with_tail",
-        "separability": "signal_separable",
-        "gates": [
-          {
-            "feature": "length_seconds",
-            "max": 20.0
-          }
-        ],
-        "priors": [
-          {
-            "feature": "harmonicity",
-            "mean": 0.82,
-            "deviation": 0.12,
-            "transform": "linear",
-            "weight": 1.0,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.82,
-              "reasoned_deviation_before_calibration": 0.12
-            }
-          },
-          {
-            "feature": "spectral_centroid_hz",
-            "mean": 1400.0,
-            "deviation": 1.8,
-            "transform": "log",
-            "weight": 0.8,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 1400.0,
-              "reasoned_deviation_before_calibration": 1.8
-            }
-          },
-          {
-            "feature": "envelope_attack_seconds",
-            "mean": 0.012,
-            "deviation": 2.8,
-            "transform": "log",
-            "weight": 0.7,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.012,
-              "reasoned_deviation_before_calibration": 2.8
-            }
-          },
-          {
-            "feature": "sustain_ratio",
-            "mean": 0.35,
-            "deviation": 0.2,
-            "transform": "linear",
-            "weight": 0.6,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.35,
-              "reasoned_deviation_before_calibration": 0.2
-            }
-          },
-          {
-            "feature": "decay_time_seconds_60db",
-            "mean": 1.2,
-            "deviation": 2.2,
-            "transform": "log",
-            "weight": 0.5,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 1.2,
-              "reasoned_deviation_before_calibration": 2.2
-            }
-          },
-          {
-            "feature": "total_harmonic_distortion",
-            "mean": 0.05,
-            "deviation": 0.06,
-            "transform": "linear",
-            "weight": 0.4,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.05,
-              "reasoned_deviation_before_calibration": 0.06
-            }
-          }
-        ]
+ "version": "8.2.APK",
+ "category": "GUITAR",
+ "emoji": "🎸",
+ "subcategories": [
+  {
+   "subcategory": "ACOUSTIC",
+   "category_id": "GUITAcou",
+   "category_short": "GUIT",
+   "emoji": "🎸",
+   "explanation": [
+    "Acoustic guitar — a plucked/strummed chordophone with a hollow wooden body giving a woody, harmonic decay.",
+    "Steel-string and nylon/classical guitars alike, from single plucks to full strums."
+   ],
+   "synonyms": [
+    "Acoustic Guitar",
+    "Acoustic",
+    "Nylon",
+    "Steel String",
+    "Classical Guitar",
+    "Strum",
+    "Fingerpick",
+    "Folk Guitar"
+   ],
+   "acoustic_signature": {
+    "morphology": "impulsive_with_tail",
+    "separability": "signal_separable",
+    "gates": [
+     {
+      "feature": "length_seconds",
+      "max": 20.0
+     }
+    ],
+    "priors": [
+     {
+      "feature": "harmonicity",
+      "mean": 0.97729,
+      "deviation": 0.12,
+      "transform": "linear",
+      "weight": 1.0,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 534,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "all_unambiguous_clips",
+       "reasoned_mean_before_calibration": 0.82
       }
-    },
-    {
-      "subcategory": "ELECTRIC",
-      "category_id": "GUITElec",
-      "category_short": "GUIT",
-      "emoji": "⚡",
-      "explanation": [
-        "Electric guitar \u2014 a solid/semi-hollow chordophone whose strings are amplified, sustained and often overdriven by an amp.",
-        "Clean single-coil tones through to distorted power chords and lead riffs."
-      ],
-      "synonyms": [
-        "Electric Guitar",
-        "Electric",
-        "Strat",
-        "Les Paul",
-        "Telecaster",
-        "Riff",
-        "Power Chord",
-        "Distorted Guitar",
-        "Overdrive",
-        "Lead Guitar",
-        "Crunch"
-      ],
-      "acoustic_signature": {
-        "morphology": "impulsive_with_tail",
-        "separability": "signal_narrowable",
-        "gates": [
-          {
-            "feature": "length_seconds",
-            "max": 30.0
-          }
-        ],
-        "priors": [
-          {
-            "feature": "harmonicity",
-            "mean": 0.78,
-            "deviation": 0.15,
-            "transform": "linear",
-            "weight": 0.9,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.78,
-              "reasoned_deviation_before_calibration": 0.15
-            }
-          },
-          {
-            "feature": "total_harmonic_distortion",
-            "mean": 0.25,
-            "deviation": 0.2,
-            "transform": "linear",
-            "weight": 0.9,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.25,
-              "reasoned_deviation_before_calibration": 0.2
-            }
-          },
-          {
-            "feature": "spectral_centroid_hz",
-            "mean": 1600.0,
-            "deviation": 1.9,
-            "transform": "log",
-            "weight": 0.7,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 1600.0,
-              "reasoned_deviation_before_calibration": 1.9
-            }
-          },
-          {
-            "feature": "sustain_ratio",
-            "mean": 0.55,
-            "deviation": 0.25,
-            "transform": "linear",
-            "weight": 0.6,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.55,
-              "reasoned_deviation_before_calibration": 0.25
-            }
-          },
-          {
-            "feature": "envelope_attack_seconds",
-            "mean": 0.015,
-            "deviation": 3.0,
-            "transform": "log",
-            "weight": 0.5,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.015,
-              "reasoned_deviation_before_calibration": 3.0
-            }
-          }
-        ]
+     },
+     {
+      "feature": "spectral_centroid_hz",
+      "mean": 2575.7,
+      "deviation": 1.955,
+      "transform": "log",
+      "weight": 0.8,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 534,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "all_unambiguous_clips",
+       "reasoned_mean_before_calibration": 1400.0
       }
-    },
-    {
-      "subcategory": "BASS GUITAR",
-      "category_id": "GUITBass",
-      "category_short": "GUIT",
-      "emoji": "🎸",
-      "explanation": [
-        "Bass guitar \u2014 a low-register plucked chordophone (electric or acoustic bass) providing deep, fundamental-heavy notes.",
-        "Fingered, picked and slapped bass; P-Bass, Jazz Bass and upright-adjacent electric basses."
-      ],
-      "synonyms": [
-        "Bass Guitar",
-        "Bass",
-        "Electric Bass",
-        "Fingered Bass",
-        "Slap Bass",
-        "P-Bass",
-        "Jazz Bass",
-        "Picked Bass",
-        "Bass Line"
-      ],
-      "acoustic_signature": {
-        "morphology": "impulsive_with_tail",
-        "separability": "signal_separable",
-        "gates": [
-          {
-            "feature": "spectral_centroid_hz",
-            "max": 1200
-          },
-          {
-            "feature": "length_seconds",
-            "max": 20.0
-          }
-        ],
-        "priors": [
-          {
-            "feature": "spectral_centroid_hz",
-            "mean": 300.0,
-            "deviation": 1.9,
-            "transform": "log",
-            "weight": 1.0,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 300.0,
-              "reasoned_deviation_before_calibration": 1.9
-            }
-          },
-          {
-            "feature": "low_band_energy",
-            "mean": 0.75,
-            "deviation": 0.18,
-            "transform": "linear",
-            "weight": 1.0,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.75,
-              "reasoned_deviation_before_calibration": 0.18
-            }
-          },
-          {
-            "feature": "harmonicity",
-            "mean": 0.8,
-            "deviation": 0.14,
-            "transform": "linear",
-            "weight": 0.8,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.8,
-              "reasoned_deviation_before_calibration": 0.14
-            }
-          },
-          {
-            "feature": "pitch_hz",
-            "mean": 80.0,
-            "deviation": 1.8,
-            "transform": "log",
-            "weight": 0.7,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 80.0,
-              "reasoned_deviation_before_calibration": 1.8
-            }
-          },
-          {
-            "feature": "envelope_attack_seconds",
-            "mean": 0.012,
-            "deviation": 3.0,
-            "transform": "log",
-            "weight": 0.5,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.012,
-              "reasoned_deviation_before_calibration": 3.0
-            }
-          }
-        ]
+     },
+     {
+      "feature": "envelope_attack_seconds",
+      "mean": 0.014966,
+      "deviation": 2.8,
+      "transform": "log",
+      "weight": 0.7,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 300,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "one_shot_clips_only",
+       "reasoned_mean_before_calibration": 0.012
       }
-    },
-    {
-      "subcategory": "HARP",
-      "category_id": "GUITHarp",
-      "category_short": "GUIT",
-      "emoji": "🎵",
-      "explanation": [
-        "Concert harp \u2014 a large plucked chordophone with bright, shimmering tone and long harmonic decay.",
-        "Sweeping glissandi and single plucked notes with a clean, ringing sustain."
-      ],
-      "synonyms": [
-        "Harp",
-        "Concert Harp",
-        "Glissando",
-        "Gliss",
-        "Pedal Harp"
-      ],
-      "acoustic_signature": {
-        "morphology": "impulsive_with_tail",
-        "separability": "signal_separable",
-        "gates": [
-          {
-            "feature": "length_seconds",
-            "max": 25.0
-          }
-        ],
-        "priors": [
-          {
-            "feature": "harmonicity",
-            "mean": 0.88,
-            "deviation": 0.1,
-            "transform": "linear",
-            "weight": 1.0,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.88,
-              "reasoned_deviation_before_calibration": 0.1
-            }
-          },
-          {
-            "feature": "spectral_centroid_hz",
-            "mean": 1900.0,
-            "deviation": 1.9,
-            "transform": "log",
-            "weight": 0.7,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 1900.0,
-              "reasoned_deviation_before_calibration": 1.9
-            }
-          },
-          {
-            "feature": "decay_time_seconds_60db",
-            "mean": 2.0,
-            "deviation": 2.2,
-            "transform": "log",
-            "weight": 0.7,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 2.0,
-              "reasoned_deviation_before_calibration": 2.2
-            }
-          },
-          {
-            "feature": "envelope_attack_seconds",
-            "mean": 0.01,
-            "deviation": 2.8,
-            "transform": "log",
-            "weight": 0.6,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.01,
-              "reasoned_deviation_before_calibration": 2.8
-            }
-          },
-          {
-            "feature": "sustain_ratio",
-            "mean": 0.45,
-            "deviation": 0.22,
-            "transform": "linear",
-            "weight": 0.5,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.45,
-              "reasoned_deviation_before_calibration": 0.22
-            }
-          }
-        ]
+     },
+     {
+      "feature": "sustain_ratio",
+      "mean": 0.068,
+      "deviation": 0.2,
+      "transform": "linear",
+      "weight": 0.6,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 399,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "one_shot_clips_only",
+       "reasoned_mean_before_calibration": 0.35
       }
-    },
-    {
-      "subcategory": "BANJO",
-      "category_id": "GUITBanj",
-      "category_short": "GUIT",
-      "emoji": "🪕",
-      "explanation": [
-        "Banjo \u2014 a bright, twangy plucked chordophone with a taut membrane head giving a metallic-edged attack and fast decay.",
-        "Bluegrass and folk banjo rolls and single notes."
-      ],
-      "synonyms": [
-        "Banjo",
-        "Bluegrass",
-        "Twang",
-        "Clawhammer"
-      ],
-      "acoustic_signature": {
-        "morphology": "impulsive_with_tail",
-        "separability": "signal_narrowable",
-        "gates": [
-          {
-            "feature": "length_seconds",
-            "max": 12.0
-          }
-        ],
-        "priors": [
-          {
-            "feature": "spectral_centroid_hz",
-            "mean": 2600.0,
-            "deviation": 1.8,
-            "transform": "log",
-            "weight": 0.9,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 2600.0,
-              "reasoned_deviation_before_calibration": 1.8
-            }
-          },
-          {
-            "feature": "harmonicity",
-            "mean": 0.72,
-            "deviation": 0.16,
-            "transform": "linear",
-            "weight": 0.8,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.72,
-              "reasoned_deviation_before_calibration": 0.16
-            }
-          },
-          {
-            "feature": "envelope_attack_seconds",
-            "mean": 0.006,
-            "deviation": 3.0,
-            "transform": "log",
-            "weight": 0.7,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.006,
-              "reasoned_deviation_before_calibration": 3.0
-            }
-          },
-          {
-            "feature": "decay_time_seconds_60db",
-            "mean": 0.5,
-            "deviation": 2.2,
-            "transform": "log",
-            "weight": 0.6,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.5,
-              "reasoned_deviation_before_calibration": 2.2
-            }
-          },
-          {
-            "feature": "high_band_energy",
-            "mean": 0.4,
-            "deviation": 0.22,
-            "transform": "linear",
-            "weight": 0.5,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.4,
-              "reasoned_deviation_before_calibration": 0.22
-            }
-          }
-        ]
+     },
+     {
+      "feature": "decay_time_seconds_60db",
+      "mean": 3.3204,
+      "deviation": 3.115,
+      "transform": "log",
+      "weight": 0.5,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 103,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "one_shot_clips_only",
+       "reasoned_mean_before_calibration": 1.2
       }
-    },
-    {
-      "subcategory": "MANDOLIN",
-      "category_id": "GUITMand",
-      "category_short": "GUIT",
-      "emoji": "🎸",
-      "explanation": [
-        "Mandolin \u2014 a high, bright double-course plucked chordophone, often played with a shimmering tremolo.",
-        "Paired-string courses give a chorused, ringing tone."
-      ],
-      "synonyms": [
-        "Mandolin",
-        "Mando",
-        "Tremolo",
-        "Double Course"
-      ],
-      "acoustic_signature": {
-        "morphology": "impulsive_with_tail",
-        "separability": "signal_narrowable",
-        "gates": [
-          {
-            "feature": "length_seconds",
-            "max": 12.0
-          }
-        ],
-        "priors": [
-          {
-            "feature": "spectral_centroid_hz",
-            "mean": 2400.0,
-            "deviation": 1.8,
-            "transform": "log",
-            "weight": 0.9,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 2400.0,
-              "reasoned_deviation_before_calibration": 1.8
-            }
-          },
-          {
-            "feature": "harmonicity",
-            "mean": 0.8,
-            "deviation": 0.14,
-            "transform": "linear",
-            "weight": 0.8,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.8,
-              "reasoned_deviation_before_calibration": 0.14
-            }
-          },
-          {
-            "feature": "pitch_hz",
-            "mean": 600.0,
-            "deviation": 1.8,
-            "transform": "log",
-            "weight": 0.6,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 600.0,
-              "reasoned_deviation_before_calibration": 1.8
-            }
-          },
-          {
-            "feature": "envelope_attack_seconds",
-            "mean": 0.007,
-            "deviation": 3.0,
-            "transform": "log",
-            "weight": 0.6,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.007,
-              "reasoned_deviation_before_calibration": 3.0
-            }
-          },
-          {
-            "feature": "high_band_energy",
-            "mean": 0.38,
-            "deviation": 0.22,
-            "transform": "linear",
-            "weight": 0.5,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.38,
-              "reasoned_deviation_before_calibration": 0.22
-            }
-          }
-        ]
+     },
+     {
+      "feature": "total_harmonic_distortion",
+      "mean": 0.05,
+      "deviation": 0.06,
+      "transform": "linear",
+      "weight": 0.4,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.05,
+       "reasoned_deviation_before_calibration": 0.06
       }
-    },
-    {
-      "subcategory": "UKULELE",
-      "category_id": "GUITUke",
-      "category_short": "GUIT",
-      "emoji": "🎸",
-      "explanation": [
-        "Ukulele \u2014 a small, bright nylon-strung plucked chordophone with a soft, warm-yet-bright attack and quick decay.",
-        "Soprano through baritone ukulele plucks and strums."
-      ],
-      "synonyms": [
-        "Ukulele",
-        "Uke",
-        "Soprano Uke",
-        "Baritone Uke"
-      ],
-      "acoustic_signature": {
-        "morphology": "impulsive_with_tail",
-        "separability": "signal_narrowable",
-        "gates": [
-          {
-            "feature": "length_seconds",
-            "max": 10.0
-          }
-        ],
-        "priors": [
-          {
-            "feature": "spectral_centroid_hz",
-            "mean": 2000.0,
-            "deviation": 1.8,
-            "transform": "log",
-            "weight": 0.8,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 2000.0,
-              "reasoned_deviation_before_calibration": 1.8
-            }
-          },
-          {
-            "feature": "harmonicity",
-            "mean": 0.8,
-            "deviation": 0.14,
-            "transform": "linear",
-            "weight": 0.8,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.8,
-              "reasoned_deviation_before_calibration": 0.14
-            }
-          },
-          {
-            "feature": "pitch_hz",
-            "mean": 440.0,
-            "deviation": 1.8,
-            "transform": "log",
-            "weight": 0.6,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 440.0,
-              "reasoned_deviation_before_calibration": 1.8
-            }
-          },
-          {
-            "feature": "envelope_attack_seconds",
-            "mean": 0.009,
-            "deviation": 3.0,
-            "transform": "log",
-            "weight": 0.6,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.009,
-              "reasoned_deviation_before_calibration": 3.0
-            }
-          },
-          {
-            "feature": "decay_time_seconds_60db",
-            "mean": 0.5,
-            "deviation": 2.2,
-            "transform": "log",
-            "weight": 0.5,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.5,
-              "reasoned_deviation_before_calibration": 2.2
-            }
-          }
-        ]
+     }
+    ],
+    "measured_evidence": {
+     "dataset": "FSD50K.dev — 40,966 human-labelled Freesound clips",
+     "analyzer_version": "20260729.1251",
+     "date": "2026-07",
+     "clip_count": 534,
+     "selection": "clips whose FSD50K labels map unambiguously to this one subcategory (high/medium crosswalk confidence only)",
+     "contributing_fsd50k_classes": {
+      "Acoustic_guitar": 534
+     },
+     "feature_observations": {
+      "complexity": {
+       "clips": 534,
+       "percentile_05": 1608.1,
+       "median": 3840.9,
+       "percentile_95": 6278.6
+      },
+      "crest_factor": {
+       "clips": 399,
+       "percentile_05": 4.7139,
+       "median": 10.476,
+       "percentile_95": 23.937,
+       "measured_on": "one_shot_clips_only"
+      },
+      "decay_time_seconds_60db": {
+       "clips": 103,
+       "percentile_05": 0.73297,
+       "median": 3.3204,
+       "percentile_95": 8.756,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_attack_seconds": {
+       "clips": 300,
+       "percentile_05": 0.0049887,
+       "median": 0.014966,
+       "percentile_95": 0.094785,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_decay_seconds": {
+       "clips": 399,
+       "percentile_05": 0.30431,
+       "median": 1.8957,
+       "percentile_95": 4.2753,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_kurtosis": {
+       "clips": 399,
+       "percentile_05": -0.50823,
+       "median": 6.9463,
+       "percentile_95": 40.754,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_release_seconds": {
+       "clips": 387,
+       "percentile_05": 0.22449,
+       "median": 1.3669,
+       "percentile_95": 3.4571,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_skewness": {
+       "clips": 399,
+       "percentile_05": 0.69924,
+       "median": 2.42,
+       "percentile_95": 5.6031,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_sustain_level": {
+       "clips": 399,
+       "percentile_05": 0.0044611,
+       "median": 0.05468,
+       "percentile_95": 0.36231,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_temporal_centroid": {
+       "clips": 399,
+       "percentile_05": 0.026926,
+       "median": 0.090471,
+       "percentile_95": 0.3267,
+       "measured_on": "one_shot_clips_only"
+      },
+      "harmonicity": {
+       "clips": 534,
+       "percentile_05": 0.43942,
+       "median": 0.97694,
+       "percentile_95": 0.99743
+      },
+      "high_band_energy": {
+       "clips": 534,
+       "percentile_05": 0.087861,
+       "median": 0.28528,
+       "percentile_95": 0.6455
+      },
+      "inharmonicity": {
+       "clips": 534,
+       "percentile_05": 0.0,
+       "median": 0.015816,
+       "percentile_95": 0.54474
+      },
+      "low_band_energy": {
+       "clips": 534,
+       "percentile_05": 0.025511,
+       "median": 0.10491,
+       "percentile_95": 0.41758
+      },
+      "mid_band_energy": {
+       "clips": 534,
+       "percentile_05": 0.22696,
+       "median": 0.53622,
+       "percentile_95": 0.76137
+      },
+      "onset_periodicity": {
+       "clips": 534,
+       "percentile_05": 0.0,
+       "median": 0.19874,
+       "percentile_95": 0.55362
+      },
+      "onset_rate_per_second": {
+       "clips": 534,
+       "percentile_05": 0.10905,
+       "median": 0.30379,
+       "percentile_95": 2.868
+      },
+      "partial_count": {
+       "clips": 507,
+       "percentile_05": 1.0,
+       "median": 4.0,
+       "percentile_95": 12.0
+      },
+      "pitch_hz": {
+       "clips": 456,
+       "percentile_05": 54.919,
+       "median": 170.93,
+       "percentile_95": 882.0
+      },
+      "pitch_slope_semitones_per_second": {
+       "clips": 121,
+       "percentile_05": -0.35841,
+       "median": -0.00074787,
+       "percentile_95": 0.72681
+      },
+      "spectral_centroid_deviation_hz": {
+       "clips": 534,
+       "percentile_05": 86.819,
+       "median": 755.79,
+       "percentile_95": 2335.4
+      },
+      "spectral_centroid_hz": {
+       "clips": 534,
+       "percentile_05": 995.62,
+       "median": 2572.6,
+       "percentile_95": 5385.6
+      },
+      "spectral_centroid_mean_hz": {
+       "clips": 534,
+       "percentile_05": 487.74,
+       "median": 2006.6,
+       "percentile_95": 4207.0
+      },
+      "spectral_centroid_slope_hz_per_second": {
+       "clips": 534,
+       "percentile_05": -169.84,
+       "median": 194.46,
+       "percentile_95": 1387.3
+      },
+      "spectral_entropy": {
+       "clips": 534,
+       "percentile_05": 0.13283,
+       "median": 0.27752,
+       "percentile_95": 0.47191
+      },
+      "spectral_flatness": {
+       "clips": 534,
+       "percentile_05": 0.033264,
+       "median": 0.16807,
+       "percentile_95": 0.40356
+      },
+      "spectral_flux": {
+       "clips": 534,
+       "percentile_05": 0.014862,
+       "median": 0.085353,
+       "percentile_95": 0.19365
+      },
+      "spectral_rolloff_hz": {
+       "clips": 534,
+       "percentile_05": 1091.6,
+       "median": 5216.6,
+       "percentile_95": 13064.0
+      },
+      "spectral_slope_db_per_octave": {
+       "clips": 534,
+       "percentile_05": -10.448,
+       "median": -5.7149,
+       "percentile_95": -2.0154
+      },
+      "stationarity": {
+       "clips": 534,
+       "percentile_05": 0.0,
+       "median": 0.0,
+       "percentile_95": 0.65128,
+       "censored_at_floor_fraction": 0.614
+      },
+      "sustain_ratio": {
+       "clips": 399,
+       "percentile_05": 0.0087146,
+       "median": 0.068,
+       "percentile_95": 0.344,
+       "measured_on": "one_shot_clips_only"
+      },
+      "syllabic_modulation_energy": {
+       "clips": 525,
+       "percentile_05": 0.00024225,
+       "median": 0.028576,
+       "percentile_95": 0.49718
+      },
+      "transient_count": {
+       "clips": 534,
+       "percentile_05": 1.0,
+       "median": 1.0,
+       "percentile_95": 23.0
+      },
+      "zero_crossings_per_second": {
+       "clips": 534,
+       "percentile_05": 353.75,
+       "median": 1151.1,
+       "percentile_95": 3765.5
       }
-    },
-    {
-      "subcategory": "SITAR",
-      "category_id": "GUITSitr",
-      "category_short": "GUIT",
-      "emoji": "🎸",
-      "explanation": [
-        "Sitar \u2014 a buzzy, resonant plucked chordophone whose curved bridge and sympathetic strings create an inharmonic, shimmering drone.",
-        "Indian classical melodic lines with characteristic pitch-bending and jawari buzz."
-      ],
-      "synonyms": [
-        "Sitar",
-        "Sympathetic Strings",
-        "Raga",
-        "Drone"
-      ],
-      "acoustic_signature": {
-        "morphology": "impulsive_with_tail",
-        "separability": "signal_narrowable",
-        "gates": [
-          {
-            "feature": "length_seconds",
-            "max": 20.0
-          }
-        ],
-        "priors": [
-          {
-            "feature": "inharmonicity",
-            "mean": 0.35,
-            "deviation": 0.2,
-            "transform": "linear",
-            "weight": 0.9,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.35,
-              "reasoned_deviation_before_calibration": 0.2
-            }
-          },
-          {
-            "feature": "spectral_centroid_hz",
-            "mean": 1800.0,
-            "deviation": 1.9,
-            "transform": "log",
-            "weight": 0.7,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 1800.0,
-              "reasoned_deviation_before_calibration": 1.9
-            }
-          },
-          {
-            "feature": "spectral_flatness",
-            "mean": 0.25,
-            "deviation": 0.18,
-            "transform": "linear",
-            "weight": 0.6,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.25,
-              "reasoned_deviation_before_calibration": 0.18
-            }
-          },
-          {
-            "feature": "harmonicity",
-            "mean": 0.6,
-            "deviation": 0.2,
-            "transform": "linear",
-            "weight": 0.6,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.6,
-              "reasoned_deviation_before_calibration": 0.2
-            }
-          },
-          {
-            "feature": "decay_time_seconds_60db",
-            "mean": 1.5,
-            "deviation": 2.2,
-            "transform": "log",
-            "weight": 0.5,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 1.5,
-              "reasoned_deviation_before_calibration": 2.2
-            }
-          }
-        ]
-      }
-    },
-    {
-      "subcategory": "MISC",
-      "category_id": "GUITMisc",
-      "category_short": "GUIT",
-      "emoji": "🎸",
-      "explanation": [
-        "A plucked chordophone that does not fit a specific subcategory, or the abstention target when the scorer is unsure."
-      ],
-      "synonyms": [
-        "Guitar",
-        "Plucked",
-        "Chordophone",
-        "Strings",
-        "Stringed Instrument",
-        "GTR",
-        "acoustic gt",
-        "electric gt",
-        "GT"
-      ],
-      "acoustic_signature": {
-        "morphology": "impulsive_with_tail",
-        "separability": "semantic_only",
-        "gates": [],
-        "priors": []
-      }
+     },
+     "features_not_measurable_here": {
+      "band_limit_high_hz": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "beats_per_minute": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "clipping_density": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "dc_offset": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "length_seconds": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "lufs": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "root_mean_square_level": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "sample_rate": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "stereo_width": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "total_harmonic_distortion": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "voicing_ratio": "left reasoned — see not_calibrated in fsd50k_calibration.json"
+     },
+     "caveat": "Amateur Freesound audio, mono, arbitrary normalization. Treat as a prior on the prior, not as truth. Duration, level, stereo width and band limit are NOT measurable here and are left reasoned."
     }
-  ]
+   }
+  },
+  {
+   "subcategory": "ELECTRIC",
+   "category_id": "GUITElec",
+   "category_short": "GUIT",
+   "emoji": "⚡",
+   "explanation": [
+    "Electric guitar — a solid/semi-hollow chordophone whose strings are amplified, sustained and often overdriven by an amp.",
+    "Clean single-coil tones through to distorted power chords and lead riffs."
+   ],
+   "synonyms": [
+    "Electric Guitar",
+    "Electric",
+    "Strat",
+    "Les Paul",
+    "Telecaster",
+    "Riff",
+    "Power Chord",
+    "Distorted Guitar",
+    "Overdrive",
+    "Lead Guitar",
+    "Crunch"
+   ],
+   "acoustic_signature": {
+    "morphology": "impulsive_with_tail",
+    "separability": "signal_narrowable",
+    "gates": [
+     {
+      "feature": "length_seconds",
+      "max": 30.0
+     }
+    ],
+    "priors": [
+     {
+      "feature": "harmonicity",
+      "mean": 0.77702,
+      "deviation": 0.2991,
+      "transform": "linear",
+      "weight": 0.9,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 493,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "all_unambiguous_clips",
+       "reasoned_mean_before_calibration": 0.78
+      }
+     },
+     {
+      "feature": "total_harmonic_distortion",
+      "mean": 0.25,
+      "deviation": 0.2,
+      "transform": "linear",
+      "weight": 0.9,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.25,
+       "reasoned_deviation_before_calibration": 0.2
+      }
+     },
+     {
+      "feature": "spectral_centroid_hz",
+      "mean": 1707.4,
+      "deviation": 1.9,
+      "transform": "log",
+      "weight": 0.7,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 493,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "all_unambiguous_clips",
+       "reasoned_mean_before_calibration": 1600.0
+      }
+     },
+     {
+      "feature": "sustain_ratio",
+      "mean": 0.47222,
+      "deviation": 0.4918,
+      "transform": "linear",
+      "weight": 0.6,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 157,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "one_shot_clips_only",
+       "reasoned_mean_before_calibration": 0.55
+      }
+     },
+     {
+      "feature": "envelope_attack_seconds",
+      "mean": 0.047327,
+      "deviation": 3.441,
+      "transform": "log",
+      "weight": 0.5,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 152,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "one_shot_clips_only",
+       "reasoned_mean_before_calibration": 0.015
+      }
+     }
+    ],
+    "measured_evidence": {
+     "dataset": "FSD50K.dev — 40,966 human-labelled Freesound clips",
+     "analyzer_version": "20260729.1251",
+     "date": "2026-07",
+     "clip_count": 493,
+     "selection": "clips whose FSD50K labels map unambiguously to this one subcategory (high/medium crosswalk confidence only)",
+     "contributing_fsd50k_classes": {
+      "Electric_guitar": 493
+     },
+     "feature_observations": {
+      "complexity": {
+       "clips": 493,
+       "percentile_05": 1075.6,
+       "median": 1694.8,
+       "percentile_95": 2866.6
+      },
+      "crest_factor": {
+       "clips": 157,
+       "percentile_05": 3.2348,
+       "median": 4.7347,
+       "percentile_95": 9.385,
+       "measured_on": "one_shot_clips_only"
+      },
+      "decay_time_seconds_60db": {
+       "clips": 37,
+       "percentile_05": 0.11691,
+       "median": 0.56282,
+       "percentile_95": 2.5389,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_attack_seconds": {
+       "clips": 152,
+       "percentile_05": 0.0099773,
+       "median": 0.044898,
+       "percentile_95": 0.55873,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_decay_seconds": {
+       "clips": 157,
+       "percentile_05": 0.0049887,
+       "median": 0.31927,
+       "percentile_95": 1.751,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_kurtosis": {
+       "clips": 157,
+       "percentile_05": -1.5042,
+       "median": 0.43241,
+       "percentile_95": 8.6365,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_release_seconds": {
+       "clips": 146,
+       "percentile_05": 0.019955,
+       "median": 0.23946,
+       "percentile_95": 1.2122,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_skewness": {
+       "clips": 157,
+       "percentile_05": -1.3267,
+       "median": 0.44718,
+       "percentile_95": 2.3567,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_sustain_level": {
+       "clips": 157,
+       "percentile_05": 0.030835,
+       "median": 0.44523,
+       "percentile_95": 0.86032,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_temporal_centroid": {
+       "clips": 157,
+       "percentile_05": 0.1083,
+       "median": 0.30675,
+       "percentile_95": 0.4984,
+       "measured_on": "one_shot_clips_only"
+      },
+      "harmonicity": {
+       "clips": 493,
+       "percentile_05": 0.32045,
+       "median": 0.77702,
+       "percentile_95": 0.98756
+      },
+      "high_band_energy": {
+       "clips": 493,
+       "percentile_05": 0.085355,
+       "median": 0.32793,
+       "percentile_95": 0.56532
+      },
+      "inharmonicity": {
+       "clips": 493,
+       "percentile_05": 0.0046273,
+       "median": 0.16259,
+       "percentile_95": 0.54698
+      },
+      "low_band_energy": {
+       "clips": 493,
+       "percentile_05": 0.006444,
+       "median": 0.068061,
+       "percentile_95": 0.3952
+      },
+      "mid_band_energy": {
+       "clips": 493,
+       "percentile_05": 0.36069,
+       "median": 0.54836,
+       "percentile_95": 0.81961
+      },
+      "onset_periodicity": {
+       "clips": 493,
+       "percentile_05": 0.11922,
+       "median": 0.28754,
+       "percentile_95": 0.60105
+      },
+      "onset_rate_per_second": {
+       "clips": 493,
+       "percentile_05": 0.21205,
+       "median": 1.3125,
+       "percentile_95": 3.3463
+      },
+      "partial_count": {
+       "clips": 493,
+       "percentile_05": 2.0,
+       "median": 7.0,
+       "percentile_95": 12.0
+      },
+      "pitch_hz": {
+       "clips": 420,
+       "percentile_05": 55.542,
+       "median": 109.98,
+       "percentile_95": 450.0
+      },
+      "pitch_slope_semitones_per_second": {
+       "clips": 76,
+       "percentile_05": -8.4494,
+       "median": -0.015061,
+       "percentile_95": 2.001
+      },
+      "spectral_centroid_deviation_hz": {
+       "clips": 493,
+       "percentile_05": 105.25,
+       "median": 368.45,
+       "percentile_95": 1562.6
+      },
+      "spectral_centroid_hz": {
+       "clips": 493,
+       "percentile_05": 764.7,
+       "median": 1707.4,
+       "percentile_95": 2663.0
+      },
+      "spectral_centroid_mean_hz": {
+       "clips": 493,
+       "percentile_05": 570.19,
+       "median": 1384.4,
+       "percentile_95": 2740.8
+      },
+      "spectral_centroid_slope_hz_per_second": {
+       "clips": 493,
+       "percentile_05": -544.4,
+       "median": 7.3488,
+       "percentile_95": 972.39
+      },
+      "spectral_entropy": {
+       "clips": 493,
+       "percentile_05": 0.21216,
+       "median": 0.36415,
+       "percentile_95": 0.53249
+      },
+      "spectral_flatness": {
+       "clips": 493,
+       "percentile_05": 0.0085185,
+       "median": 0.028273,
+       "percentile_95": 0.13497
+      },
+      "spectral_flux": {
+       "clips": 493,
+       "percentile_05": 0.036915,
+       "median": 0.1467,
+       "percentile_95": 0.20605
+      },
+      "spectral_rolloff_hz": {
+       "clips": 493,
+       "percentile_05": 1181.1,
+       "median": 3158.0,
+       "percentile_95": 4672.3
+      },
+      "spectral_slope_db_per_octave": {
+       "clips": 493,
+       "percentile_05": -10.87,
+       "median": -6.6464,
+       "percentile_95": -2.3349
+      },
+      "stationarity": {
+       "clips": 493,
+       "percentile_05": 0.0,
+       "median": 0.45601,
+       "percentile_95": 0.87613,
+       "censored_at_floor_fraction": 0.189
+      },
+      "sustain_ratio": {
+       "clips": 157,
+       "percentile_05": 0.091463,
+       "median": 0.47222,
+       "percentile_95": 0.99324,
+       "measured_on": "one_shot_clips_only"
+      },
+      "syllabic_modulation_energy": {
+       "clips": 492,
+       "percentile_05": 0.0034562,
+       "median": 0.17487,
+       "percentile_95": 0.48023
+      },
+      "transient_count": {
+       "clips": 493,
+       "percentile_05": 1.0,
+       "median": 3.0,
+       "percentile_95": 15.0
+      },
+      "zero_crossings_per_second": {
+       "clips": 493,
+       "percentile_05": 433.44,
+       "median": 1482.0,
+       "percentile_95": 3406.9
+      }
+     },
+     "features_not_measurable_here": {
+      "band_limit_high_hz": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "beats_per_minute": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "clipping_density": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "dc_offset": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "length_seconds": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "lufs": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "root_mean_square_level": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "sample_rate": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "stereo_width": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "total_harmonic_distortion": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "voicing_ratio": "left reasoned — see not_calibrated in fsd50k_calibration.json"
+     },
+     "caveat": "Amateur Freesound audio, mono, arbitrary normalization. Treat as a prior on the prior, not as truth. Duration, level, stereo width and band limit are NOT measurable here and are left reasoned."
+    }
+   }
+  },
+  {
+   "subcategory": "BASS GUITAR",
+   "category_id": "GUITBass",
+   "category_short": "GUIT",
+   "emoji": "🎸",
+   "explanation": [
+    "Bass guitar — a low-register plucked chordophone (electric or acoustic bass) providing deep, fundamental-heavy notes.",
+    "Fingered, picked and slapped bass; P-Bass, Jazz Bass and upright-adjacent electric basses."
+   ],
+   "synonyms": [
+    "Bass Guitar",
+    "Bass",
+    "Electric Bass",
+    "Fingered Bass",
+    "Slap Bass",
+    "P-Bass",
+    "Jazz Bass",
+    "Picked Bass",
+    "Bass Line"
+   ],
+   "acoustic_signature": {
+    "morphology": "impulsive_with_tail",
+    "separability": "signal_separable",
+    "gates": [
+     {
+      "feature": "spectral_centroid_hz",
+      "max": 4933.0,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "action": "widened",
+       "clips": 310,
+       "was": {
+        "max": 1200
+       },
+       "reason": "the reasoned gate rejected 35% of this subcategory's own true clips",
+       "date": "2026-07"
+      }
+     },
+     {
+      "feature": "length_seconds",
+      "max": 20.0
+     }
+    ],
+    "priors": [
+     {
+      "feature": "spectral_centroid_hz",
+      "mean": 741.85,
+      "deviation": 3.243,
+      "transform": "log",
+      "weight": 1.0,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 310,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "all_unambiguous_clips",
+       "reasoned_mean_before_calibration": 300.0
+      }
+     },
+     {
+      "feature": "low_band_energy",
+      "mean": 0.46844,
+      "deviation": 0.2918,
+      "transform": "linear",
+      "weight": 1.0,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 310,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "all_unambiguous_clips",
+       "reasoned_mean_before_calibration": 0.75
+      }
+     },
+     {
+      "feature": "harmonicity",
+      "mean": 0.99083,
+      "deviation": 0.14,
+      "transform": "linear",
+      "weight": 0.8,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 310,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "all_unambiguous_clips",
+       "reasoned_mean_before_calibration": 0.8
+      }
+     },
+     {
+      "feature": "pitch_hz",
+      "mean": 110.8,
+      "deviation": 2.021,
+      "transform": "log",
+      "weight": 0.7,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 215,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "all_unambiguous_clips",
+       "reasoned_mean_before_calibration": 80.0
+      }
+     },
+     {
+      "feature": "envelope_attack_seconds",
+      "mean": 0.014966,
+      "deviation": 3.0,
+      "transform": "log",
+      "weight": 0.5,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 141,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "one_shot_clips_only",
+       "reasoned_mean_before_calibration": 0.012
+      }
+     }
+    ],
+    "measured_evidence": {
+     "dataset": "FSD50K.dev — 40,966 human-labelled Freesound clips",
+     "analyzer_version": "20260729.1251",
+     "date": "2026-07",
+     "clip_count": 310,
+     "selection": "clips whose FSD50K labels map unambiguously to this one subcategory (high/medium crosswalk confidence only)",
+     "contributing_fsd50k_classes": {
+      "Bass_guitar": 310
+     },
+     "feature_observations": {
+      "complexity": {
+       "clips": 310,
+       "percentile_05": 794.34,
+       "median": 2114.1,
+       "percentile_95": 4557.3
+      },
+      "crest_factor": {
+       "clips": 213,
+       "percentile_05": 3.4816,
+       "median": 5.8698,
+       "percentile_95": 12.002,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_attack_seconds": {
+       "clips": 141,
+       "percentile_05": 0.0049887,
+       "median": 0.014966,
+       "percentile_95": 0.07483,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_decay_seconds": {
+       "clips": 213,
+       "percentile_05": 0.064853,
+       "median": 2.7787,
+       "percentile_95": 3.8662,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_kurtosis": {
+       "clips": 213,
+       "percentile_05": -0.56728,
+       "median": 2.0084,
+       "percentile_95": 12.771,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_release_seconds": {
+       "clips": 207,
+       "percentile_05": 0.064853,
+       "median": 2.3946,
+       "percentile_95": 4.9138,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_skewness": {
+       "clips": 213,
+       "percentile_05": 0.69829,
+       "median": 1.5446,
+       "percentile_95": 3.0743,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_sustain_level": {
+       "clips": 213,
+       "percentile_05": 0.057174,
+       "median": 0.1661,
+       "percentile_95": 0.37945,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_temporal_centroid": {
+       "clips": 213,
+       "percentile_05": 0.088184,
+       "median": 0.15407,
+       "percentile_95": 0.26229,
+       "measured_on": "one_shot_clips_only"
+      },
+      "harmonicity": {
+       "clips": 310,
+       "percentile_05": 0.81393,
+       "median": 0.99082,
+       "percentile_95": 0.99751
+      },
+      "high_band_energy": {
+       "clips": 310,
+       "percentile_05": 0.0065486,
+       "median": 0.06564,
+       "percentile_95": 0.33577
+      },
+      "inharmonicity": {
+       "clips": 310,
+       "percentile_05": 0.0,
+       "median": 0.0060476,
+       "percentile_95": 0.51714
+      },
+      "low_band_energy": {
+       "clips": 310,
+       "percentile_05": 0.060202,
+       "median": 0.46705,
+       "percentile_95": 0.81296
+      },
+      "mid_band_energy": {
+       "clips": 310,
+       "percentile_05": 0.13354,
+       "median": 0.40125,
+       "percentile_95": 0.83199
+      },
+      "onset_periodicity": {
+       "clips": 310,
+       "percentile_05": 0.052199,
+       "median": 0.31473,
+       "percentile_95": 0.87004
+      },
+      "onset_rate_per_second": {
+       "clips": 310,
+       "percentile_05": 0.10417,
+       "median": 0.16703,
+       "percentile_95": 3.3333
+      },
+      "partial_count": {
+       "clips": 268,
+       "percentile_05": 1.0,
+       "median": 3.0,
+       "percentile_95": 9.0
+      },
+      "pitch_hz": {
+       "clips": 215,
+       "percentile_05": 55.056,
+       "median": 110.8,
+       "percentile_95": 262.5
+      },
+      "pitch_slope_semitones_per_second": {
+       "clips": 171,
+       "percentile_05": -0.60962,
+       "median": -0.0034907,
+       "percentile_95": 0.095107
+      },
+      "spectral_centroid_deviation_hz": {
+       "clips": 310,
+       "percentile_05": 9.429,
+       "median": 81.117,
+       "percentile_95": 2310.8
+      },
+      "spectral_centroid_hz": {
+       "clips": 310,
+       "percentile_05": 239.5,
+       "median": 738.04,
+       "percentile_95": 2346.8
+      },
+      "spectral_centroid_mean_hz": {
+       "clips": 310,
+       "percentile_05": 130.57,
+       "median": 305.89,
+       "percentile_95": 2506.8
+      },
+      "spectral_centroid_slope_hz_per_second": {
+       "clips": 310,
+       "percentile_05": -103.05,
+       "median": 3.0384,
+       "percentile_95": 891.48
+      },
+      "spectral_entropy": {
+       "clips": 310,
+       "percentile_05": 0.12779,
+       "median": 0.21259,
+       "percentile_95": 0.30993
+      },
+      "spectral_flatness": {
+       "clips": 310,
+       "percentile_05": 0.0065189,
+       "median": 0.050553,
+       "percentile_95": 0.26235
+      },
+      "spectral_flux": {
+       "clips": 310,
+       "percentile_05": 0.0032753,
+       "median": 0.033575,
+       "percentile_95": 0.15919
+      },
+      "spectral_rolloff_hz": {
+       "clips": 310,
+       "percentile_05": 222.54,
+       "median": 646.67,
+       "percentile_95": 5013.8
+      },
+      "spectral_slope_db_per_octave": {
+       "clips": 310,
+       "percentile_05": -17.568,
+       "median": -13.096,
+       "percentile_95": -7.5081
+      },
+      "stationarity": {
+       "clips": 310,
+       "percentile_05": 0.0,
+       "median": 0.28767,
+       "percentile_95": 0.7589,
+       "censored_at_floor_fraction": 0.252
+      },
+      "sustain_ratio": {
+       "clips": 213,
+       "percentile_05": 0.062241,
+       "median": 0.1708,
+       "percentile_95": 0.368,
+       "measured_on": "one_shot_clips_only"
+      },
+      "syllabic_modulation_energy": {
+       "clips": 305,
+       "percentile_05": 0.00025451,
+       "median": 0.011856,
+       "percentile_95": 0.50596
+      },
+      "transient_count": {
+       "clips": 310,
+       "percentile_05": 1.0,
+       "median": 1.0,
+       "percentile_95": 22.0
+      },
+      "zero_crossings_per_second": {
+       "clips": 310,
+       "percentile_05": 150.34,
+       "median": 352.54,
+       "percentile_95": 727.57
+      }
+     },
+     "features_not_measurable_here": {
+      "band_limit_high_hz": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "beats_per_minute": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "clipping_density": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "dc_offset": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "length_seconds": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "lufs": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "root_mean_square_level": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "sample_rate": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "stereo_width": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "total_harmonic_distortion": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "voicing_ratio": "left reasoned — see not_calibrated in fsd50k_calibration.json"
+     },
+     "caveat": "Amateur Freesound audio, mono, arbitrary normalization. Treat as a prior on the prior, not as truth. Duration, level, stereo width and band limit are NOT measurable here and are left reasoned."
+    }
+   }
+  },
+  {
+   "subcategory": "HARP",
+   "category_id": "GUITHarp",
+   "category_short": "GUIT",
+   "emoji": "🎵",
+   "explanation": [
+    "Concert harp — a large plucked chordophone with bright, shimmering tone and long harmonic decay.",
+    "Sweeping glissandi and single plucked notes with a clean, ringing sustain."
+   ],
+   "synonyms": [
+    "Harp",
+    "Concert Harp",
+    "Glissando",
+    "Gliss",
+    "Pedal Harp"
+   ],
+   "acoustic_signature": {
+    "morphology": "impulsive_with_tail",
+    "separability": "signal_separable",
+    "gates": [
+     {
+      "feature": "length_seconds",
+      "max": 25.0
+     }
+    ],
+    "priors": [
+     {
+      "feature": "harmonicity",
+      "mean": 0.68573,
+      "deviation": 0.3295,
+      "transform": "linear",
+      "weight": 1.0,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 177,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "all_unambiguous_clips",
+       "reasoned_mean_before_calibration": 0.88
+      }
+     },
+     {
+      "feature": "spectral_centroid_hz",
+      "mean": 3438.9,
+      "deviation": 1.9,
+      "transform": "log",
+      "weight": 0.7,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 177,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "all_unambiguous_clips",
+       "reasoned_mean_before_calibration": 1900.0
+      }
+     },
+     {
+      "feature": "decay_time_seconds_60db",
+      "mean": 2.0,
+      "deviation": 2.2,
+      "transform": "log",
+      "weight": 0.7,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 2.0,
+       "reasoned_deviation_before_calibration": 2.2
+      }
+     },
+     {
+      "feature": "envelope_attack_seconds",
+      "mean": 0.014966,
+      "deviation": 2.8,
+      "transform": "log",
+      "weight": 0.6,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 62,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "one_shot_clips_only",
+       "reasoned_mean_before_calibration": 0.01
+      }
+     },
+     {
+      "feature": "sustain_ratio",
+      "mean": 0.041492,
+      "deviation": 0.22,
+      "transform": "linear",
+      "weight": 0.5,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 66,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "one_shot_clips_only",
+       "reasoned_mean_before_calibration": 0.45
+      }
+     }
+    ],
+    "measured_evidence": {
+     "dataset": "FSD50K.dev — 40,966 human-labelled Freesound clips",
+     "analyzer_version": "20260729.1251",
+     "date": "2026-07",
+     "clip_count": 177,
+     "selection": "clips whose FSD50K labels map unambiguously to this one subcategory (high/medium crosswalk confidence only)",
+     "contributing_fsd50k_classes": {
+      "Harp": 177
+     },
+     "feature_observations": {
+      "complexity": {
+       "clips": 177,
+       "percentile_05": 2430.6,
+       "median": 3846.7,
+       "percentile_95": 6362.6
+      },
+      "crest_factor": {
+       "clips": 66,
+       "percentile_05": 6.5846,
+       "median": 11.654,
+       "percentile_95": 21.228,
+       "measured_on": "one_shot_clips_only"
+      },
+      "decay_time_seconds_60db": {
+       "clips": 23,
+       "percentile_05": 0.53656,
+       "median": 1.5331,
+       "percentile_95": 5.9627,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_attack_seconds": {
+       "clips": 62,
+       "percentile_05": 0.0099773,
+       "median": 0.014966,
+       "percentile_95": 0.079819,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_decay_seconds": {
+       "clips": 66,
+       "percentile_05": 0.34921,
+       "median": 0.99274,
+       "percentile_95": 4.0109,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_kurtosis": {
+       "clips": 66,
+       "percentile_05": 1.5062,
+       "median": 10.222,
+       "percentile_95": 43.444,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_release_seconds": {
+       "clips": 66,
+       "percentile_05": 0.15465,
+       "median": 0.97778,
+       "percentile_95": 5.3279,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_skewness": {
+       "clips": 66,
+       "percentile_05": 1.3135,
+       "median": 2.785,
+       "percentile_95": 6.1004,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_sustain_level": {
+       "clips": 66,
+       "percentile_05": 0.0014385,
+       "median": 0.046365,
+       "percentile_95": 0.18967,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_temporal_centroid": {
+       "clips": 66,
+       "percentile_05": 0.025524,
+       "median": 0.077183,
+       "percentile_95": 0.21751,
+       "measured_on": "one_shot_clips_only"
+      },
+      "harmonicity": {
+       "clips": 177,
+       "percentile_05": 0.41005,
+       "median": 0.68573,
+       "percentile_95": 0.99589
+      },
+      "high_band_energy": {
+       "clips": 177,
+       "percentile_05": 0.18401,
+       "median": 0.45444,
+       "percentile_95": 0.68605
+      },
+      "inharmonicity": {
+       "clips": 177,
+       "percentile_05": 0.0003784,
+       "median": 0.21642,
+       "percentile_95": 0.57853
+      },
+      "low_band_energy": {
+       "clips": 177,
+       "percentile_05": 0.0029142,
+       "median": 0.02029,
+       "percentile_95": 0.19803
+      },
+      "mid_band_energy": {
+       "clips": 177,
+       "percentile_05": 0.20331,
+       "median": 0.50561,
+       "percentile_95": 0.72993
+      },
+      "onset_periodicity": {
+       "clips": 177,
+       "percentile_05": 0.00016955,
+       "median": 0.35958,
+       "percentile_95": 0.61255
+      },
+      "onset_rate_per_second": {
+       "clips": 177,
+       "percentile_05": 0.092189,
+       "median": 0.54571,
+       "percentile_95": 1.3508
+      },
+      "partial_count": {
+       "clips": 175,
+       "percentile_05": 1.0,
+       "median": 7.0,
+       "percentile_95": 12.0
+      },
+      "pitch_hz": {
+       "clips": 165,
+       "percentile_05": 54.31,
+       "median": 312.77,
+       "percentile_95": 1075.6
+      },
+      "spectral_centroid_deviation_hz": {
+       "clips": 177,
+       "percentile_05": 345.48,
+       "median": 706.35,
+       "percentile_95": 3334.4
+      },
+      "spectral_centroid_hz": {
+       "clips": 177,
+       "percentile_05": 1392.8,
+       "median": 3438.9,
+       "percentile_95": 5511.7
+      },
+      "spectral_centroid_mean_hz": {
+       "clips": 177,
+       "percentile_05": 1376.7,
+       "median": 2419.0,
+       "percentile_95": 5688.2
+      },
+      "spectral_centroid_slope_hz_per_second": {
+       "clips": 177,
+       "percentile_05": -191.45,
+       "median": 69.359,
+       "percentile_95": 2341.4
+      },
+      "spectral_entropy": {
+       "clips": 177,
+       "percentile_05": 0.20354,
+       "median": 0.3686,
+       "percentile_95": 0.50612
+      },
+      "spectral_flatness": {
+       "clips": 177,
+       "percentile_05": 0.067256,
+       "median": 0.20229,
+       "percentile_95": 0.37262
+      },
+      "spectral_flux": {
+       "clips": 177,
+       "percentile_05": 0.068196,
+       "median": 0.11959,
+       "percentile_95": 0.18172
+      },
+      "spectral_rolloff_hz": {
+       "clips": 177,
+       "percentile_05": 2258.3,
+       "median": 7734.9,
+       "percentile_95": 12541.0
+      },
+      "spectral_slope_db_per_octave": {
+       "clips": 177,
+       "percentile_05": -7.5483,
+       "median": -3.1983,
+       "percentile_95": -0.4206
+      },
+      "stationarity": {
+       "clips": 177,
+       "percentile_05": 0.0,
+       "median": 0.20739,
+       "percentile_95": 0.56117,
+       "censored_at_floor_fraction": 0.333
+      },
+      "sustain_ratio": {
+       "clips": 66,
+       "percentile_05": 0.013491,
+       "median": 0.041475,
+       "percentile_95": 0.15865,
+       "measured_on": "one_shot_clips_only"
+      },
+      "syllabic_modulation_energy": {
+       "clips": 177,
+       "percentile_05": 0.0034052,
+       "median": 0.10654,
+       "percentile_95": 0.3251
+      },
+      "transient_count": {
+       "clips": 177,
+       "percentile_05": 1.0,
+       "median": 3.0,
+       "percentile_95": 15.0
+      },
+      "zero_crossings_per_second": {
+       "clips": 177,
+       "percentile_05": 663.73,
+       "median": 1946.2,
+       "percentile_95": 4130.9
+      }
+     },
+     "features_not_measurable_here": {
+      "band_limit_high_hz": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "beats_per_minute": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "clipping_density": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "dc_offset": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "length_seconds": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "lufs": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "root_mean_square_level": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "sample_rate": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "stereo_width": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "total_harmonic_distortion": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "voicing_ratio": "left reasoned — see not_calibrated in fsd50k_calibration.json"
+     },
+     "caveat": "Amateur Freesound audio, mono, arbitrary normalization. Treat as a prior on the prior, not as truth. Duration, level, stereo width and band limit are NOT measurable here and are left reasoned."
+    }
+   }
+  },
+  {
+   "subcategory": "BANJO",
+   "category_id": "GUITBanj",
+   "category_short": "GUIT",
+   "emoji": "🪕",
+   "explanation": [
+    "Banjo — a bright, twangy plucked chordophone with a taut membrane head giving a metallic-edged attack and fast decay.",
+    "Bluegrass and folk banjo rolls and single notes."
+   ],
+   "synonyms": [
+    "Banjo",
+    "Bluegrass",
+    "Twang",
+    "Clawhammer"
+   ],
+   "acoustic_signature": {
+    "morphology": "impulsive_with_tail",
+    "separability": "signal_narrowable",
+    "gates": [
+     {
+      "feature": "length_seconds",
+      "max": 12.0
+     }
+    ],
+    "priors": [
+     {
+      "feature": "spectral_centroid_hz",
+      "mean": 2600.0,
+      "deviation": 1.8,
+      "transform": "log",
+      "weight": 0.9,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 2600.0,
+       "reasoned_deviation_before_calibration": 1.8
+      }
+     },
+     {
+      "feature": "harmonicity",
+      "mean": 0.72,
+      "deviation": 0.16,
+      "transform": "linear",
+      "weight": 0.8,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.72,
+       "reasoned_deviation_before_calibration": 0.16
+      }
+     },
+     {
+      "feature": "envelope_attack_seconds",
+      "mean": 0.006,
+      "deviation": 3.0,
+      "transform": "log",
+      "weight": 0.7,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.006,
+       "reasoned_deviation_before_calibration": 3.0
+      }
+     },
+     {
+      "feature": "decay_time_seconds_60db",
+      "mean": 0.5,
+      "deviation": 2.2,
+      "transform": "log",
+      "weight": 0.6,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.5,
+       "reasoned_deviation_before_calibration": 2.2
+      }
+     },
+     {
+      "feature": "high_band_energy",
+      "mean": 0.4,
+      "deviation": 0.22,
+      "transform": "linear",
+      "weight": 0.5,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.4,
+       "reasoned_deviation_before_calibration": 0.22
+      }
+     }
+    ]
+   }
+  },
+  {
+   "subcategory": "MANDOLIN",
+   "category_id": "GUITMand",
+   "category_short": "GUIT",
+   "emoji": "🎸",
+   "explanation": [
+    "Mandolin — a high, bright double-course plucked chordophone, often played with a shimmering tremolo.",
+    "Paired-string courses give a chorused, ringing tone."
+   ],
+   "synonyms": [
+    "Mandolin",
+    "Mando",
+    "Tremolo",
+    "Double Course"
+   ],
+   "acoustic_signature": {
+    "morphology": "impulsive_with_tail",
+    "separability": "signal_narrowable",
+    "gates": [
+     {
+      "feature": "length_seconds",
+      "max": 12.0
+     }
+    ],
+    "priors": [
+     {
+      "feature": "spectral_centroid_hz",
+      "mean": 2400.0,
+      "deviation": 1.8,
+      "transform": "log",
+      "weight": 0.9,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 2400.0,
+       "reasoned_deviation_before_calibration": 1.8
+      }
+     },
+     {
+      "feature": "harmonicity",
+      "mean": 0.8,
+      "deviation": 0.14,
+      "transform": "linear",
+      "weight": 0.8,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.8,
+       "reasoned_deviation_before_calibration": 0.14
+      }
+     },
+     {
+      "feature": "pitch_hz",
+      "mean": 600.0,
+      "deviation": 1.8,
+      "transform": "log",
+      "weight": 0.6,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 600.0,
+       "reasoned_deviation_before_calibration": 1.8
+      }
+     },
+     {
+      "feature": "envelope_attack_seconds",
+      "mean": 0.007,
+      "deviation": 3.0,
+      "transform": "log",
+      "weight": 0.6,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.007,
+       "reasoned_deviation_before_calibration": 3.0
+      }
+     },
+     {
+      "feature": "high_band_energy",
+      "mean": 0.38,
+      "deviation": 0.22,
+      "transform": "linear",
+      "weight": 0.5,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.38,
+       "reasoned_deviation_before_calibration": 0.22
+      }
+     }
+    ]
+   }
+  },
+  {
+   "subcategory": "UKULELE",
+   "category_id": "GUITUke",
+   "category_short": "GUIT",
+   "emoji": "🎸",
+   "explanation": [
+    "Ukulele — a small, bright nylon-strung plucked chordophone with a soft, warm-yet-bright attack and quick decay.",
+    "Soprano through baritone ukulele plucks and strums."
+   ],
+   "synonyms": [
+    "Ukulele",
+    "Uke",
+    "Soprano Uke",
+    "Baritone Uke"
+   ],
+   "acoustic_signature": {
+    "morphology": "impulsive_with_tail",
+    "separability": "signal_narrowable",
+    "gates": [
+     {
+      "feature": "length_seconds",
+      "max": 10.0
+     }
+    ],
+    "priors": [
+     {
+      "feature": "spectral_centroid_hz",
+      "mean": 2000.0,
+      "deviation": 1.8,
+      "transform": "log",
+      "weight": 0.8,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 2000.0,
+       "reasoned_deviation_before_calibration": 1.8
+      }
+     },
+     {
+      "feature": "harmonicity",
+      "mean": 0.8,
+      "deviation": 0.14,
+      "transform": "linear",
+      "weight": 0.8,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.8,
+       "reasoned_deviation_before_calibration": 0.14
+      }
+     },
+     {
+      "feature": "pitch_hz",
+      "mean": 440.0,
+      "deviation": 1.8,
+      "transform": "log",
+      "weight": 0.6,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 440.0,
+       "reasoned_deviation_before_calibration": 1.8
+      }
+     },
+     {
+      "feature": "envelope_attack_seconds",
+      "mean": 0.009,
+      "deviation": 3.0,
+      "transform": "log",
+      "weight": 0.6,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.009,
+       "reasoned_deviation_before_calibration": 3.0
+      }
+     },
+     {
+      "feature": "decay_time_seconds_60db",
+      "mean": 0.5,
+      "deviation": 2.2,
+      "transform": "log",
+      "weight": 0.5,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.5,
+       "reasoned_deviation_before_calibration": 2.2
+      }
+     }
+    ]
+   }
+  },
+  {
+   "subcategory": "SITAR",
+   "category_id": "GUITSitr",
+   "category_short": "GUIT",
+   "emoji": "🎸",
+   "explanation": [
+    "Sitar — a buzzy, resonant plucked chordophone whose curved bridge and sympathetic strings create an inharmonic, shimmering drone.",
+    "Indian classical melodic lines with characteristic pitch-bending and jawari buzz."
+   ],
+   "synonyms": [
+    "Sitar",
+    "Sympathetic Strings",
+    "Raga",
+    "Drone"
+   ],
+   "acoustic_signature": {
+    "morphology": "impulsive_with_tail",
+    "separability": "signal_narrowable",
+    "gates": [
+     {
+      "feature": "length_seconds",
+      "max": 20.0
+     }
+    ],
+    "priors": [
+     {
+      "feature": "inharmonicity",
+      "mean": 0.35,
+      "deviation": 0.2,
+      "transform": "linear",
+      "weight": 0.9,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.35,
+       "reasoned_deviation_before_calibration": 0.2
+      }
+     },
+     {
+      "feature": "spectral_centroid_hz",
+      "mean": 1800.0,
+      "deviation": 1.9,
+      "transform": "log",
+      "weight": 0.7,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 1800.0,
+       "reasoned_deviation_before_calibration": 1.9
+      }
+     },
+     {
+      "feature": "spectral_flatness",
+      "mean": 0.25,
+      "deviation": 0.18,
+      "transform": "linear",
+      "weight": 0.6,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.25,
+       "reasoned_deviation_before_calibration": 0.18
+      }
+     },
+     {
+      "feature": "harmonicity",
+      "mean": 0.6,
+      "deviation": 0.2,
+      "transform": "linear",
+      "weight": 0.6,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.6,
+       "reasoned_deviation_before_calibration": 0.2
+      }
+     },
+     {
+      "feature": "decay_time_seconds_60db",
+      "mean": 1.5,
+      "deviation": 2.2,
+      "transform": "log",
+      "weight": 0.5,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 1.5,
+       "reasoned_deviation_before_calibration": 2.2
+      }
+     }
+    ]
+   }
+  },
+  {
+   "subcategory": "MISC",
+   "category_id": "GUITMisc",
+   "category_short": "GUIT",
+   "emoji": "🎸",
+   "explanation": [
+    "A plucked chordophone that does not fit a specific subcategory, or the abstention target when the scorer is unsure."
+   ],
+   "synonyms": [
+    "Guitar",
+    "Plucked",
+    "Chordophone",
+    "Strings",
+    "Stringed Instrument",
+    "GTR",
+    "acoustic gt",
+    "electric gt",
+    "GT"
+   ],
+   "acoustic_signature": {
+    "morphology": "impulsive_with_tail",
+    "separability": "semantic_only",
+    "gates": [],
+    "priors": []
+   }
+  }
+ ]
 }

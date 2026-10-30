@@ -1,353 +1,594 @@
 {
-  "version": "8.2.APK",
-  "category": "PIANO",
-  "emoji": "🎹",
-  "subcategories": [
-    {
-      "subcategory": "GRAND",
-      "category_id": "PIANGrnd",
-      "category_short": "PIAN",
-      "emoji": "🎹",
-      "explanation": [
-        "Horizontal grand piano \u2014 a struck-string chordophone with a rich, resonant tone, long sustain, and a full harmonic spectrum.",
-        "The size distinctions (baby grand, parlor, concert grand) are not audible from a sample; the type reads as a tonal, wide-band, harmonic, slowly-decaying keyboard."
-      ],
-      "synonyms": [
-        "Grand Piano",
-        "Grand",
-        "Baby Grand",
-        "Concert Grand",
-        "Petite Grand",
-        "Parlor Grand",
-        "Boudoir Grand",
-        "Semi-Concert"
-      ],
-      "acoustic_signature": {
-        "morphology": "impulsive_with_tail",
-        "separability": "signal_narrowable",
-        "gates": [
-          {
-            "feature": "length_seconds",
-            "max": 30.0
-          }
-        ],
-        "priors": [
-          {
-            "feature": "harmonicity",
-            "mean": 0.85,
-            "deviation": 0.15,
-            "transform": "linear",
-            "weight": 1.0,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.85,
-              "reasoned_deviation_before_calibration": 0.15
-            }
-          },
-          {
-            "feature": "decay_time_seconds_60db",
-            "mean": 2.2,
-            "deviation": 2.2,
-            "transform": "log",
-            "weight": 0.7,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 2.2,
-              "reasoned_deviation_before_calibration": 2.2
-            }
-          },
-          {
-            "feature": "envelope_attack_seconds",
-            "mean": 0.012,
-            "deviation": 2.5,
-            "transform": "log",
-            "weight": 0.6,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.012,
-              "reasoned_deviation_before_calibration": 2.5
-            }
-          },
-          {
-            "feature": "pitch_hz",
-            "mean": 261.0,
-            "deviation": 3.0,
-            "transform": "log",
-            "weight": 0.5,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 261.0,
-              "reasoned_deviation_before_calibration": 3.0
-            }
-          },
-          {
-            "feature": "spectral_centroid_hz",
-            "mean": 800.0,
-            "deviation": 2.5,
-            "transform": "log",
-            "weight": 0.5,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 800.0,
-              "reasoned_deviation_before_calibration": 2.5
-            }
-          },
-          {
-            "feature": "inharmonicity",
-            "mean": 0.05,
-            "deviation": 0.06,
-            "transform": "linear",
-            "weight": 0.5,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.05,
-              "reasoned_deviation_before_calibration": 0.06
-            }
-          }
-        ]
+ "version": "8.2.APK",
+ "category": "PIANO",
+ "emoji": "🎹",
+ "subcategories": [
+  {
+   "subcategory": "GRAND",
+   "category_id": "PIANGrnd",
+   "category_short": "PIAN",
+   "emoji": "🎹",
+   "explanation": [
+    "Horizontal grand piano — a struck-string chordophone with a rich, resonant tone, long sustain, and a full harmonic spectrum.",
+    "The size distinctions (baby grand, parlor, concert grand) are not audible from a sample; the type reads as a tonal, wide-band, harmonic, slowly-decaying keyboard."
+   ],
+   "synonyms": [
+    "Grand Piano",
+    "Grand",
+    "Baby Grand",
+    "Concert Grand",
+    "Petite Grand",
+    "Parlor Grand",
+    "Boudoir Grand",
+    "Semi-Concert"
+   ],
+   "acoustic_signature": {
+    "morphology": "impulsive_with_tail",
+    "separability": "signal_narrowable",
+    "gates": [
+     {
+      "feature": "length_seconds",
+      "max": 30.0
+     }
+    ],
+    "priors": [
+     {
+      "feature": "harmonicity",
+      "mean": 0.85,
+      "deviation": 0.15,
+      "transform": "linear",
+      "weight": 1.0,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.85,
+       "reasoned_deviation_before_calibration": 0.15
       }
-    },
-    {
-      "subcategory": "UPRIGHT",
-      "category_id": "PIANUprt",
-      "category_short": "PIAN",
-      "emoji": "🎹",
-      "explanation": [
-        "Vertical (upright) piano \u2014 the same struck-string action stood on end, with a strung back and shorter strings.",
-        "Sounds acoustically very close to a grand, so this is decided by the filename rather than the signal; size labels (spinet, console, studio) are name-only distinctions."
-      ],
-      "synonyms": [
-        "Upright",
-        "Upright Piano",
-        "Spinet",
-        "Console",
-        "Studio Piano",
-        "Full Upright",
-        "Vertical"
-      ],
-      "acoustic_signature": {
-        "morphology": "impulsive_with_tail",
-        "separability": "semantic_only",
-        "gates": [],
-        "priors": []
+     },
+     {
+      "feature": "decay_time_seconds_60db",
+      "mean": 2.2,
+      "deviation": 2.2,
+      "transform": "log",
+      "weight": 0.7,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 2.2,
+       "reasoned_deviation_before_calibration": 2.2
       }
-    },
-    {
-      "subcategory": "HONKY-TONK",
-      "category_id": "PIANHonk",
-      "category_short": "PIAN",
-      "emoji": "🎹",
-      "explanation": [
-        "Honky-tonk / tack piano \u2014 a deliberately detuned upright whose unison strings beat against each other for a shimmering, chorus-like out-of-tune sound.",
-        "The detuning raises inharmonicity, widens the per-frame centroid spread, and broadens the stereo image versus a clean piano."
-      ],
-      "synonyms": [
-        "Honky-Tonk",
-        "Honky Tonk",
-        "Tack Piano",
-        "Detuned Piano",
-        "Saloon",
-        "Ragtime",
-        "Barrelhouse"
-      ],
-      "acoustic_signature": {
-        "morphology": "impulsive_with_tail",
-        "separability": "signal_narrowable",
-        "gates": [
-          {
-            "feature": "length_seconds",
-            "max": 30.0
-          }
-        ],
-        "priors": [
-          {
-            "feature": "inharmonicity",
-            "mean": 0.18,
-            "deviation": 0.1,
-            "transform": "linear",
-            "weight": 1.0,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.18,
-              "reasoned_deviation_before_calibration": 0.1
-            }
-          },
-          {
-            "feature": "spectral_centroid_deviation_hz",
-            "mean": 450.0,
-            "deviation": 250.0,
-            "transform": "linear",
-            "weight": 0.7,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 450.0,
-              "reasoned_deviation_before_calibration": 250.0
-            }
-          },
-          {
-            "feature": "stereo_width",
-            "mean": 0.5,
-            "deviation": 0.25,
-            "transform": "linear",
-            "weight": 0.6,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.5,
-              "reasoned_deviation_before_calibration": 0.25
-            }
-          },
-          {
-            "feature": "harmonicity",
-            "mean": 0.78,
-            "deviation": 0.18,
-            "transform": "linear",
-            "weight": 0.6,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.78,
-              "reasoned_deviation_before_calibration": 0.18
-            }
-          },
-          {
-            "feature": "envelope_attack_seconds",
-            "mean": 0.012,
-            "deviation": 2.5,
-            "transform": "log",
-            "weight": 0.5,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.012,
-              "reasoned_deviation_before_calibration": 2.5
-            }
-          },
-          {
-            "feature": "decay_time_seconds_60db",
-            "mean": 1.8,
-            "deviation": 2.2,
-            "transform": "log",
-            "weight": 0.5,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 1.8,
-              "reasoned_deviation_before_calibration": 2.2
-            }
-          }
-        ]
+     },
+     {
+      "feature": "envelope_attack_seconds",
+      "mean": 0.012,
+      "deviation": 2.5,
+      "transform": "log",
+      "weight": 0.6,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.012,
+       "reasoned_deviation_before_calibration": 2.5
       }
-    },
-    {
-      "subcategory": "PREPARED",
-      "category_id": "PIANPrep",
-      "category_short": "PIAN",
-      "emoji": "🎹",
-      "explanation": [
-        "Prepared piano \u2014 objects (bolts, screws, rubber, felt) placed on or between the strings, turning the instrument percussive and inharmonic.",
-        "The Cage-style preparation collapses clear pitch into buzzing, metallic, impulsive tones with high inharmonicity and low harmonicity."
-      ],
-      "synonyms": [
-        "Prepared Piano",
-        "Prepared",
-        "Cage"
-      ],
-      "acoustic_signature": {
-        "morphology": "impulsive",
-        "separability": "signal_narrowable",
-        "gates": [
-          {
-            "feature": "length_seconds",
-            "max": 30.0
-          }
-        ],
-        "priors": [
-          {
-            "feature": "inharmonicity",
-            "mean": 0.45,
-            "deviation": 0.2,
-            "transform": "linear",
-            "weight": 1.0,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.45,
-              "reasoned_deviation_before_calibration": 0.2
-            }
-          },
-          {
-            "feature": "harmonicity",
-            "mean": 0.4,
-            "deviation": 0.22,
-            "transform": "linear",
-            "weight": 0.8,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.4,
-              "reasoned_deviation_before_calibration": 0.22
-            }
-          },
-          {
-            "feature": "spectral_flatness",
-            "mean": 0.3,
-            "deviation": 0.2,
-            "transform": "linear",
-            "weight": 0.6,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.3,
-              "reasoned_deviation_before_calibration": 0.2
-            }
-          },
-          {
-            "feature": "envelope_attack_seconds",
-            "mean": 0.005,
-            "deviation": 3.0,
-            "transform": "log",
-            "weight": 0.6,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.005,
-              "reasoned_deviation_before_calibration": 3.0
-            }
-          },
-          {
-            "feature": "crest_factor",
-            "mean": 7.0,
-            "deviation": 1.6,
-            "transform": "log",
-            "weight": 0.5,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 7.0,
-              "reasoned_deviation_before_calibration": 1.6
-            }
-          }
-        ]
+     },
+     {
+      "feature": "pitch_hz",
+      "mean": 261.0,
+      "deviation": 3.0,
+      "transform": "log",
+      "weight": 0.5,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 261.0,
+       "reasoned_deviation_before_calibration": 3.0
       }
-    },
-    {
-      "subcategory": "MISC",
-      "category_id": "PIANMisc",
-      "category_short": "PIAN",
-      "emoji": "🎹",
-      "explanation": [
-        "An acoustic piano that does not fit a specific subcategory, or the abstention target when the scorer is unsure."
-      ],
-      "synonyms": [
-        "Piano",
-        "Pianoforte",
-        "Fortepiano",
-        "Player Piano",
-        "Pianola",
-        "Square Grand",
-        "Keys",
-        "grand piano",
-        "upright piano",
-        "PNO"
-      ],
-      "acoustic_signature": {
-        "morphology": "impulsive_with_tail",
-        "separability": "semantic_only",
-        "gates": [],
-        "priors": []
+     },
+     {
+      "feature": "spectral_centroid_hz",
+      "mean": 800.0,
+      "deviation": 2.5,
+      "transform": "log",
+      "weight": 0.5,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 800.0,
+       "reasoned_deviation_before_calibration": 2.5
       }
+     },
+     {
+      "feature": "inharmonicity",
+      "mean": 0.05,
+      "deviation": 0.06,
+      "transform": "linear",
+      "weight": 0.5,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.05,
+       "reasoned_deviation_before_calibration": 0.06
+      }
+     }
+    ]
+   }
+  },
+  {
+   "subcategory": "UPRIGHT",
+   "category_id": "PIANUprt",
+   "category_short": "PIAN",
+   "emoji": "🎹",
+   "explanation": [
+    "Vertical (upright) piano — the same struck-string action stood on end, with a strung back and shorter strings.",
+    "Sounds acoustically very close to a grand, so this is decided by the filename rather than the signal; size labels (spinet, console, studio) are name-only distinctions."
+   ],
+   "synonyms": [
+    "Upright",
+    "Upright Piano",
+    "Spinet",
+    "Console",
+    "Studio Piano",
+    "Full Upright",
+    "Vertical"
+   ],
+   "acoustic_signature": {
+    "morphology": "impulsive_with_tail",
+    "separability": "semantic_only",
+    "gates": [],
+    "priors": []
+   }
+  },
+  {
+   "subcategory": "HONKY-TONK",
+   "category_id": "PIANHonk",
+   "category_short": "PIAN",
+   "emoji": "🎹",
+   "explanation": [
+    "Honky-tonk / tack piano — a deliberately detuned upright whose unison strings beat against each other for a shimmering, chorus-like out-of-tune sound.",
+    "The detuning raises inharmonicity, widens the per-frame centroid spread, and broadens the stereo image versus a clean piano."
+   ],
+   "synonyms": [
+    "Honky-Tonk",
+    "Honky Tonk",
+    "Tack Piano",
+    "Detuned Piano",
+    "Saloon",
+    "Ragtime",
+    "Barrelhouse"
+   ],
+   "acoustic_signature": {
+    "morphology": "impulsive_with_tail",
+    "separability": "signal_narrowable",
+    "gates": [
+     {
+      "feature": "length_seconds",
+      "max": 30.0
+     }
+    ],
+    "priors": [
+     {
+      "feature": "inharmonicity",
+      "mean": 0.18,
+      "deviation": 0.1,
+      "transform": "linear",
+      "weight": 1.0,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.18,
+       "reasoned_deviation_before_calibration": 0.1
+      }
+     },
+     {
+      "feature": "spectral_centroid_deviation_hz",
+      "mean": 450.0,
+      "deviation": 250.0,
+      "transform": "linear",
+      "weight": 0.7,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 450.0,
+       "reasoned_deviation_before_calibration": 250.0
+      }
+     },
+     {
+      "feature": "stereo_width",
+      "mean": 0.5,
+      "deviation": 0.25,
+      "transform": "linear",
+      "weight": 0.6,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.5,
+       "reasoned_deviation_before_calibration": 0.25
+      }
+     },
+     {
+      "feature": "harmonicity",
+      "mean": 0.78,
+      "deviation": 0.18,
+      "transform": "linear",
+      "weight": 0.6,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.78,
+       "reasoned_deviation_before_calibration": 0.18
+      }
+     },
+     {
+      "feature": "envelope_attack_seconds",
+      "mean": 0.012,
+      "deviation": 2.5,
+      "transform": "log",
+      "weight": 0.5,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.012,
+       "reasoned_deviation_before_calibration": 2.5
+      }
+     },
+     {
+      "feature": "decay_time_seconds_60db",
+      "mean": 1.8,
+      "deviation": 2.2,
+      "transform": "log",
+      "weight": 0.5,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 1.8,
+       "reasoned_deviation_before_calibration": 2.2
+      }
+     }
+    ]
+   }
+  },
+  {
+   "subcategory": "PREPARED",
+   "category_id": "PIANPrep",
+   "category_short": "PIAN",
+   "emoji": "🎹",
+   "explanation": [
+    "Prepared piano — objects (bolts, screws, rubber, felt) placed on or between the strings, turning the instrument percussive and inharmonic.",
+    "The Cage-style preparation collapses clear pitch into buzzing, metallic, impulsive tones with high inharmonicity and low harmonicity."
+   ],
+   "synonyms": [
+    "Prepared Piano",
+    "Prepared",
+    "Cage"
+   ],
+   "acoustic_signature": {
+    "morphology": "impulsive",
+    "separability": "signal_narrowable",
+    "gates": [
+     {
+      "feature": "length_seconds",
+      "max": 30.0
+     }
+    ],
+    "priors": [
+     {
+      "feature": "inharmonicity",
+      "mean": 0.45,
+      "deviation": 0.2,
+      "transform": "linear",
+      "weight": 1.0,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.45,
+       "reasoned_deviation_before_calibration": 0.2
+      }
+     },
+     {
+      "feature": "harmonicity",
+      "mean": 0.4,
+      "deviation": 0.22,
+      "transform": "linear",
+      "weight": 0.8,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.4,
+       "reasoned_deviation_before_calibration": 0.22
+      }
+     },
+     {
+      "feature": "spectral_flatness",
+      "mean": 0.3,
+      "deviation": 0.2,
+      "transform": "linear",
+      "weight": 0.6,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.3,
+       "reasoned_deviation_before_calibration": 0.2
+      }
+     },
+     {
+      "feature": "envelope_attack_seconds",
+      "mean": 0.005,
+      "deviation": 3.0,
+      "transform": "log",
+      "weight": 0.6,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.005,
+       "reasoned_deviation_before_calibration": 3.0
+      }
+     },
+     {
+      "feature": "crest_factor",
+      "mean": 7.0,
+      "deviation": 1.6,
+      "transform": "log",
+      "weight": 0.5,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 7.0,
+       "reasoned_deviation_before_calibration": 1.6
+      }
+     }
+    ]
+   }
+  },
+  {
+   "subcategory": "MISC",
+   "category_id": "PIANMisc",
+   "category_short": "PIAN",
+   "emoji": "🎹",
+   "explanation": [
+    "An acoustic piano that does not fit a specific subcategory, or the abstention target when the scorer is unsure."
+   ],
+   "synonyms": [
+    "Piano",
+    "Pianoforte",
+    "Fortepiano",
+    "Player Piano",
+    "Pianola",
+    "Square Grand",
+    "Keys",
+    "grand piano",
+    "upright piano",
+    "PNO"
+   ],
+   "acoustic_signature": {
+    "morphology": "impulsive_with_tail",
+    "separability": "semantic_only",
+    "gates": [],
+    "priors": [],
+    "measured_evidence": {
+     "dataset": "FSD50K.dev — 40,966 human-labelled Freesound clips",
+     "analyzer_version": "20260729.1251",
+     "date": "2026-07",
+     "clip_count": 772,
+     "selection": "clips whose FSD50K labels map unambiguously to this one subcategory (high/medium crosswalk confidence only)",
+     "contributing_fsd50k_classes": {
+      "Piano": 772
+     },
+     "feature_observations": {
+      "complexity": {
+       "clips": 772,
+       "percentile_05": 1078.8,
+       "median": 2147.1,
+       "percentile_95": 6488.8
+      },
+      "crest_factor": {
+       "clips": 472,
+       "percentile_05": 3.6445,
+       "median": 9.784,
+       "percentile_95": 28.095,
+       "measured_on": "one_shot_clips_only"
+      },
+      "decay_time_seconds_60db": {
+       "clips": 234,
+       "percentile_05": 0.34225,
+       "median": 1.5825,
+       "percentile_95": 14.68,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_attack_seconds": {
+       "clips": 415,
+       "percentile_05": 0.0049887,
+       "median": 0.014966,
+       "percentile_95": 0.094785,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_decay_seconds": {
+       "clips": 472,
+       "percentile_05": 0.13968,
+       "median": 1.0576,
+       "percentile_95": 9.2839,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_kurtosis": {
+       "clips": 472,
+       "percentile_05": -1.0862,
+       "median": 7.4787,
+       "percentile_95": 78.768,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_release_seconds": {
+       "clips": 467,
+       "percentile_05": 0.084807,
+       "median": 0.6585,
+       "percentile_95": 5.4825,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_skewness": {
+       "clips": 472,
+       "percentile_05": 0.022028,
+       "median": 2.6663,
+       "percentile_95": 7.9311,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_sustain_level": {
+       "clips": 472,
+       "percentile_05": 0.00089096,
+       "median": 0.02679,
+       "percentile_95": 0.57088,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_temporal_centroid": {
+       "clips": 472,
+       "percentile_05": 0.015383,
+       "median": 0.072067,
+       "percentile_95": 0.29703,
+       "measured_on": "one_shot_clips_only"
+      },
+      "harmonicity": {
+       "clips": 772,
+       "percentile_05": 0.44098,
+       "median": 0.94447,
+       "percentile_95": 0.99723
+      },
+      "high_band_energy": {
+       "clips": 772,
+       "percentile_05": 0.027184,
+       "median": 0.17204,
+       "percentile_95": 0.58744
+      },
+      "inharmonicity": {
+       "clips": 772,
+       "percentile_05": 0.0,
+       "median": 0.092429,
+       "percentile_95": 0.65587
+      },
+      "low_band_energy": {
+       "clips": 772,
+       "percentile_05": 0.008426,
+       "median": 0.083994,
+       "percentile_95": 0.48086
+      },
+      "mid_band_energy": {
+       "clips": 772,
+       "percentile_05": 0.14974,
+       "median": 0.69461,
+       "percentile_95": 0.91822
+      },
+      "onset_periodicity": {
+       "clips": 772,
+       "percentile_05": 0.0027595,
+       "median": 0.27203,
+       "percentile_95": 0.65009
+      },
+      "onset_rate_per_second": {
+       "clips": 772,
+       "percentile_05": 0.055874,
+       "median": 0.5,
+       "percentile_95": 2.4792
+      },
+      "partial_count": {
+       "clips": 724,
+       "percentile_05": 1.0,
+       "median": 5.0,
+       "percentile_95": 12.0
+      },
+      "pitch_hz": {
+       "clips": 628,
+       "percentile_05": 55.402,
+       "median": 260.95,
+       "percentile_95": 1520.7
+      },
+      "pitch_slope_semitones_per_second": {
+       "clips": 203,
+       "percentile_05": -0.88802,
+       "median": -0.0025511,
+       "percentile_95": 0.42978
+      },
+      "spectral_centroid_deviation_hz": {
+       "clips": 772,
+       "percentile_05": 60.09,
+       "median": 880.32,
+       "percentile_95": 5275.5
+      },
+      "spectral_centroid_hz": {
+       "clips": 772,
+       "percentile_05": 660.24,
+       "median": 1425.2,
+       "percentile_95": 5481.9
+      },
+      "spectral_centroid_mean_hz": {
+       "clips": 772,
+       "percentile_05": 528.79,
+       "median": 1712.3,
+       "percentile_95": 6293.9
+      },
+      "spectral_centroid_slope_hz_per_second": {
+       "clips": 772,
+       "percentile_05": -84.868,
+       "median": 375.44,
+       "percentile_95": 5839.1
+      },
+      "spectral_entropy": {
+       "clips": 772,
+       "percentile_05": 0.14484,
+       "median": 0.28324,
+       "percentile_95": 0.45841
+      },
+      "spectral_flatness": {
+       "clips": 772,
+       "percentile_05": 0.0081,
+       "median": 0.050668,
+       "percentile_95": 0.46041
+      },
+      "spectral_flux": {
+       "clips": 772,
+       "percentile_05": 0.029625,
+       "median": 0.10899,
+       "percentile_95": 0.19715
+      },
+      "spectral_rolloff_hz": {
+       "clips": 772,
+       "percentile_05": 620.25,
+       "median": 2224.9,
+       "percentile_95": 14627.0
+      },
+      "spectral_slope_db_per_octave": {
+       "clips": 772,
+       "percentile_05": -12.77,
+       "median": -6.5653,
+       "percentile_95": -2.4416
+      },
+      "stationarity": {
+       "clips": 772,
+       "percentile_05": 0.0,
+       "median": 0.0,
+       "percentile_95": 0.71549,
+       "censored_at_floor_fraction": 0.605
+      },
+      "sustain_ratio": {
+       "clips": 472,
+       "percentile_05": 0.0070671,
+       "median": 0.06,
+       "percentile_95": 0.59016,
+       "measured_on": "one_shot_clips_only"
+      },
+      "syllabic_modulation_energy": {
+       "clips": 734,
+       "percentile_05": 0.00068936,
+       "median": 0.096577,
+       "percentile_95": 0.44563
+      },
+      "transient_count": {
+       "clips": 772,
+       "percentile_05": 1.0,
+       "median": 1.0,
+       "percentile_95": 17.0
+      },
+      "zero_crossings_per_second": {
+       "clips": 772,
+       "percentile_05": 337.83,
+       "median": 1220.9,
+       "percentile_95": 5796.2
+      }
+     },
+     "features_not_measurable_here": {
+      "band_limit_high_hz": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "beats_per_minute": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "clipping_density": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "dc_offset": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "length_seconds": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "lufs": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "root_mean_square_level": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "sample_rate": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "stereo_width": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "total_harmonic_distortion": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "voicing_ratio": "left reasoned — see not_calibrated in fsd50k_calibration.json"
+     },
+     "caveat": "Amateur Freesound audio, mono, arbitrary normalization. Treat as a prior on the prior, not as truth. Duration, level, stereo width and band limit are NOT measurable here and are left reasoned."
     }
-  ]
+   }
+  }
+ ]
 }

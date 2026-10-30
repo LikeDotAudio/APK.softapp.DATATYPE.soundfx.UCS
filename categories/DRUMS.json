@@ -1,454 +1,1233 @@
 {
-  "version": "8.2.APK",
-  "category": "DRUMS",
-  "emoji": "🥁",
-  "subcategories": [
-    {
-      "subcategory": "KICK",
-      "category_id": "DRUMKick",
-      "category_short": "DRUM",
-      "emoji": "🥁",
-      "explanation": [
-        "Bass drum / kick drum \u2014 the deep, low-end membranophone that carries the pulse.",
-        "Acoustic bass drums and electronic kicks (808/909 and sampled one-shots) alike."
-      ],
-      "synonyms": [
-        "Kick",
-        "Bass Drum",
-        "BD",
-        "Bassdrum",
-        "808",
-        "909",
-        "Boom",
-        "Thump",
-        "Sub Kick",
-        "Four On The Floor",
-        "KIK",
-        "bassdrm",
-        "bass drm",
-        "bdrum",
-        "KCK",
-        "KIC",
-        "KK",
-        "bassd",
-        "BDR"
-      ],
-      "acoustic_signature": {
-        "morphology": "impulsive",
-        "separability": "signal_separable",
-        "gates": [
-          {
-            "feature": "spectral_centroid_hz",
-            "max": 2500
-          },
-          {
-            "feature": "length_seconds",
-            "max": 8.0
-          }
-        ],
-        "priors": [
-          {
-            "feature": "spectral_centroid_hz",
-            "mean": 130.0,
-            "deviation": 2.2,
-            "transform": "log",
-            "weight": 1.0,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 130.0,
-              "reasoned_deviation_before_calibration": 2.2
-            }
-          },
-          {
-            "feature": "low_band_energy",
-            "mean": 0.78,
-            "deviation": 0.2,
-            "transform": "linear",
-            "weight": 1.0,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.78,
-              "reasoned_deviation_before_calibration": 0.2
-            }
-          },
-          {
-            "feature": "envelope_attack_seconds",
-            "mean": 0.008,
-            "deviation": 3.0,
-            "transform": "log",
-            "weight": 0.7,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.008,
-              "reasoned_deviation_before_calibration": 3.0
-            }
-          },
-          {
-            "feature": "crest_factor",
-            "mean": 7.0,
-            "deviation": 1.6,
-            "transform": "log",
-            "weight": 0.5,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 7.0,
-              "reasoned_deviation_before_calibration": 1.6
-            }
-          },
-          {
-            "feature": "length_seconds",
-            "mean": 0.5,
-            "deviation": 2.5,
-            "transform": "log",
-            "weight": 0.4,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.5,
-              "reasoned_deviation_before_calibration": 2.5
-            }
-          }
-        ]
+ "version": "8.2.APK",
+ "category": "DRUMS",
+ "emoji": "🥁",
+ "subcategories": [
+  {
+   "subcategory": "KICK",
+   "category_id": "DRUMKick",
+   "category_short": "DRUM",
+   "emoji": "🥁",
+   "explanation": [
+    "Bass drum / kick drum — the deep, low-end membranophone that carries the pulse.",
+    "Acoustic bass drums and electronic kicks (808/909 and sampled one-shots) alike."
+   ],
+   "synonyms": [
+    "Kick",
+    "Bass Drum",
+    "BD",
+    "Bassdrum",
+    "808",
+    "909",
+    "Boom",
+    "Thump",
+    "Sub Kick",
+    "Four On The Floor",
+    "KIK",
+    "bassdrm",
+    "bass drm",
+    "bdrum",
+    "KCK",
+    "KIC",
+    "KK",
+    "bassd",
+    "BDR"
+   ],
+   "acoustic_signature": {
+    "morphology": "impulsive",
+    "separability": "signal_separable",
+    "gates": [
+     {
+      "feature": "spectral_centroid_hz",
+      "max": 8725.0,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "action": "widened",
+       "clips": 195,
+       "was": {
+        "max": 2500
+       },
+       "reason": "the reasoned gate rejected 25% of this subcategory's own true clips",
+       "date": "2026-07"
       }
-    },
-    {
-      "subcategory": "SNARE",
-      "category_id": "DRUMSnr",
-      "category_short": "DRUM",
-      "emoji": "🥁",
-      "explanation": [
-        "Snare drum \u2014 a membranophone with rattling wire snares giving the sharp, noisy backbeat.",
-        "Includes rimshots and the crack of an acoustic or sampled snare."
-      ],
-      "synonyms": [
-        "Snare",
-        "SD",
-        "Rimshot",
-        "Rim",
-        "Backbeat",
-        "Crack",
-        "Snap",
-        "Side Stick",
-        "Brush",
-        "SN",
-        "SNR",
-        "rim shot",
-        "RS",
-        "rimsh",
-        "cross stick",
-        "crossstick",
-        "sidestick",
-        "xstk",
-        "XS",
-        "xstick"
-      ],
-      "acoustic_signature": {
-        "morphology": "impulsive",
-        "separability": "signal_separable",
-        "gates": [
-          {
-            "feature": "length_seconds",
-            "max": 6.0
-          }
-        ],
-        "priors": [
-          {
-            "feature": "spectral_centroid_hz",
-            "mean": 2200.0,
-            "deviation": 1.9,
-            "transform": "log",
-            "weight": 1.0,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 2200.0,
-              "reasoned_deviation_before_calibration": 1.9
-            }
-          },
-          {
-            "feature": "spectral_flatness",
-            "mean": 0.35,
-            "deviation": 0.22,
-            "transform": "linear",
-            "weight": 0.9,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.35,
-              "reasoned_deviation_before_calibration": 0.22
-            }
-          },
-          {
-            "feature": "mid_band_energy",
-            "mean": 0.45,
-            "deviation": 0.25,
-            "transform": "linear",
-            "weight": 0.6,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.45,
-              "reasoned_deviation_before_calibration": 0.25
-            }
-          },
-          {
-            "feature": "envelope_attack_seconds",
-            "mean": 0.005,
-            "deviation": 3.0,
-            "transform": "log",
-            "weight": 0.6,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.005,
-              "reasoned_deviation_before_calibration": 3.0
-            }
-          },
-          {
-            "feature": "harmonicity",
-            "mean": 0.25,
-            "deviation": 0.25,
-            "transform": "linear",
-            "weight": 0.5,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.25,
-              "reasoned_deviation_before_calibration": 0.25
-            }
-          }
-        ]
+     },
+     {
+      "feature": "length_seconds",
+      "max": 8.0
+     }
+    ],
+    "priors": [
+     {
+      "feature": "spectral_centroid_hz",
+      "mean": 1280.1,
+      "deviation": 3.563,
+      "transform": "log",
+      "weight": 1.0,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 195,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "all_unambiguous_clips",
+       "reasoned_mean_before_calibration": 130.0
       }
-    },
-    {
-      "subcategory": "TOM",
-      "category_id": "DRUMTom",
-      "category_short": "DRUM",
-      "emoji": "🥁",
-      "explanation": [
-        "Tom-tom \u2014 a cylindrical membranophone with a definite-ish pitch, used for fills and tribal grooves.",
-        "Floor toms, rack toms, and roto-toms."
-      ],
-      "synonyms": [
-        "Tom",
-        "Tom-Tom",
-        "Floor Tom",
-        "Rack Tom",
-        "Roto Tom",
-        "Fill",
-        "Tribal",
-        "TM",
-        "high tom",
-        "hi tom",
-        "rack tom 1",
-        "tom 1",
-        "hitom",
-        "HT",
-        "t1",
-        "mid tom",
-        "middle tom",
-        "rack tom 2",
-        "tom 2",
-        "midtom",
-        "MT",
-        "t2",
-        "low tom",
-        "tom 3",
-        "lotom",
-        "floortom",
-        "FT",
-        "LT",
-        "t3"
-      ],
-      "acoustic_signature": {
-        "morphology": "impulsive_with_tail",
-        "separability": "signal_narrowable",
-        "gates": [
-          {
-            "feature": "length_seconds",
-            "max": 8.0
-          }
-        ],
-        "priors": [
-          {
-            "feature": "spectral_centroid_hz",
-            "mean": 350.0,
-            "deviation": 2.0,
-            "transform": "log",
-            "weight": 0.9,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 350.0,
-              "reasoned_deviation_before_calibration": 2.0
-            }
-          },
-          {
-            "feature": "harmonicity",
-            "mean": 0.5,
-            "deviation": 0.25,
-            "transform": "linear",
-            "weight": 0.7,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.5,
-              "reasoned_deviation_before_calibration": 0.25
-            }
-          },
-          {
-            "feature": "decay_time_seconds_60db",
-            "mean": 0.4,
-            "deviation": 2.5,
-            "transform": "log",
-            "weight": 0.6,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.4,
-              "reasoned_deviation_before_calibration": 2.5
-            }
-          },
-          {
-            "feature": "low_band_energy",
-            "mean": 0.5,
-            "deviation": 0.25,
-            "transform": "linear",
-            "weight": 0.5,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.5,
-              "reasoned_deviation_before_calibration": 0.25
-            }
-          }
-        ]
+     },
+     {
+      "feature": "low_band_energy",
+      "mean": 0.55938,
+      "deviation": 0.2645,
+      "transform": "linear",
+      "weight": 1.0,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 195,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "all_unambiguous_clips",
+       "reasoned_mean_before_calibration": 0.78
       }
-    },
-    {
-      "subcategory": "HAND DRUM",
-      "category_id": "DRUMHand",
-      "category_short": "DRUM",
-      "emoji": "🥁",
-      "explanation": [
-        "Hand-struck membranophones from world and Latin traditions \u2014 bass tones and sharp slaps.",
-        "Conga, bongo, djembe, darbuka/doumbek, tabla, cajon, talking drum, timbale-adjacent hand drums."
-      ],
-      "synonyms": [
-        "Conga",
-        "Bongo",
-        "Djembe",
-        "Darbuka",
-        "Doumbek",
-        "Tabla",
-        "Cajon",
-        "Talking Drum",
-        "Hand Drum",
-        "Frame Drum",
-        "Bodhran",
-        "Tar",
-        "Udu",
-        "Slap",
-        "Tone",
-        "World Perc",
-        "tumba",
-        "quinto",
-        "CNG",
-        "CG",
-        "CON",
-        "BNG",
-        "timbale",
-        "timbales",
-        "timb",
-        "DJM",
-        "DJB",
-        "talkingdrum",
-        "goblet drum",
-        "taiko",
-        "surdo"
-      ],
-      "acoustic_signature": {
-        "morphology": "impulsive",
-        "separability": "signal_narrowable",
-        "gates": [
-          {
-            "feature": "length_seconds",
-            "max": 6.0
-          }
-        ],
-        "priors": [
-          {
-            "feature": "spectral_centroid_hz",
-            "mean": 700.0,
-            "deviation": 2.2,
-            "transform": "log",
-            "weight": 0.8,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 700.0,
-              "reasoned_deviation_before_calibration": 2.2
-            }
-          },
-          {
-            "feature": "envelope_attack_seconds",
-            "mean": 0.006,
-            "deviation": 3.0,
-            "transform": "log",
-            "weight": 0.6,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.006,
-              "reasoned_deviation_before_calibration": 3.0
-            }
-          },
-          {
-            "feature": "harmonicity",
-            "mean": 0.4,
-            "deviation": 0.3,
-            "transform": "linear",
-            "weight": 0.5,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 0.4,
-              "reasoned_deviation_before_calibration": 0.3
-            }
-          },
-          {
-            "feature": "crest_factor",
-            "mean": 6.5,
-            "deviation": 1.6,
-            "transform": "log",
-            "weight": 0.4,
-            "provenance": {
-              "source": "reasoned",
-              "reasoned_mean_before_calibration": 6.5,
-              "reasoned_deviation_before_calibration": 1.6
-            }
-          }
-        ]
+     },
+     {
+      "feature": "envelope_attack_seconds",
+      "mean": 0.0099773,
+      "deviation": 3.0,
+      "transform": "log",
+      "weight": 0.7,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 119,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "one_shot_clips_only",
+       "reasoned_mean_before_calibration": 0.008
       }
-    },
-    {
-      "subcategory": "MISC",
-      "category_id": "DRUMMisc",
-      "category_short": "DRUM",
-      "emoji": "🥁",
-      "explanation": [
-        "A drum / membranophone that does not fit a specific subcategory, or the abstention target when the scorer is unsure."
-      ],
-      "synonyms": [
-        "Drum",
-        "Drums",
-        "Percussion",
-        "Membranophone",
-        "Kit",
-        "handclap",
-        "hand clap",
-        "clap",
-        "CP",
-        "CLP",
-        "finger snap",
-        "fingersnap",
-        "snap",
-        "fngr",
-        "SNP"
-      ],
-      "acoustic_signature": {
-        "morphology": "impulsive",
-        "separability": "semantic_only",
-        "gates": [],
-        "priors": []
+     },
+     {
+      "feature": "crest_factor",
+      "mean": 8.5947,
+      "deviation": 2.475,
+      "transform": "log",
+      "weight": 0.5,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 163,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "one_shot_clips_only",
+       "reasoned_mean_before_calibration": 7.0
       }
+     },
+     {
+      "feature": "length_seconds",
+      "mean": 0.5,
+      "deviation": 2.5,
+      "transform": "log",
+      "weight": 0.4,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.5,
+       "reasoned_deviation_before_calibration": 2.5
+      }
+     }
+    ],
+    "measured_evidence": {
+     "dataset": "FSD50K.dev — 40,966 human-labelled Freesound clips",
+     "analyzer_version": "20260729.1251",
+     "date": "2026-07",
+     "clip_count": 195,
+     "selection": "clips whose FSD50K labels map unambiguously to this one subcategory (high/medium crosswalk confidence only)",
+     "contributing_fsd50k_classes": {
+      "Bass_drum": 195
+     },
+     "feature_observations": {
+      "complexity": {
+       "clips": 195,
+       "percentile_05": 785.57,
+       "median": 2671.0,
+       "percentile_95": 6398.7
+      },
+      "crest_factor": {
+       "clips": 163,
+       "percentile_05": 2.8399,
+       "median": 8.5947,
+       "percentile_95": 19.498,
+       "measured_on": "one_shot_clips_only"
+      },
+      "decay_time_seconds_60db": {
+       "clips": 84,
+       "percentile_05": 0.14057,
+       "median": 0.43621,
+       "percentile_95": 1.3835,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_attack_seconds": {
+       "clips": 119,
+       "percentile_05": 0.0049887,
+       "median": 0.0099773,
+       "percentile_95": 0.069841,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_decay_seconds": {
+       "clips": 163,
+       "percentile_05": 0.084807,
+       "median": 0.38912,
+       "percentile_95": 1.4018,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_kurtosis": {
+       "clips": 163,
+       "percentile_05": -0.91686,
+       "median": 14.645,
+       "percentile_95": 107.32,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_release_seconds": {
+       "clips": 161,
+       "percentile_05": 0.019955,
+       "median": 0.099773,
+       "percentile_95": 0.46893,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_skewness": {
+       "clips": 163,
+       "percentile_05": 0.44199,
+       "median": 3.6031,
+       "percentile_95": 9.5432,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_sustain_level": {
+       "clips": 163,
+       "percentile_05": 0.0,
+       "median": 0.0048188,
+       "percentile_95": 0.33411,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_temporal_centroid": {
+       "clips": 163,
+       "percentile_05": 0.0082736,
+       "median": 0.046413,
+       "percentile_95": 0.27258,
+       "measured_on": "one_shot_clips_only"
+      },
+      "harmonicity": {
+       "clips": 195,
+       "percentile_05": 0.11891,
+       "median": 0.97197,
+       "percentile_95": 0.99146
+      },
+      "high_band_energy": {
+       "clips": 195,
+       "percentile_05": 0.016474,
+       "median": 0.16948,
+       "percentile_95": 0.62335
+      },
+      "inharmonicity": {
+       "clips": 195,
+       "percentile_05": 0.0,
+       "median": 0.41413,
+       "percentile_95": 0.79303
+      },
+      "low_band_energy": {
+       "clips": 195,
+       "percentile_05": 0.16591,
+       "median": 0.55938,
+       "percentile_95": 0.90239
+      },
+      "mid_band_energy": {
+       "clips": 195,
+       "percentile_05": 0.070741,
+       "median": 0.19673,
+       "percentile_95": 0.40554
+      },
+      "onset_periodicity": {
+       "clips": 195,
+       "percentile_05": 0.00029095,
+       "median": 0.20033,
+       "percentile_95": 0.61403
+      },
+      "onset_rate_per_second": {
+       "clips": 195,
+       "percentile_05": 0.25732,
+       "median": 1.0248,
+       "percentile_95": 3.2
+      },
+      "partial_count": {
+       "clips": 177,
+       "percentile_05": 1.0,
+       "median": 3.0,
+       "percentile_95": 12.0
+      },
+      "pitch_slope_semitones_per_second": {
+       "clips": 41,
+       "percentile_05": -209.22,
+       "median": -4.6757,
+       "percentile_95": 5.7239
+      },
+      "spectral_centroid_deviation_hz": {
+       "clips": 195,
+       "percentile_05": 226.16,
+       "median": 1064.3,
+       "percentile_95": 2959.3
+      },
+      "spectral_centroid_hz": {
+       "clips": 195,
+       "percentile_05": 208.2,
+       "median": 1280.1,
+       "percentile_95": 5681.1
+      },
+      "spectral_centroid_mean_hz": {
+       "clips": 195,
+       "percentile_05": 245.13,
+       "median": 1232.5,
+       "percentile_95": 6453.7
+      },
+      "spectral_centroid_slope_hz_per_second": {
+       "clips": 195,
+       "percentile_05": -1423.0,
+       "median": 2506.4,
+       "percentile_95": 11369.0
+      },
+      "spectral_entropy": {
+       "clips": 195,
+       "percentile_05": 0.13259,
+       "median": 0.2086,
+       "percentile_95": 0.45666
+      },
+      "spectral_flatness": {
+       "clips": 195,
+       "percentile_05": 0.0056226,
+       "median": 0.084879,
+       "percentile_95": 0.48858
+      },
+      "spectral_flux": {
+       "clips": 195,
+       "percentile_05": 0.064495,
+       "median": 0.18335,
+       "percentile_95": 0.22036
+      },
+      "spectral_rolloff_hz": {
+       "clips": 195,
+       "percentile_05": 146.05,
+       "median": 2484.7,
+       "percentile_95": 14297.0
+      },
+      "spectral_slope_db_per_octave": {
+       "clips": 195,
+       "percentile_05": -14.363,
+       "median": -9.7887,
+       "percentile_95": -4.6387
+      },
+      "stationarity": {
+       "clips": 195,
+       "percentile_05": 0.0,
+       "median": 0.0,
+       "percentile_95": 0.58779,
+       "censored_at_floor_fraction": 0.836
+      },
+      "sustain_ratio": {
+       "clips": 163,
+       "percentile_05": 0.008,
+       "median": 0.056,
+       "percentile_95": 0.43333,
+       "measured_on": "one_shot_clips_only"
+      },
+      "syllabic_modulation_energy": {
+       "clips": 146,
+       "percentile_05": 0.0020983,
+       "median": 0.043769,
+       "percentile_95": 0.42715
+      },
+      "transient_count": {
+       "clips": 195,
+       "percentile_05": 1.0,
+       "median": 1.0,
+       "percentile_95": 19.0
+      },
+      "zero_crossings_per_second": {
+       "clips": 195,
+       "percentile_05": 26.993,
+       "median": 202.76,
+       "percentile_95": 5837.9
+      }
+     },
+     "features_not_measurable_here": {
+      "band_limit_high_hz": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "beats_per_minute": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "clipping_density": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "dc_offset": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "length_seconds": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "lufs": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "root_mean_square_level": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "sample_rate": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "stereo_width": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "total_harmonic_distortion": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "voicing_ratio": "left reasoned — see not_calibrated in fsd50k_calibration.json"
+     },
+     "caveat": "Amateur Freesound audio, mono, arbitrary normalization. Treat as a prior on the prior, not as truth. Duration, level, stereo width and band limit are NOT measurable here and are left reasoned."
     }
-  ]
+   }
+  },
+  {
+   "subcategory": "SNARE",
+   "category_id": "DRUMSnr",
+   "category_short": "DRUM",
+   "emoji": "🥁",
+   "explanation": [
+    "Snare drum — a membranophone with rattling wire snares giving the sharp, noisy backbeat.",
+    "Includes rimshots and the crack of an acoustic or sampled snare."
+   ],
+   "synonyms": [
+    "Snare",
+    "SD",
+    "Rimshot",
+    "Rim",
+    "Backbeat",
+    "Crack",
+    "Snap",
+    "Side Stick",
+    "Brush",
+    "SN",
+    "SNR",
+    "rim shot",
+    "RS",
+    "rimsh",
+    "cross stick",
+    "crossstick",
+    "sidestick",
+    "xstk",
+    "XS",
+    "xstick"
+   ],
+   "acoustic_signature": {
+    "morphology": "impulsive",
+    "separability": "signal_separable",
+    "gates": [
+     {
+      "feature": "length_seconds",
+      "max": 6.0
+     }
+    ],
+    "priors": [
+     {
+      "feature": "spectral_centroid_hz",
+      "mean": 4490.3,
+      "deviation": 1.9,
+      "transform": "log",
+      "weight": 1.0,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 717,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "all_unambiguous_clips",
+       "reasoned_mean_before_calibration": 2200.0
+      }
+     },
+     {
+      "feature": "spectral_flatness",
+      "mean": 0.31754,
+      "deviation": 0.2375,
+      "transform": "linear",
+      "weight": 0.9,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 717,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "all_unambiguous_clips",
+       "reasoned_mean_before_calibration": 0.35
+      }
+     },
+     {
+      "feature": "mid_band_energy",
+      "mean": 0.33493,
+      "deviation": 0.25,
+      "transform": "linear",
+      "weight": 0.6,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 717,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "all_unambiguous_clips",
+       "reasoned_mean_before_calibration": 0.45
+      }
+     },
+     {
+      "feature": "envelope_attack_seconds",
+      "mean": 0.0099773,
+      "deviation": 3.0,
+      "transform": "log",
+      "weight": 0.6,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 107,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "one_shot_clips_only",
+       "reasoned_mean_before_calibration": 0.005
+      }
+     },
+     {
+      "feature": "harmonicity",
+      "mean": 0.72286,
+      "deviation": 0.2937,
+      "transform": "linear",
+      "weight": 0.5,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 717,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "all_unambiguous_clips",
+       "reasoned_mean_before_calibration": 0.25
+      }
+     }
+    ],
+    "measured_evidence": {
+     "dataset": "FSD50K.dev — 40,966 human-labelled Freesound clips",
+     "analyzer_version": "20260729.1251",
+     "date": "2026-07",
+     "clip_count": 717,
+     "selection": "clips whose FSD50K labels map unambiguously to this one subcategory (high/medium crosswalk confidence only)",
+     "contributing_fsd50k_classes": {
+      "Snare_drum": 717
+     },
+     "feature_observations": {
+      "complexity": {
+       "clips": 717,
+       "percentile_05": 2307.3,
+       "median": 4062.9,
+       "percentile_95": 5070.1
+      },
+      "crest_factor": {
+       "clips": 652,
+       "percentile_05": 8.0213,
+       "median": 17.936,
+       "percentile_95": 33.667,
+       "measured_on": "one_shot_clips_only"
+      },
+      "decay_time_seconds_60db": {
+       "clips": 592,
+       "percentile_05": 0.19731,
+       "median": 0.44261,
+       "percentile_95": 1.2999,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_attack_seconds": {
+       "clips": 107,
+       "percentile_05": 0.0049887,
+       "median": 0.0099773,
+       "percentile_95": 0.024943,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_decay_seconds": {
+       "clips": 652,
+       "percentile_05": 0.20952,
+       "median": 0.64354,
+       "percentile_95": 1.1973,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_kurtosis": {
+       "clips": 652,
+       "percentile_05": 4.2259,
+       "median": 25.68,
+       "percentile_95": 93.16,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_release_seconds": {
+       "clips": 652,
+       "percentile_05": 0.044898,
+       "median": 0.11474,
+       "percentile_95": 0.3542,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_skewness": {
+       "clips": 652,
+       "percentile_05": 2.1697,
+       "median": 4.6876,
+       "percentile_95": 8.9395,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_sustain_level": {
+       "clips": 652,
+       "percentile_05": 0.0001127,
+       "median": 0.0011771,
+       "percentile_95": 0.028569,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_temporal_centroid": {
+       "clips": 652,
+       "percentile_05": 0.0060021,
+       "median": 0.021283,
+       "percentile_95": 0.081106,
+       "measured_on": "one_shot_clips_only"
+      },
+      "harmonicity": {
+       "clips": 717,
+       "percentile_05": 0.15725,
+       "median": 0.72286,
+       "percentile_95": 0.95677
+      },
+      "high_band_energy": {
+       "clips": 717,
+       "percentile_05": 0.27569,
+       "median": 0.61772,
+       "percentile_95": 0.83017
+      },
+      "inharmonicity": {
+       "clips": 717,
+       "percentile_05": 0.03335,
+       "median": 0.39495,
+       "percentile_95": 0.68957
+      },
+      "low_band_energy": {
+       "clips": 717,
+       "percentile_05": 0.0045246,
+       "median": 0.036697,
+       "percentile_95": 0.20186
+      },
+      "mid_band_energy": {
+       "clips": 717,
+       "percentile_05": 0.15223,
+       "median": 0.33493,
+       "percentile_95": 0.64267
+      },
+      "onset_periodicity": {
+       "clips": 717,
+       "percentile_05": 0.0,
+       "median": 0.0026906,
+       "percentile_95": 0.38224
+      },
+      "onset_rate_per_second": {
+       "clips": 717,
+       "percentile_05": 0.4,
+       "median": 0.74036,
+       "percentile_95": 2.5396
+      },
+      "partial_count": {
+       "clips": 702,
+       "percentile_05": 2.0,
+       "median": 9.0,
+       "percentile_95": 12.0
+      },
+      "pitch_hz": {
+       "clips": 618,
+       "percentile_05": 62.2,
+       "median": 154.2,
+       "percentile_95": 484.62
+      },
+      "pitch_slope_semitones_per_second": {
+       "clips": 245,
+       "percentile_05": -8.9663,
+       "median": -0.00084349,
+       "percentile_95": 8.3973
+      },
+      "spectral_centroid_deviation_hz": {
+       "clips": 717,
+       "percentile_05": 422.91,
+       "median": 2105.7,
+       "percentile_95": 3501.5
+      },
+      "spectral_centroid_hz": {
+       "clips": 717,
+       "percentile_05": 1860.8,
+       "median": 4490.3,
+       "percentile_95": 6040.2
+      },
+      "spectral_centroid_mean_hz": {
+       "clips": 717,
+       "percentile_05": 2100.3,
+       "median": 4516.1,
+       "percentile_95": 7259.9
+      },
+      "spectral_centroid_slope_hz_per_second": {
+       "clips": 717,
+       "percentile_05": -2041.1,
+       "median": 2979.8,
+       "percentile_95": 10120.0
+      },
+      "spectral_entropy": {
+       "clips": 717,
+       "percentile_05": 0.23743,
+       "median": 0.43859,
+       "percentile_95": 0.66119
+      },
+      "spectral_flatness": {
+       "clips": 717,
+       "percentile_05": 0.066958,
+       "median": 0.31754,
+       "percentile_95": 0.49729
+      },
+      "spectral_flux": {
+       "clips": 717,
+       "percentile_05": 0.09192,
+       "median": 0.18076,
+       "percentile_95": 0.22143
+      },
+      "spectral_rolloff_hz": {
+       "clips": 717,
+       "percentile_05": 3725.9,
+       "median": 8839.8,
+       "percentile_95": 11468.0
+      },
+      "spectral_slope_db_per_octave": {
+       "clips": 717,
+       "percentile_05": -5.6573,
+       "median": -1.4499,
+       "percentile_95": 2.4127
+      },
+      "stationarity": {
+       "clips": 717,
+       "percentile_05": 0.0,
+       "median": 0.0,
+       "percentile_95": 0.0,
+       "censored_at_floor_fraction": 0.95
+      },
+      "sustain_ratio": {
+       "clips": 652,
+       "percentile_05": 0.011236,
+       "median": 0.028571,
+       "percentile_95": 0.11111,
+       "measured_on": "one_shot_clips_only"
+      },
+      "syllabic_modulation_energy": {
+       "clips": 641,
+       "percentile_05": 0.00082519,
+       "median": 0.0039594,
+       "percentile_95": 0.32254
+      },
+      "transient_count": {
+       "clips": 717,
+       "percentile_05": 1.0,
+       "median": 1.0,
+       "percentile_95": 8.0
+      },
+      "zero_crossings_per_second": {
+       "clips": 717,
+       "percentile_05": 498.8,
+       "median": 2200.0,
+       "percentile_95": 6021.2
+      }
+     },
+     "features_not_measurable_here": {
+      "band_limit_high_hz": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "beats_per_minute": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "clipping_density": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "dc_offset": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "length_seconds": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "lufs": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "root_mean_square_level": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "sample_rate": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "stereo_width": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "total_harmonic_distortion": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "voicing_ratio": "left reasoned — see not_calibrated in fsd50k_calibration.json"
+     },
+     "caveat": "Amateur Freesound audio, mono, arbitrary normalization. Treat as a prior on the prior, not as truth. Duration, level, stereo width and band limit are NOT measurable here and are left reasoned."
+    }
+   }
+  },
+  {
+   "subcategory": "TOM",
+   "category_id": "DRUMTom",
+   "category_short": "DRUM",
+   "emoji": "🥁",
+   "explanation": [
+    "Tom-tom — a cylindrical membranophone with a definite-ish pitch, used for fills and tribal grooves.",
+    "Floor toms, rack toms, and roto-toms."
+   ],
+   "synonyms": [
+    "Tom",
+    "Tom-Tom",
+    "Floor Tom",
+    "Rack Tom",
+    "Roto Tom",
+    "Fill",
+    "Tribal",
+    "TM",
+    "high tom",
+    "hi tom",
+    "rack tom 1",
+    "tom 1",
+    "hitom",
+    "HT",
+    "t1",
+    "mid tom",
+    "middle tom",
+    "rack tom 2",
+    "tom 2",
+    "midtom",
+    "MT",
+    "t2",
+    "low tom",
+    "tom 3",
+    "lotom",
+    "floortom",
+    "FT",
+    "LT",
+    "t3"
+   ],
+   "acoustic_signature": {
+    "morphology": "impulsive_with_tail",
+    "separability": "signal_narrowable",
+    "gates": [
+     {
+      "feature": "length_seconds",
+      "max": 8.0
+     }
+    ],
+    "priors": [
+     {
+      "feature": "spectral_centroid_hz",
+      "mean": 350.0,
+      "deviation": 2.0,
+      "transform": "log",
+      "weight": 0.9,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 350.0,
+       "reasoned_deviation_before_calibration": 2.0
+      }
+     },
+     {
+      "feature": "harmonicity",
+      "mean": 0.5,
+      "deviation": 0.25,
+      "transform": "linear",
+      "weight": 0.7,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.5,
+       "reasoned_deviation_before_calibration": 0.25
+      }
+     },
+     {
+      "feature": "decay_time_seconds_60db",
+      "mean": 0.4,
+      "deviation": 2.5,
+      "transform": "log",
+      "weight": 0.6,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.4,
+       "reasoned_deviation_before_calibration": 2.5
+      }
+     },
+     {
+      "feature": "low_band_energy",
+      "mean": 0.5,
+      "deviation": 0.25,
+      "transform": "linear",
+      "weight": 0.5,
+      "provenance": {
+       "source": "reasoned",
+       "reasoned_mean_before_calibration": 0.5,
+       "reasoned_deviation_before_calibration": 0.25
+      }
+     }
+    ]
+   }
+  },
+  {
+   "subcategory": "HAND DRUM",
+   "category_id": "DRUMHand",
+   "category_short": "DRUM",
+   "emoji": "🥁",
+   "explanation": [
+    "Hand-struck membranophones from world and Latin traditions — bass tones and sharp slaps.",
+    "Conga, bongo, djembe, darbuka/doumbek, tabla, cajon, talking drum, timbale-adjacent hand drums."
+   ],
+   "synonyms": [
+    "Conga",
+    "Bongo",
+    "Djembe",
+    "Darbuka",
+    "Doumbek",
+    "Tabla",
+    "Cajon",
+    "Talking Drum",
+    "Hand Drum",
+    "Frame Drum",
+    "Bodhran",
+    "Tar",
+    "Udu",
+    "Slap",
+    "Tone",
+    "World Perc",
+    "tumba",
+    "quinto",
+    "CNG",
+    "CG",
+    "CON",
+    "BNG",
+    "timbale",
+    "timbales",
+    "timb",
+    "DJM",
+    "DJB",
+    "talkingdrum",
+    "goblet drum",
+    "taiko",
+    "surdo"
+   ],
+   "acoustic_signature": {
+    "morphology": "impulsive",
+    "separability": "signal_narrowable",
+    "gates": [
+     {
+      "feature": "length_seconds",
+      "max": 6.0
+     }
+    ],
+    "priors": [
+     {
+      "feature": "spectral_centroid_hz",
+      "mean": 3029.4,
+      "deviation": 2.2,
+      "transform": "log",
+      "weight": 0.8,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 52,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "all_unambiguous_clips",
+       "reasoned_mean_before_calibration": 700.0
+      }
+     },
+     {
+      "feature": "envelope_attack_seconds",
+      "mean": 0.0099773,
+      "deviation": 3.0,
+      "transform": "log",
+      "weight": 0.6,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 43,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "one_shot_clips_only",
+       "reasoned_mean_before_calibration": 0.006
+      }
+     },
+     {
+      "feature": "harmonicity",
+      "mean": 0.98431,
+      "deviation": 0.3,
+      "transform": "linear",
+      "weight": 0.5,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 52,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "all_unambiguous_clips",
+       "reasoned_mean_before_calibration": 0.4
+      }
+     },
+     {
+      "feature": "crest_factor",
+      "mean": 12.974,
+      "deviation": 3.219,
+      "transform": "log",
+      "weight": 0.4,
+      "provenance": {
+       "source": "fsd50k_measured",
+       "dataset": "FSD50K.dev",
+       "clips": 51,
+       "analyzer_version": "20260729.1251",
+       "date": "2026-07",
+       "measured_on": "one_shot_clips_only",
+       "reasoned_mean_before_calibration": 6.5
+      }
+     }
+    ],
+    "measured_evidence": {
+     "dataset": "FSD50K.dev — 40,966 human-labelled Freesound clips",
+     "analyzer_version": "20260729.1251",
+     "date": "2026-07",
+     "clip_count": 52,
+     "selection": "clips whose FSD50K labels map unambiguously to this one subcategory (high/medium crosswalk confidence only)",
+     "contributing_fsd50k_classes": {
+      "Tabla": 52
+     },
+     "feature_observations": {
+      "complexity": {
+       "clips": 52,
+       "percentile_05": 2381.8,
+       "median": 4029.7,
+       "percentile_95": 5195.6
+      },
+      "crest_factor": {
+       "clips": 51,
+       "percentile_05": 4.0689,
+       "median": 12.974,
+       "percentile_95": 32.072,
+       "measured_on": "one_shot_clips_only"
+      },
+      "decay_time_seconds_60db": {
+       "clips": 22,
+       "percentile_05": 0.073418,
+       "median": 0.35585,
+       "percentile_95": 1.2747,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_attack_seconds": {
+       "clips": 43,
+       "percentile_05": 0.0099773,
+       "median": 0.0099773,
+       "percentile_95": 0.014966,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_decay_seconds": {
+       "clips": 51,
+       "percentile_05": 0.10476,
+       "median": 0.59864,
+       "percentile_95": 1.6662,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_kurtosis": {
+       "clips": 51,
+       "percentile_05": 0.5989,
+       "median": 14.315,
+       "percentile_95": 93.104,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_release_seconds": {
+       "clips": 51,
+       "percentile_05": 0.019955,
+       "median": 0.28435,
+       "percentile_95": 1.5814,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_skewness": {
+       "clips": 51,
+       "percentile_05": 1.2061,
+       "median": 3.8236,
+       "percentile_95": 8.9101,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_sustain_level": {
+       "clips": 51,
+       "percentile_05": 0.0041865,
+       "median": 0.018367,
+       "percentile_95": 0.10827,
+       "measured_on": "one_shot_clips_only"
+      },
+      "envelope_temporal_centroid": {
+       "clips": 51,
+       "percentile_05": 0.021044,
+       "median": 0.061032,
+       "percentile_95": 0.14359,
+       "measured_on": "one_shot_clips_only"
+      },
+      "harmonicity": {
+       "clips": 52,
+       "percentile_05": 0.85866,
+       "median": 0.98406,
+       "percentile_95": 0.9942
+      },
+      "high_band_energy": {
+       "clips": 52,
+       "percentile_05": 0.10075,
+       "median": 0.41134,
+       "percentile_95": 0.60116
+      },
+      "inharmonicity": {
+       "clips": 52,
+       "percentile_05": 0.0,
+       "median": 0.031435,
+       "percentile_95": 0.4521
+      },
+      "low_band_energy": {
+       "clips": 52,
+       "percentile_05": 0.028746,
+       "median": 0.084127,
+       "percentile_95": 0.64024
+      },
+      "mid_band_energy": {
+       "clips": 52,
+       "percentile_05": 0.2257,
+       "median": 0.40767,
+       "percentile_95": 0.60168
+      },
+      "onset_periodicity": {
+       "clips": 52,
+       "percentile_05": 0.0,
+       "median": 0.00077335,
+       "percentile_95": 0.079293
+      },
+      "onset_rate_per_second": {
+       "clips": 52,
+       "percentile_05": 0.27012,
+       "median": 0.7848,
+       "percentile_95": 3.009
+      },
+      "partial_count": {
+       "clips": 41,
+       "percentile_05": 1.0,
+       "median": 2.0,
+       "percentile_95": 12.0
+      },
+      "pitch_hz": {
+       "clips": 35,
+       "percentile_05": 82.584,
+       "median": 256.4,
+       "percentile_95": 558.23
+      },
+      "pitch_slope_semitones_per_second": {
+       "clips": 21,
+       "percentile_05": -14.739,
+       "median": 0.0059324,
+       "percentile_95": 0.077679
+      },
+      "spectral_centroid_deviation_hz": {
+       "clips": 52,
+       "percentile_05": 225.15,
+       "median": 1646.1,
+       "percentile_95": 3912.1
+      },
+      "spectral_centroid_hz": {
+       "clips": 52,
+       "percentile_05": 947.58,
+       "median": 3024.1,
+       "percentile_95": 4806.4
+      },
+      "spectral_centroid_mean_hz": {
+       "clips": 52,
+       "percentile_05": 562.88,
+       "median": 3669.1,
+       "percentile_95": 6680.8
+      },
+      "spectral_centroid_slope_hz_per_second": {
+       "clips": 52,
+       "percentile_05": 268.06,
+       "median": 3805.7,
+       "percentile_95": 10448.0
+      },
+      "spectral_entropy": {
+       "clips": 52,
+       "percentile_05": 0.12879,
+       "median": 0.17526,
+       "percentile_95": 0.28227
+      },
+      "spectral_flatness": {
+       "clips": 52,
+       "percentile_05": 0.07628,
+       "median": 0.27429,
+       "percentile_95": 0.46815
+      },
+      "spectral_flux": {
+       "clips": 52,
+       "percentile_05": 0.028528,
+       "median": 0.10381,
+       "percentile_95": 0.2246
+      },
+      "spectral_rolloff_hz": {
+       "clips": 52,
+       "percentile_05": 910.27,
+       "median": 5946.9,
+       "percentile_95": 10851.0
+      },
+      "spectral_slope_db_per_octave": {
+       "clips": 52,
+       "percentile_05": -11.841,
+       "median": -4.9921,
+       "percentile_95": -2.904
+      },
+      "stationarity": {
+       "clips": 52,
+       "percentile_05": 0.0,
+       "median": 0.0,
+       "percentile_95": 0.0,
+       "censored_at_floor_fraction": 0.942
+      },
+      "sustain_ratio": {
+       "clips": 51,
+       "percentile_05": 0.0093458,
+       "median": 0.046875,
+       "percentile_95": 0.17593,
+       "measured_on": "one_shot_clips_only"
+      },
+      "syllabic_modulation_energy": {
+       "clips": 44,
+       "percentile_05": 0.00013819,
+       "median": 0.0070422,
+       "percentile_95": 0.066087
+      },
+      "transient_count": {
+       "clips": 52,
+       "percentile_05": 1.0,
+       "median": 1.0,
+       "percentile_95": 1.0
+      },
+      "zero_crossings_per_second": {
+       "clips": 52,
+       "percentile_05": 110.01,
+       "median": 1134.7,
+       "percentile_95": 2679.4
+      }
+     },
+     "features_not_measurable_here": {
+      "band_limit_high_hz": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "beats_per_minute": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "clipping_density": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "dc_offset": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "length_seconds": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "lufs": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "root_mean_square_level": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "sample_rate": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "stereo_width": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "total_harmonic_distortion": "left reasoned — see not_calibrated in fsd50k_calibration.json",
+      "voicing_ratio": "left reasoned — see not_calibrated in fsd50k_calibration.json"
+     },
+     "caveat": "Amateur Freesound audio, mono, arbitrary normalization. Treat as a prior on the prior, not as truth. Duration, level, stereo width and band limit are NOT measurable here and are left reasoned."
+    }
+   }
+  },
+  {
+   "subcategory": "MISC",
+   "category_id": "DRUMMisc",
+   "category_short": "DRUM",
+   "emoji": "🥁",
+   "explanation": [
+    "A drum / membranophone that does not fit a specific subcategory, or the abstention target when the scorer is unsure."
+   ],
+   "synonyms": [
+    "Drum",
+    "Drums",
+    "Percussion",
+    "Membranophone",
+    "Kit",
+    "handclap",
+    "hand clap",
+    "clap",
+    "CP",
+    "CLP",
+    "finger snap",
+    "fingersnap",
+    "snap",
+    "fngr",
+    "SNP"
+   ],
+   "acoustic_signature": {
+    "morphology": "impulsive",
+    "separability": "semantic_only",
+    "gates": [],
+    "priors": []
+   }
+  }
+ ]
 }

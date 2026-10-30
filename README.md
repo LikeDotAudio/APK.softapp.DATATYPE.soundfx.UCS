@@ -24,7 +24,7 @@
 | `producer_synonyms.json` | Producer vocabulary ("808", "hihat", "oneshot") overlaid onto the instrument categories, keyed by `category_id`. Kept apart so the UCS files stay as published. |
 | `fsd50k_crosswalk.json` | Hand map from FSD50K labels to UCS ids, each with a `high`/`medium`/`low` confidence, or `none` (refused, with a reason). |
 | `fsd50k_calibration.json` | Record of the last FSD50K calibration: FSD50K.dev, 2026-07, 40 966 clips scanned, 28 790 used. |
-| `fsd50k_separability.json` | 181 pairwise subcategory separability measurements (accuracy vs. chance). |
+| `fsd50k_separability.json` | 118 sibling-pair separability measurements (logistic probe accuracy vs. majority baseline), written by `fsd50k_calibrate.py separability`. |
 | `UCS v8.2.1 Full Translations.xlsx` | The published UCS spreadsheet the JSON was built from. |
 | `validate_signatures.py` | Checks every signature against the spec; exits non-zero on any error. |
 | `fsd50k_calibrate.py` | Calibrates priors and gates from a folder of FSD50K `.PEAK` sidecars. |
@@ -72,6 +72,7 @@ retired `MUSC…` ids were re-pointed at the instrument categories; the broad pa
 ```bash
 python3 fsd50k_calibrate.py evaluate  <FSD50K.dev_audio/>   # held-out 70/30, writes nothing
 python3 fsd50k_calibrate.py calibrate <FSD50K.dev_audio/>   # rewrites categories/*.json and fsd50k_calibration.json
+python3 fsd50k_calibrate.py separability <FSD50K.dev_audio/> # rewrites fsd50k_separability.json (needs numpy)
 ```
 
 `music_calibrate.py` calibrates the 13 instrument categories exploded out of UCS MUSICAL
