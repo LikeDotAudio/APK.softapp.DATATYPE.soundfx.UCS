@@ -64,6 +64,7 @@ errors, warnings = [], []
 tiers, morphs = Counter(), Counter()
 feature_use = Counter()
 all_ids, referenced_ids = set(), set()
+id_names = {}  # category_id -> (category, subcategory), for the crosswalk check
 signed = total = 0
 
 
@@ -156,6 +157,7 @@ for path in sorted(CATEGORIES.glob("*.json")):
         total += 1
         cid = sub.get("category_id", "?")
         all_ids.add(cid)
+        id_names[cid] = (data.get("category"), sub.get("subcategory"))
         where = f"{path.stem}/{cid}"
 
         for key in ("subcategory", "category_id", "explanation", "synonyms"):
@@ -172,6 +174,37 @@ dangling = referenced_ids - all_ids
 # renamed the ids they pointed at (LOOSE-datatype-soundfx-ucs-validatesignaturespy-warns-about).
 for cid in sorted(dangling):
     errors.append(f"confusable_with references unknown category_id {cid!r}")
+
+# The FSD50K crosswalk must name ids the category files define, or fsd50k_calibrate.py
+# silently calibrates nothing for those labels. Nine retired MUSC... ids sat there after
+# the MUSICAL split (LOOSE-datatype-soundfx-ucs-fsd50kcrosswalkjson-maps-fsd50k).
+crosswalk = json.loads((HERE / "fsd50k_crosswalk.json").read_text(encoding="utf-8"))
+xw_conf = Counter()
+for e in crosswalk.get("entries", []):
+    where = f"fsd50k_crosswalk/{e.get('fsd50k_class', '?')}"
+    uid, conf = e.get("ucs_id"), e.get("confidence")
+    xw_conf[conf] += 1
+    if uid is None:
+        if conf != "none":
+            errors.append(f"{where}: no ucs_id but confidence {conf!r} (want 'none')")
+        continue
+    if conf not in ("high", "medium", "low"):
+        errors.append(f"{where}: confidence {conf!r} not high/medium/low")
+    if uid not in all_ids:
+        errors.append(f"{where}: ucs_id {uid!r} is defined by no category file")
+    elif id_names[uid] != (e.get("ucs_category"), e.get("ucs_subcategory")):
+        errors.append(f"{where}: {uid} is {id_names[uid]}, entry says "
+                      f"{(e.get('ucs_category'), e.get('ucs_subcategory'))}")
+xw_entries = crosswalk.get("entries", [])
+xw_counts = {"high": xw_conf["high"], "medium": xw_conf["medium"],
+             "refused": xw_conf["none"], "low": xw_conf["low"]}
+if crosswalk.get("confidence_counts") != xw_counts:
+    errors.append(f"fsd50k_crosswalk: confidence_counts {crosswalk.get('confidence_counts')} "
+                  f"but entries count {xw_counts}")
+if crosswalk.get("mapped") != sum(1 for e in xw_entries if e.get("ucs_id")):
+    errors.append("fsd50k_crosswalk: 'mapped' does not match the entries")
+if crosswalk.get("distinct_ucs_subcategories") != len({e["ucs_id"] for e in xw_entries if e.get("ucs_id")}):
+    errors.append("fsd50k_crosswalk: 'distinct_ucs_subcategories' does not match the entries")
 
 print(f"subcategories:        {total}")
 print(f"signed:               {signed}")

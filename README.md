@@ -22,7 +22,7 @@
 | `categories/<CATEGORY>.json` | 94 files, one per category (`AIR` … `WOODWIND`; `&` is spelled `_` in the file name, e.g. `DIRT_SAND.json`). Each holds `version`, `category`, `emoji` and `subcategories[]`; every subcategory carries `subcategory`, `category_id` (e.g. `AIRBlow`), `explanation`, `synonyms` and an `acoustic_signature` (`morphology`, `separability`, `gates`, `priors`). 828 subcategories in all, every one signed. |
 | `categories/index.json` | `version` `8.2.1`, `category_count` 94, and per category its file and `subcategory_count`. |
 | `producer_synonyms.json` | Producer vocabulary ("808", "hihat", "oneshot") overlaid onto the instrument categories, keyed by `category_id`. Kept apart so the UCS files stay as published. |
-| `fsd50k_crosswalk.json` | Hand map from FSD50K labels to UCS ids, each with a `high`/`medium`/`low` confidence. |
+| `fsd50k_crosswalk.json` | Hand map from FSD50K labels to UCS ids, each with a `high`/`medium`/`low` confidence, or `none` (refused, with a reason). |
 | `fsd50k_calibration.json` | Record of the last FSD50K calibration: FSD50K.dev, 2026-07, 40 966 clips scanned, 28 790 used. |
 | `fsd50k_separability.json` | 181 pairwise subcategory separability measurements (accuracy vs. chance). |
 | `UCS v8.2.1 Full Translations.xlsx` | The published UCS spreadsheet the JSON was built from. |
@@ -62,6 +62,10 @@ signature that carries priors, are errors: the 22 dangling ids the MUSICAL split
 `CARTMisc`, `METALFric`, …) now name the instrument categories, and `VOXHist` lost its priors. A
 log-normal feature (`MUST_BE_LOG`) on a `linear` transform is an error now, not a warning;
 the 38 that were left were converted, each with a `transform_was_linear` provenance record.
+The validator also checks `fsd50k_crosswalk.json`: every `ucs_id` must be defined by a category
+file with the same category/subcategory, and the header counts must match the entries. The nine
+retired `MUSC…` ids were re-pointed at the instrument categories; the broad parent labels
+(`Drum`, `Guitar`, `Percussion`, …) are refused, so a `Snare_drum` clip still maps to one id.
 
 **Calibrate** (each needs a corpus already scanned to `.PEAK`; run with no arguments for usage):
 

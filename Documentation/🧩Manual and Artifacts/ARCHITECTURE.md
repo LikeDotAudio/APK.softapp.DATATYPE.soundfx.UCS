@@ -22,7 +22,7 @@ A data repo: JSON other code reads, plus three Python scripts that check and cal
 ## The scripts
 
 ```bash
-python3 validate_signatures.py                     # every signature against the spec; exit 1 on any error
+python3 validate_signatures.py                     # every signature against the spec, and the FSD50K crosswalk against categories/; exit 1 on any error
 python3 fsd50k_calibrate.py evaluate  <FSD50K/>    # held-out 70/30, writes nothing
 python3 fsd50k_calibrate.py calibrate <FSD50K/>    # widen-only calibration of categories/*.json
 python3 music_calibrate.py map                     # which file-name instrument feeds which subcategory

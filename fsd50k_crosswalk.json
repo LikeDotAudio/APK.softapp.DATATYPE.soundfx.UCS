@@ -2,12 +2,12 @@
  "schema": "fsd50k-to-ucs-crosswalk/1",
  "ucs_version": "8.2.1",
  "fsd50k_classes": 200,
- "mapped": 169,
- "distinct_ucs_subcategories": 114,
+ "mapped": 155,
+ "distinct_ucs_subcategories": 123,
  "confidence_counts": {
-  "high": 119,
-  "medium": 49,
-  "refused": 31,
+  "high": 106,
+  "medium": 48,
+  "refused": 45,
   "low": 1
  },
  "calibration_policy": "Only 'high' and 'medium' entries calibrate a prior. 'none' entries are recorded so the refusal is auditable, not silent.",
@@ -22,17 +22,16 @@
   },
   {
    "fsd50k_class": "Accordion",
-   "ucs_id": "MUSCKeyd",
-   "ucs_category": "MUSICAL",
-   "ucs_subcategory": "KEYED",
-   "confidence": "medium",
-   "note": "Free reed with a keyboard; KEYED over WOODWIND is a judgement call."
+   "ucs_id": "KEYBAcrd",
+   "ucs_category": "KEYBOARD",
+   "ucs_subcategory": "ACCORDION",
+   "confidence": "high"
   },
   {
    "fsd50k_class": "Acoustic_guitar",
-   "ucs_id": "MUSCPluck",
-   "ucs_category": "MUSICAL",
-   "ucs_subcategory": "PLUCKED",
+   "ucs_id": "GUITAcou",
+   "ucs_category": "GUITAR",
+   "ucs_subcategory": "ACOUSTIC",
    "confidence": "high"
   },
   {
@@ -69,16 +68,16 @@
   },
   {
    "fsd50k_class": "Bass_drum",
-   "ucs_id": "MUSCPerc",
-   "ucs_category": "MUSICAL",
-   "ucs_subcategory": "PERCUSSION",
+   "ucs_id": "DRUMKick",
+   "ucs_category": "DRUMS",
+   "ucs_subcategory": "KICK",
    "confidence": "high"
   },
   {
    "fsd50k_class": "Bass_guitar",
-   "ucs_id": "MUSCPluck",
-   "ucs_category": "MUSICAL",
-   "ucs_subcategory": "PLUCKED",
+   "ucs_id": "GUITBass",
+   "ucs_category": "GUITAR",
+   "ucs_subcategory": "BASS GUITAR",
    "confidence": "high"
   },
   {
@@ -120,7 +119,7 @@
    "ucs_category": "BIRDS",
    "ucs_subcategory": "MISC",
    "confidence": "medium",
-   "note": "Species unspecified \u2014 SONGBIRD would be a category error for the corvids and gulls in here."
+   "note": "Species unspecified — SONGBIRD would be a category error for the corvids and gulls in here."
   },
   {
    "fsd50k_class": "Boat_and_Water_vehicle",
@@ -147,17 +146,15 @@
   },
   {
    "fsd50k_class": "Bowed_string_instrument",
-   "ucs_id": "MUSCStr",
-   "ucs_category": "MUSICAL",
-   "ucs_subcategory": "STRINGED",
-   "confidence": "high"
+   "ucs_id": null,
+   "confidence": "none",
+   "reason": "broad: violin, viola, cello and double bass are separate STRINGS subcategories. MUSICAL was split into instrument categories (LOOSE-datatype-soundfx-ucs-fsd50kcrosswalkjson-maps-fsd50k)."
   },
   {
    "fsd50k_class": "Brass_instrument",
-   "ucs_id": "MUSCBrass",
-   "ucs_category": "MUSICAL",
-   "ucs_subcategory": "BRASS",
-   "confidence": "high"
+   "ucs_id": null,
+   "confidence": "none",
+   "reason": "broad: trumpet, trombone, horn and tuba are separate BRASS subcategories. MUSICAL was split into instrument categories (LOOSE-datatype-soundfx-ucs-fsd50kcrosswalkjson-maps-fsd50k)."
   },
   {
    "fsd50k_class": "Breathing",
@@ -253,10 +250,9 @@
   },
   {
    "fsd50k_class": "Chime",
-   "ucs_id": "MUSCChim",
-   "ucs_category": "MUSICAL",
-   "ucs_subcategory": "CHIME",
-   "confidence": "medium"
+   "ucs_id": null,
+   "confidence": "none",
+   "reason": "broad: clock chime, doorbell, tubular bells and wind chime live in different categories. MUSICAL was split into instrument categories (LOOSE-datatype-soundfx-ucs-fsd50kcrosswalkjson-maps-fsd50k)."
   },
   {
    "fsd50k_class": "Chink_and_clink",
@@ -334,13 +330,13 @@
    "ucs_category": "BELLS",
    "ucs_subcategory": "ANIMAL",
    "confidence": "medium",
-   "note": "Ontology parent is Bell, not Percussion \u2014 so this is the animal bell, not the musical block. Beck & Lerch put it in ALARMS-BELL."
+   "note": "Ontology parent is Bell, not Percussion — so this is the animal bell, not the musical block. Beck & Lerch put it in ALARMS-BELL."
   },
   {
    "fsd50k_class": "Crack",
    "ucs_id": null,
    "confidence": "none",
-   "reason": "low: material unspecified \u2014 wood, ice, bone and whip all 'crack'."
+   "reason": "low: material unspecified — wood, ice, bone and whip all 'crack'."
   },
   {
    "fsd50k_class": "Crackle",
@@ -352,9 +348,9 @@
   },
   {
    "fsd50k_class": "Crash_cymbal",
-   "ucs_id": "MUSCPerc",
-   "ucs_category": "MUSICAL",
-   "ucs_subcategory": "PERCUSSION",
+   "ucs_id": "CYMBCrsh",
+   "ucs_category": "CYMBALS",
+   "ucs_subcategory": "CRASH",
    "confidence": "high"
   },
   {
@@ -415,10 +411,9 @@
   },
   {
    "fsd50k_class": "Cymbal",
-   "ucs_id": "MUSCPerc",
-   "ucs_category": "MUSICAL",
-   "ucs_subcategory": "PERCUSSION",
-   "confidence": "high"
+   "ucs_id": null,
+   "confidence": "none",
+   "reason": "broad: parent of Crash_cymbal and Hi-hat, which map to their own CYMBALS subcategories. MUSICAL was split into instrument categories (LOOSE-datatype-soundfx-ucs-fsd50kcrosswalkjson-maps-fsd50k)."
   },
   {
    "fsd50k_class": "Dishes_and_pots_and_pans",
@@ -485,23 +480,21 @@
   },
   {
    "fsd50k_class": "Drum",
-   "ucs_id": "MUSCPerc",
-   "ucs_category": "MUSICAL",
-   "ucs_subcategory": "PERCUSSION",
-   "confidence": "high"
+   "ucs_id": null,
+   "confidence": "none",
+   "reason": "broad: parent of Bass_drum, Snare_drum and Tabla, which map to their own DRUMS subcategories. MUSICAL was split into instrument categories (LOOSE-datatype-soundfx-ucs-fsd50kcrosswalkjson-maps-fsd50k)."
   },
   {
    "fsd50k_class": "Drum_kit",
-   "ucs_id": "MUSCPerc",
-   "ucs_category": "MUSICAL",
-   "ucs_subcategory": "PERCUSSION",
-   "confidence": "high"
+   "ucs_id": null,
+   "confidence": "none",
+   "reason": "broad: a kit mixes DRUMS and CYMBALS subcategories. MUSICAL was split into instrument categories (LOOSE-datatype-soundfx-ucs-fsd50kcrosswalkjson-maps-fsd50k)."
   },
   {
    "fsd50k_class": "Electric_guitar",
-   "ucs_id": "MUSCPluck",
-   "ucs_category": "MUSICAL",
-   "ucs_subcategory": "PLUCKED",
+   "ucs_id": "GUITElec",
+   "ucs_category": "GUITAR",
+   "ucs_subcategory": "ELECTRIC",
    "confidence": "high"
   },
   {
@@ -629,9 +622,9 @@
   },
   {
    "fsd50k_class": "Glockenspiel",
-   "ucs_id": "MUSCTnprc",
-   "ucs_category": "MUSICAL",
-   "ucs_subcategory": "PERCUSSION TUNED",
+   "ucs_id": "MALTGlok",
+   "ucs_category": "MALLET",
+   "ucs_subcategory": "GLOCKENSPIEL",
    "confidence": "high"
   },
   {
@@ -652,10 +645,9 @@
   },
   {
    "fsd50k_class": "Guitar",
-   "ucs_id": "MUSCPluck",
-   "ucs_category": "MUSICAL",
-   "ucs_subcategory": "PLUCKED",
-   "confidence": "high"
+   "ucs_id": null,
+   "confidence": "none",
+   "reason": "broad: parent of Acoustic_guitar, Electric_guitar and Bass_guitar. MUSICAL was split into instrument categories (LOOSE-datatype-soundfx-ucs-fsd50kcrosswalkjson-maps-fsd50k)."
   },
   {
    "fsd50k_class": "Gull_and_seagull",
@@ -694,24 +686,24 @@
   },
   {
    "fsd50k_class": "Harmonica",
-   "ucs_id": "MUSCWind",
-   "ucs_category": "MUSICAL",
-   "ucs_subcategory": "WOODWIND",
+   "ucs_id": "WWNDMisc",
+   "ucs_category": "WOODWIND",
+   "ucs_subcategory": "MISC",
    "confidence": "medium",
-   "note": "Free reed; UCS files reeds under WOODWIND."
+   "note": "Free reed; WOODWIND has no harmonica subcategory, so its MISC."
   },
   {
    "fsd50k_class": "Harp",
-   "ucs_id": "MUSCPluck",
-   "ucs_category": "MUSICAL",
-   "ucs_subcategory": "PLUCKED",
+   "ucs_id": "GUITHarp",
+   "ucs_category": "GUITAR",
+   "ucs_subcategory": "HARP",
    "confidence": "high"
   },
   {
    "fsd50k_class": "Hi-hat",
-   "ucs_id": "MUSCPerc",
-   "ucs_category": "MUSICAL",
-   "ucs_subcategory": "PERCUSSION",
+   "ucs_id": "CYMBHat",
+   "ucs_category": "CYMBALS",
+   "ucs_subcategory": "HI-HAT",
    "confidence": "high"
   },
   {
@@ -750,10 +742,9 @@
   },
   {
    "fsd50k_class": "Keyboard_(musical)",
-   "ucs_id": "MUSCKeyd",
-   "ucs_category": "MUSICAL",
-   "ucs_subcategory": "KEYED",
-   "confidence": "high"
+   "ucs_id": null,
+   "confidence": "none",
+   "reason": "broad: parent of Piano, Organ and Accordion, now separate PIANO and KEYBOARD subcategories. MUSICAL was split into instrument categories (LOOSE-datatype-soundfx-ucs-fsd50kcrosswalkjson-maps-fsd50k)."
   },
   {
    "fsd50k_class": "Keys_jangling",
@@ -805,17 +796,15 @@
   },
   {
    "fsd50k_class": "Mallet_percussion",
-   "ucs_id": "MUSCTnprc",
-   "ucs_category": "MUSICAL",
-   "ucs_subcategory": "PERCUSSION TUNED",
-   "confidence": "high"
+   "ucs_id": null,
+   "confidence": "none",
+   "reason": "broad: parent of Glockenspiel and Marimba_and_xylophone. MUSICAL was split into instrument categories (LOOSE-datatype-soundfx-ucs-fsd50kcrosswalkjson-maps-fsd50k)."
   },
   {
    "fsd50k_class": "Marimba_and_xylophone",
-   "ucs_id": "MUSCTnprc",
-   "ucs_category": "MUSICAL",
-   "ucs_subcategory": "PERCUSSION TUNED",
-   "confidence": "high"
+   "ucs_id": null,
+   "confidence": "none",
+   "reason": "two subcategories in one label: MALLET/MARIMBA and MALLET/XYLOPHONE. MUSICAL was split into instrument categories (LOOSE-datatype-soundfx-ucs-fsd50kcrosswalkjson-maps-fsd50k)."
   },
   {
    "fsd50k_class": "Mechanical_fan",
@@ -878,9 +867,9 @@
   },
   {
    "fsd50k_class": "Organ",
-   "ucs_id": "MUSCKeyd",
-   "ucs_category": "MUSICAL",
-   "ucs_subcategory": "KEYED",
+   "ucs_id": "KEYBOrg",
+   "ucs_category": "KEYBOARD",
+   "ucs_subcategory": "ORGAN",
    "confidence": "high"
   },
   {
@@ -892,24 +881,23 @@
   },
   {
    "fsd50k_class": "Percussion",
-   "ucs_id": "MUSCPerc",
-   "ucs_category": "MUSICAL",
-   "ucs_subcategory": "PERCUSSION",
-   "confidence": "high"
+   "ucs_id": null,
+   "confidence": "none",
+   "reason": "broad: spans DRUMS, CYMBALS, MALLET and PERCUSSION. MUSICAL was split into instrument categories (LOOSE-datatype-soundfx-ucs-fsd50kcrosswalkjson-maps-fsd50k)."
   },
   {
    "fsd50k_class": "Piano",
-   "ucs_id": "MUSCKeyd",
-   "ucs_category": "MUSICAL",
-   "ucs_subcategory": "KEYED",
-   "confidence": "high"
+   "ucs_id": "PIANMisc",
+   "ucs_category": "PIANO",
+   "ucs_subcategory": "MISC",
+   "confidence": "medium",
+   "note": "FSD50K does not say grand or upright; MISC is the PIANO abstention target."
   },
   {
    "fsd50k_class": "Plucked_string_instrument",
-   "ucs_id": "MUSCPluck",
-   "ucs_category": "MUSICAL",
-   "ucs_subcategory": "PLUCKED",
-   "confidence": "high"
+   "ucs_id": null,
+   "confidence": "none",
+   "reason": "broad: spans every GUITAR subcategory. MUSICAL was split into instrument categories (LOOSE-datatype-soundfx-ucs-fsd50kcrosswalkjson-maps-fsd50k)."
   },
   {
    "fsd50k_class": "Pour",
@@ -978,14 +966,15 @@
    "fsd50k_class": "Rattle",
    "ucs_id": null,
    "confidence": "none",
-   "reason": "low: object rattle vs snake rattle vs percussion \u2014 top-level and genuinely ambiguous."
+   "reason": "low: object rattle vs snake rattle vs percussion — top-level and genuinely ambiguous."
   },
   {
    "fsd50k_class": "Rattle_(instrument)",
-   "ucs_id": "MUSCShake",
-   "ucs_category": "MUSICAL",
-   "ucs_subcategory": "SHAKEN",
-   "confidence": "high"
+   "ucs_id": "PERCShak",
+   "ucs_category": "PERCUSSION",
+   "ucs_subcategory": "SHAKER",
+   "confidence": "medium",
+   "note": "A rattle is shaken; SHAKER is the nearest subcategory."
   },
   {
    "fsd50k_class": "Respiratory_sounds",
@@ -1026,7 +1015,7 @@
    "fsd50k_class": "Scratching_(performance_technique)",
    "ucs_id": null,
    "confidence": "none",
-   "reason": "low: turntablism \u2014 vinyl-scratch timbre sits between COMMUNICATIONS-PHONOGRAPH and MUSICAL-PERFORMANCE; no honest single target."
+   "reason": "low: turntablism — vinyl-scratch timbre sits between COMMUNICATIONS-PHONOGRAPH and MUSICAL-PERFORMANCE; no honest single target."
   },
   {
    "fsd50k_class": "Screaming",
@@ -1039,7 +1028,7 @@
    "fsd50k_class": "Screech",
    "ucs_id": null,
    "confidence": "none",
-   "reason": "low: tyre, animal or hinge \u2014 Beck & Lerch commit to VEHICLES-BRAKE, which over-commits."
+   "reason": "low: tyre, animal or hinge — Beck & Lerch commit to VEHICLES-BRAKE, which over-commits."
   },
   {
    "fsd50k_class": "Shatter",
@@ -1109,9 +1098,9 @@
   },
   {
    "fsd50k_class": "Snare_drum",
-   "ucs_id": "MUSCPerc",
-   "ucs_category": "MUSICAL",
-   "ucs_subcategory": "PERCUSSION",
+   "ucs_id": "DRUMSnr",
+   "ucs_category": "DRUMS",
+   "ucs_subcategory": "SNARE",
    "confidence": "high"
   },
   {
@@ -1159,10 +1148,9 @@
   },
   {
    "fsd50k_class": "Strum",
-   "ucs_id": "MUSCPluck",
-   "ucs_category": "MUSICAL",
-   "ucs_subcategory": "PLUCKED",
-   "confidence": "high"
+   "ucs_id": null,
+   "confidence": "none",
+   "reason": "a technique, not an instrument; co-labelled with acoustic and electric guitar alike. MUSICAL was split into instrument categories (LOOSE-datatype-soundfx-ucs-fsd50kcrosswalkjson-maps-fsd50k)."
   },
   {
    "fsd50k_class": "Subway_and_metro_and_underground",
@@ -1173,18 +1161,17 @@
   },
   {
    "fsd50k_class": "Tabla",
-   "ucs_id": "MUSCPerc",
-   "ucs_category": "MUSICAL",
-   "ucs_subcategory": "PERCUSSION",
+   "ucs_id": "DRUMHand",
+   "ucs_category": "DRUMS",
+   "ucs_subcategory": "HAND DRUM",
    "confidence": "high"
   },
   {
    "fsd50k_class": "Tambourine",
-   "ucs_id": "MUSCShake",
-   "ucs_category": "MUSICAL",
-   "ucs_subcategory": "SHAKEN",
-   "confidence": "medium",
-   "note": "Both shaken and struck."
+   "ucs_id": "PERCTamb",
+   "ucs_category": "PERCUSSION",
+   "ucs_subcategory": "TAMBOURINE",
+   "confidence": "high"
   },
   {
    "fsd50k_class": "Tap",
@@ -1284,9 +1271,9 @@
   },
   {
    "fsd50k_class": "Trumpet",
-   "ucs_id": "MUSCBrass",
-   "ucs_category": "MUSICAL",
-   "ucs_subcategory": "BRASS",
+   "ucs_id": "BRASTpt",
+   "ucs_category": "BRASS",
+   "ucs_subcategory": "TRUMPET",
    "confidence": "high"
   },
   {
@@ -1373,17 +1360,17 @@
   },
   {
    "fsd50k_class": "Wind_chime",
-   "ucs_id": "MUSCChim",
-   "ucs_category": "MUSICAL",
-   "ucs_subcategory": "CHIME",
-   "confidence": "medium"
+   "ucs_id": "PERCMisc",
+   "ucs_category": "PERCUSSION",
+   "ucs_subcategory": "MISC",
+   "confidence": "medium",
+   "note": "PERCUSSION/MISC lists chime; no wind-chime subcategory."
   },
   {
    "fsd50k_class": "Wind_instrument_and_woodwind_instrument",
-   "ucs_id": "MUSCWind",
-   "ucs_category": "MUSICAL",
-   "ucs_subcategory": "WOODWIND",
-   "confidence": "high"
+   "ucs_id": null,
+   "confidence": "none",
+   "reason": "broad: spans every WOODWIND (and BRASS) subcategory. MUSICAL was split into instrument categories (LOOSE-datatype-soundfx-ucs-fsd50kcrosswalkjson-maps-fsd50k)."
   },
   {
    "fsd50k_class": "Wood",
