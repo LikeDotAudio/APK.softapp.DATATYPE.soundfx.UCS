@@ -97,3 +97,7 @@ file here, so the launcher opens the folder itself.
   `fsd50k_calibration.json`).
 - **Closed vocabularies, checked by a machine.** Features, morphologies and tiers are fixed
   sets; `validate_signatures.py` refuses anything outside them.
+
+<!-- wiki:smoke -->
+**Smoke test** — ✅ PASS 1/1 since 2026-10-30 12:51 EDT — [results](Documentation/%F0%9F%A7%A9Manual%20and%20Artifacts/SMOKE.md)
+<!-- /wiki:smoke -->
