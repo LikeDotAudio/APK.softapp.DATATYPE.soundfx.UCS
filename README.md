@@ -3,6 +3,8 @@
 > 📑 **UCS sound-effects taxonomy, signed** — the Universal Category System v8.2.1 as JSON, one
 > file per category, with an acoustic signature on every subcategory. It is the taxonomy the
 > sample analyzer classifies against.
+>
+> 📚 **Wiki:** [Documentation/README.md](Documentation/README.md) — principles, architecture, delivery.
 
 ---
 
