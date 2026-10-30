@@ -105,7 +105,8 @@ file here, so the launcher opens the folder itself.
 - **Say how far the signal can go.** Every subcategory declares a `separability` tier —
   `signal_separable`, `signal_narrowable`, `semantic_only`, `provenance_only` — so the
   classifier does not claim to hear what only a name can tell it (`categories/*.json`,
-  enforced by `validate_signatures.py`).
+  enforced by `validate_signatures.py`, which also refuses a `signal_separable` tier that
+  `fsd50k_separability.json` measures at chance).
 - **A measured number is a prior on the prior.** FSD50K calibration may move a mean to the
   measured median but may only widen a deviation; eleven features that measure the uploader
   rather than the sound are never calibrated (`fsd50k_calibrate.py`, `NEVER`).

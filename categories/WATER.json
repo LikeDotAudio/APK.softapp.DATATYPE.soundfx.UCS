@@ -44,7 +44,7 @@
    ],
    "acoustic_signature": {
     "morphology": "texture",
-    "separability": "signal_separable",
+    "separability": "signal_narrowable",
     "gates": [
      {
       "feature": "length_seconds",
@@ -595,7 +595,7 @@
    ],
    "acoustic_signature": {
     "morphology": "impulsive",
-    "separability": "signal_separable",
+    "separability": "signal_narrowable",
     "gates": [
      {
       "feature": "onset_rate_per_second",

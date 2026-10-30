@@ -600,8 +600,8 @@
    "WATRDrip"
   ],
   "tier": [
-   "signal_separable",
-   "signal_separable"
+   "signal_narrowable",
+   "signal_narrowable"
   ],
   "clips": [
    63,
@@ -744,7 +744,7 @@
    "WATRPour"
   ],
   "tier": [
-   "signal_separable",
+   "signal_narrowable",
    "signal_narrowable"
   ],
   "clips": [
@@ -780,7 +780,7 @@
    "WATRSurf"
   ],
   "tier": [
-   "signal_separable",
+   "signal_narrowable",
    "signal_separable"
   ],
   "clips": [
@@ -1086,7 +1086,7 @@
    "WATRFlow"
   ],
   "tier": [
-   "signal_separable",
+   "signal_narrowable",
    "signal_separable"
   ],
   "clips": [
@@ -1446,7 +1446,7 @@
    "WATRSplsh"
   ],
   "tier": [
-   "signal_separable",
+   "signal_narrowable",
    "signal_narrowable"
   ],
   "clips": [
@@ -1734,7 +1734,7 @@
    "WATRSplsh"
   ],
   "tier": [
-   "signal_separable",
+   "signal_narrowable",
    "signal_narrowable"
   ],
   "clips": [
@@ -1824,7 +1824,7 @@
    "WATRPlmb"
   ],
   "tier": [
-   "signal_separable",
+   "signal_narrowable",
    "semantic_only"
   ],
   "clips": [
@@ -1986,7 +1986,7 @@
    "WATRPlmb"
   ],
   "tier": [
-   "signal_separable",
+   "signal_narrowable",
    "semantic_only"
   ],
   "clips": [
@@ -2040,7 +2040,7 @@
    "WATRFlow"
   ],
   "tier": [
-   "signal_separable",
+   "signal_narrowable",
    "signal_separable"
   ],
   "clips": [
@@ -2058,7 +2058,7 @@
    "WATRSurf"
   ],
   "tier": [
-   "signal_separable",
+   "signal_narrowable",
    "signal_separable"
   ],
   "clips": [
@@ -2076,7 +2076,7 @@
    "WATRPour"
   ],
   "tier": [
-   "signal_separable",
+   "signal_narrowable",
    "signal_narrowable"
   ],
   "clips": [

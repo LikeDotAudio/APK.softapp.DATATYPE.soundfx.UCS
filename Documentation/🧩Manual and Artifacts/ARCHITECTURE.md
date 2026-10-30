@@ -22,7 +22,7 @@ A data repo: JSON other code reads, plus three Python scripts that check and cal
 ## The scripts
 
 ```bash
-python3 validate_signatures.py                     # every signature against the spec, and the FSD50K crosswalk against categories/; exit 1 on any error
+python3 validate_signatures.py                     # every signature against the spec, the FSD50K crosswalk against categories/, and every signal_separable tier against fsd50k_separability.json; exit 1 on any error
 python3 fsd50k_calibrate.py evaluate  <FSD50K/>    # held-out 70/30, writes nothing
 python3 fsd50k_calibrate.py calibrate <FSD50K/>    # widen-only calibration of categories/*.json
 python3 fsd50k_calibrate.py separability <FSD50K/> # sibling-pair logistic probe -> fsd50k_separability.json

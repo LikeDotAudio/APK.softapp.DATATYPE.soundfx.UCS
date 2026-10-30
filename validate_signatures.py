@@ -65,6 +65,7 @@ tiers, morphs = Counter(), Counter()
 feature_use = Counter()
 all_ids, referenced_ids = set(), set()
 id_names = {}  # category_id -> (category, subcategory), for the crosswalk check
+id_tier = {}   # category_id -> separability tier, for the FSD50K separability check
 signed = total = 0
 
 
@@ -158,6 +159,7 @@ for path in sorted(CATEGORIES.glob("*.json")):
         cid = sub.get("category_id", "?")
         all_ids.add(cid)
         id_names[cid] = (data.get("category"), sub.get("subcategory"))
+        id_tier[cid] = sub.get("acoustic_signature", {}).get("separability")
         where = f"{path.stem}/{cid}"
 
         for key in ("subcategory", "category_id", "explanation", "synonyms"):
@@ -205,6 +207,31 @@ if crosswalk.get("mapped") != sum(1 for e in xw_entries if e.get("ucs_id")):
     errors.append("fsd50k_crosswalk: 'mapped' does not match the entries")
 if crosswalk.get("distinct_ucs_subcategories") != len({e["ucs_id"] for e in xw_entries if e.get("ucs_id")}):
     errors.append("fsd50k_crosswalk: 'distinct_ucs_subcategories' does not match the entries")
+
+# A signal_separable tier is a claim the FSD50K probe can refute. fsd50k_separability.json
+# holds the measurement; the tier must not outlive it. WATRBubl and WATRDrip claimed
+# signal_separable while the probe split WATRBubl/WATRFlow, WATRBubl/WATRSurf and
+# WATRDrip/WATRPour no better than chance
+# (LOOSE-datatype-soundfx-ucs-fsd50kseparabilityjson-regenerated-20261030).
+# A pair refutes a claim when its baseline is moderate (below SEP_IMBALANCED — above it
+# lift is a weak statistic, SCANALYZER fsd50k_audit.md 7.7) and its lift is under
+# SEP_ABOVE_CHANCE. The blame falls on the side the probe cannot recognise: the minority
+# class (a probe at chance predicts the majority), or both sides when accuracy is below
+# the baseline. Tiers come from category files, never the table's snapshot column.
+SEP_IMBALANCED = 0.85
+SEP_ABOVE_CHANCE = 0.05
+for e in json.loads((HERE / "fsd50k_separability.json").read_text(encoding="utf-8")):
+    (a, b), (na, nb) = e["pair"], e["clips"]
+    for uid in (a, b):
+        if uid not in all_ids:
+            errors.append(f"fsd50k_separability/{a}+{b}: {uid!r} is defined by no category file")
+    if e["baseline"] >= SEP_IMBALANCED or e["lift_over_chance"] >= SEP_ABOVE_CHANCE:
+        continue
+    blamed = {a, b} if e["accuracy"] < e["baseline"] else {a if na < nb else b}
+    for uid in sorted(blamed):
+        if id_tier.get(uid) == "signal_separable":
+            errors.append(f"fsd50k_separability/{a}+{b}: {uid} is signal_separable but the probe "
+                          f"scores {e['accuracy']} against a {e['baseline']} baseline")
 
 print(f"subcategories:        {total}")
 print(f"signed:               {signed}")
