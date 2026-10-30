@@ -55,8 +55,10 @@ python3 validate_signatures.py
 ```
 
 Checked 2026-10-30: 828 subcategories, 828 signed, exit 0 ("every signature conforms to the
-spec"), with 61 warnings — the 25 it lists are log-normal features (`onset_rate_per_second`,
-`crest_factor`, `band_limit_high_hz`) scored with a `linear` transform.
+spec"), with 23 warnings — 22 `confusable_with` ids that no longer exist (the old `MUSC…`
+ids among them) and one `provenance_only` subcategory (`VOXHist`) that still carries priors. A
+log-normal feature (`MUST_BE_LOG`) on a `linear` transform is an error now, not a warning;
+the 38 that were left were converted, each with a `transform_was_linear` provenance record.
 
 **Calibrate** (each needs a corpus already scanned to `.PEAK`; run with no arguments for usage):
 

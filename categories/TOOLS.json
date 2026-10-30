@@ -696,11 +696,16 @@
      {
       "feature": "onset_rate_per_second",
       "mean": 20.0,
-      "deviation": 12.0,
-      "transform": "linear",
+      "deviation": 1.741,
+      "transform": "log",
       "weight": 0.8,
       "provenance": {
-       "source": "reasoned"
+       "source": "reasoned",
+       "transform_was_linear": {
+        "deviation": 12.0,
+        "converted_on": "2026-10",
+        "how": "linear sigma 12 converted to the log-normal factor exp(sqrt(ln(1+(sigma/mean)^2)))"
+       }
       }
      },
      {

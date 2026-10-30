@@ -94,11 +94,16 @@
      {
       "feature": "onset_rate_per_second",
       "mean": 0.05,
-      "deviation": 0.1,
-      "transform": "linear",
+      "deviation": 3.556,
+      "transform": "log",
       "weight": 0.8,
       "provenance": {
-       "source": "reasoned"
+       "source": "reasoned",
+       "transform_was_linear": {
+        "deviation": 0.1,
+        "converted_on": "2026-10",
+        "how": "linear sigma 0.1 converted to the log-normal factor exp(sqrt(ln(1+(sigma/mean)^2)))"
+       }
       }
      },
      {
@@ -5695,11 +5700,16 @@
      {
       "feature": "onset_rate_per_second",
       "mean": 0.03,
-      "deviation": 0.08,
-      "transform": "linear",
+      "deviation": 4.25,
+      "transform": "log",
       "weight": 0.8,
       "provenance": {
-       "source": "reasoned"
+       "source": "reasoned",
+       "transform_was_linear": {
+        "deviation": 0.08,
+        "converted_on": "2026-10",
+        "how": "linear sigma 0.08 converted to the log-normal factor exp(sqrt(ln(1+(sigma/mean)^2)))"
+       }
       }
      },
      {

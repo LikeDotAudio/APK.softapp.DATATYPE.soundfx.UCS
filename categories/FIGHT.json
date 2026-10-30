@@ -153,7 +153,7 @@
         ],
         "discriminators": [
           "A body hitting the ground is the most heavily DAMPED impact in the taxonomy: flesh has terrible acoustic impedance and dissipates the strike as heat, so there is essentially no ring. Low centroid, LF-dominated, very short decay, dull. Those four together are a real, measurable morphology.",
-          "Against FIGHT-IMPACT (a punch): a bodyfall is BIGGER and LONGER \u2014 the whole mass lands, usually with a scuffle or a slide afterwards, so transient_count is higher and the tail is messier. A punch is one compact thud. A lean, not a boundary.",
+          "Against FIGHT-IMPACT (a punch): a bodyfall is BIGGER and LONGER — the whole mass lands, usually with a scuffle or a slide afterwards, so transient_count is higher and the tail is messier. A punch is one compact thud. A lean, not a boundary.",
           "Against WOOD-IMPACT / METAL-IMPACT: those RING. If decay_time_seconds_60db is long or the spectrum is bright and inharmonic, it is not a body. That direction of the test is reliable."
         ],
         "confusable_with": [
@@ -325,8 +325,8 @@
           }
         ],
         "discriminators": [
-          "Cloth is a high-centroid, noisy, LOW-CREST friction texture with no f0 and almost no low-band energy \u2014 the antithesis of the impacts around it. It SUSTAINS rather than spiking, so crest_factor is low and sustain_ratio well above zero. Separable from FIGHT-IMPACT and FIGHT-BODYFALL on centroid and crest alone.",
-          "Against FOLEY-CLOTH and CLOTH-MOVEMENT: physically identical. The only difference UCS states is INTENSITY \u2014 'active or big scuffling cloth' \u2014 so expect higher level, higher spectral_flux and more violent envelope modulation than a walking foley pass. A soft lean, not a boundary, and that is what caps this at narrowable."
+          "Cloth is a high-centroid, noisy, LOW-CREST friction texture with no f0 and almost no low-band energy — the antithesis of the impacts around it. It SUSTAINS rather than spiking, so crest_factor is low and sustain_ratio well above zero. Separable from FIGHT-IMPACT and FIGHT-BODYFALL on centroid and crest alone.",
+          "Against FOLEY-CLOTH and CLOTH-MOVEMENT: physically identical. The only difference UCS states is INTENSITY — 'active or big scuffling cloth' — so expect higher level, higher spectral_flux and more violent envelope modulation than a walking foley pass. A soft lean, not a boundary, and that is what caps this at narrowable."
         ],
         "confusable_with": [
           "FOLYClth",
@@ -665,9 +665,9 @@
           }
         ],
         "discriminators": [
-          "A punch or kick landing on a body: a compact, DAMPED, front-loaded thud. The defining feature is what is ABSENT \u2014 there is no ring. decay_time_seconds_60db is tiny and high_band_energy is low, because flesh absorbs rather than resonates.",
+          "A punch or kick landing on a body: a compact, DAMPED, front-loaded thud. The defining feature is what is ABSENT — there is no ring. decay_time_seconds_60db is tiny and high_band_energy is low, because flesh absorbs rather than resonates.",
           "Against FIGHT-BODYFALL: a punch is a single small compact impact; a bodyfall is bigger and longer, with more low-band mass and usually a scuffle afterwards. Real but weak.",
-          "Against GORE-SPLAT and GORE-SQUISH: the same damped body impact, only WET \u2014 gore adds mid-band burble and a messier tail. The dry/wet axis is the only lean and it is not a boundary.",
+          "Against GORE-SPLAT and GORE-SQUISH: the same damped body impact, only WET — gore adds mid-band burble and a messier tail. The dry/wet axis is the only lean and it is not a boundary.",
           "Against METAL-IMPACT / WOOD-IMPACT: if it rings, it is not a body. That rules OUT reliably; it never rules IN."
         ],
         "confusable_with": [
@@ -724,16 +724,21 @@
           {
             "feature": "crest_factor",
             "mean": 8.0,
-            "deviation": 6.0,
-            "transform": "linear",
+            "deviation": 1.95,
+            "transform": "log",
             "weight": 0.1,
             "provenance": {
-              "source": "reasoned"
+              "source": "reasoned",
+              "transform_was_linear": {
+                "deviation": 6.0,
+                "converted_on": "2026-10",
+                "how": "linear sigma 6 converted to the log-normal factor exp(sqrt(ln(1+(sigma/mean)^2)))"
+              }
             }
           }
         ],
         "discriminators": [
-          "Catch-all: brawls, sparring, general combat scenes. Usually a multi-event SCENE rather than a single gesture \u2014 impacts, cloth, grunts and bodyfalls layered together \u2014 so no single morphology applies.",
+          "Catch-all: brawls, sparring, general combat scenes. Usually a multi-event SCENE rather than a single gesture — impacts, cloth, grunts and bodyfalls layered together — so no single morphology applies.",
           "The ABSTAIN target for FIGHT. Given how badly IMPACT / BODYFALL / GRAB overlap with one another and with GORE and FOLEY, abstention here is frequently the correct call.",
           "Files carrying voiced grunts and shouts will pull toward HUMAN and VOICES; that is not disqualifying for a fight scene."
         ],

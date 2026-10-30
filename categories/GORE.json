@@ -760,11 +760,16 @@
      {
       "feature": "crest_factor",
       "mean": 9.0,
-      "deviation": 7.0,
-      "transform": "linear",
+      "deviation": 1.989,
+      "transform": "log",
       "weight": 0.1,
       "provenance": {
-       "source": "reasoned"
+       "source": "reasoned",
+       "transform_was_linear": {
+        "deviation": 7.0,
+        "converted_on": "2026-10",
+        "how": "linear sigma 7 converted to the log-normal factor exp(sqrt(ln(1+(sigma/mean)^2)))"
+       }
       }
      }
     ],

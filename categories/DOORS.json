@@ -1826,8 +1826,8 @@
      {
       "feature": "onset_rate_per_second",
       "mean": 1.62241,
-      "deviation": 1.8,
-      "transform": "linear",
+      "deviation": 2.449,
+      "transform": "log",
       "weight": 0.9,
       "provenance": {
        "source": "measured",
@@ -1839,7 +1839,12 @@
        "measured_deviation": 1.4001,
        "reasoned_mean": 2.5,
        "reasoned_deviation": 1.8,
-       "policy": "mean replaced by the measured median; deviation widened only, never tightened"
+       "policy": "mean replaced by the measured median; deviation widened only, never tightened",
+       "transform_was_linear": {
+        "deviation": 1.8,
+        "converted_on": "2026-10",
+        "how": "linear sigma 1.8 converted to the log-normal factor exp(sqrt(ln(1+(sigma/mean)^2)))"
+       }
       }
      },
      {
@@ -3137,11 +3142,16 @@
      {
       "feature": "onset_rate_per_second",
       "mean": 1.5,
-      "deviation": 1.0,
-      "transform": "linear",
+      "deviation": 1.834,
+      "transform": "log",
       "weight": 0.7,
       "provenance": {
-       "source": "reasoned"
+       "source": "reasoned",
+       "transform_was_linear": {
+        "deviation": 1.0,
+        "converted_on": "2026-10",
+        "how": "linear sigma 1 converted to the log-normal factor exp(sqrt(ln(1+(sigma/mean)^2)))"
+       }
       }
      },
      {

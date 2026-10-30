@@ -1171,8 +1171,8 @@
      {
       "feature": "crest_factor",
       "mean": 6.36185,
-      "deviation": 8.0,
-      "transform": "linear",
+      "deviation": 2.648,
+      "transform": "log",
       "weight": 0.1,
       "provenance": {
        "source": "measured",
@@ -1184,7 +1184,12 @@
        "measured_deviation": 4.03951,
        "reasoned_mean": 10.0,
        "reasoned_deviation": 8.0,
-       "policy": "mean replaced by the measured median; deviation widened only, never tightened"
+       "policy": "mean replaced by the measured median; deviation widened only, never tightened",
+       "transform_was_linear": {
+        "deviation": 8.0,
+        "converted_on": "2026-10",
+        "how": "linear sigma 8 converted to the log-normal factor exp(sqrt(ln(1+(sigma/mean)^2)))"
+       }
       }
      }
     ],

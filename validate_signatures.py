@@ -127,7 +127,9 @@ def check(sig, where):
                     "a log deviation is a multiplicative factor, e.g. 1.5 or 2.0"
                 )
         if f in MUST_BE_LOG and tf == "linear":
-            warnings.append(f"{where}: {f} is log-normal but uses transform 'linear'")
+            # An error, not a warning: the spec mandates log for these, and 38 linear ones
+            # once sat here as warnings nobody acted on (LOOSE-datatype-soundfx-ucs-categories).
+            errors.append(f"{where}: {f} is log-normal but uses transform 'linear'")
 
     tier_ = sig.get("separability")
     if tier_ == "provenance_only" and sig.get("priors"):

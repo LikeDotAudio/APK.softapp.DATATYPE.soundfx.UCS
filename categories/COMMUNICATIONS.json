@@ -1175,10 +1175,15 @@
       "feature": "band_limit_high_hz",
       "mean": 5000.0,
       "deviation": 2.0,
-      "transform": "linear",
+      "transform": "log",
       "weight": 0.6,
       "provenance": {
-       "source": "reasoned"
+       "source": "reasoned",
+       "transform_was_linear": {
+        "deviation": 2.0,
+        "converted_on": "2026-10",
+        "how": "the deviation was already written as a multiplicative factor (a 2 Hz sigma on 5000 Hz is not meant); transform corrected"
+       }
       }
      },
      {
@@ -1536,10 +1541,15 @@
       "feature": "band_limit_high_hz",
       "mean": 3400.0,
       "deviation": 1.8,
-      "transform": "linear",
+      "transform": "log",
       "weight": 0.7,
       "provenance": {
-       "source": "reasoned"
+       "source": "reasoned",
+       "transform_was_linear": {
+        "deviation": 1.8,
+        "converted_on": "2026-10",
+        "how": "the deviation was already written as a multiplicative factor (a 1.8 Hz sigma on 3400 Hz is not meant); transform corrected"
+       }
       }
      },
      {
@@ -1710,10 +1720,15 @@
       "feature": "band_limit_high_hz",
       "mean": 3400.0,
       "deviation": 1.6,
-      "transform": "linear",
+      "transform": "log",
       "weight": 0.7,
       "provenance": {
-       "source": "reasoned"
+       "source": "reasoned",
+       "transform_was_linear": {
+        "deviation": 1.6,
+        "converted_on": "2026-10",
+        "how": "the deviation was already written as a multiplicative factor (a 1.6 Hz sigma on 3400 Hz is not meant); transform corrected"
+       }
       }
      },
      {
@@ -2147,10 +2162,15 @@
       "feature": "band_limit_high_hz",
       "mean": 8000.0,
       "deviation": 2.0,
-      "transform": "linear",
+      "transform": "log",
       "weight": 0.4,
       "provenance": {
-       "source": "reasoned"
+       "source": "reasoned",
+       "transform_was_linear": {
+        "deviation": 2.0,
+        "converted_on": "2026-10",
+        "how": "the deviation was already written as a multiplicative factor (a 2 Hz sigma on 8000 Hz is not meant); transform corrected"
+       }
       }
      },
      {
@@ -2288,10 +2308,15 @@
       "feature": "band_limit_high_hz",
       "mean": 3000.0,
       "deviation": 1.8,
-      "transform": "linear",
+      "transform": "log",
       "weight": 0.6,
       "provenance": {
-       "source": "reasoned"
+       "source": "reasoned",
+       "transform_was_linear": {
+        "deviation": 1.8,
+        "converted_on": "2026-10",
+        "how": "the deviation was already written as a multiplicative factor (a 1.8 Hz sigma on 3000 Hz is not meant); transform corrected"
+       }
       }
      },
      {
