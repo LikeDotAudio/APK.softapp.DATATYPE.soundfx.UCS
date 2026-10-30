@@ -3,5 +3,5 @@
   "category": "DATATYPE",
   "icon": "\ud83d\udcd1",
   "description": "UCS v8.2.1 sound-effects taxonomy as JSON: 94 categories, 828 subcategories, each with an acoustic signature. Compiled into the sample analyzer by its build.rs.",
-  "entry": "main.py"
+  "tech": "folder"
 }
