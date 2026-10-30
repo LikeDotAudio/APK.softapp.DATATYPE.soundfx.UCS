@@ -2,7 +2,7 @@
  "schema": "fsd50k-calibration/2",
  "dataset": "FSD50K.dev",
  "analyzer_version": "20260729.1251",
- "date": "2026-07",
+ "date": "2026-10-30",
  "clips_scanned": 40966,
  "clips_used": 22915,
  "clips_dropped_ambiguous": 6042,

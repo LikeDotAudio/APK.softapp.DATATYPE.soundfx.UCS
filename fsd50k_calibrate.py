@@ -19,10 +19,13 @@ Policy (see SCANALYZER.Like.audio/README.md, "Calibrating the signatures against
   * eleven features are never calibrated here at all (see NEVER) because on this
     corpus they measure the uploader rather than the sound.
 """
-import sys, os, re, json, math, glob, copy, statistics, collections, itertools, warnings
+import sys, os, re, json, math, glob, copy, statistics, collections, datetime, itertools, warnings
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-DATE = "2026-07"
+# The day this run measured the corpus. Every prior, gate and evidence block it writes
+# is stamped with it, so the date says when the number was taken, not when the script
+# was first written. Gate records carried forward from an earlier run keep their own.
+DATE = datetime.date.today().isoformat()
 
 # ---------------------------------------------------------------- the vocabulary
 

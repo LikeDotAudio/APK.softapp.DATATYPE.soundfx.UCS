@@ -23,7 +23,7 @@
 | `categories/index.json` | `version` `8.2.1`, `category_count` 94, and per category its file and `subcategory_count`. |
 | `producer_synonyms.json` | Producer vocabulary ("808", "hihat", "oneshot") overlaid onto the instrument categories, keyed by `category_id`. Kept apart so the UCS files stay as published. |
 | `fsd50k_crosswalk.json` | Hand map from FSD50K labels to UCS ids, each with a `high`/`medium`/`low` confidence, or `none` (refused, with a reason). |
-| `fsd50k_calibration.json` | Record of the last FSD50K calibration: FSD50K.dev, 2026-07, 40 966 clips scanned, 28 790 used. |
+| `fsd50k_calibration.json` | Record of the last FSD50K calibration: FSD50K.dev, 2026-10-30, 40 966 clips scanned, 22 915 used. Each run stamps the day it ran. |
 | `fsd50k_separability.json` | 118 sibling-pair separability measurements (logistic probe accuracy vs. majority baseline), written by `fsd50k_calibrate.py separability`. |
 | `UCS v8.2.1 Full Translations.xlsx` | The published UCS spreadsheet the JSON was built from. |
 | `validate_signatures.py` | Checks every signature against the spec; exits non-zero on any error. |

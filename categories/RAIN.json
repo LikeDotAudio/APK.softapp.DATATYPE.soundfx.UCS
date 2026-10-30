@@ -507,7 +507,7 @@
        "dataset": "FSD50K.dev",
        "clips": 235,
        "analyzer_version": "20260729.1251",
-       "date": "2026-07",
+       "date": "2026-10-30",
        "measured_on": "all_unambiguous_clips",
        "reasoned_mean_before_calibration": 4799.77399
       }
@@ -523,7 +523,7 @@
        "dataset": "FSD50K.dev",
        "clips": 235,
        "analyzer_version": "20260729.1251",
-       "date": "2026-07",
+       "date": "2026-10-30",
        "measured_on": "all_unambiguous_clips",
        "reasoned_mean_before_calibration": -2.40194
       }
@@ -549,7 +549,7 @@
        "dataset": "FSD50K.dev",
        "clips": 235,
        "analyzer_version": "20260729.1251",
-       "date": "2026-07",
+       "date": "2026-10-30",
        "measured_on": "all_unambiguous_clips",
        "reasoned_mean_before_calibration": 0.63403
       }
@@ -565,7 +565,7 @@
        "dataset": "FSD50K.dev",
        "clips": 235,
        "analyzer_version": "20260729.1251",
-       "date": "2026-07",
+       "date": "2026-10-30",
        "measured_on": "all_unambiguous_clips",
        "reasoned_mean_before_calibration": 0.29571
       }
@@ -581,7 +581,7 @@
        "dataset": "FSD50K.dev",
        "clips": 235,
        "analyzer_version": "20260729.1251",
-       "date": "2026-07",
+       "date": "2026-10-30",
        "measured_on": "all_unambiguous_clips",
        "reasoned_mean_before_calibration": 0.04401
       }
@@ -597,7 +597,7 @@
        "dataset": "FSD50K.dev",
        "clips": 235,
        "analyzer_version": "20260729.1251",
-       "date": "2026-07",
+       "date": "2026-10-30",
        "measured_on": "all_unambiguous_clips",
        "reasoned_mean_before_calibration": 5031.62626
       }
@@ -613,7 +613,7 @@
        "dataset": "FSD50K.dev",
        "clips": 39,
        "analyzer_version": "20260729.1251",
-       "date": "2026-07",
+       "date": "2026-10-30",
        "measured_on": "one_shot_clips_only",
        "reasoned_mean_before_calibration": 13.07725
       }
@@ -629,7 +629,7 @@
        "dataset": "FSD50K.dev",
        "clips": 235,
        "analyzer_version": "20260729.1251",
-       "date": "2026-07",
+       "date": "2026-10-30",
        "measured_on": "all_unambiguous_clips",
        "reasoned_mean_before_calibration": 0.34907
       }
@@ -645,7 +645,7 @@
        "dataset": "FSD50K.dev",
        "clips": 235,
        "analyzer_version": "20260729.1251",
-       "date": "2026-07",
+       "date": "2026-10-30",
        "measured_on": "all_unambiguous_clips",
        "reasoned_mean_before_calibration": 0.81187
       }
@@ -661,7 +661,7 @@
        "dataset": "FSD50K.dev",
        "clips": 235,
        "analyzer_version": "20260729.1251",
-       "date": "2026-07",
+       "date": "2026-10-30",
        "measured_on": "all_unambiguous_clips",
        "reasoned_mean_before_calibration": 0.64509
       }
@@ -677,7 +677,7 @@
        "dataset": "FSD50K.dev",
        "clips": 235,
        "analyzer_version": "20260729.1251",
-       "date": "2026-07",
+       "date": "2026-10-30",
        "measured_on": "all_unambiguous_clips",
        "reasoned_mean_before_calibration": 0.47031
       }
@@ -693,7 +693,7 @@
        "dataset": "FSD50K.dev",
        "clips": 235,
        "analyzer_version": "20260729.1251",
-       "date": "2026-07",
+       "date": "2026-10-30",
        "measured_on": "all_unambiguous_clips",
        "reasoned_mean_before_calibration": 0.08
       }
@@ -709,7 +709,7 @@
        "dataset": "FSD50K.dev",
        "clips": 235,
        "analyzer_version": "20260729.1251",
-       "date": "2026-07",
+       "date": "2026-10-30",
        "measured_on": "all_unambiguous_clips",
        "reasoned_mean_before_calibration": 0.22724
       }
@@ -745,7 +745,7 @@
     "measured_evidence": {
      "dataset": "FSD50K.dev — 40,966 human-labelled Freesound clips",
      "analyzer_version": "20260729.1251",
-     "date": "2026-07",
+     "date": "2026-10-30",
      "clip_count": 235,
      "selection": "clips whose FSD50K labels map unambiguously to this one subcategory (high/medium crosswalk confidence only)",
      "contributing_fsd50k_classes": {

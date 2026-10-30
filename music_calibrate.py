@@ -51,10 +51,13 @@ The calibration policy and the spec are in the Scanalyzer:
 SCANALYZER.Like.audio/README.md, "Calibrating the signatures against FSD50K", and
 SCANALYZER.Like.audio/Documentation/Specs/ucs_signature_spec.md.
 """
-import sys, os, re, json, math, glob, copy, statistics, collections
+import sys, os, re, json, math, glob, copy, statistics, collections, datetime
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-DATE = "2026-07"
+# The day this run measured the corpus. Every prior, gate and evidence block it writes
+# is stamped with it, so the date says when the number was taken, not when the script
+# was first written. Gate records carried forward from an earlier run keep their own.
+DATE = datetime.date.today().isoformat()
 
 MIN_CLIPS = 40          # below this a median is an anecdote
 LOG = {                 # features read in log space; deviation is a MULTIPLICATIVE factor
