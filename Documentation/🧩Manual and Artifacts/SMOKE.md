@@ -12,4 +12,4 @@ Is `DATATYPE.soundfx.UCS` deployed? Written by `.apk.scripts/smoke.py` from the 
 
 Re-run: `python3 .apk.scripts/smoke.py PODS/POD.THIN/Softapps/DATATYPE/DATATYPE.soundfx.UCS`
 
-<!-- smoke:sig bce475dd4d32 since 2026-10-30 12:51 EDT -->
+<!-- smoke:sig 97e798319b8d since 2026-10-30 12:51 EDT -->
