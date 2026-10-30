@@ -133,7 +133,9 @@ def check(sig, where):
 
     tier_ = sig.get("separability")
     if tier_ == "provenance_only" and sig.get("priors"):
-        warnings.append(f"{where}: provenance_only but carries priors — signal must not assert this")
+        # An error, not a warning (LOOSE-datatype-soundfx-ucs-validatesignaturespy-warns-about):
+        # the spec excludes this tier from signal scoring, so a prior here is a claim nothing may use.
+        errors.append(f"{where}: provenance_only but carries priors — signal must not assert this")
     if tier_ in ("signal_separable", "signal_narrowable") and not sig.get("priors"):
         errors.append(f"{where}: {tier_} but has no priors — nothing to score")
 
@@ -166,8 +168,10 @@ for path in sorted(CATEGORIES.glob("*.json")):
             check(sub["acoustic_signature"], where)
 
 dangling = referenced_ids - all_ids
+# An error, not a warning: 22 of these sat here as warnings after the MUSICAL split
+# renamed the ids they pointed at (LOOSE-datatype-soundfx-ucs-validatesignaturespy-warns-about).
 for cid in sorted(dangling):
-    warnings.append(f"confusable_with references unknown category_id {cid!r}")
+    errors.append(f"confusable_with references unknown category_id {cid!r}")
 
 print(f"subcategories:        {total}")
 print(f"signed:               {signed}")

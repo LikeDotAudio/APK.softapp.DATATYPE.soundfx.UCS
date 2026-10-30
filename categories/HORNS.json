@@ -320,12 +320,12 @@
      "The fanfare, bugle and trumpet synonyms pull toward MUSICAL-BRASS. A performed brass line belongs there; a single celebratory toot belongs here, and only the name can tell them apart."
     ],
     "confusable_with": [
-     "MUSCBrass",
+     "BRASMisc",
      "HORNTrad",
      "HORNMisc",
      "CRWDCele",
      "TOONHorn",
-     "MUSCWind"
+     "WWNDMisc"
     ]
    }
   },
@@ -429,8 +429,8 @@
     "confusable_with": [
      "HORNTrad",
      "HORNCele",
-     "MUSCBrass",
-     "MUSCWind",
+     "BRASMisc",
+     "WWNDMisc",
      "ANMLWild",
      "BIRDFowl"
     ]
@@ -583,9 +583,9 @@
     "confusable_with": [
      "HORNCele",
      "HORNMisc",
-     "MUSCBrass",
+     "BRASMisc",
      "HORNAir",
-     "MUSCWind"
+     "WWNDMisc"
     ]
    }
   }

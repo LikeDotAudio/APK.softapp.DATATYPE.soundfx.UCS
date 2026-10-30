@@ -57,8 +57,9 @@ python3 validate_signatures.py
 ```
 
 Checked 2026-10-30: 828 subcategories, 828 signed, exit 0 ("every signature conforms to the
-spec"), with 23 warnings — 22 `confusable_with` ids that no longer exist (the old `MUSC…`
-ids among them) and one `provenance_only` subcategory (`VOXHist`) that still carries priors. A
+spec"), no warnings. A `confusable_with` id that names no subcategory, and a `provenance_only`
+signature that carries priors, are errors: the 22 dangling ids the MUSICAL split left (`MUSC…`,
+`CARTMisc`, `METALFric`, …) now name the instrument categories, and `VOXHist` lost its priors. A
 log-normal feature (`MUST_BE_LOG`) on a `linear` transform is an error now, not a warning;
 the 38 that were left were converted, each with a `transform_was_linear` provenance record.
 

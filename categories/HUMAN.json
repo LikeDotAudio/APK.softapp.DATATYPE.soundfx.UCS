@@ -2215,7 +2215,6 @@
     "confusable_with": [
      "HMNSpit",
      "HMNMisc",
-     "WATRTrkl",
      "WATRPour"
     ]
    }
@@ -2462,7 +2461,7 @@
      "HMNKiss",
      "HMNMisc",
      "CRWDApls",
-     "CLTHMovm"
+     "CLOTHMvmt"
     ],
     "measured_evidence": {
      "dataset": "FSD50K.dev — 40,966 human-labelled Freesound clips",

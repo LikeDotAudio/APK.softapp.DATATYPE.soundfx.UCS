@@ -728,8 +728,8 @@
      "Crossbow files also carry a mechanical latch click and bolt handling. See also WEAPONS-ARROW for the flight and the impact."
     ],
     "confusable_with": [
-     "MUSCPluck",
-     "MUSCStr",
+     "GUITMisc",
+     "STRGMisc",
      "WEAPArro",
      "METLTonl",
      "WEAPSiege"

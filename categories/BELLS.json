@@ -215,8 +215,8 @@
     "confusable_with": [
      "BELLHand",
      "BELLMisc",
-     "MUSCShake",
-     "MUSCPerc",
+     "PERCShak",
+     "DRUMMisc",
      "METLImpt",
      "ANMLFarm"
     ],
@@ -650,7 +650,7 @@
      "ALRMBuzr",
      "BELLHand",
      "BELLMisc",
-     "MUSCChim",
+     "PERCMisc",
      "CLOCKChim"
     ]
    }
@@ -896,9 +896,9 @@
      "UCS v8.2 redirects most musical gongs, tam-tams and singing bowls to MUSICAL-BELLS, so this is a shrinking category and text should be trusted over signal when the two disagree."
     ],
     "confusable_with": [
-     "MUSCBell",
-     "MUSCPerc",
-     "MUSCTnprc",
+     "MALTTube",
+     "DRUMMisc",
+     "MALTMisc",
      "BELLLrg",
      "METLTonl",
      "BELLMisc"
@@ -1048,9 +1048,9 @@
      "BELLAnml",
      "BELLDoor",
      "BELLMisc",
-     "MUSCBell",
+     "MALTTube",
      "ALRMBell",
-     "MUSCTnprc"
+     "MALTMisc"
     ]
    }
   },
@@ -1251,7 +1251,7 @@
      "BELLGong",
      "BELLHand",
      "BELLMisc",
-     "MUSCBell",
+     "MALTTube",
      "ALRMBell",
      "AMBRlgn"
     ],

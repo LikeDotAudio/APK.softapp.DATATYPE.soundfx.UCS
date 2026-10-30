@@ -505,7 +505,7 @@
      "DSGNRmbl",
      "DSGNTonl",
      "DSGNBass",
-     "MUSCBrass"
+     "BRASMisc"
     ]
    }
   },
@@ -1942,7 +1942,7 @@
      "DSGNGran",
      "DSGNSynth",
      "UIGlitch",
-     "MUSCLoop",
+     "LOOPMisc",
      "DSGNDist"
     ]
    }
@@ -2103,7 +2103,6 @@
     "confusable_with": [
      "DSGNImpt",
      "DSGNBoom",
-     "MUSCStngr",
      "SCIImpt",
      "DSGNTonl"
     ]
@@ -2227,7 +2226,7 @@
      "DSGNTonl",
      "DSGNDist",
      "DSGNRythm",
-     "MUSCSynth",
+     "SYNTMisc",
      "DSGNMisc"
     ]
    }
@@ -2382,7 +2381,7 @@
      "DSGNDron",
      "DSGNBram",
      "BEEP",
-     "MUSCSynth",
+     "SYNTMisc",
      "WINDTonl"
     ]
    }

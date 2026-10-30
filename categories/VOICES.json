@@ -91,7 +91,7 @@
      "VOXMisc",
      "VOXScrm",
      "VOXFutz",
-     "CRTNVoc"
+     "TOONVox"
     ]
    }
   },
@@ -1849,78 +1849,7 @@
       "max": 3600.0
      }
     ],
-    "priors": [
-     {
-      "feature": "band_limit_high_hz",
-      "mean": 5000.0,
-      "deviation": 1.8,
-      "transform": "log",
-      "weight": 0.4,
-      "provenance": {
-       "source": "reasoned"
-      }
-     },
-     {
-      "feature": "spectral_rolloff_hz",
-      "mean": 4000.0,
-      "deviation": 1.9,
-      "transform": "log",
-      "weight": 0.3,
-      "provenance": {
-       "source": "reasoned"
-      }
-     },
-     {
-      "feature": "high_band_energy",
-      "mean": 0.1,
-      "deviation": 0.1,
-      "transform": "linear",
-      "weight": 0.3,
-      "provenance": {
-       "source": "reasoned"
-      }
-     },
-     {
-      "feature": "voicing_ratio",
-      "mean": 0.6,
-      "deviation": 0.2,
-      "transform": "linear",
-      "weight": 0.3,
-      "provenance": {
-       "source": "reasoned"
-      }
-     },
-     {
-      "feature": "syllabic_modulation_energy",
-      "mean": 0.58,
-      "deviation": 0.2,
-      "transform": "linear",
-      "weight": 0.3,
-      "provenance": {
-       "source": "reasoned"
-      }
-     },
-     {
-      "feature": "length_seconds",
-      "mean": 30.0,
-      "deviation": 3.0,
-      "transform": "log",
-      "weight": 0.2,
-      "provenance": {
-       "source": "reasoned"
-      }
-     },
-     {
-      "feature": "total_harmonic_distortion",
-      "mean": 0.08,
-      "deviation": 0.08,
-      "transform": "linear",
-      "weight": 0.2,
-      "provenance": {
-       "source": "reasoned"
-      }
-     }
-    ],
+    "priors": [],
     "discriminators": [
      "Defined by provenance — 'famous speeches, famous news broadcasts, presidential speeches' — not by sound. Nothing in the signal says a speech is famous. Excluded from signal scoring; text must drive.",
      "The only honest signal correlate is the era of the medium: reduced bandwidth (often a 4–6 kHz ceiling), a raised noise floor and mild distortion. A weak hint, never a decision.",

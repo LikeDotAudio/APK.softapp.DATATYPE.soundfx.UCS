@@ -382,7 +382,7 @@
     ],
     "confusable_with": [
      "TOONImpt",
-     "MUSCBell",
+     "MALTTube",
      "TOONMisc"
     ]
    }
@@ -658,7 +658,7 @@
     ],
     "confusable_with": [
      "TOONWhis",
-     "MUSCBrass",
+     "BRASMisc",
      "TOONVeh"
     ]
    }
@@ -1104,9 +1104,8 @@
      "One note only is CARTOON-PLUCK or CARTOON-TWANG, not this."
     ],
     "confusable_with": [
-     "MUSCStngr",
-     "TOONPluk",
-     "MUSCSong"
+     "DSGNStngr",
+     "TOONPluk"
     ]
    }
   },
@@ -1233,7 +1232,7 @@
     ],
     "confusable_with": [
      "TOONTwang",
-     "MUSCPluck",
+     "GUITMisc",
      "TOONBoing"
     ]
    }
@@ -1487,7 +1486,7 @@
      "A sustained rattle rather than one hit rules out CARTOON-IMPACT."
     ],
     "confusable_with": [
-     "MUSCShake",
+     "PERCShak",
      "TOONMach",
      "TOONMisc"
     ]
@@ -2141,7 +2140,7 @@
     "confusable_with": [
      "TOONPluk",
      "TOONBoing",
-     "MUSCPluck"
+     "GUITMisc"
     ]
    }
   },
@@ -2339,7 +2338,7 @@
     ],
     "confusable_with": [
      "TOONAnml",
-     "MUSCChor",
+     "VOCLChr",
      "TOONMisc"
     ]
    }

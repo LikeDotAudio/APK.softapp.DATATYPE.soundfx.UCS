@@ -13,6 +13,6 @@
 
 Remote: `https://github.com/LikeDotAudio/APK.softapp.DATATYPE.soundfx.UCS.git` (no workflow of its own).
 
-**Tested:** by hand — `python3 validate_signatures.py` (exit 0 on 2026-10-30, 23 warnings) and `python3 music_calibrate.py map`. The SampleAnalyzer's `cargo test` exercises the embedded table (`ucs::tests`). `.apk.scripts/smoke.py` checks only that HEAD is pushed ([SMOKE](../%F0%9F%A7%A9Manual%20and%20Artifacts/SMOKE.md)).
+**Tested:** by hand — `python3 validate_signatures.py` (exit 0 on 2026-10-30, no warnings) and `python3 music_calibrate.py map`. The SampleAnalyzer's `cargo test` exercises the embedded table (`ucs::tests`). `.apk.scripts/smoke.py` checks only that HEAD is pushed ([SMOKE](../%F0%9F%A7%A9Manual%20and%20Artifacts/SMOKE.md)).
 
 **Not automated:** nothing runs the validator on push; recalibration needs a scanned corpus and is run by hand; after an edit, rebuilding the analyzer and regenerating `ucsSynonyms.json` are separate manual steps.

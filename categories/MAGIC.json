@@ -144,7 +144,7 @@
      "MAGEvil",
      "MAGSpel",
      "DSGNEthr",
-     "MUSCChor",
+     "VOCLChr",
      "VOXSing"
     ]
    }
@@ -774,7 +774,7 @@
      "MAGAngl",
      "DSGNEthr",
      "MAGPoof",
-     "MUSCChim",
+     "PERCMisc",
      "SCIEnrg"
     ]
    }
