@@ -2,6 +2,6 @@
   "name": "Datatype Soundfx Ucs",
   "category": "DATATYPE",
   "icon": "\ud83d\udcd1",
-  "description": "Data Format Importers & Parsers component for APK.audio ecosystem.",
+  "description": "UCS v8.2.1 sound-effects taxonomy as JSON: 94 categories, 828 subcategories, each with an acoustic signature. Compiled into the sample analyzer by its build.rs.",
   "entry": "main.py"
 }
