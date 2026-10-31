@@ -20,6 +20,7 @@ Remote: `https://github.com/LikeDotAudio/APK.softapp.DATATYPE.soundfx.UCS.git` (
 Data changelog: [CHANGELOG.md](CHANGELOG.md).
 
 ## Delivered from the 2026-10-30 audit
+- **Release tag `ucs-v8.2.1-apk.1`** — annotated tag at 197956f, pushed 2026-10-31 with the owner's go-ahead.
 
 - **One feature vocabulary** — `signature_vocabulary.json` (v1.0.0) holds morphology/separability enums, available/proposed features, `log_required`, `log_axis`, `bounded_0_1`, `censored` and the `.PEAK` blocks; `validate_signatures.py`, `fsd50k_calibrate.py` and `music_calibrate.py` import it via `ucs_vocab.py`. The disagreement was reconciled: `log_axis` = the union of the three old sets and a superset of `log_required` (so music now reads `band_limit_high_hz`, which the validator requires as log, and `complexity` on a log axis; fsd50k now reads `spectral_centroid_deviation_hz` on a log axis like music). No category file changed. Verified: `python3 validate_signatures.py` OK; `python3 -m unittest -v test_ucs_vocab` 8 tests OK (incl. calibrators share the sets, a broken vocabulary/schema/feature fails the validator); `music_calibrate.py map` unchanged (41 of 53).
 - **One `.PEAK` reader** — `ucs_vocab.flatten_peak()` replaces the two copied loops in the calibrators; the field names it yields are the vocabulary's `features_available`. Verified by `test_flatten_peak`.
