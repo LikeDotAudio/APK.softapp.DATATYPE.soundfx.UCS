@@ -12,7 +12,7 @@ The sound-effects taxonomy: UCS v8.2.1 as JSON (94 `categories/*.json`, 828 sign
 | `PROCESSOR.SampleAnalyzer` | its `build.rs:30-36` reads `../../DATATYPE/DATATYPE.soundfx.UCS/categories` and `producer_synonyms.json` by relative path and `include_str!`s the result | Supplier → Customer, but through a file path, not a versioned artifact |
 | `SCANALYZER.Like.audio` Web_Front | `scripts/gen-ucs-synonyms.mjs` reads the category files to build `src/ucsSynonyms.json` | Supplier → Customer (file path) |
 | `Documentation/🧩Manual and Artifacts/ucs_signature_spec.md` (here) | the signature grammar; moved here 2026-10-30; the Scanalyzer's copy is now a pointer | Own published language |
-| SampleAnalyzer `.PEAK` sidecars | one reader, `ucs_vocab.flatten_peak()`, used by both calibrators; fields = the vocabulary's `features_available` | Conformist, through one adapter; `.PEAK` schema still absent (handoff) |
+| SampleAnalyzer `.PEAK` sidecars | one reader, `ucs_vocab.flatten_peak()`, used by both calibrators; fields = the vocabulary's `features_available` | Conformist, through one adapter; schema: SampleAnalyzer `SRC/core/schema/peak.schema.json` |
 | WEB.OsApi walker | `display.json` → `index.html` (the one UCS taxonomy tile) | Conformist |
 
 ## Scorecard
