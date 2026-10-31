@@ -99,6 +99,12 @@ Taxonomy", Scanalyzer › Taxonomy) is the one launcher tile for this taxonomy; 
 DATABASE.UCS-Taxonomy folder, which used to carry a second tile for the same data, is now a
 pointer here.
 
+**As a cargo dependency**: the repo root is the package `apk-ucs-bundle` (`Cargo.toml`,
+`links = "apk_ucs"`). It compiles nothing; its `build.rs` prints `cargo:dir=<this folder>`, which
+cargo hands to a direct dependent's build script as `DEP_APK_UCS_DIR`. A consumer pins it by git
+`rev` (PROCESSOR.SampleAnalyzer's build.rs reads `DEP_APK_UCS_DIR`), so it builds standalone
+without `APK_UCS_DIR` or the sibling folder.
+
 **Check** (the single local command; the root CI verifies nothing on purpose):
 `python3 validate_signatures.py && python3 -m unittest test_ucs_vocab`.
 

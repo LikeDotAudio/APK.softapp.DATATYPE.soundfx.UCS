@@ -19,4 +19,4 @@ The rules this taxonomy keeps, each with the file or function that keeps it. Eco
 | **One tile, at the data.** The launcher tile is this repo's `display.json` opening `index.html`, which reads `categories/` live; no second manifest describes the same data. | `display.json`, `index.html` | — |
 
 ## Kept by design
-- **Consumers read this folder by path** (`PROCESSOR.SampleAnalyzer/build.rs` → `../../DATATYPE/DATATYPE.soundfx.UCS/`). Nested repos stay submodules and the monorepo checkout is the build context; a consumer pins this data by the superproject's submodule commit, which is exact. A release tag for standalone consumers needs the owner to publish one (tags are not published by agents).
+- **Consumers may still read this folder by path** in the monorepo (`PROCESSOR.SampleAnalyzer/build.rs` falls back to the sibling folder). Standalone, they depend on the cargo package `apk-ucs-bundle` pinned by git `rev` and read `DEP_APK_UCS_DIR`. A release tag needs the owner to publish one (tags are not published by agents).

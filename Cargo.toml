@@ -1,0 +1,29 @@
+# Part of the APK.audio project — http://APK.audio — made by Anthony Kuzub
+# MIT Licence. Full text in LICENSE at the root.
+#
+# The UCS bundle as a cargo package, so a consumer can pin it by git `rev` instead of
+# reading a sibling folder. It compiles nothing: build.rs announces where the data is
+# (`cargo:dir=…`), and through `links = "apk_ucs"` cargo hands that to every direct
+# dependent's build script as DEP_APK_UCS_DIR (PROCESSOR.SampleAnalyzer reads it).
+[package]
+name = "apk-ucs-bundle"
+version = "8.2.1-apk.1"
+edition = "2021"
+description = "UCS v8.2.1 (+ 8.2.APK) sound-effects taxonomy with acoustic signatures, as data"
+license = "MIT"
+links = "apk_ucs"
+build = "build.rs"
+include = [
+    "categories/**",
+    "producer_synonyms.json",
+    "signature_vocabulary.json",
+    "category.schema.json",
+    "build.rs",
+    "src/lib.rs",
+]
+
+[lib]
+path = "src/lib.rs"
+
+# Not a member of any enclosing workspace: this repo is its own package.
+[workspace]
