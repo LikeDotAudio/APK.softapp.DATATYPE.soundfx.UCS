@@ -1,0 +1,160 @@
+{
+  "$comment": "THE one source of the UCS acoustic-signature vocabulary. Read by validate_signatures.py, fsd50k_calibrate.py and music_calibrate.py through ucs_vocab.py; category.schema.json must agree (validate_signatures.py checks it). Spec: Documentation/Specs/ucs_signature_spec.md, sections 3-4.",
+  "version": "1.0.0",
+  "morphology": [
+    "burst",
+    "complex",
+    "friction",
+    "granular",
+    "impulsive",
+    "impulsive_with_tail",
+    "rhythmic",
+    "silence",
+    "sustained_noise",
+    "sustained_tonal",
+    "sweep",
+    "texture",
+    "voiced"
+  ],
+  "separability": [
+    "signal_separable",
+    "signal_narrowable",
+    "semantic_only",
+    "provenance_only"
+  ],
+  "features_available": {
+    "$comment": "Spec 4a — computed today; exact .PEAK field names (in the peak_blocks blocks).",
+    "names": [
+      "beats_per_minute",
+      "clipping_density",
+      "complexity",
+      "crest_factor",
+      "dc_offset",
+      "envelope_attack_seconds",
+      "envelope_decay_seconds",
+      "envelope_kurtosis",
+      "envelope_release_seconds",
+      "envelope_skewness",
+      "envelope_sustain_level",
+      "envelope_temporal_centroid",
+      "harmonicity",
+      "high_band_energy",
+      "inharmonicity",
+      "length_seconds",
+      "low_band_energy",
+      "lufs",
+      "mid_band_energy",
+      "partial_count",
+      "pitch_hz",
+      "root_mean_square_level",
+      "sample_rate",
+      "spectral_centroid_deviation_hz",
+      "spectral_centroid_hz",
+      "spectral_centroid_mean_hz",
+      "spectral_flatness",
+      "spectral_flux",
+      "spectral_rolloff_hz",
+      "sustain_ratio",
+      "total_harmonic_distortion",
+      "transient_count",
+      "zero_crossings_per_second"
+    ]
+  },
+  "features_proposed": {
+    "$comment": "Spec 4b — referenced by signatures, not yet computed; the scorer skips them and renormalises.",
+    "names": [
+      "band_limit_high_hz",
+      "decay_time_seconds_60db",
+      "onset_periodicity",
+      "onset_rate_per_second",
+      "pitch_slope_semitones_per_second",
+      "spectral_centroid_slope_hz_per_second",
+      "spectral_entropy",
+      "spectral_slope_db_per_octave",
+      "stationarity",
+      "stereo_width",
+      "syllabic_modulation_energy",
+      "voicing_ratio"
+    ]
+  },
+  "log_required": {
+    "$comment": "Strictly positive and log-normal: the spec mandates transform 'log' for a prior on these; a linear prior is a validation error.",
+    "names": [
+      "band_limit_high_hz",
+      "crest_factor",
+      "decay_time_seconds_60db",
+      "envelope_attack_seconds",
+      "envelope_decay_seconds",
+      "envelope_release_seconds",
+      "length_seconds",
+      "onset_rate_per_second",
+      "pitch_hz",
+      "spectral_centroid_hz",
+      "spectral_centroid_mean_hz",
+      "spectral_rolloff_hz",
+      "zero_crossings_per_second"
+    ]
+  },
+  "log_axis": {
+    "$comment": "Every feature a calibrator measures on a log axis (median/MAD in ln space, written as transform 'log'). A superset of log_required: the extras are positive counts or Hz spreads where log is the better axis but linear stays legal.",
+    "names": [
+      "band_limit_high_hz",
+      "beats_per_minute",
+      "complexity",
+      "crest_factor",
+      "decay_time_seconds_60db",
+      "envelope_attack_seconds",
+      "envelope_decay_seconds",
+      "envelope_release_seconds",
+      "length_seconds",
+      "onset_rate_per_second",
+      "partial_count",
+      "pitch_hz",
+      "spectral_centroid_deviation_hz",
+      "spectral_centroid_hz",
+      "spectral_centroid_mean_hz",
+      "spectral_rolloff_hz",
+      "transient_count",
+      "zero_crossings_per_second"
+    ]
+  },
+  "bounded_0_1": {
+    "$comment": "Clamped to [0,1] by the extractor; gate widening stops at the bound.",
+    "names": [
+      "clipping_density",
+      "envelope_sustain_level",
+      "envelope_temporal_centroid",
+      "harmonicity",
+      "high_band_energy",
+      "inharmonicity",
+      "low_band_energy",
+      "mid_band_energy",
+      "onset_periodicity",
+      "spectral_entropy",
+      "spectral_flatness",
+      "spectral_flux",
+      "stationarity",
+      "sustain_ratio",
+      "syllabic_modulation_energy",
+      "voicing_ratio"
+    ]
+  },
+  "censored": {
+    "$comment": "Bounded features whose mass can sit on a bound so the MAD collapses: [low, high].",
+    "bounds": {
+      "stationarity": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  "peak_blocks": {
+    "$comment": "The .PEAK sidecar blocks whose numeric scalars are features (PROCESSOR.SampleAnalyzer writes them). onset_rate_per_second is derived = transient_count / length_seconds, as ucs.rs feature() does.",
+    "names": [
+      "metadata",
+      "envelope",
+      "spectral_features",
+      "musicality"
+    ]
+  }
+}

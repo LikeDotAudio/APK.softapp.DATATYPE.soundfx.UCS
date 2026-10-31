@@ -26,12 +26,18 @@
 | `fsd50k_calibration.json` | Record of the last FSD50K calibration: FSD50K.dev, 2026-10-30, 40 966 clips scanned, 22 915 used. Each run stamps the day it ran. |
 | `fsd50k_separability.json` | 118 sibling-pair separability measurements (logistic probe accuracy vs. majority baseline), written by `fsd50k_calibrate.py separability`. |
 | `UCS v8.2.1 Full Translations.xlsx` | The published UCS spreadsheet the JSON was built from. |
-| `validate_signatures.py` | Checks every signature against the spec; exits non-zero on any error. |
+| `signature_vocabulary.json` | **The one vocabulary**: morphology and separability enums, available/proposed feature names (exact `.PEAK` field names), `log_required`, `log_axis`, `bounded_0_1`, `censored`, and the `.PEAK` blocks features come from. Versioned (`version`). |
+| `ucs_vocab.py` | Loads it for the three scripts, checks it is self-consistent, and is the single `.PEAK` reader (`flatten_peak()`). |
+| `category.schema.json` | JSON Schema (2020-12) for one category file, for consumers; its enums must equal the vocabulary. |
+| `index.html` | The launcher tile: a read-only, filterable browser over `categories/*.json`. |
+| `validate_signatures.py` | Checks every signature against the spec, the vocabulary's consistency and the schema; exits non-zero on any error. |
+| `test_ucs_vocab.py` | Tests of the above (`python3 -m unittest -v test_ucs_vocab`). |
 | `fsd50k_calibrate.py` | Calibrates priors and gates from a folder of FSD50K `.PEAK` sidecars. |
 | `music_calibrate.py` | Calibrates the instrument categories (`DRUMS`, `CYMBALS`, `MALLET` …) from a producer sample library — see below. |
 
-The signature grammar, the closed feature vocabulary and the scoring math are specified in
-`Softapps/SCANALYZER_SUITE/SCANALYZER.Like.audio/Documentation/Specs/ucs_signature_spec.md`.
+The signature grammar, the closed feature vocabulary and the scoring math are specified here, in
+[`Documentation/🧩Manual and Artifacts/ucs_signature_spec.md`](Documentation/%F0%9F%A7%A9Manual%20and%20Artifacts/ucs_signature_spec.md) (moved
+from the Scanalyzer 2026-10-30); its closed sets are machine-readable in `signature_vocabulary.json`.
 The calibration policy is written up in the Scanalyzer README, section "Calibrating the
 signatures against FSD50K". The scripts' docstrings cite both by those paths.
 
@@ -87,9 +93,18 @@ python3 music_calibrate.py measure   <library/>    # report only
 python3 music_calibrate.py calibrate <library/>    # rewrites the instrument category files it touched
 ```
 
-**Web Portal Entry**: none. `display.json` declares the folder to the launcher
-(`walk_project()` in `PODS/POD.THIN/WEB.OsApi/SRC/server.py`); its `entry`, `main.py`, is not a
-file here, so the launcher opens the folder itself.
+**Web Portal Entry**: `index.html` — `display.json` (`id: UCS_Taxonomy`, "UCS Category
+Taxonomy", Scanalyzer › Taxonomy) is the one launcher tile for this taxonomy; the Softapps walker
+(WEB.OsApi `walk_project()`) opens `index.html`, which reads `categories/` live. The
+DATABASE.UCS-Taxonomy folder, which used to carry a second tile for the same data, is now a
+pointer here.
+
+**Check** (the single local command; the root CI verifies nothing on purpose):
+`python3 validate_signatures.py && python3 -m unittest test_ucs_vocab`.
+
+**Changelog** of data and vocabulary changes:
+[🌍Publishing/CHANGELOG.md](Documentation/%F0%9F%8C%8DPublishing/CHANGELOG.md). A calibration
+rewrite adds a line there in the same commit.
 **Remote Repository**: `https://github.com/LikeDotAudio/APK.softapp.DATATYPE.soundfx.UCS.git`
 
 ---
@@ -113,8 +128,9 @@ file here, so the launcher opens the folder itself.
 - **Provenance on every number.** A calibrated prior carries a `provenance` block naming the
   dataset and clip count; absence means "reasoned, never measured" (`categories/*.json`,
   `fsd50k_calibration.json`).
-- **Closed vocabularies, checked by a machine.** Features, morphologies and tiers are fixed
-  sets; `validate_signatures.py` refuses anything outside them.
+- **Closed vocabularies, written once, checked by a machine.** Features, morphologies, tiers
+  and the log axis are `signature_vocabulary.json`; the validator and both calibrators import it
+  through `ucs_vocab.py`, and `validate_signatures.py` refuses anything outside it.
 
 <!-- wiki:smoke -->
 **Smoke test** — ✅ PASS 1/1 since 2026-10-30 12:51 EDT — [results](Documentation/%F0%9F%A7%A9Manual%20and%20Artifacts/SMOKE.md)

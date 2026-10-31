@@ -49,7 +49,7 @@ the role field is no longer written, so the script loaded two files that do not 
 
 The calibration policy and the spec are in the Scanalyzer:
 SCANALYZER.Like.audio/README.md, "Calibrating the signatures against FSD50K", and
-SCANALYZER.Like.audio/Documentation/Specs/ucs_signature_spec.md.
+Documentation/🧩Manual and Artifacts/ucs_signature_spec.md (this repo).
 """
 import sys, os, re, json, math, glob, copy, statistics, collections, datetime
 
@@ -60,13 +60,10 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 DATE = datetime.date.today().isoformat()
 
 MIN_CLIPS = 40          # below this a median is an anecdote
-LOG = {                 # features read in log space; deviation is a MULTIPLICATIVE factor
-    'length_seconds', 'pitch_hz', 'spectral_centroid_hz', 'spectral_centroid_mean_hz',
-    'spectral_centroid_deviation_hz', 'spectral_rolloff_hz', 'zero_crossings_per_second',
-    'crest_factor', 'envelope_attack_seconds', 'envelope_decay_seconds',
-    'envelope_release_seconds', 'decay_time_seconds_60db', 'onset_rate_per_second',
-    'partial_count', 'transient_count', 'beats_per_minute',
-}
+# Features read in log space (deviation is a MULTIPLICATIVE factor): the shared
+# `log_axis` of signature_vocabulary.json, via ucs_vocab.py.
+sys.path.insert(0, HERE)
+from ucs_vocab import LOG_AXIS as LOG, flatten_peak
 
 # Features that describe the FILE rather than the SOUND, on any corpus.
 #
@@ -97,15 +94,7 @@ def load_records(corpus):
         group = (d.get('classification') or {}).get('group', '')
         if not group or group == 'Unclassified':
             continue
-        c = {}
-        for blk in ('metadata', 'envelope', 'spectral_features', 'musicality'):
-            for k, v in (d.get(blk) or {}).items():
-                if isinstance(v, bool) or not isinstance(v, (int, float)):
-                    continue
-                c[k] = v
-        # the scorer derives this on the fly; mirror it exactly (ucs.rs feature())
-        if c.get('length_seconds', 0) > 0 and 'transient_count' in c:
-            c['onset_rate_per_second'] = c['transient_count'] / c['length_seconds']
+        c = flatten_peak(d)          # the one .PEAK reader (ucs_vocab.py)
         c['_group'] = group
         out.append(c)
     return out

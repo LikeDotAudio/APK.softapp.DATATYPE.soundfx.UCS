@@ -1,0 +1,105 @@
+<!doctype html>
+<!-- Part of the APK.audio project — http://APK.audio — made by Anthony Kuzub
+     MIT Licence. Full text in LICENSE at the root. -->
+<!-- UCS Category Taxonomy — a read-only browser over categories/*.json, in the
+     repo that owns them. It reads the files the analyzer compiles in
+     (categories/index.json, then each category file) and copies nothing; a
+     count shown here is a count of what was fetched, never a typed number. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UCS Category Taxonomy</title>
+<link rel="stylesheet" href="/FrontEnd/shared/apk-palette.css">
+<style>
+  /* Fallbacks when the shared palette is not served (a bare checkout). */
+  :root { color-scheme: dark light; }
+  body { margin: 0; font: 14px/1.45 system-ui, sans-serif;
+         background: var(--surface, #16181d); color: var(--text, #e8e6e3); }
+  header { position: sticky; top: 0; padding: 12px 16px; background: var(--surface-raised, #1f2228);
+           border-bottom: 1px solid var(--border, #33363d); display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  h1 { font-size: 16px; margin: 0; }
+  .muted { color: var(--text-muted, #9aa0a6); }
+  input { flex: 1 1 220px; padding: 6px 10px; border-radius: 6px; border: 1px solid var(--border, #33363d);
+          background: var(--surface, #16181d); color: inherit; }
+  main { padding: 8px 16px 32px; }
+  details { border-bottom: 1px solid var(--border, #33363d); }
+  summary { cursor: pointer; padding: 8px 0; }
+  summary .count { float: right; }
+  table { border-collapse: collapse; width: 100%; margin: 4px 0 12px; }
+  th, td { text-align: left; padding: 4px 8px; vertical-align: top; border-top: 1px solid var(--border, #33363d); }
+  th { font-weight: 600; }
+  code { color: var(--accent, #f4902c); }
+  .error { color: #ff6b6b; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🏷️ UCS Category Taxonomy</h1>
+  <span class="muted" id="summary" role="status">Loading…</span>
+  <input id="filter" type="search" placeholder="Filter by category, subcategory, id or synonym" aria-label="Filter the taxonomy">
+</header>
+<main id="list"></main>
+<script>
+(async () => {
+  const list = document.getElementById('list');
+  const summary = document.getElementById('summary');
+  const filter = document.getElementById('filter');
+  const text = (tag, value, cls) => { const el = document.createElement(tag); el.textContent = value; if (cls) el.className = cls; return el; };
+  let categories;
+  try {
+    const index = await (await fetch('categories/index.json')).json();
+    categories = await Promise.all(index.categories.map(async (entry) => {
+      const data = await (await fetch('categories/' + encodeURIComponent(entry.file))).json();
+      return { entry, data, version: index.version };
+    }));
+  } catch (error) {
+    summary.textContent = '';
+    list.appendChild(text('p', 'Could not read categories/: ' + error.message +
+      ' — open this page through a web server (the launcher, or python3 -m http.server here), not file://.', 'error'));
+    return;
+  }
+  const rows = [];
+  for (const { entry, data } of categories) {
+    const details = document.createElement('details');
+    const head = document.createElement('summary');
+    head.append(`${data.emoji || ''} ${data.category} `, text('span', `${data.subcategories.length} subcategories`, 'count muted'));
+    details.appendChild(head);
+    const table = document.createElement('table');
+    const header = table.insertRow();
+    for (const label of ['Subcategory', 'Id', 'Explanation', 'Morphology', 'Separability', 'Synonyms']) header.appendChild(text('th', label));
+    for (const sub of data.subcategories) {
+      const row = table.insertRow();
+      const sig = sub.acoustic_signature || {};
+      row.appendChild(text('td', sub.subcategory));
+      const id = document.createElement('td'); id.appendChild(text('code', sub.category_id)); row.appendChild(id);
+      row.appendChild(text('td', (sub.explanation || []).join(' ')));
+      row.appendChild(text('td', sig.morphology || '—'));
+      row.appendChild(text('td', sig.separability || '—'));
+      row.appendChild(text('td', (sub.synonyms || []).join(', '), 'muted'));
+      rows.push({ details, row, haystack: [data.category, sub.subcategory, sub.category_id, ...(sub.synonyms || [])].join(' ').toLowerCase() });
+    }
+    details.appendChild(table);
+    list.appendChild(details);
+  }
+  const total = rows.length;
+  const show = () => {
+    const q = filter.value.trim().toLowerCase();
+    let shown = 0;
+    const open = new Set();
+    for (const r of rows) {
+      const hit = !q || r.haystack.includes(q);
+      r.row.hidden = !hit;
+      if (hit) { shown++; open.add(r.details); }
+    }
+    for (const { details } of rows) { details.hidden = !open.has(details); if (q) details.open = open.has(details); }
+    summary.textContent = q
+      ? `${shown} of ${total} subcategories match “${filter.value.trim()}”`
+      : `UCS v${categories[0].version} · ${categories.length} categories · ${total} subcategories`;
+  };
+  filter.addEventListener('input', show);
+  show();
+})();
+</script>
+</body>
+</html>

@@ -29,24 +29,14 @@ DATE = datetime.date.today().isoformat()
 
 # ---------------------------------------------------------------- the vocabulary
 
-# SCANALYZER.Like.audio/Documentation/Specs/ucs_signature_spec.md 4a + 4b. "`feature` must be one of these exact names ...
-# Nothing outside this vocabulary is legal." Anything else on the record
-# (bit_depth, channels, mid_rms, the legacy attack_seconds) is metadata or a
-# dataset artifact, not a fact about the sound.
-VOCABULARY = {
-    'length_seconds', 'transient_count', 'root_mean_square_level', 'lufs', 'crest_factor',
-    'zero_crossings_per_second', 'pitch_hz', 'harmonicity', 'inharmonicity', 'partial_count',
-    'sustain_ratio', 'spectral_centroid_hz', 'spectral_centroid_mean_hz',
-    'spectral_centroid_deviation_hz', 'spectral_rolloff_hz', 'spectral_flatness',
-    'spectral_flux', 'complexity', 'low_band_energy', 'mid_band_energy', 'high_band_energy',
-    'total_harmonic_distortion', 'clipping_density', 'envelope_attack_seconds',
-    'envelope_decay_seconds', 'envelope_sustain_level', 'envelope_release_seconds',
-    'envelope_temporal_centroid', 'envelope_skewness', 'envelope_kurtosis', 'dc_offset',
-    'beats_per_minute', 'sample_rate', 'onset_rate_per_second', 'onset_periodicity',
-    'stationarity', 'spectral_entropy', 'spectral_slope_db_per_octave', 'band_limit_high_hz',
-    'spectral_centroid_slope_hz_per_second', 'pitch_slope_semitones_per_second',
-    'syllabic_modulation_energy', 'decay_time_seconds_60db', 'voicing_ratio', 'stereo_width',
-}
+# The vocabulary (spec 4a + 4b, "`feature` must be one of these exact names ... Nothing
+# outside this vocabulary is legal") is signature_vocabulary.json, read through
+# ucs_vocab.py and shared with validate_signatures.py and music_calibrate.py. Anything
+# else on the record (bit_depth, channels, mid_rms, the legacy attack_seconds) is
+# metadata or a dataset artifact, not a fact about the sound.
+sys.path.insert(0, HERE)
+from ucs_vocab import BOUNDED_0_1, CENSORED, LOG_AXIS, flatten_peak
+from ucs_vocab import FEATURES as VOCABULARY
 
 # Features whose value on THIS corpus is a property of the uploader, not the source.
 NEVER = {
@@ -64,12 +54,8 @@ NEVER = {
 }
 CALIBRATABLE = sorted(VOCABULARY - NEVER)
 
-# Compared on a log axis (spec 4a).
-LOG = {'length_seconds', 'crest_factor', 'zero_crossings_per_second', 'pitch_hz',
-       'spectral_centroid_hz', 'spectral_centroid_mean_hz', 'spectral_rolloff_hz',
-       'envelope_attack_seconds', 'envelope_decay_seconds', 'envelope_release_seconds',
-       'decay_time_seconds_60db', 'complexity', 'onset_rate_per_second', 'partial_count',
-       'transient_count'}
+# Compared on a log axis: ucs_vocab.LOG_AXIS (signature_vocabulary.json `log_axis`).
+LOG = LOG_AXIS
 
 # Defined against THE single loudest peak of the file. On a multi-event clip they
 # describe the uploader's edit, not the sound: attack tracks clip length at r=+0.72,
@@ -80,13 +66,8 @@ SINGLE_EVENT_ONLY = {'envelope_attack_seconds', 'envelope_decay_seconds',
                      'envelope_temporal_centroid', 'envelope_skewness', 'envelope_kurtosis',
                      'sustain_ratio', 'decay_time_seconds_60db', 'crest_factor'}
 
-# Clamped 0..1 by the extractor, so the MAD collapses when the mass sits on a bound.
-CENSORED = {'stationarity': (0.0, 1.0)}
-BOUNDED_0_1 = {'harmonicity', 'inharmonicity', 'spectral_flatness', 'spectral_entropy',
-               'sustain_ratio', 'envelope_sustain_level', 'envelope_temporal_centroid',
-               'low_band_energy', 'mid_band_energy', 'high_band_energy', 'stationarity',
-               'onset_periodicity', 'voicing_ratio', 'syllabic_modulation_energy',
-               'spectral_flux', 'clipping_density'}
+# CENSORED and BOUNDED_0_1 (clamped 0..1 by the extractor, so the MAD collapses when
+# the mass sits on a bound) come from signature_vocabulary.json too.
 
 MIN_CLIPS = 30
 
@@ -103,15 +84,9 @@ def load_clips(corpus):
             d = json.load(open(p))
         except Exception:
             continue
-        c = {}
-        for blk in ('metadata', 'envelope', 'spectral_features', 'musicality'):
-            for k, v in d.get(blk, {}).items():
-                if isinstance(v, bool) or not isinstance(v, (int, float)):
-                    continue
-                c[k] = v
-        # the scorer derives this on the fly; mirror it exactly (ucs.rs feature())
-        if c.get('length_seconds', 0) > 0 and 'transient_count' in c:
-            c['onset_rate_per_second'] = c['transient_count'] / c['length_seconds']
+        if not isinstance(d, dict):
+            continue
+        c = flatten_peak(d)          # the one .PEAK reader (ucs_vocab.py)
         c['_labels'] = m.group(1).split('-')
         c['_id'] = m.group(2)
         out.append(c)

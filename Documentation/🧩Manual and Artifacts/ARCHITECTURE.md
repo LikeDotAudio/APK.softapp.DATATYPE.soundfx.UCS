@@ -13,6 +13,10 @@ A data repo: JSON other code reads, plus three Python scripts that check and cal
 | `producer_synonyms.json` | producer vocabulary overlaid onto the instrument categories at build time, keyed by `category_id` |
 | `fsd50k_crosswalk.json`, `fsd50k_calibration.json`, `fsd50k_separability.json` | the FSD50K label map, the record of the last calibration, and 118 sibling-pair separability measurements (`fsd50k_calibrate.py separability`; both files regenerated 2026-10-30 against the MUSICAL-split ids) |
 | `UCS v8.2.1 Full Translations.xlsx` | the published spreadsheet the JSON was built from |
+| `signature_vocabulary.json` | the one vocabulary (enums, feature names, `log_required` ⊆ `log_axis`, `bounded_0_1`, `censored`, `.PEAK` blocks), read through `ucs_vocab.py` |
+| `category.schema.json` | JSON Schema for a category file; enums checked equal to the vocabulary |
+| `index.html` | the launcher tile: a filterable read-only browser over `categories/` |
+| [ucs_signature_spec.md](ucs_signature_spec.md) | the signature spec (grammar, vocabulary, scoring) |
 
 ## Who reads it
 
@@ -22,7 +26,8 @@ A data repo: JSON other code reads, plus three Python scripts that check and cal
 ## The scripts
 
 ```bash
-python3 validate_signatures.py                     # every signature against the spec, the FSD50K crosswalk against categories/, and every signal_separable tier against fsd50k_separability.json; exit 1 on any error
+python3 -m unittest -v test_ucs_vocab              # vocabulary, .PEAK reader, validator failure cases
+python3 validate_signatures.py                     # the vocabulary's consistency, the schema, every signature against the spec, the FSD50K crosswalk against categories/, and every signal_separable tier against fsd50k_separability.json; exit 1 on any error
 python3 fsd50k_calibrate.py evaluate  <FSD50K/>    # held-out 70/30, writes nothing
 python3 fsd50k_calibrate.py calibrate <FSD50K/>    # widen-only calibration of categories/*.json
 python3 fsd50k_calibrate.py separability <FSD50K/> # sibling-pair logistic probe -> fsd50k_separability.json
@@ -31,4 +36,4 @@ python3 music_calibrate.py measure   <library/>    # in-domain calibration, repo
 python3 music_calibrate.py calibrate <library/>    # rewrites the instrument category files it touched
 ```
 
-Both calibrators read `.PEAK` sidecars (the SampleAnalyzer's output), never audio. `fsd50k_calibrate.py` joins FSD50K file-name labels to UCS ids through the crosswalk. `music_calibrate.py` labels each clip by `classification.group` (the instrument the analyzer reads off the file name — `music_names.json`), maps the group to the one instrument subcategory it names or lists as a synonym (`resolve()`), and writes median and MAD-derived spread with a provenance block. Python 3 standard library only, except `separability`, which needs numpy. A re-run of `calibrate` drops gate history whose `ucs_id` no category file defines any more. Both stamp what they write (`date`, `calibrated_on`) with the day the run measured the corpus (`DATE`, today's date); gate records carried forward from an earlier run keep their own date.
+Both calibrators read `.PEAK` sidecars (the SampleAnalyzer's output), never audio. `fsd50k_calibrate.py` joins FSD50K file-name labels to UCS ids through the crosswalk. `music_calibrate.py` labels each clip by `classification.group` (the instrument the analyzer reads off the file name — `music_names.json`), maps the group to the one instrument subcategory it names or lists as a synonym (`resolve()`), and writes median and MAD-derived spread with a provenance block. Both read a sidecar through `ucs_vocab.flatten_peak()` and take their feature sets from `signature_vocabulary.json`. Python 3 standard library only, except `separability`, which needs numpy (and the optional `jsonschema`, with which the validator also schema-validates every file). A re-run of `calibrate` drops gate history whose `ucs_id` no category file defines any more. Both stamp what they write (`date`, `calibrated_on`) with the day the run measured the corpus (`DATE`, today's date); gate records carried forward from an earlier run keep their own date.

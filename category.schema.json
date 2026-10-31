@@ -1,0 +1,294 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://apk.audio/APK:Softapps/DATATYPE/DATATYPE.soundfx.UCS/category.schema.json",
+  "title": "UCS category file (categories/<CATEGORY>.json)",
+  "$comment": "The shape of one category file. Enums are signature_vocabulary.json's; validate_signatures.py fails if they differ and validates every category file against this schema. Semantic rules (min < max, log mean > 0, log deviation > 1, required-log features, confusion graph) stay in validate_signatures.py.",
+  "type": "object",
+  "required": [
+    "version",
+    "category",
+    "emoji",
+    "subcategories"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "emoji": {
+      "type": "string"
+    },
+    "matchable": {
+      "type": "boolean"
+    },
+    "subcategories": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/subcategory"
+      }
+    }
+  },
+  "$defs": {
+    "subcategory": {
+      "type": "object",
+      "required": [
+        "subcategory",
+        "category_id",
+        "explanation",
+        "synonyms",
+        "acoustic_signature"
+      ],
+      "properties": {
+        "subcategory": {
+          "type": "string"
+        },
+        "category_id": {
+          "type": "string"
+        },
+        "category_short": {
+          "type": "string"
+        },
+        "emoji": {
+          "type": "string"
+        },
+        "explanation": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "synonyms": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "acoustic_signature": {
+          "$ref": "#/$defs/signature"
+        }
+      }
+    },
+    "signature": {
+      "type": "object",
+      "required": [
+        "morphology",
+        "separability",
+        "gates",
+        "priors"
+      ],
+      "properties": {
+        "morphology": {
+          "type": "string",
+          "enum": [
+            "burst",
+            "complex",
+            "friction",
+            "granular",
+            "impulsive",
+            "impulsive_with_tail",
+            "rhythmic",
+            "silence",
+            "sustained_noise",
+            "sustained_tonal",
+            "sweep",
+            "texture",
+            "voiced"
+          ]
+        },
+        "separability": {
+          "type": "string",
+          "enum": [
+            "signal_separable",
+            "signal_narrowable",
+            "semantic_only",
+            "provenance_only"
+          ]
+        },
+        "gates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "feature"
+            ],
+            "anyOf": [
+              {
+                "required": [
+                  "min"
+                ]
+              },
+              {
+                "required": [
+                  "max"
+                ]
+              }
+            ],
+            "properties": {
+              "feature": {
+                "type": "string",
+                "enum": [
+                  "band_limit_high_hz",
+                  "beats_per_minute",
+                  "clipping_density",
+                  "complexity",
+                  "crest_factor",
+                  "dc_offset",
+                  "decay_time_seconds_60db",
+                  "envelope_attack_seconds",
+                  "envelope_decay_seconds",
+                  "envelope_kurtosis",
+                  "envelope_release_seconds",
+                  "envelope_skewness",
+                  "envelope_sustain_level",
+                  "envelope_temporal_centroid",
+                  "harmonicity",
+                  "high_band_energy",
+                  "inharmonicity",
+                  "length_seconds",
+                  "low_band_energy",
+                  "lufs",
+                  "mid_band_energy",
+                  "onset_periodicity",
+                  "onset_rate_per_second",
+                  "partial_count",
+                  "pitch_hz",
+                  "pitch_slope_semitones_per_second",
+                  "root_mean_square_level",
+                  "sample_rate",
+                  "spectral_centroid_deviation_hz",
+                  "spectral_centroid_hz",
+                  "spectral_centroid_mean_hz",
+                  "spectral_centroid_slope_hz_per_second",
+                  "spectral_entropy",
+                  "spectral_flatness",
+                  "spectral_flux",
+                  "spectral_rolloff_hz",
+                  "spectral_slope_db_per_octave",
+                  "stationarity",
+                  "stereo_width",
+                  "sustain_ratio",
+                  "syllabic_modulation_energy",
+                  "total_harmonic_distortion",
+                  "transient_count",
+                  "voicing_ratio",
+                  "zero_crossings_per_second"
+                ]
+              },
+              "min": {
+                "type": "number"
+              },
+              "max": {
+                "type": "number"
+              },
+              "provenance": {
+                "type": "object"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "priors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "feature",
+              "mean",
+              "deviation",
+              "transform",
+              "weight"
+            ],
+            "properties": {
+              "feature": {
+                "type": "string",
+                "enum": [
+                  "band_limit_high_hz",
+                  "beats_per_minute",
+                  "clipping_density",
+                  "complexity",
+                  "crest_factor",
+                  "dc_offset",
+                  "decay_time_seconds_60db",
+                  "envelope_attack_seconds",
+                  "envelope_decay_seconds",
+                  "envelope_kurtosis",
+                  "envelope_release_seconds",
+                  "envelope_skewness",
+                  "envelope_sustain_level",
+                  "envelope_temporal_centroid",
+                  "harmonicity",
+                  "high_band_energy",
+                  "inharmonicity",
+                  "length_seconds",
+                  "low_band_energy",
+                  "lufs",
+                  "mid_band_energy",
+                  "onset_periodicity",
+                  "onset_rate_per_second",
+                  "partial_count",
+                  "pitch_hz",
+                  "pitch_slope_semitones_per_second",
+                  "root_mean_square_level",
+                  "sample_rate",
+                  "spectral_centroid_deviation_hz",
+                  "spectral_centroid_hz",
+                  "spectral_centroid_mean_hz",
+                  "spectral_centroid_slope_hz_per_second",
+                  "spectral_entropy",
+                  "spectral_flatness",
+                  "spectral_flux",
+                  "spectral_rolloff_hz",
+                  "spectral_slope_db_per_octave",
+                  "stationarity",
+                  "stereo_width",
+                  "sustain_ratio",
+                  "syllabic_modulation_energy",
+                  "total_harmonic_distortion",
+                  "transient_count",
+                  "voicing_ratio",
+                  "zero_crossings_per_second"
+                ]
+              },
+              "mean": {
+                "type": "number"
+              },
+              "deviation": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "transform": {
+                "enum": [
+                  "log",
+                  "linear"
+                ]
+              },
+              "weight": {
+                "type": "number",
+                "exclusiveMinimum": 0,
+                "maximum": 1
+              },
+              "provenance": {
+                "type": "object"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "discriminators": {
+          "type": "array"
+        },
+        "confusable_with": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "measured_evidence": {
+          "type": "object"
+        }
+      }
+    }
+  }
+}

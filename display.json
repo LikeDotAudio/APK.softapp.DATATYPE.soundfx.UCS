@@ -1,7 +1,12 @@
 {
-  "name": "Datatype Soundfx Ucs",
-  "category": "DATATYPE",
-  "icon": "\ud83d\udcd1",
-  "description": "UCS v8.2.1 sound-effects taxonomy as JSON: 94 categories, 828 subcategories, each with an acoustic signature. Compiled into the sample analyzer by its build.rs.",
-  "tech": "folder"
+  "id": "UCS_Taxonomy",
+  "name": "UCS Category Taxonomy",
+  "icon": "🏷️",
+  "group": "Scanalyzer",
+  "subGroup": "Taxonomy",
+  "kind": "web",
+  "class": "artifact",
+  "entry": "index.html",
+  "description": "The Universal Category System (UCS v8.2.1 + the 8.2.APK instrument extension) as the sample analyzer compiles it in: every category and subcategory with its explanation, synonyms, morphology and separability tier, read live from categories/*.json and filterable. Read-only.",
+  "autostart": false
 }

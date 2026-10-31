@@ -1,9 +1,15 @@
 #!/usr/bin/env python3
 """Validate every acoustic_signature in categories/*.json against the spec.
 
-The spec is SCANALYZER.Like.audio/Documentation/Specs/ucs_signature_spec.md. This enforces the parts of it a
+The spec is Documentation/🧩Manual and Artifacts/ucs_signature_spec.md in this repo; its
+vocabularies are signature_vocabulary.json. This enforces the parts of it a
 machine can check: closed vocabularies, well-formed gates and priors, numeric
-sanity, and a resolvable confusion graph. Exits non-zero on any error.
+sanity, a resolvable confusion graph, a self-consistent vocabulary, and
+category.schema.json (enums equal the vocabulary; every file validated when the
+optional `jsonschema` package is installed). Exits non-zero on any error.
+
+    python3 validate_signatures.py           the whole data contract
+    python3 -m unittest -v test_ucs_vocab    the tests of this script and ucs_vocab.py
 """
 import json
 import pathlib
@@ -13,54 +19,16 @@ from collections import Counter
 HERE = pathlib.Path(__file__).parent
 CATEGORIES = HERE / "categories"
 
-MORPHOLOGY = {
-    "impulsive", "impulsive_with_tail", "burst", "sustained_tonal",
-    "sustained_noise", "texture", "rhythmic", "sweep", "friction",
-    "granular", "voiced", "complex", "silence",
-}
-
-SEPARABILITY = {
-    "signal_separable", "signal_narrowable", "semantic_only", "provenance_only",
-}
-
-# Section 4a of the spec — computed today, exact Peak field names.
-FEATURES_AVAILABLE = {
-    "length_seconds", "transient_count", "root_mean_square_level", "lufs",
-    "crest_factor", "zero_crossings_per_second", "pitch_hz", "harmonicity",
-    "inharmonicity", "partial_count", "sustain_ratio", "spectral_centroid_hz",
-    "spectral_centroid_mean_hz", "spectral_centroid_deviation_hz",
-    "spectral_rolloff_hz", "spectral_flatness", "spectral_flux", "complexity",
-    "low_band_energy", "mid_band_energy", "high_band_energy",
-    "total_harmonic_distortion", "clipping_density", "envelope_attack_seconds",
-    "envelope_decay_seconds", "envelope_sustain_level",
-    "envelope_release_seconds", "envelope_temporal_centroid",
-    "envelope_skewness", "envelope_kurtosis", "dc_offset", "beats_per_minute",
-    "sample_rate",
-}
-
-# Section 4b — referenced by signatures, not yet computed. The scorer must skip
-# these until they land, renormalizing the surviving weights.
-FEATURES_PROPOSED = {
-    "onset_rate_per_second", "onset_periodicity",
-    "spectral_centroid_slope_hz_per_second", "pitch_slope_semitones_per_second",
-    "stationarity", "voicing_ratio", "syllabic_modulation_energy",
-    "spectral_slope_db_per_octave", "decay_time_seconds_60db",
-    "band_limit_high_hz", "stereo_width", "spectral_entropy",
-}
-
-FEATURES = FEATURES_AVAILABLE | FEATURES_PROPOSED
-
-# Features that are strictly positive, so a log transform is defined. The spec
-# mandates log for these — they are log-normal, not Gaussian.
-MUST_BE_LOG = {
-    "length_seconds", "crest_factor", "zero_crossings_per_second", "pitch_hz",
-    "spectral_centroid_hz", "spectral_centroid_mean_hz", "spectral_rolloff_hz",
-    "envelope_attack_seconds", "envelope_decay_seconds",
-    "envelope_release_seconds", "decay_time_seconds_60db",
-    "onset_rate_per_second", "band_limit_high_hz",
-}
+# The vocabulary is signature_vocabulary.json, read through ucs_vocab.py — the one
+# source the calibrators share. MUST_BE_LOG is its `log_required`: the spec mandates
+# log for these (strictly positive, log-normal, not Gaussian).
+sys.path.insert(0, str(HERE))
+from ucs_vocab import (FEATURES, FEATURES_AVAILABLE, FEATURES_PROPOSED, MORPHOLOGY,
+                       SEPARABILITY, VOCAB, consistency_errors)
+from ucs_vocab import LOG_REQUIRED as MUST_BE_LOG
 
 errors, warnings = [], []
+errors.extend(f"signature_vocabulary.json: {e}" for e in consistency_errors())
 tiers, morphs = Counter(), Counter()
 feature_use = Counter()
 all_ids, referenced_ids = set(), set()
@@ -232,6 +200,39 @@ for e in json.loads((HERE / "fsd50k_separability.json").read_text(encoding="utf-
         if id_tier.get(uid) == "signal_separable":
             errors.append(f"fsd50k_separability/{a}+{b}: {uid} is signal_separable but the probe "
                           f"scores {e['accuracy']} against a {e['baseline']} baseline")
+
+# The JSON Schema for a category file (category.schema.json) is for consumers that
+# want a standard validator; its enums must be the vocabulary's, never a third copy
+# drifting on its own. Every category file is also validated against it when the
+# `jsonschema` package is installed (optional — the checks above need nothing).
+schema = json.loads((HERE / "category.schema.json").read_text(encoding="utf-8"))
+signature_props = schema["$defs"]["signature"]["properties"]
+for label, got, want in (
+    ("morphology", signature_props["morphology"]["enum"], VOCAB["morphology"]),
+    ("separability", signature_props["separability"]["enum"], VOCAB["separability"]),
+    ("gate feature", signature_props["gates"]["items"]["properties"]["feature"]["enum"], sorted(FEATURES)),
+    ("prior feature", signature_props["priors"]["items"]["properties"]["feature"]["enum"], sorted(FEATURES)),
+):
+    if sorted(got) != sorted(want):
+        errors.append(f"category.schema.json: {label} enum differs from signature_vocabulary.json "
+                      f"(+{sorted(set(got) - set(want))} -{sorted(set(want) - set(got))})")
+try:
+    import jsonschema
+except ImportError:
+    jsonschema = None
+    print("(jsonschema not installed: category.schema.json enums checked, files not schema-validated)")
+if jsonschema is not None:
+    schema_validator = jsonschema.Draft202012Validator(schema)
+    for path in sorted(CATEGORIES.glob("*.json")):
+        if path.name == "index.json":
+            continue
+        try:
+            document = json.loads(path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            continue   # already reported above
+        for problem in list(schema_validator.iter_errors(document))[:5]:
+            where = "/".join(str(x) for x in problem.absolute_path)
+            errors.append(f"{path.name}: schema: {where}: {problem.message[:160]}")
 
 print(f"subcategories:        {total}")
 print(f"signed:               {signed}")
