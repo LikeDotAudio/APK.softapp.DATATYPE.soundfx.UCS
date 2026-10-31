@@ -7,5 +7,6 @@ How it is built, shipped, and where it lands — its delivery.
 <!-- wiki:index -->
 | Page | What |
 |---|---|
+| [CHANGELOG.md](CHANGELOG.md) | Changelog — DATATYPE.soundfx.UCS data |
 | [DELIVERY.md](DELIVERY.md) | Delivery — DATATYPE.soundfx.UCS |
 <!-- /wiki:index -->
