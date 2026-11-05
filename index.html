@@ -14,6 +14,9 @@
 <link rel="stylesheet" href="/APK:OS/vendor/apk-contracts/apk-tokens.css">
 <!-- THE ONE TABLE (FrontEnd/shared/apk-table.*, vendored; check.sh webshared) -->
 <link rel="stylesheet" href="vendor/apk-table/apk-table.css">
+<!-- The one softapp client: contracts, then APKSoftapp (help, problems), then the table. -->
+<script src="vendor/apk-contracts/apk-contracts.global.js"></script>
+<script src="vendor/apk-softapp/apk-softapp.js"></script>
 <script src="vendor/apk-table/apk-table.js"></script>
 <script src="js/taxonomy-table.js"></script>
 <style>
@@ -44,24 +47,68 @@
 </header>
 <main id="list"></main>
 <script>
-(async () => {
+(async function load() {
+  const S = window.APKSoftapp;
   const list = document.getElementById('list');
   const summary = document.getElementById('summary');
   const filter = document.getElementById('filter');
   const text = (tag, value, cls) => { const el = document.createElement(tag); el.textContent = value; if (cls) el.className = cls; return el; };
-  let categories;
-  try {
-    const index = await (await fetch('categories/index.json')).json();
-    categories = await Promise.all(index.categories.map(async (entry) => {
-      const data = await (await fetch('categories/' + encodeURIComponent(entry.file))).json();
-      return { entry, data, version: index.version };
-    }));
-  } catch (error) {
-    summary.textContent = '';
-    list.appendChild(text('p', 'Could not read categories/: ' + error.message +
-      ' — open this page through a web server (the launcher, or python3 -m http.server here), not file://.', 'error'));
-    return;
+  const SERVE = 'Open this page through a web server (the launcher, or python3 -m http.server in DATATYPE.soundfx.UCS), not file://.';
+  if (S && !load.described) {
+    load.described = true;
+    S.describe({
+      name: 'UCS Category Taxonomy',
+      does: 'A read-only browser over the UCS sound-effect categories the analyzer compiles in.',
+      inputs: [
+        { name: 'Category index', from: 'categories/index.json (version, categories[].file)', kind: 'file' },
+        { name: 'Category files', from: 'categories/<CATEGORY>.json (category, subcategories[])', kind: 'file' },
+      ],
+      outputs: [{ name: 'Tables', to: 'this page only: one table per category; nothing is saved' }],
+      controls: [
+        { name: 'Filter', how: 'Type a category, subcategory, id or synonym; non-matching categories hide' },
+        { name: 'Category', how: 'Click a category row to open or close its subcategories' },
+      ],
+      problems: ['fetch_failed', 'http_not_found', 'bad_json', 'bad_input', 'sdk_missing'],
+    });
   }
+  /* A failed read: what happened / why / do this, in the list, with Retry. */
+  const fail = (problem) => {
+    summary.textContent = '';
+    list.replaceChildren();
+    if (S) S.showProblem(problem, { into: list, onRetry: () => { summary.textContent = 'Loading…'; load(); }, dismissable: false });
+    else list.appendChild(text('p', `${problem.subject || ''}: ${problem.detail || problem} — ${SERVE}`, 'error'));
+  };
+  const bad = (file, detail) => (S ? S.problem('bad_input', { subject: file, detail, fix: [`Fix ${file}, or rebuild categories/ from the UCS sheet (ucs_vocab.py).`] }) : { subject: file, detail });
+  const read = async (url) => {
+    if (S) {
+      const r = await S.fetchJson(url, { cache: 'no-store', timeoutMs: 15000, subject: url });
+      if (!r.ok && !r.status) r.problem.fix = [SERVE].concat(r.problem.fix || []);
+      return r;
+    }
+    try { const r = await fetch(url); return r.ok ? { ok: true, data: await r.json() } : { ok: false, problem: { subject: url, detail: `HTTP ${r.status}` } }; }
+    catch (e) { return { ok: false, problem: { subject: url, detail: e.message } }; }
+  };
+  const idx = await read('categories/index.json');
+  if (!idx.ok) return fail(idx.problem);
+  const index = idx.data;
+  if (!index || !Array.isArray(index.categories)) return fail(bad('categories/index.json', 'It has no "categories" list, so no category file can be found.'));
+  const at = index.categories.findIndex((e) => !e || typeof e.file !== 'string' || !e.file);
+  if (at >= 0) return fail(bad('categories/index.json', `categories[${at}] has no "file" name.`));
+  const categories = [];
+  const urls = index.categories.map((entry) => 'categories/' + encodeURIComponent(entry.file));
+  const reads = await Promise.all(urls.map(read));   // all at once, checked in order
+  for (let i = 0; i < reads.length; i++) {
+    const entry = index.categories[i], url = urls[i], r = reads[i];
+    if (!r.ok) return fail(r.problem);
+    const data = r.data;
+    if (!data || typeof data.category !== 'string') return fail(bad(url, 'It has no "category" name.'));
+    if (!Array.isArray(data.subcategories)) return fail(bad(url, `Category ${data.category} has no "subcategories" list.`));
+    const sub = data.subcategories.findIndex((x) => !x || typeof x !== 'object');
+    if (sub >= 0) return fail(bad(url, `subcategories[${sub}] of ${data.category} is not an object.`));
+    categories.push({ entry, data, version: index.version });
+  }
+  if (!window.APKTable) return fail(S ? S.problem('sdk_missing', { detail: 'vendor/apk-table/apk-table.js did not load, so the tables cannot draw.' }) : { subject: 'vendor/apk-table', detail: 'did not load' });
+  list.replaceChildren();
   const tables = [];
   for (const { data } of categories) {
     const details = document.createElement('details');
@@ -89,7 +136,7 @@
       ? `${shown} of ${total} subcategories match “${filter.value.trim()}”`
       : `UCS v${categories[0].version} · ${categories.length} categories · ${total} subcategories`;
   };
-  filter.addEventListener('input', show);
+  filter.oninput = show;   // one listener, even after a Retry
   show();
 })();
 </script>
