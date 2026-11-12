@@ -31,5 +31,14 @@ Data changelog: [CHANGELOG.md](CHANGELOG.md).
 - **Consumers pin a version** — the repo is now a cargo package, `apk-ucs-bundle` 8.2.1-apk.1 (`Cargo.toml`, `links = "apk_ucs"`, data-only `src/lib.rs`, `build.rs` printing `cargo:dir`), so PROCESSOR.SampleAnalyzer can depend on it by git `rev` and read `DEP_APK_UCS_DIR` (S01 handoff). Verified: `cargo build` clean; a scratch dependent's build script receives `DEP_APK_UCS_DIR` pointing at this folder with `categories/index.json`; `cargo package --list` holds the data files. Tagging a release: Needs owner.
 - **`.PEAK` schema** — not needed under `contracts/`: its owner already publishes it, `PROCESSOR.SampleAnalyzer/SRC/core/schema/peak.schema.json` ($id …/analyzer-peak/1.1.0); W01 declined a second copy. This repo declares the fields once (`features_available`) and reads `.PEAK` through one reader; the feature-name agreement test belongs in SampleAnalyzer (S01).
 
+## Delivered 2026-11-11 – 2026-11-12
+
+From this repository's own commits (the commit message is the record):
+
+- vendor: apk-contracts web bundle refreshed from contracts/generated/web (report.ts: LogLine + ProblemRecord, System/Problems family) (`b34d750`)
+- vendor/apk-softapp: re-vendored — every problem card is reported through the SDK (ROAD-3695 step 2) (`8ac5d2c`)
+- vendor: apk-contracts web bundle refreshed from contracts/generated/web (five report codes, ROAD-3695; unit-gate, ROAD-3684) (`086ae71`)
+- re-vendor apk-contracts web bundle: contracts 2.4.0 retires APK.audio/Tests/{suite} (ROAD-3729) (`4dd91a9`)
+
 ## Releases
 - **Released `2.0.0`, tag `v2.0.0`** (2026-11-01, ROAD-3452, the owner's V2) — no SDK pin; every manifest says 2.0.0; GitHub release `v2.0.0`.
